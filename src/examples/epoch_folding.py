@@ -1,42 +1,48 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from astropy.timeseries import TimeSeries
-import astropy.units as u
-from astropy.time import Time
+from astropy.timeseries import LombScargle
 
-# Generate a synthetic time series with noise and a periodic signal
+# Generate synthetic time series data with a known periodic signal
 np.random.seed(0)
-n_points = 1000
-time = np.linspace(0, 20, n_points)
-periodic_signal = 2.0 * np.sin(2 * np.pi * time / 3.0)
-noise = np.random.normal(0, 0.5, n_points)
-flux = periodic_signal + noise
+t = np.linspace(0, 100, 1000)
+# Inject a sinusoidal signal with a period of 10 seconds (0.1 Hz)
+signal_period = 10
+signal_amplitude = 5
+signal = signal_amplitude * np.sin(2 * np.pi * (1 / signal_period) * t)
+noise = np.random.normal(0, 1, len(t))
+data = signal + noise
 
-# Create a Time object and assign time data
-time = Time(time, format='jd')  # Specify the time format
+# Candidate frequencies to test (reciprocal of periods)
+candidate_frequencies = 1 / np.linspace(5, 15, 1000)
 
-# Create a TimeSeries object and add the flux data
-ts = TimeSeries(time=time)
-ts['flux'] = flux
+# Initialize arrays to store periodogram results
+periods = []
+power = []
 
-# Test different periods and create folded plots
-test_periods = [2.0, 3.0, 4.0, 5.0]  # Replace with the periods you want to test
+# Perform epoch folding and calculate the periodogram for each candidate frequency
+for freq in candidate_frequencies:
+    folded_time = t % (1 / freq)
+    ls = LombScargle(folded_time, data)
+    frequency, power_density = ls.autopower()
 
-for period_value in test_periods:
-    # Convert the period to an astropy Quantity with the correct units (e.g., days)
-    period = period_value * u.day
+    # Find the frequency corresponding to the highest peak
+    best_frequency = frequency[np.argmax(power_density)]
 
-    folded_data = ts.fold(period=period)
+    # Convert frequency to period and store the results
+    best_period = 1 / best_frequency
+    periods.append(best_period)
+    power.append(np.max(power_density))
 
-    plt.figure(figsize=(8, 6))
-    plt.plot(folded_data['time'], folded_data['flux'], marker='o', linestyle='None')
-    plt.xlabel('Folded Time (Phase)')
-    plt.ylabel('Flux')
-    plt.title(f'Folded Data (Period = {period_value} days)')
-    plt.grid(True)
+# Plot the periodogram
+plt.figure(figsize=(10, 4))
+plt.plot(periods, power)
+plt.xlabel('Period (units of time)')
+plt.ylabel('Power')
+plt.title('Periodogram')
+plt.grid(True)
 
-    plt.savefig(f'folded_data_period_{period_value}.png')
-    plt.close()
+# Find the period corresponding to the highest peak in the periodogram
+best_period = periods[np.argmax(power)]
+print(f"Detected Period: {best_period:.2f} units of time")
 
-# Show or save the plots for different test periods
 plt.show()
