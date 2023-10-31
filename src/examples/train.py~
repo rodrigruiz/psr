@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the parameters
+period = 20  # Period of the pulse train
+sigma = 5   # Standard deviation of the Gaussian
+
+# Create a time array
+t = np.linspace(0, 100, 1000)  # Adjust the time range and resolution as needed
+
+# Generate the Gaussian pulse train
+pulse_train = np.zeros(len(t))
+for i in range(len(t)):
+    if i % period == 0:
+        pulse_train[i] = 1
+    else:
+        pulse_train[i] = np.exp(-(t[i] % period - period / 2)**2 / (2 * sigma**2))
+
+# Plot the Gaussian pulse train
+plt.figure(figsize=(10, 5))
+plt.plot(t, pulse_train, label='Gaussian Pulse Train')
+plt.xlabel('Time')
+plt.ylabel('Amplitude')
+plt.title('Gaussian Pulse Train with Period of 20 and Sigma of 5')
+plt.grid(True)
+plt.legend()
+plt.show()
