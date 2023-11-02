@@ -37,17 +37,20 @@ def analyze_timeseries(directory, period, reference_mjd):
 
     # Initialize an empty TimeSeries to store the combined folded data
     combined_folded_ts = None
-
+    
     # Create a combined plot
     plt.figure(figsize=(10, 6))
     for file_path in timeseries_files:
         ts = TimeSeries.read(file_path, format='ascii', time_column='time', time_format='mjd')
 
+        # Plot the original time series
+        plt.plot(ts.time.jd, ts['flux'], '.', markersize=1, label=file_path)
+
         # Fold the time series with the specified period and reference MJD
         
         epoch_time = Time(reference_mjd, format='mjd')  # Create a Time object for the reference MJD
         folded_ts = ts.fold(period=period * u.day, epoch_time=epoch_time)
-    
+
         # Sum the folded time series to the combined_folded_ts
         if combined_folded_ts is None:
             combined_folded_ts = folded_ts
@@ -56,11 +59,13 @@ def analyze_timeseries(directory, period, reference_mjd):
 
     # Plot the folded time series
     folded_ts.time.format = 'jd'
+    plt.figure(figsize=(10,6))
     plt.plot(combined_folded_ts.time.jd, combined_folded_ts['flux'], '.', markersize=1, label=file_path)
     plt.xlabel('Folded Time (MJD)')
     plt.ylabel('flux')
+    
     plt.legend(loc='upper right')
-    plt.title(f'Combined Folded Time Series')
+    plt.title(f'Combined Folded and Original Time Series')
     plt.show()
 
 if __name__ == '__main__':
