@@ -100,7 +100,7 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     delta_t = times[1] - times[0]
     P = float(period)  # Period of the pulse train
     P_0 = 0 # Phase offset
-    sigma = 0.005  # Standard deviation
+    sigma = 0.03 #Standard deviation
     a = float(signal_strength)  # Amplitude
     flux = generate_pulse_train(times, delta_t, P, P_0, sigma, a)    
     noise = np.random.normal(0, 0.5, int(number_of_points))
@@ -116,6 +116,9 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         plt.plot(ts.time.mjd, ts['flux'], '.', markersize=1, label=f'Time Series {i}')
         file_name = f'timeseries_{i}.dat'
         ts.write(file_name, format='ascii', overwrite=True)
+    plt.xlabel('Time (MJD)')
+    plt.ylabel('flux')
+    plt.title(f'period = {period} days.')
     plt.show()
 
 if __name__ == '__main__':
