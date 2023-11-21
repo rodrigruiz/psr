@@ -100,8 +100,9 @@ def calculate_efficiency_statistics(filename):
 
 def main():
     args = docopt.docopt(__doc__)
-    directory = args['<input_directory>']
-    output_filename = args['output_file']
+    print(args)
+    directory = args['-I']
+    output_filename = args['-o']
 
     if not os.path.isdir(directory):
         print(f"Error: '{directory}' is not a valid directory.")
