@@ -1,0 +1,10 @@
+input = [n_events       : 10000,
+         n_runs         : 1,
+         interaction    : "cc",
+      	 flavor         : "electron",
+      	 radius         : 100, 
+         target_z       : 8,
+      	 target_a       : 16,
+	 detector       : "${KM3BUU_PIPELINE_PATH}/parameters/detector.gdml",
+	 schema         : "${KM3BUU_PIPELINE_PATH}/parameters/gdml.xsd",
+	 pmt_parameters : "${KM3BUU_PIPELINE_PATH}/parameters/km3sim_param.txt"]
