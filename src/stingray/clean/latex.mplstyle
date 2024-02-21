@@ -1,0 +1,38 @@
+## LATEX 
+text.usetex: True 
+text.latex.preamble: \usepackage{amsmath} \usepackage{amsfonts}
+#text.latex.preamble: \usepackage{textgreek} \usepackage{amsmath} \usepackage{amsfonts}
+
+## FONT
+font.family: serif
+#font.weight: bold
+
+## TEXT
+#text.fontsize: 12
+
+## AXES
+axes.labelsize: 12
+axes.titlesize: 12
+axes.labelpad: 30.0
+axes.titlepad: 10.0
+axes.labelweight: bold 
+
+## TICKS
+xtick.labelsize: 12
+xtick.minor.visible: True
+ytick.labelsize: 12
+ytick.minor.visible: True
+ytick.right: False
+
+## LEGEND
+legend.fontsize: 12
+legend.handlelength: 1.5
+legend.title_fontsize: 12
+
+## LINES
+
+## FIGURE
+#figure.labelsize: 12
+figure.titlesize: 12
+figure.constrained_layout.use: True
+#figure.autolayout: True

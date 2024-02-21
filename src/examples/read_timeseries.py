@@ -22,29 +22,26 @@ from docopt import docopt
 from astropy import units as u  # Added for Quantity
 from astropy.time import Time  # Added for Time
 from astropy.timeseries import aggregate_downsample
+from astropy.table import vstack
 
-# def calculate_stats(ts):
-#     # Assuming you have a TimeSeries object named 'ts' with a 'flux' column
-
-#     # Calculate the length of the 'flux' column
-#     num_rows = len(ts)
-
-#     # Divide the data into three equal parts
-#     first_third = ts[:num_rows // 3]
-#     last_third = ts[-num_rows // 3:]
-
-#     # Calculate the mean and standard deviation for the first third
-#     first_third_mean = np.mean(first_third['flux'])
-#     first_third_std = np.std(first_third['flux'])
-
-#     # Calculate the mean and standard deviation for the last third
-#     last_third_mean = np.mean(last_third['flux'])
-#     last_third_std = np.std(last_third['flux'])
-
-#     print("First Third Mean:", first_third_mean)
-#     print("First Third Standard Deviation:", first_third_std)
-#     print("Last Third Mean:", last_third_mean)
-#     print("Last Third Standard Deviation:", last_third_std)
+# chi2 test to check against a constant profile
+def get_chi2(unfolded_ts, folded_ts, period, flux_column_name='flux'):
+    # std of unfolded time series - load the data from the different files first, combine and then calculate std
+    # x_bar: from Larsson(1996) mean of unfolded data since we want to test against a constant profile (?folded time series)
+    # std: from Larsson(1996) std of unfolded data divided by #points in bin = test period / bin width
+    
+    # mean and std of unfolded data
+    mean, std = get_stats_timeseries( unfolded_ts )
+    chi2 = 0
+    # total number of bins is given by the length of the folded data
+    print(f'length of folded timeseries:{len(folded_ts)}')
+    for i in folded_ts[flux_column_name]:
+        # number of data points in bin i - for this case is the same in every bin, but could be different in experimental data if the resolution changes or the are gaps in the data
+        #print(f'number of data points in bin: {n_i}')
+        n_i = ((unfolded_ts['time'].value[-1]) - (unfolded_ts['time'].value[0])) / period
+        print(f'number of data points in bin: {n_i}')
+        chi2 += ( i - mean )**2 / ( std / np.sqrt(n_i) )**2
+    return chi2
 
 def calculate_stats(ts):
      # Assuming you have a TimeSeries object named 'ts' with a 'flux' column
@@ -84,7 +81,7 @@ def calculate_stats(ts):
      print("Last Third Mean:", last_third_mean)
      print("Last Third Standard Deviation:", last_third_std)
 
-def calculate_segment_stats(time_series, segment_length, flux_column_name='flux'):
+def calculate_segment_stats(time_series, segment_length=10, flux_column_name='flux'):
     # Extract the 'flux' column from the TimeSeries
     flux = time_series[flux_column_name]
 
@@ -176,8 +173,37 @@ def calculate_segment_stats(time_series, segment_length, flux_column_name='flux'
 
 #     return np.array(segment_times), np.array(mean_flux_values), np.array(std_flux_values)
 
+def combine_timeseries(directory, flux_column_name='flux'):
+    '''combines the timeseries from different files into a single timeseries.'''
+    
+    file_pattern = os.path.join(directory, 'timeseries_*.dat')
+    timeseries_files = glob.glob(file_pattern)
 
-def analyze_timeseries(directory, period, reference_mjd):
+    if not timeseries_files:
+        print(f"No timeseries files found in the directory: {directory}")
+        return
+
+    # Sort files by the integer value i in the filename
+    timeseries_files.sort(key=lambda x: int(x.split('_')[-1].split('.')[0]))
+    
+    combined_ts = None
+    
+    for file_path in timeseries_files:
+        ts = TimeSeries.read(file_path, format='ascii', time_column='time', time_format='mjd')
+        #print( combined_ts )
+        if combined_ts is None:
+            combined_ts = ts
+        else:
+            combined_ts = vstack([combined_ts, ts])
+        
+    return combined_ts
+
+def get_stats_timeseries(timeseries, column_name='flux'):
+    '''calculates mean and std of a timeseries column.'''
+    flux = timeseries[column_name]
+    return np.mean(flux), np.std(flux)
+
+def analyze_split_timeseries(directory, period, reference_mjd):
     # Find all files named 'timeseries_*.dat' in the specified directory
     file_pattern = os.path.join(directory, 'timeseries_*.dat')
     timeseries_files = glob.glob(file_pattern)
@@ -196,49 +222,120 @@ def analyze_timeseries(directory, period, reference_mjd):
     plt.figure(figsize=(10, 6))
     for file_path in timeseries_files:
         ts = TimeSeries.read(file_path, format='ascii', time_column='time', time_format='mjd')
-
+        print(f'unfolded timeseries: {ts}')
+        print(f'length of unfolded timeseries: {len(ts)}')
         # Plot the original time series
-        plt.plot(ts.time.jd, ts['flux'], '.', markersize=1, label=file_path)
+        #plt.plot(ts.time.jd, ts['flux'], '.', markersize=1, label=file_path)
 
         # Fold the time series with the specified period and reference MJD
         
         epoch_time = Time(reference_mjd, format='mjd')  # Create a Time object for the reference MJD
         folded_ts = ts.fold(period=period * u.day, epoch_time=epoch_time)
-
+        #plt.plot(folded_ts.time.jd, folded_ts['flux'], '.', markersize=1, color='red')
+        print(f'folded timeseries: {folded_ts}')
+        print( f'length of folded timeseries: {len(folded_ts)}' )
         # Sum the folded time series to the combined_folded_ts
         if combined_folded_ts is None:
             combined_folded_ts = folded_ts
         else:
             combined_folded_ts['flux'] += folded_ts['flux']
-
+    
+    plt.plot(combined_folded_ts.time.jd, combined_folded_ts['flux'], '.', markersize=1, color='red')
+    # calculate chi2
+    combined_unfolded_ts = combine_timeseries(directory)
+    #print(float(period))
+    chi2 = get_chi2( combined_unfolded_ts, combined_folded_ts, period)
+    '''
     # Plot the folded time series
     stats = calculate_segment_stats(combined_folded_ts, 10)
-    print(stats[0])
+    #print(stats[0])
     folded_ts.time.format = 'jd'
     plt.xlabel('Folded Time (JD)')
-    plt.ylabel('flux')
+    plt.ylabel('flux [a.u.]')
     plt.title("Original Time Series")
     plt.figure(figsize=(10,6))
     plt.plot(combined_folded_ts.time.jd, combined_folded_ts['flux'], '.', markersize=1, color='black', label=file_path)
     ts_binned = aggregate_downsample(combined_folded_ts, time_bin_size=0.001 * u.day)
     ts_binned_2 = aggregate_downsample(combined_folded_ts, time_bin_size=0.001 * u.day, aggregate_func=np.std)
+    #print(f'mean folded signal: {ts_binned}')
+    #print(f'std of folded signal: {ts_binned_2}')
     plt.plot(ts_binned.time_bin_start.jd, ts_binned['flux'], 'r-', drawstyle='steps-post')
     plt.plot(ts_binned_2.time_bin_start.jd, ts_binned['flux'] + ts_binned_2['flux'], '-', color='orange', drawstyle='steps-post')
     plt.plot(ts_binned_2.time_bin_start.jd, ts_binned['flux'] - ts_binned_2['flux'], '-', color='orange', drawstyle='steps-post')
     #plt.plot(stats[0], stats[1], linestyle='None',marker='.', color='red')
+    '''
     plt.xlabel('Folded Time (JD)')
-    plt.ylabel('flux')
+    plt.ylabel('flux [a.u.]')
     
     #plt.legend(loc='upper right')
     plt.title(f'Folded Time Series. Period = {period} days.')
+    plt.savefig('folded_timeseries.pdf')
     plt.show()
+    
+    return chi2
+
+def analyze_timeseries(directory, period, reference_mjd):
+    # calculate chi2
+    ts = combine_timeseries(directory)
+    
+    # Create a combined plot
+    plt.figure(figsize=(10, 6))
+    
+    print(f'unfolded timeseries: {ts}')
+    print(f'length of unfolded timeseries: {len(ts)}')
+    # Plot the original time series
+    #plt.plot(ts.time.jd, ts['flux'], '.', markersize=1, color='black')
+
+    # Fold the time series with the specified period and reference MJD  
+    epoch_time = Time(reference_mjd, format='mjd')  # Create a Time object for the reference MJD
+    folded_ts = ts.fold(period=period * u.day, epoch_time=epoch_time)
+        #plt.plot(folded_ts.time.jd, folded_ts['flux'], '.', markersize=1, color='red')
+    print(f'folded timeseries: {folded_ts}')
+    print( f'length of folded timeseries: {len(folded_ts)}' )
+    
+    plt.plot(folded_ts.time.jd, folded_ts['flux'], '.', markersize=1, color='red')
+    # calculate chi2
+    #print(float(period))
+    chi2 = get_chi2( ts, folded_ts, period)
+    '''
+    # Plot the folded time series
+    stats = calculate_segment_stats(combined_folded_ts, 10)
+    #print(stats[0])
+    folded_ts.time.format = 'jd'
+    plt.xlabel('Folded Time (JD)')
+    plt.ylabel('flux [a.u.]')
+    plt.title("Original Time Series")
+    plt.figure(figsize=(10,6))
+    plt.plot(combined_folded_ts.time.jd, combined_folded_ts['flux'], '.', markersize=1, color='black', label=file_path)
+    ts_binned = aggregate_downsample(combined_folded_ts, time_bin_size=0.001 * u.day)
+    ts_binned_2 = aggregate_downsample(combined_folded_ts, time_bin_size=0.001 * u.day, aggregate_func=np.std)
+    #print(f'mean folded signal: {ts_binned}')
+    #print(f'std of folded signal: {ts_binned_2}')
+    plt.plot(ts_binned.time_bin_start.jd, ts_binned['flux'], 'r-', drawstyle='steps-post')
+    plt.plot(ts_binned_2.time_bin_start.jd, ts_binned['flux'] + ts_binned_2['flux'], '-', color='orange', drawstyle='steps-post')
+    plt.plot(ts_binned_2.time_bin_start.jd, ts_binned['flux'] - ts_binned_2['flux'], '-', color='orange', drawstyle='steps-post')
+    #plt.plot(stats[0], stats[1], linestyle='None',marker='.', color='red')
+    '''
+    plt.xlabel('Folded Time (JD)')
+    plt.ylabel('flux [a.u.]')
+    
+    #plt.legend(loc='upper right')
+    plt.title(f'Folded Time Series. Period = {period} days.')
+    plt.savefig('folded_timeseries.pdf')
+    plt.show()
+    
+    return chi2
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
     directory = arguments['--directory']
     period = float(arguments['--period'])
     reference_mjd = float(arguments['--reference_mjd'])
-    analyze_timeseries(directory, period, reference_mjd)
+    #combined_ts = combine_timeseries(directory)
+    #mean, std = get_stats_timeseries( combined_ts )
+    chi2 = analyze_timeseries(directory, period, reference_mjd)
+    #chi2 = analyze_split_timeseries(directory, period, reference_mjd)
+    print( f'chi2: {chi2}' )
 
 
 

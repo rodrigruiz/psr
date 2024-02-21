@@ -22,7 +22,7 @@ from astropy.time import Time
 import astropy.units as u
 from docopt import docopt
 import matplotlib.pyplot as plt
-plt.style.use('../latex.mplstyle')
+#plt.style.use('../latex.mplstyle')
 
 def gauss(x, mu=0, sigma=1):
     '''returns a normalized gaussian function.'''
@@ -151,15 +151,15 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     a = float(signal_strength)  # Amplitude
     
     # gaussian signal
-    #sigma = 0.03 #Standard deviation
-    #flux = generate_pulse_train(times, P, P_0, sigma, a) 
-    #label = f'Gaussian Pulse Train' 
-    #flux = f'Gaussian Pulse Train with Period of {P} and Sigma of {sigma}'
+    sigma = 1 #Standard deviation
+    flux = generate_pulse_train_gauss(times, P, P_0, sigma, a) 
+    label = f'Gaussian Pulse Train' 
+    title = f'Gaussian Pulse Train with Period of {P} and Sigma of {sigma}'
     
     # sinusodial signal
-    flux = generate_pulse_train_sin(times, P, P_0, a)
-    label = 'Sinusodial Pulse Train'
-    title = f'Sinusodial Pulse Train with Period of {P}'
+    #flux = generate_pulse_train_sin(times, P, P_0, a)
+    #label = 'Sinusodial Pulse Train'
+    #title = f'Sinusodial Pulse Train with Period of {P}'
     
     # for visualization - can be removed later
     plt.figure(figsize=(10, 5))
@@ -176,11 +176,11 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     # poisson
     noise = np.random.poisson(100, int(number_of_points))
     title_poisson = ' and Poisson distributed Noise'
-    '''
+    
     # gaussian
-    noise = np.random.normal(0, 0.5, int(number_of_points))
-    title_gauss = ' and gaussian distributed Noise'
-    '''
+    #noise = np.random.normal(0, 0.5, int(number_of_points))
+    #title_gauss = ' and gaussian distributed Noise'
+    
     
     flux += noise
     
@@ -212,13 +212,13 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     
     for i, indices in enumerate(file_indices):
         ts = TimeSeries(time=times[indices])
-        ts['flux'] = flux[indices]
+        ts['counts'] = flux[indices]
         print(f'timeseries: {ts}')
-        plt.plot(ts.time.mjd, ts['flux'], '.', markersize=1, label=f'Time Series {i}')
+        plt.plot(ts.time.mjd, ts['counts'], '.', markersize=1, label=f'Time Series {i}')
         file_name = f'timeseries_{i}.dat'
-        ts.write(file_name, format='ascii', overwrite=True)
+        ts.write(file_name, format='ascii.ecsv', overwrite=True)
     plt.xlabel('Time [MJD]')
-    plt.ylabel('flux [a.u.]')
+    plt.ylabel('Counts [a.u.]')
     plt.title(f'period = {period} days.')
     plt.savefig(f'timeseries.png')
     plt.show()
