@@ -3,7 +3,7 @@
 Epochfolding.
 
 Usage:
-  stingray_epochfolding.py  -i INPUT_FILE --obs_length=<obs_length> --testperiods=<testperiods> [--mode=<mode>] [--nbin=<nbin>] [--oversampling=<oversampling>] [--true_period=<true_period>] [--plot=<plot>] [--fit=<fit>] [--pulseshape=<pulseshape> ] 
+  stingray_epochfolding.py  -i INPUT_FILE --obs_length=<obs_length> --testperiods=<testperiods> [--mode=<mode>] [--nbin=<nbin>] [--oversampling=<oversampling>] [--true_period=<true_period>] [--plot=<plot>] [--save=<save>] [--root_dir=<root_dir>] [--fit=<fit>] [--pulseshape=<pulseshape> ] 
   stingray_epochfolding.py (-h | --help)
 
 Options:
@@ -18,14 +18,18 @@ Options:
   --testperiods=<testperiods> Testperiods to perform the epoch folding on. Can also be only one value or `true_period`
   --true_period=<true_period> True period of the signal (if known).
   --plot=<plot>               Whether to plot the results [default: True]
+  --save=<save>               Whether to save **currently** the output of epochfolding_single()
+  --root_dir=<root_dir>       root directory where to save the folded pulse profiles
   --fit=<fit>                 Whether to fit the epoch folding statistics [default: True]
   --pulseshape=<pulseshape>   Pulseshape to fit the statistics to. 
                               'arbitrary' will fit a gaussian, 
                               'sine' will fit a sinc function [default: arbitrary]
   
 """
-
+import os
 from docopt import docopt
+from astropy.table import Table
+from astropy.io import ascii
 from collections.abc import Iterable
 import numpy as np
 import matplotlib.pyplot as plt
@@ -43,7 +47,7 @@ from stingray.stats import fold_detection_level
 from stingray.pulse.search import plot_profile, search_best_peaks
 from stingray.pulse.modeling import fit_gaussian, fit_sinc
 
-def epochfolding_single(filepath, testperiods, nbin=32, output='profile'):
+def epochfolding_single(filepath, testperiods, nbin=32, output='profile', plot=True, save=True):
     """Performs epochfolding with a certain testperiod or on a range of testperiods.
      
     Parameters
@@ -60,10 +64,22 @@ def epochfolding_single(filepath, testperiods, nbin=32, output='profile'):
           
     Optional Parameters
     -------------------
+        plot : bool
+            Whether to plot the folded pulse profiles.
+            
+        output : str
+            filename of the plot.
             
     Returns
     -------
-        Plots the pulse profile(s) of the folded eventlist.
+        phase_bins : array of floats
+            The phases corresponding to the pulse profile
+
+        profile : array of floats
+            The pulse profile (folded counts)
+
+        profile_err : array of floats
+            The uncertainties on the pulse profile
         
     """
     
@@ -74,22 +90,75 @@ def epochfolding_single(filepath, testperiods, nbin=32, output='profile'):
     # perform epochfolding and plot resulting profile
     if isinstance(testperiods, Iterable):
         for p in testperiods:
-            ph, profile, profile_err = fold_events(events.time, 1/p, nbin=nbin)
-            ax = plot_profile(ph, profile, ax=ax)
-            fig.savefig(output + '.png', bbox_inches='tight')
-            
+            phase_bins, profile, profile_err = _fold_events(events.time, p, nbin=nbin, save=save)
+            if plot:
+                ax = plot_profile(phase_bins, profile, ax=ax)
+                fig.savefig(output + '.png', bbox_inches='tight')
+            '''
+            phase_bins, profile, profile_err = fold_events(events.time, 1/p, nbin=nbin)
+            if plot:
+                ax = plot_profile(phase_bins, profile, ax=ax)
+                fig.savefig(output + '.png', bbox_inches='tight')
+            if save:
+                save_to_ascii(phase_bins, profile, profile_err, p)
+                
+                # defining astopy table
+                data = Table()
+                data['phase_bins'] = phase_bins
+                data['folded_profile'] = profile
+                data['folded_profile_err'] = profile_err
+                ascii.write(data, 'folded_profile_{}.dat'.format(p), overwrite=True)
+                
+            '''
     elif isinstance(testperiods, float):
-        ph, profile, profile_err = fold_events(events.time, 1/testperiods, nbin=nbin)
-        ax = plot_profile(ph, profile, ax=ax)
-        fig.savefig(output + '.png', bbox_inches='tight')
-        
+        phase_bins, profile, profile_err = _fold_events(events.time, testperiods, nbin=nbin, save=save)
+        if plot:
+            ax = plot_profile(phase_bins, profile, ax=ax)
+            fig.savefig(output + '.png', bbox_inches='tight')
+        '''
+        phase_bins, profile, profile_err = fold_events(events.time, 1/testperiods, nbin=nbin)
+        if plot:
+            ax = plot_profile(phase_bins, profile, ax=ax)
+            fig.savefig(output + '.png', bbox_inches='tight')
+        if save:
+            save_to_ascii(phase_bins, profile, profile_err, testperiods)
+        '''
     else:
         raise ValueError(
             "testperiods should be either a float of a list of floats!"
         )
+    
         
-    #return ph, profile, profile_err
+    return phase_bins, profile, profile_err
 
+def _fold_events(times, testperiod, nbin=32, save=False, root_dir=None):
+    """Helping function.
+       Calculate the folded pulse profile.
+    """
+    
+    phase_bins, profile, profile_err = fold_events(times, 1/testperiod, nbin=nbin)
+    if save:
+        save_to_ascii(phase_bins, profile, profile_err, testperiod, root_dir=root_dir)
+    return phase_bins, profile, profile_err
+
+def save_to_ascii(phase_bins, profile, profile_err, testperiod, root_dir=None):
+    """Helping function.
+       Saves the output of fold_events() to an ascii file.
+    """
+    if root_dir is None:
+        output_dir = './folded_events/'
+    else:
+        output_dir = './folded_events/' + root_dir
+    
+    if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
+        
+    data = Table()
+    data['phase_bins'] = phase_bins
+    data['folded_profile'] = profile
+    data['folded_profile_err'] = profile_err
+    ascii.write(data, output_dir + 'folded_profile_{}.dat'.format(testperiod), overwrite=True)
+    
 def epochfolding_scan(filepath, testperiods, nbin=32, oversampling=10, obs_length=None, plot=True, true_period=None):
     """Performs epochfolding for a range of testperiods.
     
@@ -340,19 +409,23 @@ if __name__ == '__main__':
     filepath = arguments['-i']
     mode = arguments['--mode']
     nbin = int(arguments['--nbin'])
-    oversampling = int(arguments['--oversampling'])
+    #oversampling = int(arguments['--oversampling'])
     obs_length = float(arguments['--obs_length'])
-    if len(arguments['--testperiods']) <= 4:
+    if arguments['--testperiods'][0] != '[':
         testperiods = float(arguments['--testperiods'])
     else: 
         testperiods = map(float, arguments['--testperiods'].strip('[]').split(','))
-    true_period = float(arguments['--true_period'])
+    #true_period = float(arguments['--true_period'])
     plot = bool(arguments['--plot'])
-    fit = bool(arguments['--fit'])
-    pulseshape = arguments['--pulseshape']
+    save = bool(arguments['--save'])
+    #fit = bool(arguments['--fit'])
+    #pulseshape = arguments['--pulseshape']
     
     if mode == 'single':
-        epochfolding_single(filepath, testperiods, nbin=nbin, output='profile')
+        if nbin is None:
+             epochfolding_single(filepath, testperiods, output='profile', plot=plot, save=save)
+        else:
+            epochfolding_single(filepath, testperiods, nbin=nbin, output='profile', plot=plot, save=save)
         
     elif mode == 'scan':
         frequencies, effreq, efstat = epochfolding_scan(filepath, true_period, nbin=nbin, oversampling=oversampling, 
@@ -361,7 +434,7 @@ if __name__ == '__main__':
             fit_stats( frequencies, nbin, effreq, efstat, obs_length, pulseshape=pulseshape, plot=plot, true_period=true_period )
             
     elif mode == 'all':
-        epochfolding_single(filepath, testperiods, nbin=nbin, output='profile')
+        epochfolding_single(filepath, testperiods, nbin=nbin, output='profile', plot=plot, save=save)
         frequencies, effreq, efstat = epochfolding_scan(filepath, true_period, nbin=nbin, oversampling=oversampling,
                                                         obs_length=obs_length, plot=plot, true_period=true_period)
         cand_freqs_ef, cand_stat_ef, fit = fit_stats( frequencies, nbin, effreq, efstat, obs_length,
