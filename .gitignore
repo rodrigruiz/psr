@@ -8,6 +8,9 @@
 !data/**/.dat
 !data/**/.txt
 
+# stingray venv
+./stingray/*
+
 # Editor backup files
 **/*~
 
