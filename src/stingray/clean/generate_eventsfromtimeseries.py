@@ -12,6 +12,7 @@ Options:
 """
 
 import os, glob
+from collections.abc import Iterable
 import numpy as np
 from astropy.timeseries import TimeSeries
 from astropy.table import Table
@@ -19,7 +20,7 @@ from astropy.time import Time
 from docopt import docopt
 
 def load_timeseries(directory):
-    """Loads astropy.timeseries.TimeSeries from multiple files.
+    """Loads astropy.timeseries.TimeSeries from a single or multiple files.
     
     Parameters
     ----------
@@ -28,8 +29,8 @@ def load_timeseries(directory):
             
     Returns
     -------
-        list
-            List of astropy.timeseries.TimeSeries objects.
+        list or astropy.timeseries.TimeSeries object
+            List of astropy.timeseries.TimeSeries objects or a single astropy.timeseries.TimeSeries object.
         
     """
     
@@ -76,10 +77,36 @@ def create_eventlist(directory, output='eventlist', data_column_name='counts'):
         Saves the eventlist to a file in the ascii.ecsv format.
 
     """
+    np.random.seed()
     
     ts = load_timeseries(directory)
+    
+    if isinstance(ts, Iterable):
+        for i, s in enumerate(ts):
+            output_file = output + f'_{i}'
+            _generate_events(s, output=output_file)
+    else:
+        _generate_events(ts)
+    
+    '''
+    event_list = None
+    for i, bins in enumerate(ts[:-1]):
+        events = np.random.uniform( bins['time'].value, ts[i+1]['time'].value, int(bins[data_column_name]) )
+        events = np.sort(events)
+        
+        if event_list is None:
+            event_list = events
+        else:
+            event_list = np.concatenate((event_list, events))
 
-    np.random.seed()
+    event_list = Table([event_list], names=['time'])
+    event_list.write(output + '.dat', format='ascii.ecsv', overwrite=True)
+    '''
+    
+def _generate_events(ts, output='eventlist', data_column_name='counts'):
+    """Helping function.
+       Generates events and writes the eventlist to a ascii.escv file.
+    """
     
     event_list = None
     for i, bins in enumerate(ts[:-1]):
@@ -99,7 +126,10 @@ if __name__ == '__main__':
     directory = arguments['--directory']
     output = arguments['--output']
     
-    create_eventlist(directory, output=output)
+    if output is None:
+        create_eventlist(directory)
+    else:
+        create_eventlist(directory, output=output)
     
     
     

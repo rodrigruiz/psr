@@ -63,7 +63,7 @@ def plot_chi2_landscape(input_file=None, chi2s=None, periods=None, output='chi2_
     for chi2, period in zip(chi2s, periods):
         plt.vlines(x=period, ymin=0., ymax=chi2, color='purple')
     #plt.plot(periods, chi2s, 'o', label=r'$\chi^2$ lanscape', color='purple' )
-    plt.xlabel('Test periods [days]')
+    plt.xlabel('Test frequencies [days]')
     plt.ylabel(r'$\chi^2$')
     plt.title(r'$\chi^2$ lanscape')
     plt.grid(True)
