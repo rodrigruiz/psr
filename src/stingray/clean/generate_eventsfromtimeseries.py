@@ -20,7 +20,7 @@ from astropy.time import Time
 from docopt import docopt
 
 def load_timeseries(directory):
-    """Loads astropy.timeseries.TimeSeries from multiple files.
+    """Loads astropy.timeseries.TimeSeries from a single or multiple files.
     
     Parameters
     ----------

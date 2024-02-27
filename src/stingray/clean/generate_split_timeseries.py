@@ -3,7 +3,7 @@
 Generate and split time series into multiple files.
 
 Usage:
-  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --period=<period> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise>
+  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise>
   script.py (-h | --help)
 
 Options:
@@ -12,7 +12,7 @@ Options:
   --time_stop=<time_stop>       Stop time
   --number_of_points=<number_of_points> Number of points
   --signal_strength=<signal_strength>   Signal strength
-  --period=<period>           Period of the sinusoid signal
+  --frequency=<frequency>           Frequency of the sinusoid signal
   --num_files=<num_files>     Number of output files
   --pulseshape=<pulseshape>   Shape of pulses in the pulse train
   --noise=<noise>             Distribution of noise added to pulse train
@@ -24,7 +24,7 @@ from astropy.time import Time
 import astropy.units as u
 from docopt import docopt
 import matplotlib.pyplot as plt
-plt.style.use('../../latex.mplstyle')
+plt.style.use('~/software/Psr/src/latex.mplstyle')
 
 def gauss(x, mu=0, sigma=1):
     """normalized gaussian function.
@@ -50,8 +50,8 @@ def gauss(x, mu=0, sigma=1):
     
     return 1/np.sqrt(2*np.pi*sigma**2) * np.exp(-(x-mu)**2/2/sigma**2)
 
-def sinusoid(times, period, baseline, amplitude, phase):
-    return baseline + amplitude * np.sin(2 * np.pi * (times / period + phase))
+def sinusoid(times, frequency, baseline, amplitude, phase):
+    return baseline + amplitude * np.sin(2 * np.pi * (times * frequency + phase))
 
 def MVMD(t, f, phi, kappa, a):
     """Modified von Mises distribution (MVMD).
@@ -84,16 +84,16 @@ def MVMD(t, f, phi, kappa, a):
     y = a * ( np.exp(kappa*np.cos(2*np.pi*f*t+phi))-np.exp(-kappa))/(np.i0(kappa) - np.exp(-kappa))
     return y
 
-def generate_pulse_train_peak(time, P, P_0, pulseshape, a, sigma=None, kappa=None):
-    """generates a pulse train in the entire `time` interval with pulse period `P`.
+def generate_pulse_train_peak(time, f, P_0, pulseshape, a, sigma=None, kappa=None):
+    """generates a pulse train in the entire `time` interval with pulse frequency `f`.
 
     Parameters
     ----------
         time : array_like, astropy.time.Time
             Time bins of the pulse train.
             
-        P : float
-            Period of the pulse train.
+        f : float
+            Frequency of the pulse train.
             
         P_0 : float
             Phase of the pulses.
@@ -127,12 +127,12 @@ def generate_pulse_train_peak(time, P, P_0, pulseshape, a, sigma=None, kappa=Non
     t_values = time.value
     
     # Rescale phase if necessary, so the complete timeseries is filled with pulses: # Maps the input P_0 to the interval [-P/2, P/2)
-    P_0 = (P_0 + P/2) % P - P/2
-    print(f'Phase Offset P_0 = {P_0}')
+    #P_0 = (P_0 + P/2) % P - P/2
+    #print(f'Phase Offset P_0 = {P_0}')
 
     # Number of pulses
     # The floor of the scalar x is the largest integer i, such that i <= x
-    N = int(np.floor((time[-1] - time[0]).to(u.day).value / P)) + 2
+    N = int(np.floor((time[-1] - time[0]).to(u.day).value * f)) + 2
     print(f"Number of pulses N = {N}")
     
     # Index of the phase
@@ -140,7 +140,7 @@ def generate_pulse_train_peak(time, P, P_0, pulseshape, a, sigma=None, kappa=Non
     print(f"idx_P_0={idx_P_0}")
     
     # Index width of one pulse
-    idx_P = int(np.round(P / delta_t.to(u.day).value))
+    idx_P = int(np.round(1 / f / delta_t.to(u.day).value))
     print(f"idx_P={idx_P}")
     
     # Initialize signal
@@ -159,9 +159,9 @@ def generate_pulse_train_peak(time, P, P_0, pulseshape, a, sigma=None, kappa=Non
         
         # Calculate pulse peaks for each pulse window
         if pulseshape == 'gauss':
-            PulseTrain[idx_l:idx_u] += a * gauss(t_values[idx_l:idx_u], i * P + P_0 + t_values[0], sigma)
+            PulseTrain[idx_l:idx_u] += a * gauss(t_values[idx_l:idx_u], i * 1/f + P_0 + t_values[0], sigma)
         elif pulseshape == 'mvm':
-            PulseTrain[idx_l:idx_u] += MVMD(t_values[idx_l:idx_u], 1/P, P_0, kappa, a)
+            PulseTrain[idx_l:idx_u] += MVMD(t_values[idx_l:idx_u], f, P_0, kappa, a)
         else:
             raise ValueError(
                 "pulseshape can only be `gauss` or `mvm`!"
@@ -169,16 +169,16 @@ def generate_pulse_train_peak(time, P, P_0, pulseshape, a, sigma=None, kappa=Non
             
     return PulseTrain
 
-def generate_pulse_train_sin(time, P, P_0, a, baseline):
-    """generates a pulse train in the entire `time` interval with pulse period `P`.
+def generate_pulse_train_sin(time, f, P_0, a, baseline):
+    """generates a pulse train in the entire `time` interval with pulse frequency `f`.
    
     Parameters
     ----------
         time : array_like, astropy.time.Time
             Time bins of the pulse train.
             
-        P : float
-            Period of the pulse train. In this case equals the period of the sine function.
+        f : float
+            Frequency of the pulse train. In this case equals the frequency of the sine function.
             
         P_0 : float
             Phase of the pulses.
@@ -208,7 +208,7 @@ def generate_pulse_train_sin(time, P, P_0, a, baseline):
     print(f'Phase Offset P_0 = {P_0}')
     
     # Initialize signal
-    PulseTrain = a * np.sin(2*np.pi/P * t_values + P_0) + baseline
+    PulseTrain = a * np.sin(2*np.pi*f * t_values + P_0) + baseline
     
     #multiple sine
     #PulseTrain += a/2 * np.sin(2*np.pi / (P/3) * t_values + P_0) + 50.
@@ -226,7 +226,7 @@ def plot_pulsetrain(times, counts, output='pulsetrain', color='blue', label='Pul
     plt.savefig( output + '.png' )
     plt.show()
 
-def generate_time_series(time_start, time_stop, number_of_points, signal_strength, period, num_files, pulseshape, noise):
+def generate_time_series(time_start, time_stop, number_of_points, signal_strength, frequency, num_files, pulseshape, noise):
     """TimeSeries (or binned lightcurve).
     
     Parameters
@@ -244,8 +244,8 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         signal_strength : float
             Amplitude of the pulses in the pulse train.
             
-        period : float
-            Periodo of the pulses in the pulse train.
+        frequency : float
+            Frequencyo of the pulses in the pulse train.
             
         num_files : int
             Number of files to split the entire TimeSeries into.
@@ -267,27 +267,27 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     
     times = Time(np.linspace(float(time_start), float(time_stop), int(number_of_points), endpoint=False), format='mjd')
 
-    P = float(period)  # Period of the pulse train
+    f = float(frequency)  # Frequency of the pulse train
     P_0 = 0 # Phase offset
     
     a = float(signal_strength)  # Amplitude
     
     if pulseshape == 'gauss':
         sigma = 1. #Standard deviation
-        flux = generate_pulse_train_peak(times, P, P_0, pulseshape, a, sigma=sigma)
+        flux = generate_pulse_train_peak(times, f, P_0, pulseshape, a, sigma=sigma)
         label = f'Gaussian Pulse Train' 
-        title = r'Gaussian Pulse Train with Period $P={}$ and Sigma $\sigma={}$'.format(P, sigma)
+        title = r'Gaussian Pulse Train with Frequency $f={}$ and Sigma $\sigma={}$'.format(f, sigma)
         output = 'pulsetrain_gauss'
     elif pulseshape == 'mvm':
         kappa = 10.
-        flux = generate_pulse_train_peak(times, P, P_0, pulseshape, a, kappa=kappa)
+        flux = generate_pulse_train_peak(times, P, P_0, pulseshape, a/8, kappa=kappa)
         label = f'modified von Mises Pulse Train' 
-        title = r'modified von Mises Pulse Train with Period $P={}$ and $\kappa={}$'.format(P, kappa)
+        title = r'modified von Mises Pulse Train with Frequency $f={}$ and $\kappa={}$'.format(f, kappa)
         output = 'pulsetrain_mvm'
     elif pulseshape == 'sin':
         flux = generate_pulse_train_sin(times, P, P_0, a, 50.)
         label = f'Sinusodial Pulse Train' 
-        title = r'Sinusodial Pulse Train with Period $P={}$'.format(P, sigma)
+        title = r'Sinusodial Pulse Train with Frequency $f={}$'.format(P, sigma)
         output = 'pulsetrain_sin'
     else:
         raise ValueError(
@@ -307,6 +307,11 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         noise = np.random.normal(0, 0.5, int(number_of_points))
         label_noise = ' + gaussian distributed Noise'
         output_noise = '+gaussnoise'
+    elif noise == 'exp':
+        l = np.log(2) / len(times.value) / 2
+        noise = ( 7 * a**3 * np.exp(- (times.value - times.value[0]) * l) + np.random.poisson(50, int(number_of_points)) ) - (7 * a**3 * 0.96)
+        label_noise = ' + exponentially decaying poisson Noise'
+        output_noise = '+exp+poissonnoise'
     else:
         raise ValueError(
             "noise should be either `poisson` or `gauss`!"
@@ -314,6 +319,7 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     
     # add noise to pulse train
     flux += noise
+    #flux = noise
     
     # plot the pulsetrain with noise
     plot_pulsetrain(times.value, flux, output=output+output_noise, label=label+label_noise, title=title+label_noise)
@@ -337,7 +343,7 @@ if __name__ == '__main__':
         arguments['--time_stop'],
         arguments['--number_of_points'],
         arguments['--signal_strength'],
-        arguments['--period'],
+        arguments['--frequency'],
         arguments['--num_files'],
         arguments['--pulseshape'],
         arguments['--noise']
