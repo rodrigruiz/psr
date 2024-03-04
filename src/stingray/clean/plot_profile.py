@@ -3,7 +3,7 @@
 Plot a table from an ascii.ecsv file.
 
 Usage:
-  script.py --filepath=<filepath> --output=<output> --phasebins=<phasebins> --profile=<profile> [-color=<color>] [--label=<label>] [--title=<title>]
+  script.py --filepath=<filepath> --output=<output> --phasebins=<phasebins> --profile=<profile> [--color=<color>] [--label=<label>] [--title=<title>]
   script.py (-h | --help)
 
 Options:

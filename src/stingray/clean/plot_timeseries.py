@@ -16,7 +16,7 @@ from astropy.timeseries import TimeSeries
 import matplotlib.pyplot as plt
 plt.style.use('~/software/psr/src/stingray/clean/latex.mplstyle')
 
-def plot_timeseries(file_path, output='timeseries', data_column_name='counts', color='blue', label=None, title=None):
+def plot_timeseries(file_path, output='timeseries', time_column_name='time', data_column_name='counts', color='blue', label=None, title=None):
     """Plots a astropy.timeseries.TimeSeries object.
     
     Parameters

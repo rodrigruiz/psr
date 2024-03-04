@@ -156,10 +156,12 @@ def barycentric_correction(timeseries, timeslice_duration, skycoord):
     time_bin_end = Time([time_bin_start[1:], timeseries.time_bin_end[-1].tdb + dt_lb])
 
     # Add calculated time correction to timeseries
+    
     TS_bar_cor = BinnedTimeSeries(time_bin_start=time_bin_start,
                                   time_bin_end=time_bin_end,
                                   data={key: timeseries[key] for key in timeseries.keys() 
                                         if key not in ['time_bin_start', 'time_bin_size']})
+    
     
 
     

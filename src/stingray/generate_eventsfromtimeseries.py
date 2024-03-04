@@ -32,7 +32,7 @@ if __name__ == '__main__':
     event_list = None
     for i, bins in enumerate(ts[:-1]):
         #print(bins['time'].value,  ts[i+1]['time'].value, bins['flux'])
-        events = np.random.uniform( bins['time'].value, ts[i+1]['time'].value, int(bins['countrate']) )
+        events = np.random.uniform( bins['time'].value, ts[i+1]['time'].value, int(bins['counts']) )
         np.sort(events)
         #print(len(events))
         if event_list is None:

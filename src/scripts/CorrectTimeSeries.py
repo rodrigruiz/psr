@@ -1,14 +1,16 @@
 """ Performs corrections on TimeSeries.
 
-Usage: CorrectTimeSeries.py -i INPUT_FILE -o OUTPUT_FILE [--rajd RIGHT_ASCENSION --decjd DECLINATION]
+Usage: CorrectTimeSeries.py -i INPUT_FILE -o OUTPUT_FILE --correction=<correction> [--rajd RIGHT_ASCENSION --decjd DECLINATION]
 
 Options:
   -h --help                              Help
   -i --input_file INPUT_FILE             Input files
   -o --output_file OUTPUT_FILE           Output file
+     --correction=<correction>           Which correction to perform on the TimeSeries. Options: 'bary', 'fill', 'all' [default: all]
+                                         If 'bary' or 'all' is selected RA and Dec should also be specified.
      --rajd RIGHT_ASCENSION              Right ascension (J2000) (degrees)
      --decjd DECLINATION                 Declination (J2000) (degrees)
-
+     
 """
 # python3 CorrectTimeSeries.py -i 'CombinedTimeSeries_Test.hdf5' -o 'CorrectedTimeSeries_Test.hdf5' --rajd '256.06166667' --decjd '-60.28166667'
 # python3 CorrectTimeSeries.py -i "CombinedTimeSeries_MEff_MA.hdf5" -o "TimeSeries_J1704-6016.hdf5" --rajd "256.06166667" --decjd "-60.28166667"
@@ -45,16 +47,37 @@ def main():
 
     
     # Perform Barycentric Correction
-    if data['rajd'] != None:
-        print('Perform Barycentric Correction')
-        skycoord = coord.SkyCoord(ra=data['rajd'], dec=data['decjd'], unit=(u.deg, u.deg))
-        TimeSeries = TS.barycentric_correction(TimeSeries, timeslice_duration, skycoord)
-
-    print('Barycentric Correction Successful')
+    if data['correction'] == 'bary':
+        if data['rajd'] != None and data['decjd'] != None:
+            print('Perform Barycentric Correction')
+            skycoord = coord.SkyCoord(ra=data['rajd'], dec=data['decjd'], unit=(u.deg, u.deg))
+        
+            TimeSeries = TS.barycentric_correction(TimeSeries, timeslice_duration, skycoord)
+            
+            print('Barycentric Correction Successful')
+        else:
+            raise ValueError(
+                "please specify RA and Dec of the object!")
+            
+    elif data['correction'] == 'fill':
+        # Fill Gaps in TimeSeries
+        TimeSeries = TS.fill_TimeSeries_gaps(TimeSeries, timeslice_duration)
+        
+    elif data['correction'] == 'all':
+        if data['rajd'] != None and data['decjd'] != None:
+            print('Perform Barycentric Correction')
+            skycoord = coord.SkyCoord(ra=data['rajd'], dec=data['decjd'], unit=(u.deg, u.deg))
+            TimeSeries = TS.barycentric_correction(TimeSeries, timeslice_duration, skycoord)
+            
+            print('Barycentric Correction Successful')
+        
+        # Fill Gaps in TimeSeries
+        TimeSeries = TS.fill_TimeSeries_gaps(TimeSeries, timeslice_duration)
     
-    # Fill Gaps in TimeSeries
-    TimeSeries = TS.fill_TimeSeries_gaps(TimeSeries, timeslice_duration)
-
+    else:
+        raise ValueError(
+            "correction was not specified or the correction was not recognised.")
+    
     # Store Corrected TimeSeries again in HDF5-File
     with h5py.File(data['output_file'], 'w') as output_file:   
     

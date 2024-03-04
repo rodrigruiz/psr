@@ -3,7 +3,7 @@
 Generate and split time series into multiple files.
 
 Usage:
-  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --period=<period> --num_files=<num_files>
+  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --period=<period> --num_files=<num_files> --just_noise=<just_noise>
   script.py (-h | --help)
 
 Options:
@@ -141,7 +141,7 @@ returns: np.array containing pulse train'''
 #     return PulseTrain
     
 
-def generate_time_series(time_start, time_stop, number_of_points, signal_strength, period, num_files):
+def generate_time_series(time_start, time_stop, number_of_points, signal_strength, period, num_files, just_noise=False):
     times = Time(np.linspace(float(time_start), float(time_stop), int(number_of_points), endpoint=False), format='mjd')
 
     # delta_t = times[1] - times[0]
@@ -181,8 +181,10 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
     #noise = np.random.normal(0, 0.5, int(number_of_points))
     #title_gauss = ' and gaussian distributed Noise'
     
-    
-    flux += noise
+    if just_noise:
+        flux = noise
+    else:
+        flux += noise
     
     # for visualization - can be removed later
     plt.figure(figsize=(10, 5))
@@ -232,5 +234,6 @@ if __name__ == '__main__':
         arguments['--number_of_points'],
         arguments['--signal_strength'],
         arguments['--period'],
-        arguments['--num_files']
+        arguments['--num_files'],
+        arguments['--just_noise']
     )

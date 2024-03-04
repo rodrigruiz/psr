@@ -3,7 +3,7 @@
 Generate and split time series into multiple files.
 
 Usage:
-  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise>
+  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise> [--just_noise=<just_noise>]
   script.py (-h | --help)
 
 Options:
@@ -16,13 +16,16 @@ Options:
   --num_files=<num_files>     Number of output files
   --pulseshape=<pulseshape>   Shape of pulses in the pulse train
   --noise=<noise>             Distribution of noise added to pulse train
+  --just_noise=<just_noise>   Select whether the signal is just noise. [default:False]
 """
 
 import numpy as np
+import h5py
 from astropy.timeseries import TimeSeries
 from astropy.time import Time
 import astropy.units as u
 from docopt import docopt
+from plens.TimeSeries import saveTimeSeries
 import matplotlib.pyplot as plt
 plt.style.use('~/software/Psr/src/latex.mplstyle')
 
@@ -226,7 +229,7 @@ def plot_pulsetrain(times, counts, output='pulsetrain', color='blue', label='Pul
     plt.savefig( output + '.png' )
     plt.show()
 
-def generate_time_series(time_start, time_stop, number_of_points, signal_strength, frequency, num_files, pulseshape, noise):
+def generate_time_series(time_start, time_stop, number_of_points, signal_strength, frequency, num_files, pulseshape, noise, just_noise=False):
     """TimeSeries (or binned lightcurve).
     
     Parameters
@@ -309,7 +312,7 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         output_noise = '+gaussnoise'
     elif noise == 'exp':
         l = np.log(2) / len(times.value) / 2
-        noise = ( 7 * a**3 * np.exp(- (times.value - times.value[0]) * l) + np.random.poisson(50, int(number_of_points)) ) - (7 * a**3 * 0.96)
+        noise = ( 7 * 10 * np.exp(- (times.value - times.value[0]) * l) + np.random.poisson(20, int(number_of_points)) ) #/ 10000 #- (7 * 10**3 * 0.9)
         label_noise = ' + exponentially decaying poisson Noise'
         output_noise = '+exp+poissonnoise'
     else:
@@ -318,7 +321,15 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         )
     
     # add noise to pulse train
-    flux += noise
+    if just_noise:
+       # print(type(noise))
+        #flux = [x+1 for x in noise]
+        if gauss:
+            flux = np.add(noise, 10)
+        else:
+            flux = noise
+    else:
+        flux += noise
     #flux = noise
     
     # plot the pulsetrain with noise
@@ -336,6 +347,22 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         file_name = f'timeseries_{i}.dat'
         ts.write(file_name, format='ascii.ecsv', overwrite=True)
 
+def split_timeseries(ts, number_of_points, num_files, filename, format='ascii.ecsv', antares=False, timeslice_duration=None):
+    file_indices = np.array_split(np.arange(int(number_of_points)), int(num_files))
+            
+    for i, indices in enumerate(file_indices):
+        
+        if format == 'hdf5':
+            output = filename + f'_{i}.hdf5'
+        else:
+            output = filename + f'_{i}.dat'
+        
+        if antares:
+            with h5py.File(output, 'w') as output_file:
+                saveTimeSeries(ts[indices], timeslice_duration, output_file)
+        else:
+            ts[indices].write(output, format=format, overwrite=True)
+        
 if __name__ == '__main__':
     arguments = docopt(__doc__)
     generate_time_series(
@@ -346,5 +373,6 @@ if __name__ == '__main__':
         arguments['--frequency'],
         arguments['--num_files'],
         arguments['--pulseshape'],
-        arguments['--noise']
+        arguments['--noise'],
+        arguments['--just_noise']
     )
