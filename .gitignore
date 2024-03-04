@@ -5,6 +5,7 @@
 **/*.png
 **/*.dat
 **/*.txt
+**/*.hdf5
 !data/**/.dat
 !data/**/.txt
 
