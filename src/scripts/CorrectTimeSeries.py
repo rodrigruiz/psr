@@ -97,7 +97,7 @@ def main():
             
         
             elif data['correction'] == 'bary+bin':
-                print(data['eventlist'])
+                #print(data['eventlist'])
                 if data['timeseries']:
                     print(TimeSeries.time_bin_start[0])
                     # barycentric correction

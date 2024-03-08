@@ -13,7 +13,7 @@ font.family: serif
 ## AXES
 axes.labelsize: 12
 axes.titlesize: 12
-axes.labelpad: 30.0
+axes.labelpad: 15.0
 axes.titlepad: 10.0
 axes.labelweight: bold 
 
