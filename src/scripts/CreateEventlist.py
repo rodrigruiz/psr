@@ -1,6 +1,6 @@
 """ Create Eventlist from TimeSeries
 
-Usage: CreateEventlist.py -i INPUT_FILES -o OUTPUT_DIR --scaling=<scaling>
+Usage: CreateEventlist.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --scaling=<scaling>
 
 Options:
   -h --help                              Help
@@ -10,7 +10,8 @@ Options:
                                          The actual rate will be divided by this number.
 
 """
-# python3 CreateEventlist.py -i './data/Antares_*_total_rates_*_corrected.hdf5' -o './data/' --scaling 1e10
+# python3 CreateEventlist.py -i './data/Antares_*_total_rates_*_corrected.hdf5' -o './data/' --scaling 1e10 --filepattern 'Antares_(\d*)_total_rates_(\d*)_corrected.hdf5'
+
 from docopt import docopt
 import os, glob
 import h5py
@@ -29,15 +30,24 @@ def main():
     input_files = glob.glob(data['input_files'])
     input_files.sort()
     
+    if not os.path.exists(data['output_dir']):
+        os.makedirs(data['output_dir'])
+    
     # Construct Eventlist for each run from corrected TimeSeries
     for file in input_files:
+        #split = re.split('Antares_(\d*)_total_rates_(\d*)_corrected.hdf5', file)
+        #split = re.split('Antares_(\d*)_total_rates_(\d*).hdf5', file)
+        split = re.split(data['filepattern'], file)
+        run_number = split[1]
+        split_number = split[2]
+        print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
+        output = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number
+        
+        if os.path.exists(output + '.hdf5'):
+            continue
+            
         with h5py.File(file) as input_file:
-            split = re.split('Antares_(\d*)_total_rates_(\d*)_corrected.hdf5', file)
-            run_number = split[1]
-            split_number = split[2]
-        
-            output = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number
             
             ts, timeslice_duration = TS.readTimeSeries(input_file)
             

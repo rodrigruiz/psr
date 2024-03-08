@@ -89,7 +89,7 @@ def create_eventlist(ts=None, directory=None, output='eventlist', time_column_na
     
     if ts is None:
         ts = load_timeseries(directory)
-        print(ts)
+        #print(ts)
     elif directory is None:
         ts = ts
     else:
@@ -142,7 +142,7 @@ def _generate_events(ts, output='eventlist', time_column_name='time', data_colum
             event_list = np.concatenate((event_list, events))
 
     #event_list = Table([event_list], names=[time_column_name])
-    print(event_list)
+    #print(event_list)
     event_list = Table([event_list], names=['time'])
     
     if format == 'hdf5':
