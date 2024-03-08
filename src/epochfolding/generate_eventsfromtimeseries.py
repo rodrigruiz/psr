@@ -20,6 +20,9 @@ from astropy.timeseries import TimeSeries, BinnedTimeSeries
 from astropy.table import Table
 from astropy.time import Time
 from docopt import docopt
+import h5py
+from plens.TimeSeries import antares_location
+import plens.EventList as EL
 
 def load_timeseries(directory, input_file='timeseries_*.dat'):
     """Loads astropy.timeseries.TimeSeries from a single or multiple files.
@@ -143,12 +146,19 @@ def _generate_events(ts, output='eventlist', time_column_name='time', data_colum
 
     #event_list = Table([event_list], names=[time_column_name])
     #print(event_list)
+    #return event_list
+    #"""
     event_list = Table([event_list], names=['time'])
+    #print(event_list)
+    #event_list = TimeSeries(time=Time(event_list, format='unix'))
     
     if format == 'hdf5':
         event_list.write(output + '.hdf5', format='hdf5', overwrite=True)
+        #with h5py.File(output + '.hdf5', 'w') as output:
+        #    EL.saveEventList(event_list, output)
     else:
         event_list.write(output + '.dat', format='ascii.ecsv', overwrite=True)
+    #"""
     
 if __name__ == '__main__':
     arguments = docopt(__doc__)

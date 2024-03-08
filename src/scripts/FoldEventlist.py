@@ -18,6 +18,7 @@ import re
 import h5py
 import numpy as np
 import plens.TimeSeries as TS
+import plens.EventList as EL
 from epochfolding.stingray_epochfolding import epochfolding_scan#, plot_efstat
 
 def main():
@@ -47,7 +48,9 @@ def main():
             continue
             
         with h5py.File(file) as input_file:
-            
+            #print(input_file.keys(), input_file['timeseries'].keys())
+            #print(input_file.keys(), input_file['__astropy_table__'])
+            timeseries = EL.readEventList(input_file)
             _, effreq, efstat = epochfolding_scan(input_file, frequencies=float(data['frequency']), nbin=int(data['nbin']), oversampling=10, obs_length=100, number_testf=float(data['number_of_testf']), plot=False, save=True, format='hdf5', output=output)
 
 

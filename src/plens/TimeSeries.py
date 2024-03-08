@@ -125,7 +125,7 @@ def readTimeSeries(file):
     return timeseries, timeslice_duration
 
 ##### Don't use. Very memory intensive for unclear reasons
-def barycentric_correction(timeseries, timeslice_duration, skycoord):
+def barycentric_correction(timeseries, skycoord):
     """Get the brycentric corrected timeseries.
     
     Parameters

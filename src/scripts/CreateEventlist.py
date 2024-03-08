@@ -1,6 +1,6 @@
 """ Create Eventlist from TimeSeries
 
-Usage: CreateEventlist.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --scaling=<scaling>
+Usage: CreateEventlist.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --scaling=<scaling> --overwrite=<BOOL>
 
 Options:
   -h --help                              Help
@@ -29,7 +29,7 @@ def main():
     
     input_files = glob.glob(data['input_files'])
     input_files.sort()
-    
+    #print(input_files)
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
     
@@ -43,19 +43,20 @@ def main():
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
         output = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number
+        #print(output, os.path.exists(output + '.hdf5'))
         
+        #if data['overwrite'] is False:
         if os.path.exists(output + '.hdf5'):
             continue
             
         with h5py.File(file) as input_file:
-            
-            ts, timeslice_duration = TS.readTimeSeries(input_file)
-            
+            ts, timeslice_duration = TS.readTimeSeries(input_file)  
             create_eventlist(ts=ts, output=output, 
                          time_column_name='time_bin_start', 
                          data_column_name='rateOn', 
                          scaling=float(data['scaling']),
                          format='hdf5')
+            
 
 if __name__ == "__main__":
     main()
