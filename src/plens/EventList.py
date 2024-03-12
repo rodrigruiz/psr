@@ -5,7 +5,7 @@ from astropy.coordinates import EarthLocation
 import astropy.units as u
 import h5py
 from plens.TimeSeries import antares_location
-from plens.PulseModel import MVMD
+from plens.PulseModel import MVMD, sinusoid
 from stingray import EventList, Lightcurve
 
 def readEventList(file):
@@ -103,7 +103,8 @@ def barycentric_correction(timeseries, skycoord):
     
     return TS_bar_cor
 
-def injectSignal( time, bin_time, frequency, baseline, a, phi, kappa ):
+
+def injectSignal( time, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None ):
     """Injects a signal with a MVM pulseshape into an existing time sequence (eventlist).
     
     Parameters
@@ -134,7 +135,10 @@ def injectSignal( time, bin_time, frequency, baseline, a, phi, kappa ):
         
     """
     
-    counts = MVMD(time, frequency, phi, kappa, a, baseline=baseline)
+    if pulseshape == 'mvm':
+        counts = MVMD(time, frequency, phi, kappa, a, baseline=baseline)
+    elif pulseshape == 'sine':
+        counts = sinusoid(time, frequency, baseline, a, phi)
 
     lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
 

@@ -34,3 +34,6 @@ def MVMD(t, f, phi, kappa, a, baseline=None):
         y += baseline
         
     return y
+
+def sinusoid(times, frequency, baseline, amplitude, phase):
+    return baseline + amplitude * np.sin(2 * np.pi * (frequency * times + phase))

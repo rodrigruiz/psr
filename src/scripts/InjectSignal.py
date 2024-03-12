@@ -1,10 +1,12 @@
 """Inject an artificial signal.
-Usage: InjectSignal.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>]
+Usage: InjectSignal.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>]
 
 Options:
   -h --help                              Help
   -i --input_files INPUT_FILES           Input files
   -o --output_dir OUTPUT_DIR             Output file
+     --pulseshape=<pulseshape>           Shape of the injected signal (sine or mvm). [default: mvm]
+                                         if 'sine': 'df', 'frequency', 'baseline', 'a', 'phi' should be set
      --df=<float>                        Time resolution of the signal. [default: 0.1]
      --frequency=<float>                 Frequency of the signal. [default: 0.5]
      --baseline=<float>                  Offset on the y-axis. [default: 0.]
@@ -49,7 +51,7 @@ def main():
             
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number))#, end='\r')
         
-        output_file = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number + '_signal.hdf5'
+        output_file = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number + '_signal'
         
         if os.path.exists(output_file):
             continue   
@@ -59,17 +61,33 @@ def main():
             
             EventList = EL.readEventList(input_file)
             
-            EventListNew = TimeSeries(time=Time(EL.injectSignal(EventList['time'].value, 
+            if data['pulseshape'] == 'mvm':
+                EventListNew = TimeSeries(time=Time(EL.injectSignal(EventList['time'].value, 
                                                      float(data['df']), 
+                                                     data['pulseshape'],
                                                      float(data['frequency']), 
                                                      float(data['baseline']), 
                                                      float(data['a']), 
                                                      float(data['phi']), 
                                                      float(data['kappa'])),
                                                 format='unix'
-                                               )
-                                     )
-        
+                                                   )
+                                         )
+                output_file += '_mvm.hdf5'
+                    
+            elif data['pulseshape'] == 'sine':
+                EventListNew = TimeSeries(time=Time(EL.injectSignal(EventList['time'].value, 
+                                                     float(data['df']), 
+                                                     data['pulseshape'],
+                                                     float(data['frequency']), 
+                                                     float(data['baseline']), 
+                                                     float(data['a']), 
+                                                     float(data['phi'])),
+                                                format='unix'
+                                                   )
+                                         )
+                output_file += '_sine.hdf5'
+                
         with h5py.File(output_file, 'w') as output:  
 
             EventListNew.write(output, format='hdf5', overwrite=True, serialize_meta=True)
