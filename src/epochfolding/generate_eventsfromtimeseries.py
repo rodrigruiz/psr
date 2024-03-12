@@ -153,7 +153,7 @@ def _generate_events(ts, output='eventlist', time_column_name='time', data_colum
     #event_list = TimeSeries(time=Time(event_list, format='unix'))
     
     if format == 'hdf5':
-        event_list.write(output + '.hdf5', format='hdf5', overwrite=True)
+        event_list.write(output + '.hdf5', format='hdf5', overwrite=True, serialize_meta=True)
         #with h5py.File(output + '.hdf5', 'w') as output:
         #    EL.saveEventList(event_list, output)
     else:

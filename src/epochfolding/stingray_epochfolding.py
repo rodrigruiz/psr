@@ -105,10 +105,17 @@ def epochfolding_single(filepath, frequencies, nbin=32, output='profile', plot=T
             The uncertainties on the pulse profile
         
     """
+    
+    events = EventList().read(filepath, format)
+    #print(events.time)
+        #phase_bins, profile, profile_err = _ef_single(events, testperiods, nbin=nbin, output=output, plot=plot, save=save)
+    _ef_single(events, frequencies, nbin=nbin, output=output, plot=plot, save=save, outputdir=outputdir, root_dir=None, format=format)
+        
+    """ remove this, should be done when performing the script as giving a list of input files
     if os.path.isfile(filepath):
         events = EventList().read(filepath, format)
         #phase_bins, profile, profile_err = _ef_single(events, testperiods, nbin=nbin, output=output, plot=plot, save=save)
-        _ef_single(events, frequencies, nbin=nbin, output=output, plot=plot, save=save, outputdir=outputdir, root_dir='eventlist/')
+        _ef_single(events, frequencies, nbin=nbin, output=output, plot=plot, save=save, outputdir=outputdir, root_dir='eventlist/', format=format)
         
     if os.path.isdir(filepath):
         eventlists = load_eventlist(filepath)
@@ -117,7 +124,8 @@ def epochfolding_single(filepath, frequencies, nbin=32, output='profile', plot=T
             events = EventList().read(eventlist, format)
             
             #phase_bins, profile, profile_err = _ef_single(events, testperiods, nbin=nbin, output=output, plot=plot, save=save, root_dir=f'eventlist_{i}/')
-            _ef_single(events, frequencies, nbin=nbin, output=output + f'_{i}', plot=plot, save=save, outputdir=outputdir, root_dir=f'eventlist_{i}/')
+            _ef_single(events, frequencies, nbin=nbin, output=output + f'_{i}', plot=plot, save=save, outputdir=outputdir, root_dir=f'eventlist_{i}/', format=format)
+    """
     
     """   
     fig, ax = plt.subplots()
@@ -143,23 +151,25 @@ def epochfolding_single(filepath, frequencies, nbin=32, output='profile', plot=T
     """
     #return phase_bins, profile, profile_err
 
-def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=True, outputdir='./folded_events/', root_dir=None):
+def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=True, outputdir='./folded_events/', root_dir=None, format='ascii'):
     """Helping function.
        Calls _fold_events and plots the folded events (if plot).
     """
-    fig, ax = plt.subplots()
+    
+    if plot:
+        fig, ax = plt.subplots()
     
     # perform epochfolding and plot resulting profile
     if isinstance(frequencies, Iterable):
         
         for p in frequencies:
-            phase_bins, profile, profile_err = _fold_events(events.time, p, nbin=nbin, save=save, outputdir=outputdir, root_dir=root_dir)
+            phase_bins, profile, profile_err = _fold_events(events.time, p, nbin=nbin, save=save, output=output+f'_{p}', outputdir=outputdir, root_dir=root_dir, format=format)
             if plot:
                 ax = plot_profile(phase_bins, profile, ax=ax)
                 fig.savefig(output + '.png', bbox_inches='tight')
 
     elif isinstance(frequencies, float):
-        phase_bins, profile, profile_err = _fold_events(events.time, frequencies, nbin=nbin, save=save, outputdir=outputdir, root_dir=root_dir)
+        phase_bins, profile, profile_err = _fold_events(events.time, frequencies, nbin=nbin, save=save, output=output+f'_{frequencies}', outputdir=outputdir, root_dir=root_dir, format=format)
         if plot:
             ax = plot_profile(phase_bins, profile, ax=ax)
             fig.savefig(output + '.png', bbox_inches='tight')
@@ -173,14 +183,18 @@ def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=T
         
     #return phase_bins, profile, profile_err
 
-def _fold_events(times, frequency, nbin=32, save=False, outputdir='./folded_events/', root_dir=None):
+def _fold_events(times, frequency, nbin=32, save=False, output='profile', outputdir='./folded_events/', root_dir=None, format='ascii'):
     """Helping function.
        Calculate the folded pulse profile.
     """
     
     phase_bins, profile, profile_err = fold_events(times, frequency, nbin=nbin)
     if save:
-        save_to_ascii(phase_bins, profile, profile_err, frequency, outputdir=outputdir, root_dir=root_dir)
+        if format=='ascii':
+            save_to_ascii(phase_bins, profile, profile_err, frequency, outputdir=outputdir, root_dir=root_dir, output=output)
+        if format=='hdf5':
+            data = { 'ef_profile/phase_bins' : phase_bins, 'ef_profile/profile' : profile, 'ef_profile/profile_err' : profile_err }
+            save_hdf5(outputdir+output+'.hdf5', **data )
         
     return phase_bins, profile, profile_err
 
@@ -209,11 +223,25 @@ def save_to_ascii(phase_bins, profile, profile_err, frequency, outputdir='./fold
     #print(output_dir + output + '{}.dat'.format(frequency))
     ascii.write(data, output_dir + output + '{0:.4fsave}.dat'.format(frequency), format='ecsv', overwrite=True)
 
+#"""
 def savehdf5(frequencies, chi2s, filename):
     #filename.create_dataset('efstats/frequencies', frequencies)
     #filename.create_dataset('efstats/chi2s', chi2s)
     filename['efstats/frequencies'] = frequencies
     filename['efstats/chi2s'] = chi2s
+    
+    return
+#"""
+
+def save_hdf5(filename, **data):
+    #filename.create_dataset('efstats/frequencies', frequencies)
+    #filename.create_dataset('efstats/chi2s', chi2s)
+    #for c, n in zip(columns, column_names):
+   #     filename[n] = c
+        #filename['efstats/chi2s'] = chi2s
+    with h5py.File(filename, 'w') as file:
+        for key, value in data.items():
+            file[key] = value
     
     return
     
@@ -282,8 +310,7 @@ def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_te
         raise ValueError(
             "testfrequencies should be a float or a list of floats!"
         )
-    #print(events.time, frequencies, nbin)
-    #print(type(events.time[0]), type(frequencies[0]), type(nbin))
+
     effreq, efstat = epoch_folding_search(events.time, frequencies, nbin=nbin)
     
     if plot:
@@ -466,6 +493,37 @@ plt.xlabel('Frequency (Hz)')
 _ = plt.ylabel('Residuals')
 
 '''
+
+def get_testfrequencies(principal_f, number_of_testf, df):
+    """Defines the testfrequencies around the principal frequency in the interval 
+    [principal_f - number_of_testf/2 * df, principal_f  + number_of_testf/2 * df]
+    with a df spacing between the testfrequencies.
+    
+    Parameters
+    ----------
+        principal_f : float
+            Principal frequency around which testfrequencies will be defined.
+        
+        number_of_testf : int
+            Number of testfrequencies to define.
+            
+        df : float
+            Spacing between testfrequencies.
+            
+    Optional Parameters
+    -------------------
+        
+        frequencies : list
+            List of testfrequencies.
+        
+    """
+    
+    #oversampling = 10
+    #df_min = 1/obs_length
+    #df = df_min / oversampling
+    frequencies = np.arange(principal_f - number_of_testf/2 * df, principal_f  + number_of_testf/2 * df, df)
+    
+    return frequencies
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
