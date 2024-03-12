@@ -356,11 +356,11 @@ def plot_efstat(effreq, efstat, nbin, output='chi2', label='EF statistics', true
     
     plt.figure()
     plt.plot(effreq, efstat, label=label, color='blue')
-    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label='n - 1')
+    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label='d.o.f. $ = N_\mathrm{bin} - 1$')
     if isinstance(true_frequency, float):
         plt.axvline(true_frequency, lw=3, alpha=0.5, color='r', label='Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
-    plt.xlabel('Frequency (Hz)')
-    plt.ylabel('EF Statistics')
+    plt.xlabel('Frequency [Hz]')
+    plt.ylabel('EF Statistics ($\chi^2$)')
     plt.legend()
     plt.savefig(output + '.png', bbox_inches='tight')
     

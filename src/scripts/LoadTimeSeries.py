@@ -1,6 +1,6 @@
 """ Load Time Series
 
-Usage: LoadTimeSeries.py -i INPUT_FILES -o OUTPUT_DIR
+Usage: LoadTimeSeries.py -i INPUT_FILES -o OUTPUT_DIR [--blind]
 
 Options:
   -h --help                              Help
@@ -33,18 +33,24 @@ def main():
     input_files = glob.glob(data['input_files'])
     input_files.sort()
 
-    
+    if not os.path.exists(data['output_dir']):
+        os.makedirs(data['output_dir'])
+        
     # Construct TimeSeries for each run
     for file in input_files:
         with h5py.File(file) as h5_file:
             run_number = re.split('Antares_(\d*)_total_rates.hdf5', file)[1]
-            print('Processing Run Nr.: ' + str(run_number), end='\r')
+            print('Processing Run Nr.: ' + str(run_number), end='\n')
             
             output_file = data['output_dir'] + 'Antares_' + run_number + '_total_rates_combined.hdf5'
             
             TimeSeries = plens.TimeSeries.get_TimeSeries(h5_file)
             timeslice_duration = plens.antares_hdf5.get_timeslice_duration(h5_file)
-
+            
+            # blind data
+            if data['blind']:
+                plens.TimeSeries.shuffleTimeSeries(TimeSeries, 'rateOn')
+                
             # Write Output File
             with h5py.File(output_file, 'w') as output_file:   
                 plens.TimeSeries.saveTimeSeries(TimeSeries, timeslice_duration, output_file)

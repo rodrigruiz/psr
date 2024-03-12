@@ -124,6 +124,15 @@ def readTimeSeries(file):
     
     return timeseries, timeslice_duration
 
+def shuffleTimeSeries(TimeSeries, columnname):
+     # Random Number Generator
+    rng = np.random.default_rng(seed=0)
+        
+    #for key in TimeSeries.keys():
+    rng.shuffle(TimeSeries[columnname].value) 
+        
+    return 
+
 ##### Don't use. Very memory intensive for unclear reasons
 def barycentric_correction(timeseries, skycoord):
     """Get the brycentric corrected timeseries.
