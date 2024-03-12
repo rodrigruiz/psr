@@ -18,7 +18,7 @@ nextflow.enable.dsl = 2
  */
 include {
   Km3buuSingleEnergy_cylinder;
-} from './processes/km3buu.nf'
+} from './processes/generator.nf'
 
 include {
   Km3sim;
@@ -33,12 +33,16 @@ include {
   CrossSection;
 } from './processes/plotting.nf'
 
+include {
+  JcreateGdmlFile;
+} from './processes/inputs.nf'
+
 /*
  * A way to include configuration parameters is to evaluate a separate script that includes the definition of the parameters as groovy variables.
  * In this file, the parameters are defined as [key,value] pairs in associative arrays. Their elements can be accessed here as <array_name>.key.
  * The array containing the input parameters is called "inputs".
  */
-evaluate(new File("./parameters/inputs.nf"))
+evaluate(new File("./inputs/inputs.nf"))
 
 /*
  * Workflow definition.
@@ -55,12 +59,12 @@ workflow {
 			                    energies,
 			                    input.radius);
 
-  // Km3sim(Km3buuSingleEnergy.out.km3buu_root,
-  // 	 input.detector,
-  // 	 input.pmt_parameters,
-  // 	 input.schema);
+  Km3sim(Km3buuSingleEnergy_cylinder.out.km3buu_root,
+	 input.detector,
+	 input.pmt_parameters,
+	 input.schema);
 
-  // JaanetPreprocessor(Km3sim.out);
+  JaanetPreprocessor(Km3sim.out);
 
   // EffectiveVolume(energies.collect(),
   // 		  input.radius,
