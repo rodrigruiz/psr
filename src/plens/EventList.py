@@ -5,6 +5,8 @@ from astropy.coordinates import EarthLocation
 import astropy.units as u
 import h5py
 from plens.TimeSeries import antares_location
+from plens.PulseModel import MVMD
+from stingray import EventList, Lightcurve
 
 def readEventList(file):
     """Read EventList from HDF5-file constucted by CreateEventlist. 
@@ -50,7 +52,7 @@ def saveEventList(timeseries, file):
             Output file, the timeseries is saved to.
     
     """  
-    print(timeseries['time'])
+    #print(timeseries['time'])
     file['timeseries/time'] = timeseries['time'].to_value('unix')
     #file['timeseries/time_bin_size'] = timeslice_duration.to_value('sec')
     #file['timeseries/rateOff'] = timeseries['rateOff'].to_value()
@@ -99,9 +101,44 @@ def barycentric_correction(timeseries, skycoord):
                                   #data={key: timeseries[key] for key in timeseries.keys() 
                                   #      if key not in ['time_bin_start', 'time_bin_size']})
     
-    
-
-    
-    
-    
     return TS_bar_cor
+
+def injectSignal( time, bin_time, frequency, baseline, a, phi, kappa ):
+    """Injects a signal with a MVM pulseshape into an existing time sequence (eventlist).
+    
+    Parameters
+    ----------
+        time : np.array
+        
+        bin_time : float
+        
+        frequency : float
+            Frequency of the pulse train.
+            
+        baseline : float
+            Offset along the y-axis.
+            
+        a : float
+            Amplitude of the Pulse. Equates to the area of one pulse.
+            
+        phi : float
+            Phase offset of the pulse train.
+            
+        kappa : float
+            Shape parameter giving the width of the function.
+        
+    Returns
+    -------
+        np.array
+        New times with injected pulsetrain.
+        
+    """
+    
+    counts = MVMD(time, frequency, phi, kappa, a, baseline=baseline)
+
+    lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
+
+    ev = EventList()
+    ev.simulate_times(lc)
+
+    return np.sort(np.concatenate((time, ev.time)))

@@ -162,10 +162,15 @@ def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=T
     # perform epochfolding and plot resulting profile
     if isinstance(frequencies, Iterable):
         
+        label = []
         for p in frequencies:
             phase_bins, profile, profile_err = _fold_events(events.time, p, nbin=nbin, save=save, output=output+f'_{p}', outputdir=outputdir, root_dir=root_dir, format=format)
             if plot:
                 ax = plot_profile(phase_bins, profile, ax=ax)
+        
+                label.append('$f_\mathrm{test} = ' +  str(p) + '\, \mathrm{Hz}$ ')
+                ax.legend(label)
+
                 fig.savefig(output + '.png', bbox_inches='tight')
 
     elif isinstance(frequencies, float):

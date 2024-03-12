@@ -1,6 +1,6 @@
 """ Chi2s
 
-Usage: Plot.py -i INPUT_FILES -o OUTPUT_DIR (--chi2profile | --foldedprofile ) [--filepattern] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>]
+Usage: Plot.py -i INPUT_FILES -o OUTPUT_DIR (--chi2profile | --foldedprofile ) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>]
 
 Options:
   -h --help                              Help
@@ -13,6 +13,7 @@ Options:
 #  python3 antares_plot_chi2.py -i './folded/Antares_*_chi2_*.hdf5' -o './'
 import os, glob
 from docopt import docopt
+import re
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
@@ -66,7 +67,7 @@ def plotHistogram(data, chi2s, output):
     plt.close()
     
     
-def getOutputFilepath(data):
+def getOutputFilepath(data, file=None):
     """ Builds the outputfilepath depending on the command-line arguments chosen.
     
     Parameters
@@ -123,7 +124,7 @@ def main():
     input_files.sort()
 
     for file in input_files:
-        output = getOutputFilepath(data)
+        output = getOutputFilepath(data, file)
             
         if data['chi2profile']:
             with h5py.File(file) as f: 

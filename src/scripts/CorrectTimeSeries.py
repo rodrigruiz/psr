@@ -1,6 +1,6 @@
 """ Performs corrections on TimeSeries.
 
-Usage: CorrectTimeSeries.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --correction=<correction> [--rajd RIGHT_ASCENSION --decjd DECLINATION] [--Porb=<float> --axsini=<float> --e=<float> --omega=<float> --Tpi2=<float>] (--timeseries | --eventlist)
+Usage: CorrectTimeSeries.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --correction=<correction> [--rajd RIGHT_ASCENSION --decjd DECLINATION] [--Porb=<float> --axsini=<float> --e=<float> --omega=<float> --Tpi2=<float>] [--signal --df=<float> --frequency=<float> --baseline=<float> --a=<float> --phi=<float> --kappa=<float>]
 
 Options:
   -h --help                              Help
@@ -13,6 +13,13 @@ Options:
                                          Please give the values of the parameters in the units given on the website.
      --rajd RIGHT_ASCENSION              Right ascension (J2000) (degrees)
      --decjd DECLINATION                 Declination (J2000) (degrees)
+     --signal                            Whether to inject an artificial signal
+     --df=<float>                        Time resolution of the signal. [default: 0.1]
+     --frequency=<float>                 Frequency of the signal. [default: 0.5]
+     --baseline=<float>                  Offset on the y-axis. [default: 0.]
+     --a=<float>                         Amplitude of the signal. [default: 1.]
+     --phi=<float>                       Phase of the signal. [default: 0.]
+     --kappa=<float>                     Shape parameter of the MVMD. [default: 5.]
      
 """
 #python3 CorrectTimeSeries.py -i '../stingray/antares/data/Antares_051870_total_rates_*[!combined].hdf5' -o '../stingray/antares/data/' --correction bary --rajd 02h43m40.4252869512s --decjd +61d26m03.757456824s
@@ -71,23 +78,17 @@ def main():
             
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number))#, end='\r')
         
-        
+        output_file = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number + '_corrected.hdf5'
+        #print(output_file, os.path.exists(output_file))
+        if os.path.exists(output_file):
+            continue
             
         # Read TimeSeries
         with h5py.File(file) as input_file:
             
-            if data['timeseries']:
-                TimeSeries, timeslice_duration = TS.readTimeSeries(input_file)  
-                arg = '_total_rates_'
-            elif data['eventlist']:
-                TimeSeries = EL.readEventList(input_file)
-                arg = '_eventlist_'
+            TimeSeries = EL.readEventList(input_file)
+         
             
-            #print(TimeSeries)
-            output_file = data['output_dir'] + 'Antares_' + run_number + arg + split_number + '_corrected.hdf5'
-            #print(output_file, os.path.exists(output_file))
-            if os.path.exists(output_file):
-                continue
             # Perform Barycentric Correction
             if data['correction'] == 'bary':
            
@@ -97,41 +98,23 @@ def main():
             
         
             elif data['correction'] == 'bary+bin':
-                #print(data['eventlist'])
-                if data['timeseries']:
-                    print(TimeSeries.time_bin_start[0])
-                    # barycentric correction
-                    TimeSeries = TS.barycentric_correction(TimeSeries, skycoord)
-                    print(TimeSeries.time_bin_start[0])
-                    # binary correction
-                    #TimeSeries['time_bin_start'].format = 'mjd'
-                    # use tdb format; convert Tpi2 to tdb or unix
-                    time_corr = orbit_cor_deeter(TimeSeries.time_bin_start.value, 
+              
+                #print(TimeSeries.time[0])
+                # barycentric correction
+                TimeSeries = EL.barycentric_correction(TimeSeries, skycoord)
+                #print(TimeSeries.time[0])
+                # binary correction
+                #TimeSeries['time_bin_start'].format = 'mjd'
+                # use tdb format; convert Tpi2 to tdb or unix
+                time_corr = orbit_cor_deeter(TimeSeries.time.value, 
                                              (float(data['Porb'])*u.d).to_value(u.s), 
                                              float(data['axsini']), 
                                              float(data['e']), 
                                              Angle(float(data['omega']), u.deg).radian - np.pi/2, 
                                              Time(float(data['Tpi2']) + float(data['Porb'])/2, format='jd').unix
                                             )
-                    TimeSeries['time_bin_start'] = time_corr
-                    print(TimeSeries.time_bin_start[0])
-                elif data['eventlist']:
-                    #print(TimeSeries.time[0])
-                    # barycentric correction
-                    TimeSeries = EL.barycentric_correction(TimeSeries, skycoord)
-                    #print(TimeSeries.time[0])
-                    # binary correction
-                    #TimeSeries['time_bin_start'].format = 'mjd'
-                    # use tdb format; convert Tpi2 to tdb or unix
-                    time_corr = orbit_cor_deeter(TimeSeries.time.value, 
-                                             (float(data['Porb'])*u.d).to_value(u.s), 
-                                             float(data['axsini']), 
-                                             float(data['e']), 
-                                             Angle(float(data['omega']), u.deg).radian - np.pi/2, 
-                                             Time(float(data['Tpi2']) + float(data['Porb'])/2, format='jd').unix
-                                            )
-                    TimeSeries['time'] = time_corr
-                    #print(TimeSeries.time[0])
+                TimeSeries['time'] = time_corr
+                #print(TimeSeries.time[0])
                 
             elif data['correction'] == 'fill':
                 # Fill Gaps in TimeSeries
@@ -149,15 +132,14 @@ def main():
             else:
                 raise ValueError(
                     "correction was not specified or the correction was not recognised.")
-    
+        
+        
         # Store Corrected TimeSeries again in HDF5-File
         with h5py.File(output_file, 'w') as output:  
-            if data['timeseries']:
-                TS.saveTimeSeries(TimeSeries, timeslice_duration, output)
-            elif data['eventlist']:
-                #print(TimeSeries)
-                #EL.saveEventList(TimeSeries, output)
-                TimeSeries.write(output, format='hdf5', overwrite=True, serialize_meta=True)
+
+            #print(TimeSeries)
+            #EL.saveEventList(TimeSeries, output)
+            TimeSeries.write(output, format='hdf5', overwrite=True, serialize_meta=True)
     
 if __name__ == "__main__":
     main()
