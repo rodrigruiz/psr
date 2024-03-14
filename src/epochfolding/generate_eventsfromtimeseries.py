@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-"""
-Generate event times from a timeseries.
-
-Usage:
-  generate_eventsfromtimeseries.py [--directory=<directory> | --timeseries=<timeseries>] [--output=<outputfilepath>] [--data_column_name=<data_column_name>] [--time_column_name=<time_column_name> --data_column_name=<data_column_name> --format=<format>]
-  generate_eventsfromtimeseries.py (-h | --help)
-
-Options:
-  -h --help                   Show this help message and exit.
-  --directory=<directory>     Directory where timeseries files are stored.
-  --time_column_name=<time_column_name> Time column name [default:time]
-  --data_column_name=<data_column_name> data column name [default:counts]
-"""
-
 import os, glob
 from collections.abc import Iterable
 import numpy as np
@@ -39,7 +24,6 @@ def load_timeseries(directory, input_file='timeseries_*.dat'):
         
     """
     
-    #file_pattern = os.path.join(directory, 'timeseries_*.dat')
     file_pattern = os.path.join(directory, input_file)
     timeseries_files = glob.glob(file_pattern)
 
@@ -105,22 +89,7 @@ def create_eventlist(ts=None, directory=None, output='eventlist', time_column_na
             _generate_events(s, output=output_file, time_column_name=time_column_name, data_column_name=data_column_name, format=format)
     else:
         _generate_events(ts, output=output, time_column_name=time_column_name, data_column_name=data_column_name, scaling=scaling, format=format)
-    
-    '''
-    event_list = None
-    for i, bins in enumerate(ts[:-1]):
-        events = np.random.uniform( bins['time'].value, ts[i+1]['time'].value, int(bins[data_column_name]) )
-        events = np.sort(events)
-        
-        if event_list is None:
-            event_list = events
-        else:
-            event_list = np.concatenate((event_list, events))
 
-    event_list = Table([event_list], names=['time'])
-    event_list.write(output + '.dat', format='ascii.ecsv', overwrite=True)
-    '''
-    
 def _generate_events(ts, output='eventlist', time_column_name='time', data_column_name='counts', scaling=1, format='ascii'):
     """Helping function.
        Generates events and writes the eventlist to a ascii.escv file.
@@ -144,39 +113,9 @@ def _generate_events(ts, output='eventlist', time_column_name='time', data_colum
         else:
             event_list = np.concatenate((event_list, events))
 
-    #event_list = Table([event_list], names=[time_column_name])
-    #print(event_list)
-    #return event_list
-    #"""
     event_list = Table([event_list], names=['time'])
-    #print(event_list)
-    #event_list = TimeSeries(time=Time(event_list, format='unix'))
     
     if format == 'hdf5':
         event_list.write(output + '.hdf5', format='hdf5', overwrite=True, serialize_meta=True)
-        #with h5py.File(output + '.hdf5', 'w') as output:
-        #    EL.saveEventList(event_list, output)
     else:
         event_list.write(output + '.dat', format='ascii.ecsv', overwrite=True)
-    #"""
-    
-if __name__ == '__main__':
-    arguments = docopt(__doc__)
-    directory = arguments['--directory']
-    timeseries = arguments['--timeseries']
-    output = arguments['--output']
-    
-    if directory is None:
-        if output is None:
-            create_eventlist(ts=timeseries, time_column_name=arguments['--time_column_name'], data_column_name=arguments['--data_column_name'], format=arguments['--format'])
-        else:
-            create_eventlist(ts=timeseries, output=output, time_column_name=arguments['--time_column_name'], data_column_name=arguments['--data_column_name'], format=arguments['--format'])
-            
-    else:
-        if output is None:
-            create_eventlist(directory=directory)
-        else:
-            create_eventlist(direcotry=directory, output=output)
-    
-    
-    

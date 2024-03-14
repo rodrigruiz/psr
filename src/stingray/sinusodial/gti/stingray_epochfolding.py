@@ -99,11 +99,11 @@ events = EventList().read('combined_eventlist.dat', 'ascii')
 #events = EventList().read('eventlist_0.dat', 'ascii')
 #events.gtis = [[events.time[0], events.time[1]], [events.time[150], events.time[151]]]
 #gtis = np.asarray([[events.time[0], events.time[1]]])
-#gtis = np.asarray([(58000., 59000.), (59015., 59100.)])
+gtis = np.asarray([(58000., 59000.), (59015., 59100.)])
 #gtis = [(58000., 59000.), (59015., 59100.)]
 #gtis = np.asarray([[58000., 59000.], [59015., 59100.]])
-#events.gtis = gtis
-#print(events.gtis)
+events.gtis = gtis
+print(events.gtis)
 #print(events.time[:5])
 
 #ev1 = EventList().read('eventlist_0.dat', 'ascii')

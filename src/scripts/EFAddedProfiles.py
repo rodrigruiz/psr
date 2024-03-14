@@ -31,9 +31,16 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
+    #gti_files = glob.glob(data['gtis'])
+    #gti_files.sort()
+    
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
-        
+    
+    #gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
+    #print(gti_file)
+    #gtis = loadGTIs(gti_file[0])
+    #print(gtis)
     #for file in input_files:
     #    split = re.split(data['filepattern'], file)
     #    run_number = split[1]
@@ -43,12 +50,13 @@ def main():
         
     #if os.path.exists(output + '.hdf5')
         
-    #frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
-    frequencies = [9.9, 9.901, 9.902]    
+    frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
+    #frequencies = [9.9, 9.901, 9.902]    
         #for p in frequencies:
     #with h5py.File() as input_file:
     #    events = EventList().read(input_file, 'hdf5')
     
+    # dummy variable
     times = np.arange(1.28408629e+09, 1.28408630e+09, 0.1)   
     
     # all splits for a certain period
@@ -60,8 +68,10 @@ def main():
                                  data['output_dir'],
                                  nbin=int(data['nbin']), 
                                  segment_size=np.inf, 
-                                 expocorr=False, 
-                                 gti=None, 
+                                 #expocorr=data['expocorr'], 
+                                 #gti=gtis,
+                                 expocorr=False,
+                                 gti=None,
                                  weights=1, 
                                  fdots=0
                                 )

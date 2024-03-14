@@ -282,7 +282,8 @@ def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_te
         raise ValueError(
             "testfrequencies should be a float or a list of floats!"
         )
-
+    #print(events.time, frequencies, nbin)
+    #print(type(events.time[0]), type(frequencies[0]), type(nbin))
     effreq, efstat = epoch_folding_search(events.time, frequencies, nbin=nbin)
     
     if plot:

@@ -1,24 +1,3 @@
-#!/usr/bin/env python3
-"""
-Generate and split time series into multiple files.
-
-Usage:
-  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise> [--just_noise=<just_noise>]
-  script.py (-h | --help)
-
-Options:
-  -h --help               Show this help message and exit.
-  --time_start=<time_start>     Start time
-  --time_stop=<time_stop>       Stop time
-  --number_of_points=<number_of_points> Number of points
-  --signal_strength=<signal_strength>   Signal strength
-  --frequency=<frequency>           Frequency of the sinusoid signal
-  --num_files=<num_files>     Number of output files
-  --pulseshape=<pulseshape>   Shape of pulses in the pulse train
-  --noise=<noise>             Distribution of noise added to pulse train
-  --just_noise=<just_noise>   Select whether the signal is just noise. [default:False]
-"""
-
 import numpy as np
 import h5py
 from astropy.timeseries import TimeSeries
@@ -363,16 +342,3 @@ def split_timeseries(ts, number_of_points, num_files, filename, format='ascii.ec
         else:
             ts[indices].write(output, format=format, overwrite=True)
         
-if __name__ == '__main__':
-    arguments = docopt(__doc__)
-    generate_time_series(
-        arguments['--time_start'],
-        arguments['--time_stop'],
-        arguments['--number_of_points'],
-        arguments['--signal_strength'],
-        arguments['--frequency'],
-        arguments['--num_files'],
-        arguments['--pulseshape'],
-        arguments['--noise'],
-        arguments['--just_noise']
-    )
