@@ -6,6 +6,7 @@ Options:
   -h --help                              Help
   -i --input_files INPUT_FILES           Input files
   -o --output_dir OUTPUT_DIR             Output directory
+     --blind                             Whether to blind the data.
 
 """
 #/home/wecapstor3/capn/mppi19/ANTARES/data/rates/hdf5/
