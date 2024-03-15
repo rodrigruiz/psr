@@ -92,15 +92,13 @@ def epoch_folding_search(times, frequencies, input_dir, filepattern, outputdir, 
         the epoch folding statistics corresponding to each frequency bin.
     """
 
-    def stat_fun(f, input_dir, filepattern, outputdir, fd=0, **kwargs):
+    def stat_fun(f, fd=0, **kwargs):
         return profile_stat(add_profiles(input_dir, filepattern, f, outputdir)[1])
     
     return _folding_search(
             stat_fun,
+            times,
             frequencies,
-            input_dir,
-            filepattern,
-            outputdir,
             segment_size=segment_size,
             use_times=True,
             expocorr=expocorr,
@@ -109,29 +107,3 @@ def epoch_folding_search(times, frequencies, input_dir, filepattern, outputdir, 
             nbin=nbin,
             fdots=fdots,
         )
-
-if __name__ == '__main__':
-    arguments = docopt(__doc__)
-    filepath = arguments['--filepath']
-    directory = arguments['--directory']
-    true_frequency = float(arguments['--true_frequency'])
-    if arguments['--frequencies'] is None:
-        obs_length = 1000
-        oversampling = 10
-        df_min = 1/obs_length
-        df = df_min / oversampling
-        frequencies = np.arange(true_frequency - 200 * df, true_frequency + 200 * df, df)
-        print(frequencies)
-    elif arguments['--frequencies'][0] != '[':
-        frequencies = float(arguments['--frequencies'])
-    elif arguments['--frequencies'][0] == '[':
-        #print(arguments['--testperiods'].strip('[]').split(','))
-        frequencies = list( map(float, arguments['--frequencies'].strip('[]').split(',')) )
-        
-    #events = EventList().read(filepath, 'ascii')
-    times = np.arange(58000, 58500, 0.1)
-    nbin = 32
-    effreq, efstat = epoch_folding_search(times, frequencies, directory, nbin=nbin)
-    save_to_ascii(effreq, efstat)
-    print(effreq, efstat)
-    plot_efstat(effreq, efstat, nbin=nbin, true_frequency=true_frequency)
