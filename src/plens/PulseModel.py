@@ -1,6 +1,6 @@
 import numpy as np
 
-def MVMD(t, f, phi, kappa, a):
+def MVMD(t, f, phi, kappa, a, baseline=None):
     """Modivied von Mises distribution (MVMD).
         Reference: "Fourier Techniques for Very Long Astrophysical Time-Series Analysis" 
                     Scott M. Ransom et al 2002 AJ 124 1788
@@ -29,4 +29,11 @@ def MVMD(t, f, phi, kappa, a):
     """
     
     y = a * ( np.exp(kappa*np.cos(2*np.pi*f*t+phi))-np.exp(-kappa))/(np.i0(kappa) - np.exp(-kappa))
+    
+    if baseline is not None:
+        y += baseline
+        
     return y
+
+def sinusoid(times, frequency, baseline, amplitude, phase):
+    return baseline + amplitude * np.sin(2 * np.pi * (frequency * times + phase))

@@ -5,7 +5,10 @@
 **/*.png
 **/*.dat
 **/*.txt
+**/*.hdf5
+**/*.pkl
 !data/**/.dat
+!data/**/.pkl
 !data/**/.txt
 
 # Editor backup files

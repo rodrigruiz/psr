@@ -124,8 +124,17 @@ def readTimeSeries(file):
     
     return timeseries, timeslice_duration
 
+def shuffleTimeSeries(TimeSeries, columnname):
+     # Random Number Generator
+    rng = np.random.default_rng(seed=0)
+        
+    #for key in TimeSeries.keys():
+    rng.shuffle(TimeSeries[columnname].value) 
+        
+    return 
+
 ##### Don't use. Very memory intensive for unclear reasons
-def barycentric_correction(timeseries, timeslice_duration, skycoord):
+def barycentric_correction(timeseries, skycoord):
     """Get the brycentric corrected timeseries.
     
     Parameters
@@ -156,10 +165,12 @@ def barycentric_correction(timeseries, timeslice_duration, skycoord):
     time_bin_end = Time([time_bin_start[1:], timeseries.time_bin_end[-1].tdb + dt_lb])
 
     # Add calculated time correction to timeseries
+    
     TS_bar_cor = BinnedTimeSeries(time_bin_start=time_bin_start,
                                   time_bin_end=time_bin_end,
                                   data={key: timeseries[key] for key in timeseries.keys() 
                                         if key not in ['time_bin_start', 'time_bin_size']})
+    
     
 
     
@@ -167,6 +178,46 @@ def barycentric_correction(timeseries, timeslice_duration, skycoord):
     
     return TS_bar_cor
 
+
+def orbit_cor_deeter(time, Porb, axsini, e, omega, Tnod):
+    """
+    Correct the photon arrival times to the photon emission time
+    Deeter model.
+
+    Parameters
+    ----------
+    time : array-like
+        The time series before binary correction (seconds)
+    Porb : float
+        The period of binary motion (in units of second)
+    axsini : float
+        Projected semi-major orbital axis (in units of light-sec)
+    e : float
+        The orbital eccentricity
+    omega : float
+        Longitude of periastron
+    Tnod : float
+        The epoch of ascending node passage (in units of seconds, same time system with parameter t)
+
+    Returns
+    -------
+    t_em : array-like
+        The photon emission time
+
+    Notes
+    -----
+    Reference: Deeter et al. 1981, ApJ, 247:1003-1012
+
+    """
+    A = axsini
+    mean_anomaly = 2*np.pi*(time-Tnod)/Porb
+
+    term1 = np.sin(mean_anomaly + omega)
+    term2 = (e/2)*np.sin(2*mean_anomaly + omega)
+    term3 = (-3*e/2)*np.sin(omega)
+
+    t_em = time - A * (term1 + term2 + term3)
+    return t_em
 
 
 def fill_TimeSeries_gaps(timeseries, timeslice_duration, replace_zeros=True):
