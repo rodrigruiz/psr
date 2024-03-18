@@ -27,6 +27,9 @@ include {
   CalculateChi2;
 } from './processes/analysis.nf'
 
+include{
+  PlotHist;
+} from './processes/plotting.nf'
 
 /*
  * A way to include configuration parameters is to evaluate a separate script that includes the definition of the parameters as groovy variables.
@@ -46,15 +49,18 @@ workflow {
 
     LoadTimeSeries(GetFiles.out);  
 
-    SplitTimeSeries(LoadTimeSeries.out);
+    SplitTimeSeries(LoadTimeSeries.out, input.bins_per_file);
 
-    CreateEventList(SplitTimeSeries.out.flatten());
+    CreateEventList(SplitTimeSeries.out.flatten(), input.scaling);
     
-    CorrectEventList(CreateEventList.out);
+    CorrectEventList(CreateEventList.out, input.correction, input.rajd, input.decjd, input.Porb, input.axsini, input.e,
+			input.omega, input.Tpi2);
 
     FindGTIs(LoadTimeSeries.out);
 
     CalculateChi2(CorrectEventList.out,FindGTIs.out);
+
+    PlotHist(CalculateChi2.out.collect()); 
 }
 
 workflow.onComplete = {

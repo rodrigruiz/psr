@@ -43,13 +43,14 @@ process SplitTimeSeries{
   
   input:
     path input_file;
+    val bins_per_file;
 
   output:
     path "*total_rates_[!combined]*.hdf5";
 
   script:
   """
-  split-timeseries -i ${input_file} -o ./ --bins_per_file 200
+  split-timeseries -i ${input_file} -o ./ --bins_per_file ${bins_per_file}
   """
 }
 
@@ -57,13 +58,14 @@ process CreateEventList{
   
   input:
     path input_file;
+    val scaling;
 
   output:
     path "*eventlist*.hdf5";
 
   script:
   """
-  create-eventlist -i ${input_file} -o ./ --filepattern 'Antares_(\\d*)_total_rates_(\\d*).hdf5' --scaling 1e10
+  create-eventlist -i ${input_file} -o ./ --filepattern 'Antares_(\\d*)_total_rates_(\\d*).hdf5' --scaling ${scaling}
   """
 }
 
@@ -71,13 +73,21 @@ process CorrectEventList{
 
   input:
     path input_file;
+    val correction;
+    val rajd;
+    val decjd;
+    val Porb;
+    val axsini;
+    val e;
+    val omega;
+    val Tpi2;
 
   output:
     path "*corrected.hdf5";
 
   script:
   """
-  correct-eventlist -i ${input_file} -o ./ --filepattern 'Antares_(\\d*)_eventlist_(\\d*).hdf5' --correction bary+bin --rajd 02h43m40.4252869512s --decjd +61d26m03.757456824s --Porb 27.6943 --axsini 115.531 --e 0.1029 --omega -74.05 --Tpi2 2458116.09700
+  correct-eventlist -i ${input_file} -o ./ --filepattern 'Antares_(\\d*)_eventlist_(\\d*).hdf5' --correction ${correction} --rajd ${rajd} --decjd ${decjd} --Porb ${Porb} --axsini ${axsini} --e ${e} --omega ${omega} --Tpi2 ${Tpi2}
   """
 }
 

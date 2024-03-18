@@ -1,13 +1,14 @@
 """ Chi2s
 
-Usage: Plot.py -i INPUT_FILES -o OUTPUT_DIR (--chi2profile | --foldedprofile ) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>]
+Usage: Plot.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR (--chi2profile | --foldedprofile ) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>] [--latex]
 
 Options:
   -h --help                              Help
-  -i --input_files INPUT_FILES           Input files
+  <INPUT_FILES>...           Input files
   -o --output_dir OUTPUT_DIR             Output directory
      --nbin=<int>                        Number of bins in the folded profile [default: 32]
      --bins_hist=<int>                   Number of bins in the histogram [default: 200]
+     --latex                             Whether to use latex formatting. [default: False]
 
 """
 #  python3 antares_plot_chi2.py -i './folded/Antares_*_chi2_*.hdf5' -o './'
@@ -17,7 +18,7 @@ import re
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('~/software/Psr/src/latex.mplstyle')
+#plt.style.use('~/software/Psr/src/latex.mplstyle')
 import plens.TimeSeries as TS
 #import scripts 
 from scipy.stats import chi2
@@ -120,7 +121,14 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    if data['latex']:
+        plt.style.use('~/software/Psr/src/latex.mplstyle')
+        
+    if data['wildcard']:
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
+   
     input_files.sort()
 
     for file in input_files:

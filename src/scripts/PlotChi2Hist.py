@@ -1,6 +1,6 @@
 """ Plot Chi2 Distribution.
 
-Usage: antares_plot_chi2.py -i INPUT_FILES -o OUTPUT_DIR [--nbin=<int>] [--bins_hist=<int>]
+Usage: PlotChi2Hist.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR [--nbin=<int>] [--bins_hist=<int>] [--latex]
 
 Options:
   -h --help                              Help
@@ -16,7 +16,7 @@ from docopt import docopt
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('/home/hpc/capn/mppi148h/software/Psr/src/latex.mplstyle')
+#plt.style.use('/home/hpc/capn/mppi148h/software/Psr/src/latex.mplstyle')
 import plens.TimeSeries as TS
 #import scripts 
 from scipy.stats import chi2
@@ -28,7 +28,13 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    if data['latex']:
+        plt.style.use('~/software/Psr/src/latex.mplstyle')
+        
+    if data['wildcard']:
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
     input_files.sort()
     
     chi2s = None
