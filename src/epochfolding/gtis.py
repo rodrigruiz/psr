@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 
-def findGTIs(a, time, outputfile):
+def findGTIs(a, time):
     """Finds 0. entries in data array and returns time intervals of good data.
     
     Parameters

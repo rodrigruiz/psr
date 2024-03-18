@@ -38,7 +38,7 @@ def main():
     for file in input_files:
         
         run_number = re.split('Antares_(\d*)_total_rates_combined.hdf5', file)[1]
-        print('Processing Run Nr.: ' + str(run_number))#, end='\r')
+        print('Processing Run Nr.: ' + str(run_number), end='\n')
         
         output_file = data['output_dir'] + 'Antares_' + run_number + '_total_rates'
             
@@ -46,15 +46,8 @@ def main():
             continue
                 
         with h5py.File(file) as h5_file:
-            #run_number = re.split('Antares_(\d*)_total_rates_combined.hdf5', file)[1]
-            #print('Processing Run Nr.: ' + str(run_number), end='\r')
     
             ts, timeslice_duration = TS.readTimeSeries(h5_file)
-            
-            #output_file = data['output_dir'] + 'Antares_' + run_number + '_total_rates'
-            
-            #if os.path.exists(output_file + '.hdf5'):
-            #    continue
             
             split_timeseries(ts, len(ts), np.ceil(len(ts)/int(data['bins_per_file'])), output_file, format='hdf5', antares=True, timeslice_duration=timeslice_duration)
 

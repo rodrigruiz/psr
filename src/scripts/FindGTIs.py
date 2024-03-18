@@ -1,12 +1,13 @@
 """ Check for gaps in the data. Determine good time intervals.
 
-Usage: FindGTIs.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--count --outputfile=<outputfile>]
+Usage: FindGTIs.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR --filepattern=<filepattern> [--count --outputfile=<outputfile>] [--combine]
 
 Options:
   -h --help                              Help
   -i --input_files INPUT_FILES           Input files
   -o --output_dir OUTPUT_DIR             Output directory
      --find                              Whether to find gtis in Antares runs.
+     --combine                           Whether to save gtis in one file.
   
 """
 # 
@@ -28,7 +29,10 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    if data['wildcard']:
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
     input_files.sort()
     
     if not os.path.exists(data['output_dir']):
@@ -36,7 +40,10 @@ def main():
     
     if data['count']:
         Ngtis = Table(names=('run_number', 'N_bad_data_rows'), dtype=(str, int))
-
+    
+    if data['combine']:
+        gtis = []
+        
     for file in input_files:
         split = re.split(data['filepattern'], file)
         run_number = split[1]
@@ -46,26 +53,37 @@ def main():
             split_number = split[2]
             print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
             
-            output = data['output_dir'] + 'Antares_' + run_number + '_gtis_' + split_number
+            if data['combine']:
+                output = data['output_dir'] + 'Antares_gtis'
+            else:
+                output = data['output_dir'] + 'Antares_' + run_number + '_gtis_' + split_number
             
         else:
             print('Processing Run Nr.: ' + str(run_number), end='\n')
             
-            output = data['output_dir'] + 'Antares_' + run_number + '_gtis'
+            if data['combine']:
+                output = data['output_dir'] + 'Antares_gtis'
+            else:
+                output = data['output_dir'] + 'Antares_' + run_number + '_gtis'
         
             
         with h5py.File(file) as input_file:
             
             ts, timeslice_duration = TS.readTimeSeries(input_file)
             
-            gtis = findGTIs(ts['rateOn'].value, ts['time_bin_start'].value, output)
-            
-            saveGTIs(gtis, output)
+            if data['combine']:
+                gtis += findGTIs(ts['rateOn'].value, ts['time_bin_start'].value)
+            else:
+                gtis = findGTIs(ts['rateOn'].value, ts['time_bin_start'].value)
+                saveGTIs(gtis, output)
             
             if data['count']:
                 Ngtis.add_row((run_number, len(ts[ ts['rateOn'].value == 0. ])))
 
-    
+    if data['combine']:
+        gtis.sort()
+        saveGTIs(gtis, output)
+                                 
     if data['count']:
         Ngtis.write(data['output_dir'] + data['outputfile'], format='ascii', overwrite=True)
     
