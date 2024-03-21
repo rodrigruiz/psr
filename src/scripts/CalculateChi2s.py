@@ -38,12 +38,12 @@ def main():
     else:
         input_files = data['<INPUT_FILES>']
         #gti_files = data['gti_files']
-    
-    gti_files = glob.glob(data['gti_files'])
-    print(gti_files)
-        
     input_files.sort()
-    gti_files.sort()
+    
+    if data['expocorr']:
+        gti_files = glob.glob(data['gti_files'])
+        print(gti_files)
+        gti_files.sort()
     
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
@@ -57,14 +57,17 @@ def main():
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
         #print(gti_file)
-        if len(gti_files) > 1:
-            gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
+        if data['expocorr']:
+            if len(gti_files) > 1:
+                gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
             #print(gti_file)
         #else:
-            gtis = loadGTIs(gti_file[0])
+                gtis = loadGTIs(gti_file[0])
             #print(gtis)
+            else:
+                gtis = loadGTIs(gti_files[0])
         else:
-            gtis = loadGTIs(gti_files[0])
+            gtis = None
             
         output = data['output_dir'] + 'Antares_' + run_number + '_chi2_' + split_number + '.hdf5'
         

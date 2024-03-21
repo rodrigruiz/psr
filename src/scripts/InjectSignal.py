@@ -8,7 +8,7 @@ Options:
      --pulseshape=<pulseshape>           Shape of the injected signal (sine or mvm). [default: mvm]
                                          if 'sine': 'df', 'frequency', 'baseline', 'a', 'phi' should be set
      --df=<float>                        Time resolution of the signal. [default: 0.1]
-     --frequency=<float>                 Frequency of the signal. [default: 0.5]
+     --frequency=<float>                 Frequency of the signal. [default: 1]
      --baseline=<float>                  Offset on the y-axis. [default: 0.]
      --a=<float>                         Amplitude of the signal. [default: 1.]
      --phi=<float>                       Phase of the signal. [default: 0.]

@@ -58,7 +58,7 @@ def plotHistogram(data, chi2s, output):
     plt.plot(h_axis, chi2.pdf(h_axis, int(data['nbin']) - 1), 'r-', lw=2, label=r'$\chi^2(\mathrm{{d.o.f.}} = {})$'.format(int(data['nbin']) - 1))
 
     plt.yscale('log')
-    plt.xlabel('$\chi^2$')
+    plt.xlabel(r'$\chi^2$')
     plt.ylabel('Probability Density')
     plt.xlim([0,200])
     plt.legend()
@@ -136,7 +136,7 @@ def main():
             
         if data['chi2profile']:
             with h5py.File(file) as f: 
-                plot_efstat(f['efstats/frequencies'][()], f['efstats/chi2s'][()], nbin=int(data['nbin']), output=output, label='$\chi^2$ landscape', true_frequency=None)
+                plot_efstat(f['efstats/frequencies'][()], f['efstats/chi2s'][()], nbin=int(data['nbin']), output=output, label=r'$\chi^2$ landscape', true_frequency=None)
                 
         if data['foldedprofile']:
             # input is eventlist, not the saved folded profile

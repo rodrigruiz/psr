@@ -6,7 +6,7 @@ from astropy.io import ascii
 from collections.abc import Iterable
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('~/software/Psr/src/latex.mplstyle')
+#plt.style.use('~/software/Psr/src/latex.mplstyle')
 import seaborn as sb
 import matplotlib as mpl
 mpl.rcParams['figure.figsize'] = (10, 6)
@@ -88,7 +88,7 @@ def _ef_single(events, frequencies, nbin=32, expocorr=False, gti=None, output='p
             if plot:
                 ax = plot_profile(phase_bins, profile, ax=ax)
         
-                label.append('$f_\mathrm{test} = ' +  str(p) + '\, \mathrm{Hz}$ ')
+                label.append(r'$f_\mathrm{test} = ' +  str(p) + '\, \mathrm{Hz}$ ')
                 ax.legend(label)
 
                 fig.savefig(output + '.png', bbox_inches='tight')
@@ -282,12 +282,12 @@ def plot_efstat(effreq, efstat, nbin, output='chi2', label='EF statistics', true
     
     plt.figure()
     plt.plot(effreq, efstat, label=label, color='blue')
-    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label='d.o.f. $ = N_\mathrm{bin} - 1$')
+    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label=r'd.o.f. $ = N_\mathrm{bin} - 1$')
     plt.axvline(effreq[np.argmax(efstat)], lw=3, alpha=0.5, color='k', label='Observed frequency')
     if isinstance(true_frequency, float):
-        plt.axvline(true_frequency, lw=3, alpha=0.5, color='r', label='Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
-    plt.xlabel('Frequency [Hz]')
-    plt.ylabel('EF Statistics ($\chi^2$)')
+        plt.axvline(true_frequency, lw=3, alpha=0.5, color='r', label=r'Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
+    plt.xlabel(r'Frequency [Hz]')
+    plt.ylabel(r'EF Statistics ($\chi^2$)')
     plt.legend()
     plt.savefig(output + '.png', bbox_inches='tight')
     
@@ -402,7 +402,7 @@ def plot_stats_fit(bestfit, effreq, efstat, nbin, output='chi2_fit', label='EF s
     plt.plot(effreq, efstat-(nbin-1), label=label, color='blue')
     plt.plot(effreq, bestfit(effreq), label='Best fit', color='red', ls='--')
     if isinstance(true_frequency, float):
-        plt.axvline(true_frequency, alpha=0.5, color='r', label='Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
+        plt.axvline(true_frequency, alpha=0.5, color='r', label=r'Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
     plt.axvline(bestfit.mean[0], alpha=0.5, label=r'Fit frequency $f_\mathrm{fit} = $' + '{}'.format(bestfit.mean[0]))
     #plt.xlim( [fg.mean[0] * 0.95, fg.mean[0] * 1.05] )
     plt.xlabel('Frequency (Hz)')
