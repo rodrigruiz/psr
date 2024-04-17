@@ -1,6 +1,6 @@
 """ Chi2s
 
-Usage: Plot.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR (--chi2profile | --foldedprofile ) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>] [--latex]
+Usage: Plot.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR (--chi2profile | --foldedprofile | --run_hist --runnumber=<runnumber>) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>] [--latex]
 
 Options:
   -h --help                              Help
@@ -24,6 +24,9 @@ import plens.TimeSeries as TS
 from scipy.stats import chi2
 from epochfolding.stingray_epochfolding import plot_efstat
 from epochfolding.stingray_epochfolding import epochfolding_single
+from plens.plot_latex_size import set_size
+width = 418.25368
+figsize = set_size(width, fraction=1, ratio='golden')
 
 def plotHistogram(data, chi2s, output):
     """ Plots a histogram over observed chi2 values and a theoretical chi2 distribution with nbin-1 d.o.f.
@@ -48,7 +51,7 @@ def plotHistogram(data, chi2s, output):
         Saves the plot to `output`.
     
     """
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
     plt.hist(chi2s, bins=int(data['bins_hist']), density=True, alpha=0.6, color='b', label='Observed')
      
     # Plot a chi-squared distribution with appropriate degrees of freedom
@@ -113,13 +116,29 @@ def getOutputFilepath(data, file=None):
     elif data['foldedprofile']:
         return 'Antares_foldedprofile'
 
-
+def plotRunHist(arguments, data_to_bin, bins, runnumber=0):
+    '''the data_to_bin has to be in Hz'''
+    fig, ax = plt.subplots(figsize=figsize)
+    plt.hist(data_to_bin/1000., bins=bins, density=True, alpha=0.6, color='b', label='ANTARES rates'+ '\n' + 'run number {}'.format(runnumber)+ '\n'+ 'run length {}\,s'.format(round(len(data_to_bin)*0.1, 2)))
+    plt.axvline(np.mean(data_to_bin/1000.), color='#d62728', ls='--', label='Mean rate ${}\,\mathrm{{kHz}}$'.format(round(np.mean(data_to_bin/1000.))))
+    plt.xlabel(r'ANTARES rates [kHz]')
+    plt.ylabel('Probability Density')
+    #plt.xlim([0,200])
+    plt.legend()
+        
+    fig.savefig(arguments['output_dir'] + 'run_hist_' + runnumber + '.pdf',  bbox_inches='tight')
+    #plt.show()
+    plt.close()
+    
+    print(len(data_to_bin)*np.mean(data_to_bin))
+    
 def main():
     arguments = docopt(__doc__)
 
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
+    print(data)
     
     if data['latex']:
         plt.style.use('~/software/Psr/src/latex.mplstyle')
@@ -142,8 +161,12 @@ def main():
             # input is eventlist, not the saved folded profile
             frequencies = list( map(float, data['frequencies'].strip('[]').split(',')) )
             epochfolding_single(file, frequencies, nbin=int(data['nbin']), output=output, plot=True, save=False, format='hdf5', outputdir=data['output_dir'])
-    
-
+        
+        if data['run_hist']:
+            with h5py.File(file) as h5_file:
+                ts, timeslice_duration = TS.readTimeSeries(h5_file)
+                plotRunHist(data, ts[ ts['rateOn'] > 0.]['rateOn'].value, int(data['bins_hist']), runnumber=data['runnumber'])
+                
 
 if __name__ == "__main__":
     main()

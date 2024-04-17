@@ -30,7 +30,7 @@ def main():
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
-    print(data)
+    #print(data['gti_files'], data['expocorr'])
     if data['wildcard']:
         #input_files = glob.glob(data['input_files'][0])
         input_files = glob.glob(data['<INPUT_FILES>'][0])
@@ -42,7 +42,7 @@ def main():
     
     if data['expocorr']:
         gti_files = glob.glob(data['gti_files'])
-        print(gti_files)
+        print(gti_files, len(gti_files))
         gti_files.sort()
     
     if not os.path.exists(data['output_dir']):
@@ -60,7 +60,7 @@ def main():
         if data['expocorr']:
             if len(gti_files) > 1:
                 gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
-            #print(gti_file)
+                print(gti_file)
         #else:
                 gtis = loadGTIs(gti_file[0])
             #print(gtis)
