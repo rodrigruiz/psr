@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 import matplotlib as mpl
 mpl.rcParams['figure.figsize'] = (10, 6)
-
+#import astropy.time.core.Time
+from astropy.time import Time
 #from generate_split_timeseries import generate_pulse_train_gauss, gauss
 #from stingray import Lightcurve
 from stingray.events import EventList
@@ -68,7 +69,7 @@ def epochfolding_single(filepath, frequencies, nbin=32, expocorr=False, gti=None
     """
     
     events = EventList().read(filepath, format)
-   
+    #print(type(events.time), type(events.time[0]))
     _ef_single(events, frequencies, nbin=nbin, expocorr=expocorr, gti=gti, output=output, plot=plot, save=save, outputdir=outputdir, root_dir=None, format=format)
 
 def _ef_single(events, frequencies, nbin=32, expocorr=False, gti=None, output='profile', plot=True, save=True, outputdir='./folded_events/', root_dir=None, format='ascii'):
@@ -110,7 +111,9 @@ def _fold_events(times, frequency, nbin=32, expocorr=False, gti=None, save=False
     """Helping function.
        Calculate the folded pulse profile.
     """
-    
+    if isinstance(times[0], Time):
+        times = np.array([i.value for i in times])
+
     phase_bins, profile, profile_err = fold_events(times, frequency, nbin=nbin, expocorr=expocorr, gti=gti)
     if save:
         if format=='ascii':
@@ -236,7 +239,7 @@ def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_te
             "testfrequencies should be a float or a list of floats!"
         )
     
-    print(type(events.time), type(events.time[0]))
+    #print(type(events.time), type(events.time[0]))
     effreq, efstat = epoch_folding_search(events.time, frequencies, nbin=nbin, expocorr=expocorr, gti=gti)
     
     if plot:
@@ -286,7 +289,7 @@ def plot_efstat(effreq, efstat, nbin, output='chi2', label='EF statistics', true
     plt.axvline(effreq[np.argmax(efstat)], lw=3, alpha=0.5, color='k', label='Observed frequency')
     if isinstance(true_frequency, float):
         plt.axvline(true_frequency, lw=3, alpha=0.5, color='r', label=r'Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
-    plt.xlabel(r'Frequency [Hz]')
+    plt.xlabel(r'Frequency $f$ [Hz]')
     plt.ylabel(r'EF Statistics ($\chi^2$)')
     plt.legend()
     plt.savefig(output + '.png', bbox_inches='tight')

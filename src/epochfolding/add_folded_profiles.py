@@ -51,7 +51,7 @@ def add_profiles(input_dir, filepattern, frequency, outputdir):
     err_buffer = None
     
     input_files = glob.glob(input_dir + filepattern + str(frequency) + '.hdf5')
-    print(input_files)
+    #print(input_files)
     for file in input_files:
         
         with h5py.File(file) as f:

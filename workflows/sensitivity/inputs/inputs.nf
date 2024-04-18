@@ -7,4 +7,6 @@ input = [bins_per_file  : 200,
       	 axsini       : 115.531,
 	 e       : 0.1029,
 	 omega         : -74.05,
-	 Tpi2 : 2458116.09700]
+	 Tpi2 : 2458116.09700,
+         pulseshape : "mvm",
+         frequency : 1]

@@ -20,11 +20,12 @@ nextflow.enable.dsl = 2
 include {
   GetFiles;
   LoadTimeSeries;
-  FindGTIs;
   SplitTimeSeries;
   CreateEventList;
   CorrectEventList;
-  CalculateChi2;
+  InjectSignal;
+  FoldEventlist;
+  EFAddedProfiles;
 } from './processes/analysis.nf'
 
 include{
@@ -44,7 +45,8 @@ evaluate(new File("./inputs/inputs.nf"))
 workflow {
     files = channel.of( "Antares_053140_total_rates.hdf5",
 			"Antares_053150_total_rates.hdf5" );
-    
+    signal_strength = channel.of( 0,1,10,50,100 );
+ 
     GetFiles(files);
 
     LoadTimeSeries(GetFiles.out);  
@@ -56,11 +58,12 @@ workflow {
     CorrectEventList(CreateEventList.out, input.correction, input.rajd, input.decjd, input.Porb, input.axsini, input.e,
 			input.omega, input.Tpi2);
 
-    FindGTIs(LoadTimeSeries.out.collect());
+    InjectSignal(CorrectEventList.out, signal_strength, input.pulseshape, input.frequency);
 
-    CalculateChi2(CorrectEventList.out,FindGTIs.out);
+    FoldEventlist(CalculateChi2.out, input.frequency, signal_strength);
 
-    PlotHist(CalculateChi2.out.collect()); 
+    EFAddedProfiles(input.frequency, signal_strength);
+
 }
 
 workflow.onComplete = {

@@ -13,8 +13,12 @@ mpl.rcParams['figure.figsize'] = (10, 6)
 
 #from generate_split_timeseries import generate_pulse_train_gauss, gauss
 #from stingray import Lightcurve
-from stingray.pulse.pulsar import profile_stat #for old stingray version
-#from stingray.pulse.pulsar import ef_profile_stat for new stingray version, change function name in line117 or import as profile_stat
+import stingray
+if stingray.__version__ < '2.0.0':
+    from stingray.pulse.pulsar import profile_stat #for old stingray version
+else:
+    from stingray.pulse.pulsar import ef_profile_stat as profile_stat
+#for new stingray version, change function name in line117 or import as profile_stat
 #"""
 from stingray.events import EventList
 from stingray.pulse.search import _folding_search, _profile_fast

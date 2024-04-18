@@ -1,6 +1,6 @@
 """ Epochfold corrected Eventlists and and save folded profiles.
 
-Usage: FoldEventlist.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--expocorr --gtis=<gtis>]
+Usage: FoldEventlist.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--expocorr --gtis=<gtis>] [--signal_strength=<signal_strength>]
 
 Options:
   -h --help                              Help
@@ -22,20 +22,27 @@ import plens.TimeSeries as TS
 import plens.EventList as EL
 from epochfolding.stingray_epochfolding import epochfolding_single, get_testfrequencies#, plot_efstat
 from epochfolding.gtis import loadGTIs
-
+#import stingray
 def main():
     arguments = docopt(__doc__)
-
+    
+    #print(stingray.__version__)
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    if data['wildcard']:
+        #input_files = glob.glob(data['input_files'][0])
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+        #gti_files = glob.glob(data['gti_files'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
+        #gti_files = data['gti_files']
     input_files.sort()
     #print(input_files)
     
-    gti_files = glob.glob(data['gtis'])
-    gti_files.sort()
+    #gti_files = glob.glob(data['gtis'])
+    #gti_files.sort()
     
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
@@ -46,27 +53,27 @@ def main():
         split = re.split(data['filepattern'], file)
         run_number = split[1]
         split_number = split[2]
+        #signal_strength = split[3]
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
-        gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
-        print(gti_file)
-        gtis = loadGTIs(gti_file[0])
-        print(gtis)
+        #gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
+        #print(gti_file)
+        #gtis = loadGTIs(gti_file[0])
+        #print(gtis)
         
-        output = 'Antares_' + run_number + '_folded_' + split_number
-        
+        output = 'Antares_' + run_number + '_folded_' + split_number + '_' + data['signal_strength']        
         if os.path.exists(output + '.hdf5'):
             continue
             
         frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
         
         with h5py.File(file) as input_file:
-            print(input_file.keys())
+            #print(input_file.keys())
             epochfolding_single(input_file, 
                                 frequencies, 
                                 nbin=int(data['nbin']),
                                 expocorr=data['expocorr'], 
-                                gti=gtis, 
+                                #gti=gtis, 
                                 output=output, plot=False, save=True, 
                                 format='hdf5', outputdir=data['output_dir']
                                )

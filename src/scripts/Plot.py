@@ -1,6 +1,6 @@
 """ Chi2s
 
-Usage: Plot.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR (--chi2profile | --foldedprofile | --run_hist --runnumber=<runnumber>) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>] [--latex]
+Usage: Plot.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR (--chi2profile | --foldedprofile | --run_hist --runnumber=<runnumber>) [--filepattern=<filepattern>] [--nbin=<int>] [--frequencies=<frequencies>] [--bins_hist=<int>] [--latex] [--signal_strength=<signal_strength>]
 
 Options:
   -h --help                              Help
@@ -100,18 +100,29 @@ def getOutputFilepath(data, file=None):
             split_number = split[2]
         #print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
             if data['chi2profile']:
-                return data['output_dir'] + 'Antares_' + run_number + '_' + split_number + '_chi2profile'
+                
+                out = data['output_dir'] + 'Antares_' + run_number + '_' + split_number + '_chi2profile'
+                if data['signal_strength'] is not None:
+                    out += '_' + data['signal_strength']
+                return out
+                
             if data['foldedprofile']:
                 return 'Antares_' + run_number + '_' + split_number + '_foldedprofile'
             
         elif data['chi2profile']:
-            return data['output_dir'] + 'Antares_' + run_number + '_chi2profile'
+            out =  data['output_dir'] + 'Antares_' + run_number + '_chi2profile'
+            if data['signal_strength'] is not None:
+                out += '_' + data['signal_strength']
+            return out
         
         elif data['foldedprofile']:
                 return 'Antares_' + run_number + '_foldedprofile'
             
     elif data['chi2profile']:
-        return data['output_dir'] + 'Antares_chi2profile'
+        out = data['output_dir'] + 'Antares_chi2profile'
+        if data['signal_strength'] is not None:
+            out += '_' + data['signal_strength']
+        return out
     
     elif data['foldedprofile']:
         return 'Antares_foldedprofile'

@@ -1,5 +1,5 @@
 """Inject an artificial signal.
-Usage: InjectSignal.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>]
+Usage: InjectSignal.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR --filepattern=<filepattern> [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>]
 
 Options:
   -h --help                              Help
@@ -30,13 +30,20 @@ import plens.antares_hdf5
 import plens.antares_hdf5 as antares_hdf5
 
 def main():
+    #print(stingray.__version__)
     arguments = docopt(__doc__)
 
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    if data['wildcard']:
+        #input_files = glob.glob(data['input_files'][0])
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+        #gti_files = glob.glob(data['gti_files'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
+        #gti_files = data['gti_files']
     input_files.sort()
 
     if not os.path.exists(data['output_dir']):
@@ -51,7 +58,7 @@ def main():
             
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number))#, end='\r')
         
-        output_file = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number + '_signal'
+        output_file = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number + '_signal_' + str(data['a'])
         
         if os.path.exists(output_file):
             continue   

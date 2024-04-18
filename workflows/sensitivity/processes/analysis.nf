@@ -21,7 +21,7 @@ process LoadTimeSeries{
 
  script:
  """
- load-timeseries -i ${input_file} -o ./
+ load-timeseries -i ${input_file} -o ./ --blind
  """
 }
 
@@ -95,13 +95,56 @@ process CalculateChi2{
 
   input:
     path input_file;
-    path gti_file;
+   
   output:
     path "*chi2*.hdf5";
 
   script:
   """
-  calculate-chi2s ${input_file} -o ./ --filepattern 'Antares_(\\d*)_eventlist_(\\d*)_corrected.hdf5' --expocorr --gti_files '${gti_file}'
+  calculate-chi2s ${input_file} -o ./ --filepattern 'Antares_(\\d*)_eventlist_(\\d*)_corrected.hdf5'
   """
 
+}
+
+process InjectSignal{
+  input:
+    path input_file;
+    val a;
+    val pulseshape;
+    val frequency;
+  output:
+    path "*signal*.hdf5";
+
+  script:
+  """
+  inject-signal ${input_file} -o ./ --filepattern 'Antares_(\\d*)_eventlist_(\\d*)_corrected.hdf5' --a ${a} --pulseshape '${pulseshape}' --frequency ${frequency}
+  """ 
+}
+
+FoldEventlist{
+
+  input:
+    path input_file;
+    val frequency;
+    val signal_strength;
+  output:
+    path "*folded*mvm.hdf5";
+
+  script:
+  """
+  fold-eventlist ${input_file} -o ./ --filpattern 'Antares_(\\d*)_eventlist_(\\d*)_signal_${signal_strength}_mvm.hdf5' --frequency ${frequency} --signal_strength ${signal_strength}
+  """
+}
+
+process EFAddedProfile{
+  input:
+    val frequency;
+    val signal_strength;
+  output:
+    path "*added.hdf5";
+ 
+  script:
+  """
+  ef-add-profile -i ./  -o ./ --filepattern 'Antares_*_folded_*_${signal_strength}' --signal_strength ${signal_strength} --frequency ${frequency}
+  """
 }
