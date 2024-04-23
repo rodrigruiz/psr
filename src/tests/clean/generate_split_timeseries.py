@@ -3,7 +3,7 @@
 Generate and split time series into multiple files.
 
 Usage:
-  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise> [--just_noise=<just_noise>]
+  script.py --time_start=<time_start> --time_stop=<time_stop> --number_of_points=<number_of_points> --signal_strength=<signal_strength> --frequency=<frequency> --num_files=<num_files> --pulseshape=<pulseshape> --noise=<noise> [--just_noise]
   script.py (-h | --help)
 
 Options:
@@ -16,7 +16,7 @@ Options:
   --num_files=<num_files>     Number of output files
   --pulseshape=<pulseshape>   Shape of pulses in the pulse train
   --noise=<noise>             Distribution of noise added to pulse train
-  --just_noise=<just_noise>   Select whether the signal is just noise. [default:False]
+  --just_noise   Select whether the signal is just noise. [default: False]
 """
 
 import numpy as np
@@ -28,6 +28,8 @@ from docopt import docopt
 from plens.TimeSeries import saveTimeSeries
 import matplotlib.pyplot as plt
 plt.style.use('~/software/Psr/src/latex.mplstyle')
+from plens.plot_latex_size import set_size
+width = 418.25368
 
 def gauss(x, mu=0, sigma=1):
     """normalized gaussian function.
@@ -218,15 +220,18 @@ def generate_pulse_train_sin(time, f, P_0, a, baseline):
     
     return PulseTrain
 
-def plot_pulsetrain(times, counts, output='pulsetrain', color='blue', label='PulseTrain', title='PulseTrain'):
-    plt.figure(figsize=(10, 5))
+def plot_pulsetrain(times, counts, output='pulsetrain', color='blue', label=None, title='PulseTrain', fraction=1):
+    #plt.figure(figsize=(5,3))
+    plt.figure(figsize=set_size(width,fraction=fraction))
     plt.plot(times, counts, label=label, color=color )
-    plt.xlabel('Time [MJD]')
+    plt.xlabel('Time $t$ [s]')
+    #plt.xlabel('Time [MJD]')
     plt.ylabel('Counts [a.u.]')
     plt.title(title)
     plt.grid(True)
-    plt.legend()
-    plt.savefig( output + '.png' )
+    if label is not None:
+        plt.legend()
+    plt.savefig( output + '.pdf' )
     plt.show()
 
 def generate_time_series(time_start, time_stop, number_of_points, signal_strength, frequency, num_files, pulseshape, noise, just_noise=False):
@@ -279,16 +284,20 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         sigma = 1. #Standard deviation
         flux = generate_pulse_train_peak(times, f, P_0, pulseshape, a, sigma=sigma)
         label = f'Gaussian Pulse Train' 
-        title = r'Gaussian Pulse Train with Frequency $f={}$ and Sigma $\sigma={}$'.format(f, sigma)
+        title = r'Gaussian Pulse Train with frequency $f={} \,\mathrm{Hz}$ and Sigma $\sigma={}$'.format(f, sigma)
         output = 'pulsetrain_gauss'
     elif pulseshape == 'mvm':
-        kappa = 10.
-        flux = generate_pulse_train_peak(times, P, P_0, pulseshape, a/8, kappa=kappa)
+        kappa = 5.
+        #flux = generate_pulse_train_peak(times, f, P_0, pulseshape, a, kappa=kappa)
+        flux = MVMD(times.value, f, P_0, kappa, a)
         label = f'modified von Mises Pulse Train' 
-        title = r'modified von Mises Pulse Train with Frequency $f={}$ and $\kappa={}$'.format(f, kappa)
+        #label = ''
+        #title = r'modified von Mises pulsetrain \newline with frequency $f={} \,\mathrm{{Hz}}$ and $\kappa={}$'.format(f, kappa)
+        title = r'$f_\mathrm{{MVMD}}(t; f = {} \,\mathrm{{Hz}}, \kappa = {})$'.format(f, kappa)
+        title_smaller = r'$f_\mathrm{{MVMD}}(t; f, \kappa)$'
         output = 'pulsetrain_mvm'
     elif pulseshape == 'sin':
-        flux = generate_pulse_train_sin(times, P, P_0, a, 50.)
+        flux = generate_pulse_train_sin(times, f, P_0, a, 50.)
         label = f'Sinusodial Pulse Train' 
         title = r'Sinusodial Pulse Train with Frequency $f={}$'.format(P, sigma)
         output = 'pulsetrain_sin'
@@ -296,19 +305,21 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         raise ValueError(
             "pulseshape should be `gauss`, `mvm` or `sin`!"
         )
-        
-    # plot the pure signal
-    plot_pulsetrain(times.value, flux, output=output, label=label, title=title)
     
+    #print(flux)
+    # plot the pure signal, for using hertz -58000. and s on the x-axis
+    plot_pulsetrain(times.value - 58000., flux, output=output, title=title, fraction=0.5)
+    #plot_pulsetrain(times.value - 58000., flux, output=output, label=label, title=title)
     # std defines noise strength
     # poisson noise
     if noise == 'poisson':
-        noise = np.random.poisson(50, int(number_of_points))
-        label_noise = ' + poissonian distributed Noise'
+        noise = np.random.poisson(max(flux)*3, int(number_of_points))
+        #label_noise = '\n and Poisson noise'
+        label_noise = ' and Poisson noise'
         output_noise = '+poissonnoise'
     elif noise == 'gauss':
         noise = np.random.normal(0, 0.5, int(number_of_points))
-        label_noise = ' + gaussian distributed Noise'
+        label_noise = ' + Gaussian distributed Noise'
         output_noise = '+gaussnoise'
     elif noise == 'exp':
         l = np.log(2) / len(times.value) / 2
@@ -329,13 +340,15 @@ def generate_time_series(time_start, time_stop, number_of_points, signal_strengt
         else:
             flux = noise
     else:
+        #print('I should be here')
         flux += noise
     #flux = noise
     
+    label=label+label_noise
     # plot the pulsetrain with noise
-    plot_pulsetrain(times.value, flux, output=output+output_noise, label=label+label_noise, title=title+label_noise)
+    plot_pulsetrain(times.value -58000., flux, output=output+output_noise, title=title_smaller+label_noise, fraction=0.5)
     # zoom into the pulsetrain
-    plot_pulsetrain(times.value[:250], flux[:250], output=output+output_noise+'_zoom', label=label+label_noise, title=title+label_noise)
+    plot_pulsetrain(times.value[:250]-58000., flux[:250], output=output+output_noise+'_zoom', title=title+label_noise)
     
     # Split the time series into multiple files
     file_indices = np.array_split(np.arange(int(number_of_points)), int(num_files))
@@ -365,6 +378,7 @@ def split_timeseries(ts, number_of_points, num_files, filename, format='ascii.ec
         
 if __name__ == '__main__':
     arguments = docopt(__doc__)
+    print(arguments)
     generate_time_series(
         arguments['--time_start'],
         arguments['--time_stop'],
