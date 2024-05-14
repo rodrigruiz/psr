@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: ubuntu:latest
+
+%post
+    apt-get update && apt-get install -y \
+        python3 \
+        python3-pip
+
+    # Install git
+    apt-get install -y git
+
+    # Install the Python package from the copied repository
+    cd /psr
+    pip3 install .
+
+%environment
+    export PYTHONPATH=$PYTHONPATH:/psr
+
+%files
+    /home/hpc/capn/mppi104h/Software/psr /psr

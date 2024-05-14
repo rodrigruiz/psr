@@ -15,6 +15,8 @@ process Km3buuSingleEnergy_cylinder{
     path "km3buu*.root", emit: km3buu_root;
     path "xs*.dat", emit: km3buu_xs;
 
+ publishDir "${params.output_dir}/generator", mode: 'link', overwrite: true;
+
  script:
  """
  #!/usr/bin/python3

@@ -1,10 +1,10 @@
-input = [n_events       : 10000,
+input = [n_events       : 100,
          n_runs         : 1,
          interaction    : "cc",
-      	 flavor         : "electron",
-      	 radius         : 100, 
+         flavor         : "electron",
+         radius         : 100,
          target_z       : 8,
-      	 target_a       : 16,
-	 detector       : "${KM3BUU_PIPELINE_PATH}/parameters/detector.gdml",
-	 schema         : "${KM3BUU_PIPELINE_PATH}/parameters/gdml.xsd",
-	 pmt_parameters : "${KM3BUU_PIPELINE_PATH}/parameters/km3sim_param.txt"]
+         target_a       : 16,
+         detector       : "${KM3BUU_PIPELINE_PATH}/inputs/Antares_18.3.0.detx",
+         schema         : "${KM3BUU_PIPELINE_PATH}/parameters/gdml.xsd",
+         pmt_parameters : "${KM3BUU_PIPELINE_PATH}/parameters/km3sim_param.txt"]
