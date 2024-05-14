@@ -1,10 +1,11 @@
 """ Create Eventlist from TimeSeries
 
-Usage: CreateEventlist.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> --scaling=<scaling> --overwrite=<BOOL>
+Usage: CreateEventlist.py -i INPUT_FILES... -o OUTPUT_DIR --filepattern=<filepattern> --scaling=<scaling> [--wildcard]
 
 Options:
   -h --help                              Help
   -i --input_files INPUT_FILES           Input files
+     --wildcard                          Whether the input files should be retrieved from a wildcard expression.
   -o --output_dir OUTPUT_DIR             Output directory
      --scaling=<scaling>                 Whether to scale the ANTARES rates. 
                                          The actual rate will be divided by this number.
@@ -27,23 +28,25 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = glob.glob(data['input_files'])
+    #print(data['input_files'])
+    if data['wildcard']:
+        input_files = glob.glob(data['input_files'][0])
+    else:
+        input_files = data['input_files']
     input_files.sort()
-    #print(input_files)
+    
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
     
     # Construct Eventlist for each run from corrected TimeSeries
     for file in input_files:
-        #split = re.split('Antares_(\d*)_total_rates_(\d*)_corrected.hdf5', file)
-        #split = re.split('Antares_(\d*)_total_rates_(\d*).hdf5', file)
+        #file = glob.glob(file)
         split = re.split(data['filepattern'], file)
         run_number = split[1]
         split_number = split[2]
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
         output = data['output_dir'] + 'Antares_' + run_number + '_eventlist_' + split_number
-        #print(output, os.path.exists(output + '.hdf5'))
         
         #if data['overwrite'] is False:
         if os.path.exists(output + '.hdf5'):

@@ -13,9 +13,10 @@ font.family: serif
 ## AXES
 axes.labelsize: 12
 axes.titlesize: 12
-axes.labelpad: 15.0
+axes.labelpad: 8.0
 axes.titlepad: 10.0
 axes.labelweight: bold 
+axes.prop_cycle: cycler('color', ['b', 'd62728', '2ca02c', 'ff7f0e', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
 
 ## TICKS
 xtick.labelsize: 12

@@ -43,7 +43,8 @@ gtis = findGTIs(ts['rateOn'], ts.time.value)
 #print(findGTIs(test, time))
 
 #"""
-print(type(gtis))
+gtis.insert(0, (1294471244.68, 1294471244.695975))
+print(gtis)
 with open('testpickle.pkl', 'wb') as f:
         pickle.dump(gtis, f)
         
@@ -54,8 +55,9 @@ with open('testpickle.pkl', 'rb') as f:
 
 lc = Lightcurve(ts.time.value, ts['rateOn'], dt=0.104858, skip_checks=True, gti=gtis_file)
 #lc = Lightcurve(ts.time.value, ts['rateOn'], dt=0.104858, skip_checks=True, gti=gtis)
+print(lc.time[0], lc.time[-1])
 print(lc.gti[0][0])
-#print(len(lc.time))
+print(len(lc.time))
 lc.apply_gtis()
-#print(len(lc.time))
+print(len(lc.time))
 #"""

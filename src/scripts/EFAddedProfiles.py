@@ -1,6 +1,6 @@
 """ Epochfold corrected Eventlists and and save folded profiles.
 
-Usage: FoldEventlist.py -i INPUT_DIR -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>]
+Usage: EFAddedProfiles.py -i INPUT_DIR [--wildcard] -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--signal_strength=<signal_strength>]
 
 Options:
   -h --help                              Help
@@ -34,6 +34,16 @@ def main():
     #gti_files = glob.glob(data['gtis'])
     #gti_files.sort()
     
+    """
+    if data['wildcard']:
+        #input_files = glob.glob(data['input_files'][0])
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+        #gti_files = glob.glob(data['gti_files'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
+        #gti_files = data['gti_files']
+    input_files.sort()
+    """
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
     
@@ -46,7 +56,7 @@ def main():
     #    run_number = split[1]
     #    split_number = split[2]
     #    print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
-    output = data['output_dir'] + 'Antares_chi2_added.hdf5'
+    output = data['output_dir'] + 'Antares_chi2_added_' + data['signal_strength'] + '.hdf5'
         
     #if os.path.exists(output + '.hdf5')
         

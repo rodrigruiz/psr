@@ -7,9 +7,12 @@
 **/*.txt
 **/*.hdf5
 **/*.pkl
-!data/**/*.dat
-!data/**/*.pkl
-!data/**/*.txt
+**/*.pdf
+!data/**/.dat
+!data/**/.pkl
+!data/**/.txt
+**/work/*
+**/workflows/**/.*
 
 # Editor backup files
 **/*~

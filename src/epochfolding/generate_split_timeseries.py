@@ -6,7 +6,7 @@ import astropy.units as u
 from docopt import docopt
 from plens.TimeSeries import saveTimeSeries
 import matplotlib.pyplot as plt
-plt.style.use('~/software/Psr/src/latex.mplstyle')
+#plt.style.use('~/software/Psr/src/latex.mplstyle')
 
 def gauss(x, mu=0, sigma=1):
     """normalized gaussian function.

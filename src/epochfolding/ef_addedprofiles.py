@@ -6,14 +6,19 @@ from astropy.io import ascii
 from collections.abc import Iterable
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('~/software/Psr/src/latex.mplstyle')
+#plt.style.use('~/software/Psr/src/latex.mplstyle')
 import seaborn as sb
 import matplotlib as mpl
 mpl.rcParams['figure.figsize'] = (10, 6)
 
 #from generate_split_timeseries import generate_pulse_train_gauss, gauss
 #from stingray import Lightcurve
-from stingray.pulse.pulsar import *
+import stingray
+if stingray.__version__ < '2.0.0':
+    from stingray.pulse.pulsar import profile_stat #for old stingray version
+else:
+    from stingray.pulse.pulsar import ef_profile_stat as profile_stat
+#for new stingray version, change function name in line117 or import as profile_stat
 #"""
 from stingray.events import EventList
 from stingray.pulse.search import _folding_search, _profile_fast
@@ -97,7 +102,7 @@ def epoch_folding_search(times, frequencies, input_dir, filepattern, outputdir, 
             raise ValueError("To calculate exposure correction, you need to" " specify the GTIs")
 
         def stat_fun(t, f, fd=0, **kwargs):
-            return ef_profile_stat(add_profiles(input_dir, filepattern, f, outputdir)[1])
+            return profile_stat(add_profiles(input_dir, filepattern, f, outputdir)[1])
         
         return _folding_search(
             stat_fun,

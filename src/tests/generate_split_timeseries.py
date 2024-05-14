@@ -22,7 +22,7 @@ from astropy.time import Time
 import astropy.units as u
 from docopt import docopt
 import matplotlib.pyplot as plt
-#plt.style.use('../latex.mplstyle')
+plt.style.use('~software/Psr/src/latex.mplstyle')
 
 def gauss(x, mu=0, sigma=1):
     '''returns a normalized gaussian function.'''

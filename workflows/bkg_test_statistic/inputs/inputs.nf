@@ -1,0 +1,10 @@
+input = [bins_per_file  : 200,
+         scaling        : 1e10,
+         correction   : "bary+bin",
+      	 rajd        : "02h43m40.4252869512s",
+      	 decjd         : "+61d26m03.757456824s", 
+         Porb       : 27.6943,
+      	 axsini       : 115.531,
+	 e       : 0.1029,
+	 omega         : -74.05,
+	 Tpi2 : 2458116.09700]

@@ -1,16 +1,16 @@
 """ Epochfold corrected Eventlists and calculate the chi2 statistic for the testperiods.
 
-Usage: CalculateChi2s.py -i INPUT_FILES -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--expocorr --gtis=<gtis>]
+Usage: CalculateChi2s.py <INPUT_FILES>... [--wildcard] -o OUTPUT_DIR --filepattern=<filepattern> [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--expocorr --gti_files=<gti_files>]
 
 Options:
   -h --help                              Help
-  -i --input_files INPUT_FILES           Input files
+  -i --input_files <INPUT_FILES>           Input files
   -o --output_dir OUTPUT_DIR             Output directory
      --frequency=<float>                 Principle frequency around which an interval for the testfrequencies will be chosen. [default: 10.]
      --number_of_testf=<float>             Number of testfrequencies to test around the principle frequency. [default: 200]
      --nbin=<int>                        Number of bins in the folded profile [default: 32]
      --expocorr                          Whether to perform exposire correction. [default: False]
-     --gtis=<gtis>                       GTI files.
+     --gti_files=<GTI_FILES>                      GTI files. works with only one gti file or a wildcard expression.
 
 """
 # python3 FoldEventlist.py -i './data/Antares_*_eventlist_*.hdf5' -o './data/' --filepattern 'Antares_(\d*)_eventlist_(\d*).hdf5'
@@ -21,7 +21,7 @@ import h5py
 import numpy as np
 import plens.TimeSeries as TS
 import plens.EventList as EL
-from epochfolding.stingray_epochfolding import epochfolding_scan#, plot_efstat
+from epochfolding.stingray_epochfolding import epochfolding_scan
 from epochfolding.gtis import loadGTIs
 
 def main():
@@ -30,12 +30,20 @@ def main():
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
-    
-    input_files = glob.glob(data['input_files'])
+    #print(data['gti_files'], data['expocorr'])
+    if data['wildcard']:
+        #input_files = glob.glob(data['input_files'][0])
+        input_files = glob.glob(data['<INPUT_FILES>'][0])
+        #gti_files = glob.glob(data['gti_files'][0])
+    else:
+        input_files = data['<INPUT_FILES>']
+        #gti_files = data['gti_files']
     input_files.sort()
     
-    gti_files = glob.glob(data['gtis'])
-    gti_files.sort()
+    if data['expocorr']:
+        gti_files = glob.glob(data['gti_files'])
+        print(gti_files, len(gti_files))
+        gti_files.sort()
     
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
@@ -49,10 +57,17 @@ def main():
         print('Processing Run Nr.: ' + str(run_number) + ', split: ' + str(split_number), end='\n')
         
         #print(gti_file)
-        gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
-        print(gti_file)
-        gtis = loadGTIs(gti_file[0])
-        print(gtis)
+        if data['expocorr']:
+            if len(gti_files) > 1:
+                gti_file = fnmatch.filter(gti_files, '*'+run_number+'*')
+                print(gti_file)
+        #else:
+                gtis = loadGTIs(gti_file[0])
+            #print(gtis)
+            else:
+                gtis = loadGTIs(gti_files[0])
+        else:
+            gtis = None
             
         output = data['output_dir'] + 'Antares_' + run_number + '_chi2_' + split_number + '.hdf5'
         

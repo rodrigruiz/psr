@@ -3,7 +3,7 @@
 Epochfolding.
 
 Usage:
-  stingray_epochfolding.py  -i INPUT_FILE [--obs_length=<obs_length>] [--frequencies=<frequencies>] [--mode=<mode>] [--nbin=<nbin>] [--oversampling=<oversampling>] [--true_frequency=<true_frequency>] [--plot] [--save] [--outputdir=<outputdir>] [--root_dir=<root_dir>] [--fit --pulseshape=<pulseshape> ] 
+  stingray_epochfolding.py  -i INPUT_FILE [--obs_length=<obs_length>] [--frequencies=<frequencies>] [--mode=<mode>] [--nbin=<nbin>] [--oversampling=<oversampling>] [--true_frequency=<true_frequency>] [--plot] [--save] [--outputdir=<outputdir>] [--root_dir=<root_dir>] [--fit --pulseshape=<pulseshape> ] [--number_testf=<number_testf>]
   stingray_epochfolding.py (-h | --help)
 
 Options:
@@ -37,7 +37,10 @@ import matplotlib.pyplot as plt
 plt.style.use('~/software/Psr/src/latex.mplstyle')
 import seaborn as sb
 import matplotlib as mpl
-mpl.rcParams['figure.figsize'] = (10, 6)
+from plens.plot_latex_size import set_size
+width = 418.25368
+figsize = set_size(width, fraction=1, ratio='golden')
+#mpl.rcParams['figure.figsize'] = set_size(width)
 
 #from generate_split_timeseries import generate_pulse_train_gauss, gauss
 #from stingray import Lightcurve
@@ -45,8 +48,52 @@ from stingray.events import EventList
 from stingray.pulse.search import epoch_folding_search, _folding_search
 from stingray.pulse.pulsar import fold_events
 from stingray.stats import fold_detection_level
-from stingray.pulse.search import plot_profile, search_best_peaks
+from stingray.pulse.search import search_best_peaks
+#from stingray.pulse.search import plot_profile
 from stingray.pulse.modeling import fit_gaussian, fit_sinc
+
+def plot_profile(phase, profile, width, err=None, ax=None, fraction=0.5):
+    """Plot a pulse profile showing some stats.
+
+    If err is None, the profile is assumed in counts and the Poisson confidence
+    level is plotted. Otherwise, err is shown as error bars
+
+    Parameters
+    ----------
+    phase : array-like
+        The bins on the x-axis
+
+    profile : array-like
+        The pulsed profile
+
+    Other Parameters
+    ----------------
+    ax : `matplotlib.pyplot.axis` instance
+        Axis to plot to. If None, create a new one.
+
+    Returns
+    -------
+    ax : `matplotlib.pyplot.axis` instance
+        Axis where the profile was plotted.
+    """
+    if ax is None:
+        fig, ax = plt.subplots(1, 1, figsize=set_size(width, fraction=fraction))
+
+    #mean = np.mean(profile)
+    if np.all(phase < 1.5):
+        phase = np.concatenate((phase, phase + 1))
+        profile = np.concatenate((profile, profile))
+    ax.plot(phase, profile, drawstyle="steps-mid")
+    #if err is None:
+    #    err_low, err_high = poisson_conf_interval(mean, interval="frequentist-confidence", sigma=1)
+    #    ax.axhspan(err_low, err_high, alpha=0.5)
+    #else:
+    #    err = np.concatenate((err, err))
+    #    ax.errorbar(phase, profile, yerr=err, fmt="none")
+    plt.title('Folded Pulse Profile')
+    ax.set_ylabel("Counts [a.u.]")
+    ax.set_xlabel(r"Phase $\varphi_\mathrm{ef}$")
+    return ax
 
 def load_eventlist(directory):
     file_pattern = os.path.join(directory, 'eventlist_*.dat')
@@ -147,22 +194,26 @@ def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=T
     """Helping function.
        Calls _fold_events and plots the folded events (if plot).
     """
-    fig, ax = plt.subplots()
+    #change fraction here
+    fig, ax = plt.subplots(figsize=figsize)
     
     # perform epochfolding and plot resulting profile
     if isinstance(frequencies, Iterable):
-        
+        label = []
         for p in frequencies:
             phase_bins, profile, profile_err = _fold_events(events.time, p, nbin=nbin, save=save, outputdir=outputdir, root_dir=root_dir)
             if plot:
-                ax = plot_profile(phase_bins, profile, ax=ax)
-                fig.savefig(output + '.png', bbox_inches='tight')
+                ax = plot_profile(phase_bins, profile, width, ax=ax, fraction=1)
+                label.append(r'$f_\mathrm{test} = ' +  str(p) + '\, \mathrm{Hz}$ ')
+                ax.legend(label)
+                
+                fig.savefig(output + '.pdf', bbox_inches='tight')
 
     elif isinstance(frequencies, float):
         phase_bins, profile, profile_err = _fold_events(events.time, frequencies, nbin=nbin, save=save, outputdir=outputdir, root_dir=root_dir)
         if plot:
-            ax = plot_profile(phase_bins, profile, ax=ax)
-            fig.savefig(output + '.png', bbox_inches='tight')
+            ax = plot_profile(phase_bins, profile, width, ax=ax, fraction=0.5)
+            fig.savefig(output + '.pdf', bbox_inches='tight')
     
     else:
         raise ValueError(
@@ -170,7 +221,7 @@ def _ef_single(events, frequencies, nbin=32, output='profile', plot=True, save=T
         )
     
     plt.close()
-        
+    print(phase_bins)
     #return phase_bins, profile, profile_err
 
 def _fold_events(times, frequency, nbin=32, save=False, outputdir='./folded_events/', root_dir=None):
@@ -217,7 +268,7 @@ def savehdf5(frequencies, chi2s, filename):
     
     return
     
-def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_testf=200, obs_length=None, plot=True, save=False, true_frequency=None, format='ascii', output='chi2s.hdf5'):
+def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_testf=100, obs_length=None, plot=True, save=False, true_frequency=None, format='ascii', output='chi2s.hdf5'):
     """Performs epochfolding for a range of frequencies.
     
     Parameters
@@ -275,7 +326,7 @@ def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_te
             
         df_min = 1/obs_length
         df = df_min / oversampling
-        frequencies = np.arange(frequencies - number_testf/2 * df, frequencies + number_testf/2 * df, df)
+        frequencies = np.arange(true_frequency - number_testf * df, true_frequency + (number_testf+1) * df, df)
     elif isinstance(frequencies, Iterable):
         frequencies = frequencies
     else:
@@ -284,10 +335,11 @@ def epochfolding_scan(filepath, frequencies, nbin=32, oversampling=10, number_te
         )
     #print(events.time, frequencies, nbin)
     #print(type(events.time[0]), type(frequencies[0]), type(nbin))
+    print(frequencies)
     effreq, efstat = epoch_folding_search(events.time, frequencies, nbin=nbin)
     
     if plot:
-        plot_efstat(effreq, efstat, nbin, output='chi2_{}'.format(filepath), true_frequency=true_frequency)
+        plot_efstat(effreq, efstat, nbin, true_frequency=true_frequency)
     
     if save:
          with h5py.File(output, 'w') as output_file:
@@ -326,16 +378,16 @@ def plot_efstat(effreq, efstat, nbin, output='chi2', label='EF statistics', true
             Default is None.
         
     """
-    
-    plt.figure()
-    plt.plot(effreq, efstat, label=label, color='blue')
-    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label='n - 1')
+    plt.figure(figsize=figsize)
+    plt.plot(effreq, efstat, label=r'$\chi^2$ landscape', color='blue')
+    plt.axhline(nbin - 1, ls='--', lw=2, color='k', label=r'd.o.f. $ = N_\mathrm{{bin}} - 1 = {}$'.format(nbin-1))
+    plt.axvline(effreq[np.argmax(efstat)], lw=2, alpha=0.5, color='grey', label='$f_\mathrm{{obs}} = {} \,\mathrm{{Hz}}$'.format(round(effreq[np.argmax(efstat)], 3)))
     if isinstance(true_frequency, float):
-        plt.axvline(true_frequency, lw=3, alpha=0.5, color='r', label='Correct frequency $f_\mathrm{true} = {' + str(true_frequency) + '}$')
-    plt.xlabel('Frequency (Hz)')
-    plt.ylabel('EF Statistics')
+        plt.axvline(true_frequency, lw=2, alpha=0.5, color='r', label=r'$f_\mathrm{true} = {' + str(true_frequency) + '\,\mathrm{Hz}}$')
+    plt.xlabel(r'Frequency $f$ [Hz]')
+    plt.ylabel(r'$\chi^2$ test statistic')
     plt.legend()
-    plt.savefig(output + '.png', bbox_inches='tight')
+    plt.savefig(output + '.pdf', bbox_inches='tight')
     
 
 def fit_stats( frequencies, nbin, effreq, efstat, obs_length, pulseshape='arbitrary', plot=False, true_frequency=None ):
@@ -477,12 +529,15 @@ if __name__ == '__main__':
     obs_length = float(arguments['--obs_length'])
     true_frequency = float(arguments['--true_frequency'])
     if arguments['--frequencies'] is None:
-        obs_length = 1000
-        oversampling = 10
+        #obs_length = 1000
+    #    oversampling = 10
+    #    df_min = 1/obs_length
+    #    df = df_min / oversampling
+    #    frequencies = np.arange(true_frequency - 100 * df, true_frequency + 100 * df, df)
+    #    print(len(frequencies))
         df_min = 1/obs_length
         df = df_min / oversampling
-        frequencies = np.arange(true_frequency - 10000 * df, true_frequency + 10000 * df, df)
-        print(len(frequencies))
+        frequencies = np.arange(true_frequency - float(arguments['--number_testf']) * df, true_frequency + float(arguments['--number_testf']) * df, df)
     elif arguments['--frequencies'][0] != '[':
         frequencies = float(arguments['--frequencies'])
     elif arguments['--frequencies'][0] == '[':
@@ -503,7 +558,7 @@ if __name__ == '__main__':
         
     elif mode == 'scan':
         frequencies, effreq, efstat = epochfolding_scan(filepath, true_frequency, nbin=nbin, oversampling=oversampling, 
-                          obs_length=obs_length, plot=plot, true_frequency=true_frequency, save=save)
+                          obs_length=obs_length, plot=plot, true_frequency=true_frequency, save=save, number_testf=float(arguments['--number_testf']))
         #print(fit)
         if arguments['--fit']:
             fit_stats( frequencies, nbin, effreq, efstat, obs_length, pulseshape=pulseshape, plot=plot, true_frequency=true_frequency )
