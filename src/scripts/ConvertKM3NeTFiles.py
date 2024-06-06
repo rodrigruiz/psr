@@ -24,11 +24,13 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
 
-    input_files = glob.glob(data['input_files'])
+    input_files = []
+    for pattern in data['input_files']:
+        input_files.extend(glob.glob(pattern))
     input_files.sort()
 
     if not input_files:
-        print(f"No files matching pattern: {input_pattern}")
+        print(f"No files matching pattern: {input_files}")
         return
 
     if not os.path.exists(data['output_dir']):
