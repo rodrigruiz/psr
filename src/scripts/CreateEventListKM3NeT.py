@@ -1,6 +1,6 @@
 """ Load KM3NeT root data files and convert them to astropy tables. 
 
-Usage: CreateEventListKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE [--reco_type=<reco_type>] [--format=<format>] [--energy_th=<float>] [--detector=<detector>]
+Usage: CreateEventListKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE [--reco_type=<reco_type>] [--format=<format>] [--energy_th=<float>] [--detector=<detector>] [--dist=<float>]
 
 Options:
   -h --help                              Help
@@ -11,8 +11,9 @@ Options:
      --format=<string>                   Output Format. [default: hdf5]  
      --energy_th=<float>                 Energy Threshold. [default: 0]
      --detector=<string>                 Detector location ('arca','orca','antares') [default: arca]
+     --dist=<float>                      Maximum angular source distance of included events [default: 2.0]
 """
-#python3 ConvertFiles.py -i '/home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/*.root' -o TestOutput/
+#python3 psr/src/scripts/CreateEventListKM3NeT.py -i '/home/hpc/capn/capn107h/software/hdf5TestOutput/*' -o eventlistTestOutput/ -s hdf5SourceFiles/Vela_X-1.h5
 
 from docopt import docopt
 import os, glob
@@ -55,6 +56,7 @@ def main():
     reco_type = data['reco_type']
     format = data['format']
     detector_location = data['detector']
+    distance_to_source = float(data['dist'])
 
     if data['energy_th'] is not 0:
         energy_threshold = float(data['energy_th'])  
@@ -77,7 +79,7 @@ def main():
     
 
     source_location = skycoord
-    DISTANCE_TO_SOURCE = 10 # degrees
+
     
     #print(input_files)
 
@@ -122,7 +124,7 @@ def main():
             event_location = local_event(np.array(event_table['theta_detectorframe']),np.array(event_table['phi_detectorframe']),times,detector_location)
             separation = event_location.separation(source_location)
             print(f"separation: {separation}")
-            location_mask = separation <= DISTANCE_TO_SOURCE * u.deg
+            location_mask = separation <= distance_to_source * u.deg
             event_table = event_table[location_mask]
 
         times = event_table['tracktime_utc'] if reco_type != "mc" else event_table['timeslice_utc_time']

@@ -108,6 +108,8 @@ def main():
             print("After Binary Corrections:")
             print(TimeSeries)
 
+        if os.path.exists(output_file):
+            os.remove(output_file)  # Remove the file if it already exists
         # Store Corrected TimeSeries in HDF5-File
         with h5py.File(output_file, 'w') as output:   
             #EL.saveEventList(TimeSeries, output)
