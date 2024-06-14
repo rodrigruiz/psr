@@ -72,12 +72,14 @@ def injectSignalRedistribute( time, ratio, bin_time, pulseshape, frequency, base
     elif pulseshape == 'sine':
         counts = sinusoid(time, frequency, baseline, a, phi)
 
-    #print(f"time: {time}")
-    #print(f"counts: {counts}")
-    #print(f"len(counts): {len(counts)}")
+    print(f"time: {time}")
+    print(f"counts: {counts}")
+    print(f"len(counts): {len(counts)}")
 
     # Create a light curve with the desired signal
-    lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True,input_counts=False)
+    lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
+
+    lc.plot()
     
     # Simulate event times from the light curve
     ev = EventList()
@@ -140,7 +142,7 @@ def main():
         file_name = os.path.splitext(file_name)[0]
         #print(file_name)
 
-        output_file = data['output_dir'] + file_name + '_' + str(data['a']) + '-signal'
+        output_file = data['output_dir'] + file_name + '_'+ str(data['frequency']) + 'Hz_' + str(data['a']) + '-signal'
         #print(output_file, os.path.exists(output_file))
 
         # Read TimeSeries
