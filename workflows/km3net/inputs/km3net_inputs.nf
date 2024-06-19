@@ -1,0 +1,13 @@
+input = [dist : 2.0,
+         energy_threshold : 0,
+         bins_per_file  : 200,
+         pulseshape : "mvm",
+         frequency : 0.003,
+         df : 1e-5,
+         ratio : 0.3,
+         number_of_testf : 200,
+         nbin : 32,
+         kappa : 5.0,
+         a : 1.0,
+         baseline : 0.0,
+         phi : 0.0]
