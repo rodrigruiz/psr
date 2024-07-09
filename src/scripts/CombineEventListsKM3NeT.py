@@ -20,7 +20,6 @@ from astropy.table import vstack, Table
 import plens.EventList as EL
 
 def main():
-    # Getting Key-Argument-Pairs that are passed to the script
     arguments = docopt(__doc__)
 
     data = {}
@@ -39,11 +38,24 @@ def main():
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
 
-    # Construct TimeSeries for each run
+    output_dir = data['output_dir']
+
+
+    # Debug: Check input files and output directory
+    print("Input files:", input_files)
+    print("Output directory:", output_dir)
+
+    if not input_files:
+        print("No input files provided")
+        return
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     CombinedEventList = None
 
     for file in input_files:
-        with h5py.File(file) as h5_file:
+        with h5py.File(file, 'r') as h5_file:
             EventList = EL.readEventList(h5_file)
 
             if CombinedEventList is None:
@@ -61,7 +73,7 @@ def main():
     common_prefix = os.path.basename(common_prefix).rstrip("_-.")
     if not common_prefix:
         common_prefix = "Test"
-    output_file = os.path.join(data['output_dir'], f"{common_prefix}_combined_eventlist.h5")
+    output_file = os.path.join(data['output_dir'], f"{common_prefix}_combined_eventlist.hdf5")
 
 
     # Save the combined EventList

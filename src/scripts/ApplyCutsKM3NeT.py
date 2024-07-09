@@ -1,6 +1,6 @@
-""" Load KM3NeT root data files and convert them to astropy tables. 
+""" Apply selection cuts to the events from a KM3NeT event list, like source location or energy threshold. 
 
-Usage: CreateEventListKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE [--reco_type=<reco_type>] [--format=<format>] [--energy_th=<float>] [--detector=<detector>] [--dist=<float>]
+Usage: ApplyCutsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE [--reco_type=<reco_type>] [--format=<format>] [--energy_th=<float>] [--detector=<detector>] [--dist=<float>]
 
 Options:
   -h --help                              Help
@@ -11,7 +11,7 @@ Options:
      --format=<string>                   Output Format. [default: hdf5]  
      --energy_th=<float>                 Energy Threshold. [default: 0]
      --detector=<string>                 Detector location ('arca','orca','antares') [default: arca]
-     --dist=<float>                      Maximum angular source distance of included events [default: 5.0]
+     --dist=<float>                      Maximum angular source distance of included events [default: 2.0]
 """
 #python3 psr/src/scripts/CreateEventListKM3NeT.py -i '/home/hpc/capn/capn107h/software/hdf5TestOutput/*' -o eventlistTestOutput/ -s hdf5SourceFiles/Vela_X-1.h5
 
