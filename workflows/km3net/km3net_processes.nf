@@ -85,10 +85,11 @@ process EpochFoldingKM3NeT{
     val nbin;
 
     output:
-    path "*epochfolding_Results.hdf5";
+    path "*epochfolding_results.hdf5";
 
     script:
     """
-    python3 EpochFoldingKM3NeT.py -i "${input_files}" -o "${output_dir}" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin}
     """
 }
+
