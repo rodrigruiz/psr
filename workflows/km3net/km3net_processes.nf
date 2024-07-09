@@ -3,11 +3,11 @@ process ConvertFilesKM3NeT{
     path input_files;
 
     output:
-    path output_dir;
+    path '*.h5';
 
     script:
     """
-    python3 ConvertFiles.py -i "${input_files}" -o "./"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ConvertKM3NeTFiles.py -i "${input_files}" -o "./"
     """
 
 }
@@ -20,10 +20,10 @@ process CreateEventListKM3NeT{
     val energy_threshold;
 
     output:
-    path output_dir;
+    path '*eventlist.hdf5';
 
     """
-    python3  CreateEventListKM3NeT.py -i "${input_files}" -o "${output_dir}" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist}
+    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT.py -i "${input_files}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist}
     """
 }
 
@@ -33,11 +33,11 @@ process CorrectEventListKM3NeT{
     path source_specs_file;
     
     output:
-    path output_dir;
+    path "*corrected.hdf5";
 
     script:
     """
-    python3 CorrectEventListKM3NeT.py -i "${input_files}" -o "${output_dir}" -s "${source_specs_file}"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CorrectEventListKM3NeT.py -i "${input_files}" -o "./" -s "${source_specs_file}"
     """
 }
 
@@ -55,11 +55,11 @@ process InjectSignalKM3NeT{
 
     
     output:
-    path output_dir;
+    path "*signal*hdf5";
 
     script:
     """
-    python3 InjectSignalKM3NeT.py -i "${input_files}" -o "${output_dir}" --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/InjectSignalKM3NeT.py -i ${input_files} -o "./" --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa}
     """
 }
 
@@ -68,11 +68,11 @@ process CombineEventListsKM3NeT{
     path input_files;
     
     output:
-    path output_dir;
+    path "*combined_eventlist.hdf5";
 
     script:
     """
-    python3 CombineEventListsKM3NeT.py -i "${input_files}" -o "${output_dir}"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CombineEventListsKM3NeT.py -i '*signal_mvm.hdf5' -o "./"
     """
 }
 
@@ -85,7 +85,7 @@ process EpochFoldingKM3NeT{
     val nbin;
 
     output:
-    path output_dir;
+    path "*epochfolding_Results.hdf5";
 
     script:
     """

@@ -1,4 +1,4 @@
-input = [dist : 2.0,
+input = [dist : 20.0,
          energy_threshold : 0,
          bins_per_file  : 200,
          pulseshape : "mvm",
@@ -10,4 +10,6 @@ input = [dist : 2.0,
          kappa : 5.0,
          a : 1.0,
          baseline : 0.0,
-         phi : 0.0]
+         phi : 0.0,
+         source_file : '/home/hpc/capn/capn107h/software/hdf5SourceFiles/Vela_X-1.h5',
+         ]
