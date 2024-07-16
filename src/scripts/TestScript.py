@@ -1,9 +1,8 @@
 """
-Usage:
-  TestScript.py -i INPUT_FILES... -o OUTPUT_DIR
+Usage: TestScript.py INPUT_FILES... -o OUTPUT_DIR
 
 Options:
-  -i --input_files INPUT_FILES    Input file paths.
+  INPUT_FILES                      Input files
   -o --output_dir OUTPUT_DIR      Output directory.
 """
 
@@ -25,8 +24,9 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
 
+    print(data)
     input_files = []
-    for pattern in data['input_files']:
+    for pattern in data['INPUT_FILES']:
         input_files.extend(glob.glob(pattern))
     input_files.sort()
 
@@ -40,7 +40,7 @@ def main():
     output_dir = data['output_dir']
 
     print(output_dir)
-    
+
     for file in input_files:
         print(file)
 

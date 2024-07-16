@@ -49,7 +49,7 @@ def main():
     data = {}
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
-    
+    print(data)
     if data['rajd'] != None and data['decjd'] != None:
         skycoord = coord.SkyCoord(ra=data['rajd'], dec=data['decjd'], unit=(u.deg, u.deg))
     else:
