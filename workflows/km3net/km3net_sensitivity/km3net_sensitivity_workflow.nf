@@ -23,6 +23,6 @@ workflow{
     CorrectEventListKM3NeT(CreateEventListKM3NeT.out, input.source_file);
     InjectSignalKM3NeT(CorrectEventListKM3NeT.out, input.frequency, input.ratio, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa);
     CombineEventListsKM3NeT(InjectSignalKM3NeT.out.collect());
-    // EpochFoldingKM3NeT(CombineEventListsKM3NeT.out, input.frequency, input.number_of_testf, input.testf_df, input.nbin);
+    EpochFoldingKM3NeT(CombineEventListsKM3NeT.out, input.frequency, input.number_of_testf, input.testf_df, input.nbin);
 
 }
