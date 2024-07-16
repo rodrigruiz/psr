@@ -12,5 +12,5 @@ input = [dist : 20.0,
          baseline : 0.0,
          phi : 0.0,
          source_file : "${WORKFLOW_DIR}/inputs/sources/Vela_X-1.h5",
-	 km3net_files : "${WORKFLOW_DIR}/inputs/runs.txt";
+	     km3net_files : "${WORKFLOW_DIR}/inputs/runs.txt",
          ]
