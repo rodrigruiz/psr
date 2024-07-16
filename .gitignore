@@ -13,7 +13,8 @@
 !data/**/.txt
 **/work/*
 **/workflows/**/.*
-
+!workflows/**/inputs/*.txt
+!workflows/**/inputs/sources/*.h5
 # Editor backup files
 **/*~
 
