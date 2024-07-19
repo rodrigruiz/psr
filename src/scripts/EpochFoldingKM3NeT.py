@@ -1,5 +1,5 @@
 """Apply stingray Epoch Folding Search to KM3NeT data.
-Usage: EpochFoldingKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] 
+Usage: EpochFoldingKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--ratio=<ratio>]
 
 Options:
   -h --help                              Help
@@ -9,6 +9,7 @@ Options:
      --number_of_testf=<int>             Number of testfrequencies to test around the principle frequency. [default: 200]
      --df=<float>                        Resolution of testfrequencies. [default: 1e-5]
      --nbin=<int>                        Number of bins in the folded profile. [default: 32]
+     --ratio=<float>                     Signal to Noise ratio [default: 0.3]
 """
 
 from docopt import docopt
@@ -49,8 +50,8 @@ def main():
         file_name = os.path.splitext(file_name)[0]
         #print(file_name)
 
-        output_plot = data['output_dir'] + file_name + '_epochfolding_resultplot.png'
-        output_file = data['output_dir'] + file_name + '_epochfolding_results.hdf5'
+        output_plot = data['output_dir'] + file_name + "SNR_" + str(data['ratio']) + '_epochfolding_resultplot.png' # + "_IterationNr" +str(data['iteration']).zfill(4) 
+        output_file = data['output_dir'] + file_name + "SNR_" + str(data['ratio']) + '_epochfolding_results.hdf5'
 
         with h5py.File(file) as input_file:
                 

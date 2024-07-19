@@ -37,6 +37,10 @@ def main():
         os.makedirs(data['output_dir'])
         
     for file in input_files:
+        if not os.path.exists(file):
+            print(f"Warning: File {file} does not exist. Skipping.")
+            continue
+        
         folder_path, file_name = os.path.split(file) 
         file_name = os.path.splitext(file_name)[0]
         output_filename = data['output_dir'] + file_name + ".h5"

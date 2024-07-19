@@ -4,7 +4,7 @@ Usage: CombineEventListsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR
 
 Options:
   -h --help                              Show this help message
-  -i --input_files INPUT_FILES           Input files
+  -i --input_files INPUT_FILES...        Input files
   -o --output_dir OUTPUT_DIR             Output directory  
 """
 
@@ -22,32 +22,8 @@ import plens.EventList as EL
 def main():
     arguments = docopt(__doc__)
 
-    data = {}
-    for key in arguments:
-        data[key.replace("-", "")] = arguments[key]
-
-    input_files = []
-    for pattern in data['input_files']:
-        input_files.extend(glob.glob(pattern))
-    input_files.sort()
-
-    if not input_files:
-        print(f"No files matching pattern: {input_files}")
-        return
-
-    if not os.path.exists(data['output_dir']):
-        os.makedirs(data['output_dir'])
-
-    output_dir = data['output_dir']
-
-
-    # Debug: Check input files and output directory
-    print("Input files:", input_files)
-    print("Output directory:", output_dir)
-
-    if not input_files:
-        print("No input files provided")
-        return
+    input_files = arguments['--input_files']
+    output_dir = arguments['--output_dir']
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -73,7 +49,7 @@ def main():
     common_prefix = os.path.basename(common_prefix).rstrip("_-.")
     if not common_prefix:
         common_prefix = "Test"
-    output_file = os.path.join(data['output_dir'], f"{common_prefix}_combined_eventlist.hdf5")
+    output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist.hdf5")
 
 
     # Save the combined EventList
