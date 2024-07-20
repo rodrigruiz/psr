@@ -1,0 +1,2 @@
+/home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013288.jchain.aashower.1.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013289.jchain.aashower.2.root

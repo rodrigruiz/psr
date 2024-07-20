@@ -1,9 +1,9 @@
 process ConvertFilesKM3NeT{
     input:
-    tuple val(ratio), path(input_file)
+    tuple val(ratio), path(input_file), val(iteration)
 
     output:
-    tuple val(ratio), path("*.h5"), emit: converted_file
+    tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
 
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
 
@@ -16,13 +16,13 @@ process ConvertFilesKM3NeT{
 
 process CreateEventListKM3NeT{
     input:
-    tuple val(ratio), path(input_file)
+    tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
     val dist
     val energy_threshold
 
     output:
-    tuple val(ratio), path('*eventlist.hdf5'), emit: eventlist
+    tuple val(ratio), path('*eventlist.hdf5'), val(iteration), emit: eventlist
 
     publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
 
@@ -33,11 +33,11 @@ process CreateEventListKM3NeT{
 
 process CorrectEventListKM3NeT{
     input:
-    tuple val(ratio), path(input_file)
+    tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
     
     output:
-    tuple val(ratio), path("*corrected.hdf5"), emit: corrected_eventlist
+    tuple val(ratio), path("*corrected.hdf5"), val(iteration), emit: corrected_eventlist
 
     publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
 
@@ -49,7 +49,7 @@ process CorrectEventListKM3NeT{
 
 process InjectSignalKM3NeT{
     input:
-    tuple val(ratio), path(input_file)
+    tuple val(ratio), path(input_file), val(iteration)
     val frequency
     val pulseshape
     val df
@@ -60,7 +60,7 @@ process InjectSignalKM3NeT{
 
     
     output:
-    tuple val(ratio), path("*signal*hdf5"), emit: injected_signal
+    tuple val(ratio), path("*signal*hdf5"), val(iteration), emit: injected_signal
 
     publishDir "${params.output_dir}/signal", mode: 'link', overwrite: true;
 
@@ -72,10 +72,10 @@ process InjectSignalKM3NeT{
 
 process CombineEventListsKM3NeT{
     input:
-    tuple val(ratio), path(input_files)
+    tuple val(ratio), path(input_files), val(iteration)
     
     output:
-    tuple val(ratio), path("*combined_eventlist.hdf5"), emit: combined_file
+    tuple val(ratio), path("*combined_eventlist.hdf5"), val(iteration), emit: combined_file
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
@@ -90,21 +90,55 @@ process CombineEventListsKM3NeT{
 
 process EpochFoldingKM3NeT{
     input:
-    tuple val(ratio), path(input_file)
+    tuple val(ratio), path(input_file), val(iteration)
     val frequency
     val number_of_testf
     val df
     val nbin
 
     output:
-    path "*epochfolding_results.hdf5", emit: hdf5;
+    tuple val(ratio), path("*epochfolding_results.hdf5"), val(iteration), emit: hdf5;
     path "*.png", emit: plot;
 
     publishDir "${params.output_dir}/epoch_folding", mode: 'link', overwrite: true;
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio} --iteratio ${iteration}
+    """
+}
+
+process Chi2HistogramKM3NeT{
+    input:
+    tuple val(ratio), path(input_files), val(iteration)
+
+    output:
+    path "*maxchi2.hdf5", emit: hdf5
+    path "*.png", emit: plot
+
+    publishDir "${params.output_dir}/maxchi2", mode: 'link', overwrite: true
+
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/Chi2HistogramKM3NeT.py ${inputFilesString} -o "./" --ratio=${ratio}
+    """
+}
+
+process SignalNoiseStatisticsKM3NeT{
+    input:
+    path input_files
+
+    output:
+    path "*StatisticOverSNR.hdf5", emit: hdf5
+    path "*StatisticOverSNR_plot.png", emit: png
+
+    publishDir "${params.output_dir}/eff_statistic", mode: 'link', overwrite: true
+    
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./"
     """
 }
 
