@@ -1,12 +1,13 @@
 """ Fetching outputs from EpochFoldingKM3NeT.py and creating a histogram of maximal chi-squared values.
 
-Usage: Chi2HistogramKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--ratio=<ratio>]
+Usage: Chi2HistogramKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--ratio=<ratio>] [--nhbins=<nhbins>]
 
 Options:
   -h --help                              Show this help message
   -i --input_files INPUT_FILES...        Input files
   -o --output_dir OUTPUT_DIR             Output directory  
      --ratio=<float>                     Signal-to-Noise ratio
+     --nhbins=<int>                      Number of bins for the Histogram creation
 """
 
 
@@ -25,6 +26,7 @@ def main():
     input_files = arguments['--input_files']
     output_dir = arguments['--output_dir']
     ratio = float(arguments['--ratio'])
+    nhbins = int(arguments['--nhbins'])
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -65,7 +67,7 @@ def main():
 
     # Create a histogram of the maximum chi-squared values
     plt.figure()
-    plt.hist(max_chi2_values, bins=5, edgecolor='black')
+    plt.hist(max_chi2_values, bins=nhbins, edgecolor='black')
     plt.axvline(mean_max_chi2, color='r', linestyle='dashed', linewidth=1)
     plt.title(f'Histogram of Maximum Chi-Squared Values (SNR={ratio})')
     plt.xlabel('Maximum Chi-Squared Value')

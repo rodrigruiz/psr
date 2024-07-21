@@ -1,11 +1,12 @@
 """ Fetching Chi2 distributions from Chi2HistogramKM3NeT.py and creating Chi2 over SNR plots.
 
-Usage: SignalNoiseStatisticsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR
+Usage: SignalNoiseStatisticsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--nbin=<nbin>]
 
 Options:
   -h --help                              Show this help message
   -i --input_files INPUT_FILES...        Input files
   -o --output_dir OUTPUT_DIR             Output directory  
+     --nbin=<int>                        Number of bins [default: 32]
 """
 
 
@@ -17,6 +18,7 @@ import numpy as np
 from astropy.table import vstack, Table
 import plens.EventList as EL
 from matplotlib import pyplot as plt
+from scipy.stats.distributions import chi2
 
 def main():
     arguments = docopt(__doc__)
@@ -49,12 +51,14 @@ def main():
             ratio_list.append(ratio)
     
 
+    pvalue = chi2.sf(max_chi2_list , int(arguments['--nbin']) -1)
+
     # Create a histogram of the maximum chi-squared values
     plt.figure()
-    plt.scatter(ratio_list,max_chi2_list,lw=3)
+    plt.scatter(ratio_list,pvalue,lw=3)
     plt.title(f'Test Statistic')
     plt.xlabel('Signal to Noise Ratio (SNR)')
-    plt.ylabel('Maximum Chi-Squared Value')
+    plt.ylabel('p Value')
     plt.grid(True)
     _ = plt.legend()
     plt.savefig(output_plot)   
