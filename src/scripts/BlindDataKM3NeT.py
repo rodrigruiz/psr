@@ -1,5 +1,5 @@
 """
-Shuffle the timing information in HDF5 files to blind the data.
+Shuffle the location and energy information in HDF5 files to blind the data.
 
 Usage: BlindDataKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR
 
@@ -9,54 +9,45 @@ Options:
   -o --output_dir OUTPUT_DIR             Output directory
 
 """
-#python3 BlindDataKM3NeT.py -i '/path/to/input/files/*.h5' -o /path/to/output/files/
-
+# python3 BlindDataKM3NeT.py -i '/path/to/input/files/*.h5' -o /path/to/output/files/
 
 from docopt import docopt
-import os, glob
-
-from h5py import File, Group
+import os
+import glob
+from h5py import File
 from astropy.table import Table
 from astropy.time import Time
 from astropy.io.misc.hdf5 import read_table_hdf5, write_table_hdf5
-import astropy.units as u
-from astropy.coordinates import SkyCoord
-import km3io.definitions as kd
-
+import numpy as np
 from km3astro.io import load_hdf5_tables
 
-import numpy as np
-
-from km3astro.coord import local_event
-from km3astro import sources
-
-def shuffle_times(table, time_column):
+def shuffle_columns(table, columns):
     """
-    Shuffle the times in the given Astropy table.
+    Shuffle the specified columns in the given Astropy table.
 
     Parameters
     ----------
     table : astropy.table.Table
-        Table containing the times to be shuffled.
-    time_column : str
-        The name of the time column to shuffle.
+        Table containing the columns to be shuffled.
+    columns : list of str
+        List of column names to shuffle.
 
     Returns
     -------
     astropy.table.Table
-        New table with shuffled times.
+        New table with shuffled columns.
     """
-    times = table[time_column]
-    shuffled_times = np.random.permutation(times)
-    table[time_column] = shuffled_times
+    for column in columns:
+        if column in table.colnames:
+            data = table[column]
+            shuffled_data = np.random.permutation(data)
+            table[column] = shuffled_data
     return table
 
 def main():
     arguments = docopt(__doc__)
 
-    data = {}
-    for key in arguments:
-        data[key.replace("-", "")] = arguments[key]
+    data = {key.replace("-", ""): value for key, value in arguments.items()}
 
     input_files = []
     for pattern in data['input_files']:
@@ -64,12 +55,11 @@ def main():
     input_files.sort()
 
     if not input_files:
-        print(f"No files matching pattern: {input_files}")
+        print(f"No files matching pattern: {data['input_files']}")
         return
 
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
-    
 
     for file in input_files:
         folder_path, file_name = os.path.split(file)
@@ -77,30 +67,21 @@ def main():
         output_filename = os.path.join(data['output_dir'], file_name + "_blinded.h5")
 
         tables = load_hdf5_tables(file)
-        #print(tables.__dict__)
-        #print(tables)
-        shuffled_tables = {}
+        print(f"Processing file: {file}")
 
-        # Check and shuffle times for each reco type table if it exists
-        reco_types = {
-            'mc': ('id_table', 'timeslice_utc_time'),
-            'reco': ('reco_table', 'tracktime_utc'),
-        }
+        # Check and shuffle times and columns for each table if it exists
+        # if hasattr(tables, 'id_table'):
+        #     print("Shuffling times in ID table...")
+        #     tables.id_table = shuffle_columns(tables.id_table, ['timeslice_utc_time'])
 
-        for reco_type, details in reco_types.items():
-            print(reco_type)
-            print(details)
-            if reco_type == 'mc' and hasattr(tables, 'mc_table') and tables.mc_table is not None:
-                print("MC times are present and will now get shuffled...")
-                table_name, time_column = details
-                table = tables.id_table
-                shuffled_tables[table_name] = shuffle_times(table, time_column)
-            elif reco_type == 'reco':
-                print("RECO times are present and will now get shuffled...")
-                table_name, time_column = details
-                table = tables.reco_table
-                shuffled_tables[table_name] = shuffle_times(table, time_column)
-        
+        if hasattr(tables, 'mc_table') and tables.mc_table is not None:
+            print("Shuffling columns in MC table...")
+            tables.mc_table = shuffle_columns(tables.mc_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
+
+        if hasattr(tables, 'reco_table'):
+            print("Shuffling columns in RECO_EVENTS table...")
+            tables.reco_table = shuffle_columns(tables.reco_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
+
         # Write the shuffled tables back to an HDF5 file
         with File(output_filename, 'w') as h5file:
             # Write HEADER table

@@ -16,6 +16,21 @@ process ConvertFilesKM3NeT{
 
 }
 
+process BlindDataKM3NET{
+    input:
+    path input_file
+    output:
+    path "*blinded.h5", emit: blinded_file
+
+    publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true;
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/BlindDataKM3NeT.py -i "${input_file}" -o "./"
+    """
+
+}
+
 process CreateEventListKM3NeT{
     input:
     path input_file
@@ -139,7 +154,8 @@ process SignalNoiseStatisticsKM3NeT{
 
     output:
     path "*StatisticOverSNR.hdf5", emit: hdf5
-    path "*StatisticOverSNR_plot.png", emit: png
+    path "*StatisticOverSNR_plotlin.png", emit: plot_lin
+    path "*StatisticOverSNR_plotlog.png", emit: plot_log
 
     publishDir "${params.output_dir}/eff_statistic", mode: 'link', overwrite: true
     

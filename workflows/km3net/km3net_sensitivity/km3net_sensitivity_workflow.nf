@@ -2,6 +2,7 @@ nextflow.enable.dsl = 2
 
 include{
     ConvertFilesKM3NeT;
+    BlindDataKM3NET;
     CreateEventListKM3NeT;
     CorrectEventListKM3NeT;
     InjectSignalKM3NeT;
@@ -40,10 +41,12 @@ workflow{
     // Combined_Channel = SNR_Channel.combine(Files_Channel).combine(Iteration_Channel)
 
     ConvertFilesKM3NeT(Files_Channel)
-    CreateEventListKM3NeT(ConvertFilesKM3NeT.out, input.source_file, input.dist, input.energy_threshold)
+    BlindDataKM3NET(ConvertFilesKM3NeT.out)
+    CreateEventListKM3NeT(BlindDataKM3NET.out, input.source_file, input.dist, input.energy_threshold)
+    // CreateEventListKM3NeT(ConvertFilesKM3NeT.out, input.source_file, input.dist, input.energy_threshold)
     CorrectEventListKM3NeT(CreateEventListKM3NeT.out, input.source_file)
-
     Combined_Channel = SNR_Channel.combine(CorrectEventListKM3NeT.out).combine(Iteration_Channel)
+    // Combined_Channel = SNR_Channel.combine(CreateEventListKM3NeT.out).combine(Iteration_Channel)
     InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
 
     // InjectSignalKM3NeT(CorrectEventListKM3NeT.out, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa) //.out.injected_signal.groupTuple(by: 0).view().set { File_Collection }
