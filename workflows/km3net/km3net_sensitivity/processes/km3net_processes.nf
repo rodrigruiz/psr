@@ -1,6 +1,7 @@
 process ConvertFilesKM3NeT{
     input:
     path input_file
+    val detectorname
     // tuple val(ratio), path(input_file), val(iteration)
 
     output:
@@ -125,7 +126,7 @@ process EpochFoldingKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio} --iteratio ${iteration}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio} --iteration ${iteration}
     """
 }
 
@@ -163,6 +164,49 @@ process SignalNoiseStatisticsKM3NeT{
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
     python3 /home/hpc/capn/capn107h/software/psr/src/scripts/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./" --nbin ${nbin}
+    """
+}
+
+process AngularResolutionKM3NeT{
+    input:
+    path input_file
+    val detector
+    val runtype
+    val recotype
+    val pltscale
+
+    output: 
+    path "*AngularResolutionOverEnergy*.hdf5", emit: hdf5
+    path "*TestPlotAngularRes*.png", emit: plot
+    path "*HistogramSeparations*.png", emit: histogram
+
+    publishDir "${params.output_dir}/angular_resolutions", mode: 'link', overwrite: true
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/AngularResolutionKM3NeT.py -i "${input_file}" -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    """
+}
+
+process CombineAngularResolutionKM3NeT{
+    input:
+    path input_files
+    val detector
+    val runtype
+    val recotype
+    val pltscale
+    
+
+    output: 
+    path "*AngularResolutionOverEnergy*.hdf5", emit: hdf5
+    path "*TestPlotAngularRes*.png", emit: plot
+    path "*HistogramSeparations*.png", emit: histogram
+
+    publishDir "${params.output_dir}/angular_resolutions", mode: 'link', overwrite: true
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/AngularResolutionKM3NeT.py -i "${input_file}" -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
     """
 }
 

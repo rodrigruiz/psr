@@ -1,6 +1,6 @@
 """ Load KM3NeT hdf5 astropy tables and calculate the distribution of the angular resolution over the energy. 
 
-Usage: AngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--detector=<detector>] [--runtype=<runtype>]
+Usage: AngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--detector=<detector>] [--runtype=<runtype>] [--recotype=<recotype>] [--pltscale=<pltscale>]
 
 Options:
   -h --help                              Help
@@ -8,6 +8,8 @@ Options:
   -o --output_dir OUTPUT_DIR             Output directory
      --detector=<string>                 Detector location ('arca','orca','antares') [default: arca]
      --runtype=<string>                  Run type ('nue','numu','anue','anumu') [default: anue]
+     --recotype=<string>                 Reco type ('jmuon','aashower') [default: jmuon]
+     --pltscale=<string>                 Scale of the y-axis ('linear','log') [default: linear]
 """
 
 from docopt import docopt
@@ -30,17 +32,17 @@ from km3astro.coord import local_event
 from km3astro import sources
 
 
-def plot_angular_resolution_vs_energy(table, reco_type, reco_stage, reco_name, energy_range, n_bins, run_type):
+def plot_angular_resolution_vs_energy(table, reco_type_id, reco_stage_id, reco_name, energy_range, n_bins, run_type, plt_scale, file_name):
     # Apply mask for the specified reco_type and reco_stage
-    mask = (table['reco_type'] == reco_type) & (table['reco_stage'] == reco_stage)
+    mask = (table['reco_type'] == reco_type_id) & (table['reco_stage'] == reco_stage_id)
     filtered_table = table[mask]
 
-    print(len(filtered_table))
+    #print(len(filtered_table))
     
     # Logarithmic binning for energy
     energy_min, energy_max = energy_range
     bins = np.logspace(np.log10(energy_min), np.log10(energy_max), n_bins + 1)
-    print(len(bins))
+    #print(len(bins))
     
     # Prepare arrays to store results
     mean_separations = []
@@ -55,7 +57,7 @@ def plot_angular_resolution_vs_energy(table, reco_type, reco_stage, reco_name, e
         
         if len(bin_data) > 0:
             # Calculate mean and standard deviations
-            mean_sep = np.mean(bin_data)
+            mean_sep = np.median(bin_data)
             std_sep = np.std(bin_data)
             n = len(bin_data)
             mean_separations.append(mean_sep)
@@ -69,41 +71,53 @@ def plot_angular_resolution_vs_energy(table, reco_type, reco_stage, reco_name, e
             bin_centers.append(np.sqrt(bins[i] * bins[i+1]))
     
     # Convert to numpy arrays for easier plotting
-    mean_separations = np.array(mean_separations)
+    median_separations = np.array(mean_separations)
     sigma1_bands = np.array(sigma1_bands)
     sigma2_bands = np.array(sigma2_bands)
     bin_centers = np.array(bin_centers)
     
     # Plotting
     plt.figure(figsize=(10, 6))
-    plt.plot(bin_centers, mean_separations, color='black', label='Mean Angular Separation')
+    plt.plot(bin_centers, median_separations, color='black', label='Mean Angular Separation')
     plt.fill_between(bin_centers, mean_separations - sigma1_bands, mean_separations + sigma1_bands, color='blue', alpha=0.3, label='1σ Band')
     plt.fill_between(bin_centers, mean_separations - sigma2_bands, mean_separations + sigma2_bands, color='blue', alpha=0.1, label='2σ Band')
+
+    if plt_scale == 'linear': 
+        plt.axhline(0,color="k",ls="dashed",lw=2)
+
     # plt.axhline(y=0.1, color='orange', linewidth=4)  # Example of a horizontal line
     plt.xscale('log')
-    plt.ylim([0,100])
+    plt.yscale(plt_scale)
+    #plt.ylim([1e-4,1e2])
     plt.xlabel('Energy [GeV]')
     plt.ylabel('Angular Resolution [°]')
     plt.title(f'Angular Resolution vs Energy for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
     plt.legend()
     plt.grid(True, which="both", ls="--")
 
-    output_plotname = "TestPlotAngularRes" + reco_name + "_" + run_type + ".png"
+    output_plotname = "TestPlotAngularRes" + reco_name + "_" + run_type + "_" + plt_scale + ".png"
 
     plt.savefig(output_plotname)   
     plt.close()   
+    print(f"Plot saved: {output_plotname}")
 
+    hdf5_name = "AngularResolutionOverEnergy_" +  reco_name + "_" + file_name + ".hdf5"
+    angular_resolution_table = Table([bin_centers, median_separations, sigma1_bands], names=['energy_bin_center', 'median_angular_separation','sigma1_width'])
+    angular_resolution_table.write(hdf5_name, format='hdf5', overwrite=True, serialize_meta=True)
+    print(f"hdf5 file saved: {hdf5_name}")
+    
      # Plotting Histogram of All Separations
     plt.figure(figsize=(10, 6))
     plt.hist(filtered_table['separation'], bins=53, color='darkorange')
+    plt.yscale(plt_scale)
     plt.xlabel('Angular Separation [°]')
     plt.ylabel('Counts')
     plt.title(f'Histogram of Angular Separations for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
     
-    output_histname = "HistogramSeparations_" + reco_name + "_" + run_type + ".png"
+    output_histname = "HistogramSeparations_" + reco_name + "_" + run_type + "_" + plt_scale + ".png"
     plt.savefig(output_histname)
     plt.close()
-
+    print(f"Histogram saved: {output_histname}")
 
 def main():
     arguments = docopt(__doc__)
@@ -129,6 +143,8 @@ def main():
 
     detector_location = data['detector']
     run_type = data['runtype']
+    reco_type = data['recotype']
+    plt_scale = data['pltscale']
 
     for file in input_files:
 
@@ -185,12 +201,28 @@ def main():
 
         result_table = Table([event_ids, mc_energies*u.GeV, reco_types, reco_stages, separations*u.deg],
                          names=('event_id', 'mc_energy', 'reco_type', 'reco_stage', 'separation'))
+        
+        print("Mean Separation: ", np.mean(separations))
         print(result_table)
+
 
     energy_range = (1e3, 1e7)  # [GeV]
     n_bins = 20
-    plot_angular_resolution_vs_energy(result_table, reco_type=101, reco_stage=300, reco_name = "jmuon" , energy_range=energy_range, n_bins=n_bins,run_type=run_type)
-    plot_angular_resolution_vs_energy(result_table, reco_type=4000, reco_stage=0, reco_name = "aashower" , energy_range=energy_range, n_bins=n_bins,run_type=run_type)
+
+
+    if reco_type == 'jmuon':
+        reco_type_id  = kd.reconstruction.JPP_RECONSTRUCTION_TYPE
+        reco_stage_id = kd.reconstruction.JMUONBEGIN
+    elif reco_type == 'aashower':
+        reco_type_id  = kd.reconstruction.AANET_RECONSTRUCTION_TYPE 
+        reco_stage_id = kd.reconstruction.AASHOWERBEGIN
+    else:
+        print("Up to now only 'jmuon' and 'aashower' reconstruction types are implemented to work, Sorry...")
+    
+        
+
+
+    plot_angular_resolution_vs_energy(result_table, reco_type_id, reco_stage_id, reco_type , energy_range, n_bins,run_type,plt_scale,file_name)
 
 if __name__ == "__main__":
     main()
