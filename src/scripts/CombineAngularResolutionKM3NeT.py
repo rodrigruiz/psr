@@ -1,11 +1,12 @@
 """ Fetching results from AngularResolutionKM3NeT.py and creating final anguar resolution over energy plots from multiple runs.
 
-Usage: CombineAngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--runtype=<runtype>] [--recotype=<recotype>] [--pltscale=<pltscale>]
+Usage: CombineAngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--detector=<detector>] [--runtype=<runtype>] [--recotype=<recotype>] [--pltscale=<pltscale>]
 
 Options:
   -h --help                              Show this help message
   -i --input_files INPUT_FILES...        Input files
   -o --output_dir OUTPUT_DIR             Output directory  
+     --detector=<string>                 Detector location ('arca','orca','antares') [default: arca]
      --runtype=<string>                  Run type ('nue','numu','anue','anumu') [default: anue]
      --recotype=<string>                 Reco type ('jmuon','aashower') [default: jmuon]
      --pltscale=<string>                 Scale of the y-axis ('linear','log') [default: linear]
@@ -27,6 +28,7 @@ def main():
 
     input_files = arguments['--input_files']
     output_dir = arguments['--output_dir']
+    detector_location = arguments['--detector']
     run_type = arguments['--runtype']
     reco_type = arguments['--recotype']
     plt_scale = arguments['--pltscale']
@@ -136,6 +138,7 @@ def main():
     angular_resolution_table.write(output_file, format='hdf5', overwrite=True, serialize_meta=True)
     print(f"hdf5 file saved: {hdf5_name}")
     
+    """
      # Plotting Histogram of All Separations
     plt.figure(figsize=(10, 6))
     plt.hist(overall_median, bins=53, color='darkorange')
@@ -148,7 +151,7 @@ def main():
     plt.savefig(output_histname)
     plt.close()
     print(f"Histogram saved: {output_histname}")
-    
+    """
 
     
 if __name__ == "__main__":

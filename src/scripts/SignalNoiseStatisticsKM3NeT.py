@@ -36,8 +36,8 @@ def main():
     if not common_prefix:
         common_prefix = "Test"
     output_file = os.path.join(output_dir, f"{common_prefix}_StatisticOverSNR.hdf5")
-    output_plot = os.path.join(output_dir, f"{common_prefix}_StatisticOverSNR_plot.png")
-
+    output_plot_lin = os.path.join(output_dir, f"{common_prefix}_StatisticOverSNR_plotlin.png")
+    output_plot_log = os.path.join(output_dir, f"{common_prefix}_StatisticOverSNR_plotlog.png")
     max_chi2_list = []
     ratio_list = []
 
@@ -54,15 +54,42 @@ def main():
     pvalue = chi2.sf(max_chi2_list , int(arguments['--nbin']) -1)
 
     # Create a histogram of the maximum chi-squared values
-    plt.figure()
-    plt.scatter(ratio_list,pvalue,lw=3)
-    plt.title(f'Test Statistic')
-    plt.xlabel('Signal to Noise Ratio (SNR)')
-    plt.ylabel('p Value')
-    plt.grid(True)
-    _ = plt.legend()
-    plt.savefig(output_plot)   
-    plt.close()     
+    # Plot with linear y-axis
+    fig, ax1 = plt.subplots()
+    ax2 = ax1.twinx()
+    ax2.scatter(ratio_list,max_chi2_list,alpha=0)
+    ax1.scatter(ratio_list,pvalue,lw=3,label="Test Statistic")
+    ax1.set_xlabel('Signal to Noise Ratio (SNR)')
+    ax1.set_ylabel('p Value')
+    ax2.set_ylabel(r'Maximum $\chi^2$')
+    ax1.grid(True)
+    ax1.axhline(y=2.87e-7, color='k', linestyle='--', linewidth=1, label=r"$5\sigma$ threshold")
+    ax2.scatter(ratio_list,max_chi2_list,alpha=0)
+    ax1.legend()
+    # Save the linear plot
+    plt.savefig(output_plot_lin)
+    plt.close(fig)
+
+    fig, ax1 = plt.subplots()
+    ax2 = ax1.twinx()
+
+    ax2.scatter(ratio_list,max_chi2_list,alpha=0)
+    ax1.scatter(ratio_list,pvalue,lw=3,label="Test Statistic")
+    ax1.set_xlabel('Signal to Noise Ratio (SNR)')
+    ax1.set_ylabel('p Value')
+    ax2.set_ylabel(r'Maximum $\chi^2$')
+    ax1.set_yscale('log')
+    ax2.set_yscale('log')
+    ax1.grid(True)
+    ax1.axhline(y=2.87e-7, color='k', linestyle='--', linewidth=1, label=f"$5\sigma$ threshold")
+    ax2.scatter(ratio_list,max_chi2_list,alpha=0)
+    ax1.legend()
+    # Save the logarithmic plot
+    plt.savefig(output_plot_log)
+    plt.close(fig)
+
+
+
 
     # Convert the list to an Astropy Table
     chi2_over_snr_table = Table([ratio_list,max_chi2_list], names=('SNR', 'Max_Mean_Chi2'))

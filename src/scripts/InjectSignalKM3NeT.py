@@ -178,13 +178,16 @@ def main():
                                                     )
                                             )
                 output_file += '_sine.hdf5'
+
+            InjectedEventList = EventList.copy()
+            InjectedEventList['time'] = EventListNew['time']
                 
         if os.path.exists(output_file):
             print("File already existed. Deleting File...")
             os.remove(output_file)  # Remove the file if it already exists
         with h5py.File(output_file, 'w') as output:  
 
-            EventListNew.write(output, format='hdf5', overwrite=True, serialize_meta=True)
+            InjectedEventList.write(output, format='hdf5', overwrite=True, serialize_meta=True)
 
 if __name__ == "__main__":
     main()

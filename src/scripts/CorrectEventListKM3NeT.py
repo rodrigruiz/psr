@@ -87,33 +87,44 @@ def main():
 
         # Read TimeSeries file and apply corrections using timing and source information
         with h5py.File(file) as input_file:
-            # Read non corrected event list
-            TimeSeries = EL.readEventList(input_file)
+            # Read non-corrected event list
+            EventList = EL.readEventList(input_file)
+            
+            # Assuming 'time' is a column in the EventList, which is an astropy Time object
+            TimeSeries = EventList['time']  # Ensure this is an Astropy Time object
+
+            
             print("Raw TimeSeries:")
             print(TimeSeries)
-            # Barycentric correction
-            TimeSeries = EL.barycentric_correction(TimeSeries, skycoord)
-            print("After Baryocentric Correction:")
-            print(TimeSeries)
+
+            # Perform the barycentric correction on the extracted time values
+            BaryCorrectedTimes = EL.barycentric_correction(EventList, skycoord)
+            print("After Barycentric Correction:")
+            print(BaryCorrectedTimes)
+
             # Binary correction
-            time_corr = orbit_cor_deeter(TimeSeries.time.value, 
-                                            (float(Porb)*u.d).to_value(u.s), 
-                                            float(axsini), 
-                                            float(e), 
-                                            Angle(float(omega), u.deg).radian - np.pi/2, 
-                                            Time(float(Tpi2) + float(Porb)/2, format='jd').unix
-                                        )
+            time_corr = orbit_cor_deeter(
+                BaryCorrectedTimes.time.value, 
+                (float(Porb) * u.d).to_value(u.s), 
+                float(axsini), 
+                float(e), 
+                Angle(float(omega), u.deg).radian - np.pi / 2, 
+                Time(float(Tpi2) + float(Porb) / 2, format='jd').unix
+            )
+
             # Creating new table with corrected eventlist
-            TimeSeries = Table([time_corr], names=['time'])
+            CorrectedEventList = EventList.copy()
+            CorrectedEventList['time'] = time_corr  # Apply corrected times
             print("After Binary Corrections:")
-            print(TimeSeries)
+            print(CorrectedEventList)
 
         if os.path.exists(output_file):
             os.remove(output_file)  # Remove the file if it already exists
+
         # Store Corrected TimeSeries in HDF5-File
         with h5py.File(output_file, 'w') as output:   
-            #EL.saveEventList(TimeSeries, output)
-            TimeSeries.write(output, format='hdf5', overwrite=True, serialize_meta=True)
+            CorrectedEventList.write(output, format='hdf5', overwrite=True, serialize_meta=True)
+
     
 if __name__ == "__main__":
     main()

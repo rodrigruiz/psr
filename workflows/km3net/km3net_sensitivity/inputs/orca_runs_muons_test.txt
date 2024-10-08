@@ -1,0 +1,5 @@
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/numu/reco/gsg_muon-CC_1.0-100.0GeV.1.km3sim.jte.jmergefit.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/numu/reco/gsg_muon-CC_1.0-100.0GeV.2.km3sim.jte.jmergefit.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/numu/reco/gsg_muon-CC_1.0-100.0GeV.3.km3sim.jte.jmergefit.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/numu/reco/gsg_muon-CC_1.0-100.0GeV.4.km3sim.jte.jmergefit.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/numu/reco/gsg_muon-CC_1.0-100.0GeV.5.km3sim.jte.jmergefit.root

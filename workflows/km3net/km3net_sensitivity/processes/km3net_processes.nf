@@ -1,11 +1,12 @@
 process ConvertFilesKM3NeT{
     input:
-    path input_file
-    val detectorname
-    // tuple val(ratio), path(input_file), val(iteration)
+    // path input_file
+    // val detectorname
+    tuple path(input_file), val(detectorname)
 
     output:
-    path "*.h5", emit: converted_file
+    // path "*.h5", emit: converted_file
+    tuple path("*.h5"), val(detectorname), emit: converted_file
     // tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
 
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
@@ -19,9 +20,9 @@ process ConvertFilesKM3NeT{
 
 process BlindDataKM3NET{
     input:
-    path input_file
+    tuple path(input_file), val(detectorname)
     output:
-    path "*blinded.h5", emit: blinded_file
+    tuple path("*blinded.h5"), val(detectorname), emit: blinded_file
 
     publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true;
 
@@ -34,7 +35,7 @@ process BlindDataKM3NET{
 
 process CreateEventListKM3NeT{
     input:
-    path input_file
+    tuple path(input_file), val(detectorname)
     // tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
     val dist
@@ -47,13 +48,14 @@ process CreateEventListKM3NeT{
     publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
 
     """
-    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist}
+    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist} --detector ${detectorname}
     """
 }
 
 process CorrectEventListKM3NeT{
     input:
     path input_file
+    // path input_file
     // tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
     
@@ -188,6 +190,28 @@ process AngularResolutionKM3NeT{
     """
 }
 
+process MultifileAngularResolutionKM3NeT{
+    input:
+    path input_files
+    val detectorname
+    val runtype
+    val recotype
+    val pltscale
+
+    output: 
+    path "*AngularResolutionOverEnergy*.hdf5", emit: hdf5
+    path "*TestPlotAngularRes*.png", emit: plot 
+    path "*HistogramSeparations*.png", emit: histogram
+
+    publishDir "${params.output_dir}/angular_resolutions", mode: 'link', overwrite: true
+
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/MultifileAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    """
+}
+
 process CombineAngularResolutionKM3NeT{
     input:
     path input_files
@@ -200,13 +224,13 @@ process CombineAngularResolutionKM3NeT{
     output: 
     path "*AngularResolutionOverEnergy*.hdf5", emit: hdf5
     path "*TestPlotAngularRes*.png", emit: plot
-    path "*HistogramSeparations*.png", emit: histogram
 
     publishDir "${params.output_dir}/angular_resolutions", mode: 'link', overwrite: true
 
     script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/AngularResolutionKM3NeT.py -i "${input_file}" -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CombineAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
     """
 }
 

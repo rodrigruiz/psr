@@ -17,7 +17,12 @@ input = [dist : 70.0,
          phi : 0.0,
          nhbins : 5,
          source_file : "${WORKFLOW_DIR}/inputs/sources/Vela_X-1.h5",
-	     km3net_files : "${WORKFLOW_DIR}/inputs/runs_test.txt",
+	     km3net_arca_files : "${WORKFLOW_DIR}/inputs/runs_test.txt",
+         km3net_orca_files : "${WORKFLOW_DIR}/inputs/orca_runs_muons_test.txt",
+         detector : 'arca',
+         runtype : 'anue',
+         recotype : 'aashower',
+         pltscale : 'log',
          ]
 
          // /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_sensitivity/inputs/runs.txt

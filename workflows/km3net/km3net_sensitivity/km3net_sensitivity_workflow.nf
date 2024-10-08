@@ -30,9 +30,30 @@ workflow{
     // def snr_list = [0.05,0.2,0.4] //(input.ratio_min..input.ratio_max).step(input.ratio_step).toList()
 
     Channel
-    .fromPath(input.km3net_files)
+    .fromPath(input.km3net_arca_files)
     .splitText(by: 1)
+    .combine(Channel.of('arca'))
+    .view()
+    .set {ARCAFiles_Channel}
+    // .combine(Channel.of('arca'))
+
+    // Idea: Create txt file with filepaths, for each detector a different file
+    //       Concat those channels, so that we have a [filepath,detectorname] channel
+    //       The detectorname can be assigned when calculating the distance to the source for an event
+    //       while the eventlist is created
+
+    /*
+    Channel
+    .fromPath(input.km3net_orca_files)
+    .splitText(by: 1)
+    .combine(Channel.of('orca'))
+    .view()
+    .mix(ARCAFiles_Channel)
+    .view()
     .set {Files_Channel}
+    */
+
+
 
     SNR_Channel = Channel.fromList(snr_list)
     Iteration_Channel = Channel.fromList(iteration_list)
@@ -40,7 +61,7 @@ workflow{
 
     // Combined_Channel = SNR_Channel.combine(Files_Channel).combine(Iteration_Channel)
 
-    ConvertFilesKM3NeT(Files_Channel)
+    ConvertFilesKM3NeT(ARCAFiles_Channel)
     BlindDataKM3NET(ConvertFilesKM3NeT.out)
     CreateEventListKM3NeT(BlindDataKM3NET.out, input.source_file, input.dist, input.energy_threshold)
     // CreateEventListKM3NeT(ConvertFilesKM3NeT.out, input.source_file, input.dist, input.energy_threshold)
