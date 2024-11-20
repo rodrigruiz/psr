@@ -1,0 +1,18 @@
+# Define the source information
+source_name = "Cen_X-3"
+ra = 170.3133 * u.deg  # Right Ascension
+dec = -60.6233 * u.deg  # Declination
+skycoord = SkyCoord(ra=ra, dec=dec, frame='icrs')
+
+# Other source information
+P_orb = 2.0869953   # in days
+T_pi2 = 2455073.68504 
+axsini = 39.653  # light-seconds
+e = 0.0000
+omega = 0.00
+
+other_info = {
+    "Period_Deriv": -1.0150e-08,
+    "Egress": 0.11,
+    "Ingress": 0.89
+}

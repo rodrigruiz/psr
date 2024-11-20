@@ -26,7 +26,7 @@ workflow {
 
     
     combinedChannel = ratios.combine(files).flatMap { ratio, file -> 
-        (1..num_iterations).map { [ratio, file, it] }
+        (1..num_iterations).flatMap { [ratio, file] }
     }
 
     // Split the combined channel into separate channels for each element

@@ -3,14 +3,14 @@ nextflow.enable.dsl = 2
 include{
     ConvertFilesKM3NeT;
     BlindDataKM3NET;
-    CreateEventListKM3NeT;
+    CreateEventListKM3NeT_new;
     CorrectEventListKM3NeT;
     InjectSignalKM3NeT;
     CombineEventListsKM3NeT;
     EpochFoldingKM3NeT;
     Chi2HistogramKM3NeT;
     SignalNoiseStatisticsKM3NeT;
-} from '../processes/km3net_processes.nf'
+} from './processes/km3net_processes.nf'
 
 evaluate(new File(params.input_file))
 
@@ -27,26 +27,22 @@ workflow{
     
     snr_list = generateList(input.ratio_min, input.ratio_max, input.ratio_step)
     iteration_list = (1..input.repetitions).toList()
+    // def snr_list = [0.05,0.2,0.4] //(input.ratio_min..input.ratio_max).step(input.ratio_step).toList()
 
     Channel
-    .fromPath(input.km3net_arca_numu_files)
+    .fromPath(input.km3net_arca_files)
     .splitText(by: 1)
     .combine(Channel.of('arca'))
-    .set {ARCA_numu_Files_Channel}
-
-    Channel
-    .fromPath(input.km3net_arca_anue_files)
-    .splitText(by: 1)
-    .combine(Channel.of('arca'))
-    .mix(ARCA_numu_Files_Channel)
-    .set {ARCA_Files_Channel}
+    .view()
+    .set {ARCAFiles_Channel}
+    // .combine(Channel.of('arca'))
 
     // Idea: Create txt file with filepaths, for each detector a different file
     //       Concat those channels, so that we have a [filepath,detectorname] channel
     //       The detectorname can be assigned when calculating the distance to the source for an event
     //       while the eventlist is created
 
-    /*
+    
     Channel
     .fromPath(input.km3net_orca_files)
     .splitText(by: 1)
@@ -55,25 +51,29 @@ workflow{
     .mix(ARCAFiles_Channel)
     .view()
     .set {Files_Channel}
-    */
+    
+
+
 
     SNR_Channel = Channel.fromList(snr_list)
     Iteration_Channel = Channel.fromList(iteration_list)
+    //.view()
 
-    ConvertFilesKM3NeT(ARCA_Files_Channel)
+    // Combined_Channel = SNR_Channel.combine(Files_Channel).combine(Iteration_Channel)
 
+    ConvertFilesKM3NeT(ARCAFiles_Channel)
     BlindDataKM3NET(ConvertFilesKM3NeT.out)
-    CreateEventListKM3NeT(BlindDataKM3NET.out, input.source_file, input.dist, input.energy_threshold)
-    // CreateEventListKM3NeT(ConvertFilesKM3NeT.out, input.source_file, input.dist, input.energy_threshold)
 
+    CreateEventListKM3NeT_new(BlindDataKM3NET.out, input.source_file, input.ar_shower_file, input.ar_track_file, input.trackscore_threshold, input.energy_threshold)
+    // CreateEventListKM3NeT(ConvertFilesKM3NeT.out, input.source_file, input.dist, input.energy_threshold)
     CorrectEventListKM3NeT(CreateEventListKM3NeT.out, input.source_file)
-    // Combined_Channel = SNR_Channel.combine(CorrectEventListKM3NeT.out).combine(Iteration_Channel)
-    CombineEventListsKM3NeT(CorrectEventListKM3NeT.out.collect())
-    Combined_Channel = SNR_Channel.combine(CombineEventListsKM3NeT.out).combine(Iteration_Channel)
-    InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
+    Combined_Channel = SNR_Channel.combine(CorrectEventListKM3NeT.out).combine(Iteration_Channel)
+    // Combined_Channel = SNR_Channel.combine(CreateEventListKM3NeT.out).combine(Iteration_Channel)
     // InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
-    // CombineEventListsKM3NeT(InjectSignalKM3NeT.out.groupTuple(by: [0,2]))
-    EpochFoldingKM3NeT(InjectSignalKM3NeT.out, input.frequency, input.number_of_testf, input.testf_df, input.nbin)
+
+    // InjectSignalKM3NeT(CorrectEventListKM3NeT.out, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa) //.out.injected_signal.groupTuple(by: 0).view().set { File_Collection }
+    CombineEventListsKM3NeT(InjectSignalKM3NeT.out.groupTuple(by: [0,2]))
+    EpochFoldingKM3NeT(CombineEventListsKM3NeT.out, input.frequency, input.number_of_testf, input.testf_df, input.nbin)
     Chi2HistogramKM3NeT(EpochFoldingKM3NeT.out.hdf5.groupTuple(by: 0), input.nhbins)
     SignalNoiseStatisticsKM3NeT(Chi2HistogramKM3NeT.out.hdf5.collect(), input.nbin)
 

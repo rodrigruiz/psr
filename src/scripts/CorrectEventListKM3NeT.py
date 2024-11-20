@@ -42,14 +42,7 @@ def main():
     for key in arguments:
         data[key.replace("-", "")] = arguments[key]
     
-    input_files = []
-    for pattern in data['input_files']:
-        input_files.extend(glob.glob(pattern))
-    input_files.sort()
-
-    if not input_files:
-        print(f"No files matching pattern: {input_files}")
-        return
+    input_files = arguments['--input_files']
 
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])

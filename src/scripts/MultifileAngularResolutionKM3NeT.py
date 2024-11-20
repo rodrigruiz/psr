@@ -1,6 +1,6 @@
 """ Load KM3NeT hdf5 astropy tables and calculate the distribution of the angular resolution over the energy. 
 
-Usage: MultifileAngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--detector=<detector>] [--runtype=<runtype>] [--recotype=<recotype>] [--pltscale=<pltscale>]
+Usage: MultifileAngularResolutionKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--detector=<detector>] [--runtype=<runtype>] [--recotype=<recotype>] [--pltscale=<pltscale>] [--energy_low=<energy_low>] [--energy_high=<energy_high>] [--nbins=<nbins>]
 
 Options:
   -h --help                              Help
@@ -10,6 +10,9 @@ Options:
      --runtype=<string>                  Run type ('nue','numu','anue','anumu') [default: anue]
      --recotype=<string>                 Reco type ('jmuon','aashower') [default: jmuon]
      --pltscale=<string>                 Scale of the y-axis ('linear','log') [default: linear]
+     --energy_low=<float>                Energy lower limit [default: 1e2]
+     --energy_high=<float>               Energy upper limit [default: 1e9]
+     --nbins=<int>                       Number of bins [default: 50]
 """
 
 from docopt import docopt
@@ -52,7 +55,7 @@ def plot_angular_resolution_vs_energy(table, reco_type_id, reco_stage_id, reco_n
     
     for i in range(len(bins) - 1):
         # Get events within the current energy bin
-        bin_mask = (filtered_table['mc_energy'] >= bins[i]) & (filtered_table['mc_energy'] < bins[i+1])
+        bin_mask = (filtered_table['reco_energy'] >= bins[i]) & (filtered_table['reco_energy'] < bins[i+1])
         bin_data = filtered_table[bin_mask]['separation']
         
         if len(bin_data) > 0:
@@ -89,7 +92,7 @@ def plot_angular_resolution_vs_energy(table, reco_type_id, reco_stage_id, reco_n
     plt.xscale('log')
     plt.yscale(plt_scale)
     #plt.ylim([1e-4,1e2])
-    plt.xlabel('Energy [GeV]')
+    plt.xlabel('Reconstructed Energy [GeV]')
     plt.ylabel('Angular Resolution [°]')
     plt.title(f'Angular Resolution vs Energy for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
     plt.legend()
@@ -135,6 +138,12 @@ def main():
     reco_type = data['recotype']
     plt_scale = data['pltscale']
 
+    # Define energy range
+    energy_range = (float(arguments['--energy_low']), float(arguments['--energy_high']))
+    
+    # Get the number of bins
+    n_bins = int(arguments['--nbins'])
+
     input_files = []
     for pattern in data['input_files']:
         input_files.extend(glob.glob(pattern))
@@ -158,6 +167,7 @@ def main():
 
     event_ids = []
     mc_energies = []
+    reco_energies = []
     reco_types = []
     reco_stages = []
     separations = []
@@ -205,19 +215,20 @@ def main():
                 # Store results
                 event_ids.append(event_id)
                 mc_energies.append(mc_event['energy'])
+                reco_energies.append(reco_event['energy'])
                 reco_types.append(reco_event['rec_type'])
                 reco_stages.append(reco_event['rec_stage'])
                 separations.append(separation)
 
-    result_table = Table([event_ids, mc_energies*u.GeV, reco_types, reco_stages, separations*u.deg],
-                        names=('event_id', 'mc_energy', 'reco_type', 'reco_stage', 'separation'))
+    result_table = Table([event_ids, mc_energies*u.GeV, reco_energies*u.GeV, reco_types, reco_stages, separations*u.deg],
+                        names=('event_id', 'mc_energy', 'reco_energy', 'reco_type', 'reco_stage', 'separation'))
     
     print("Mean Separation: ", np.mean(separations))
     print(result_table)
 
 
-    energy_range = (1e3, 1e7)  # [GeV]
-    n_bins = 20
+    # energy_range = (1e2, 1e9)  # [GeV]
+    # n_bins = 50
 
 
     if reco_type == 'jmuon':
@@ -226,8 +237,11 @@ def main():
     elif reco_type == 'aashower':
         reco_type_id  = kd.reconstruction.AANET_RECONSTRUCTION_TYPE 
         reco_stage_id = kd.reconstruction.AASHOWERBEGIN
+    elif reco_type == 'jshower':
+        reco_type_id = kd.reconstruction.JPP_RECONSTRUCTION_TYPE
+        reco_stage_id = kd.reconstruction.JSHOWERBEGIN
     else:
-        print("Up to now only 'jmuon' and 'aashower' reconstruction types are implemented to work, Sorry...")
+        print("Up to now only 'jmuon', 'aashower' and 'jshower' reconstruction types are implemented to work, Sorry...")
     
         
 

@@ -1,16 +1,18 @@
 """Apply stingray Epoch Folding Search to KM3NeT data.
-Usage: EpochFoldingKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--ratio=<ratio>] [--iteration=<iteration>]
+Usage: EpochFoldingKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR [--gti_files=<gti_files>...] [--frequency=<frequency>] [--number_of_testf=<number_of_testf>] [--nbin=<nbin>] [--df=<float>] [--ratio=<ratio>] [--iteration=<iteration>] [--segment_size=<segment_size>]
 
 Options:
   -h --help                              Help
   -i --input_files INPUT_FILES           Input files
   -o --output_dir OUTPUT_DIR             Output file
+     --gti_files=<gti_files>...          Optional GTI files
      --frequency=<float>                 Principle frequency around which an interval for the testfrequencies will be chosen. [default: 10.]
      --number_of_testf=<int>             Number of testfrequencies to test around the principle frequency. [default: 200]
      --df=<float>                        Resolution of testfrequencies. [default: 1e-5]
      --nbin=<int>                        Number of bins in the folded profile. [default: 32]
      --ratio=<float>                     Signal to Noise ratio [default: 0.3]
      --iteration=<int>                   Nr of current iteration [default: 0]
+     --segment_size=<float>              Length of the segments to be averaged in the periodogram [default: 5000]
 """
 
 from docopt import docopt
@@ -19,6 +21,8 @@ import h5py as h5py
 import re
 import numpy as np
 from matplotlib import pyplot as plt
+
+from astropy.io.misc.hdf5 import read_table_hdf5
 
 # PLENS Imports
 import plens.EventList as EL
@@ -41,27 +45,55 @@ def main():
     if not input_files:
         print(f"No files matching pattern: {input_files}")
         return
+    
+    gti_files = data.get('gti_files', [])
+    if gti_files is None:
+        gti_files = []
+    else:
+        gti_files = [file for file in gti_files]
+
+    gti_files.sort()
+
+    # Validate GTI file count
+    if len(gti_files) == 1 and len(input_files) > 1:
+        print("Warning: Only one GTI file provided for multiple input files. It will be applied to all input files.")
+    elif len(gti_files) not in [0, 1, len(input_files)]:
+        print("Error: Number of GTI files must be either 0, 1, or equal to the number of input files.")
+        return
 
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
 
-    for file in input_files:    
-        # Fetching filename for usage in output filename 
+    for idx, file in enumerate(input_files):
+        # Determine GTI for the current input file
+        current_gti = None
+        if gti_files:
+            gti_file = gti_files[0] if len(gti_files) == 1 else gti_files[idx]
+
+            gti_table = read_table_hdf5(gti_file)
+            gti_start = gti_table['gti_start']
+            gti_stop = gti_table['gti_stop']
+            current_gti = np.array([gti_start, gti_stop]).T
+            print(f"GTIs: {current_gti}")
+
+        # Fetching filename for usage in output filename
         folder_path, file_name = os.path.split(file)
         file_name = os.path.splitext(file_name)[0]
-        #print(file_name)
 
-        output_plot = data['output_dir'] + file_name + "SNR_" + str(data['ratio']) + "_I" + str(data['iteration']).zfill(4) + '_epochfolding_resultplot.png' # + "_IterationNr" +str(data['iteration']).zfill(4) 
-        output_file = data['output_dir'] + file_name + "SNR_" + str(data['ratio']) + "_I" + str(data['iteration']).zfill(4) + '_epochfolding_results.hdf5'
+        output_plot = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
+        output_file = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
 
-        with h5py.File(file) as input_file:
-                
+        with h5py.File(file, 'r') as input_file:
             EventList = EL.readEventList(input_file)
-            print(EventList)
             frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
-            print(frequencies)
-            freq, efstat = epoch_folding_search(np.array(EventList['time'].value), frequencies, nbin=int(data['nbin']))
 
+            freq, efstat = epoch_folding_search(
+                np.array(EventList['time'].value),
+                frequencies,
+                nbin=int(data['nbin']),
+                segment_size=float(data['segment_size']),
+                gti=current_gti
+            )
             # ---- PLOTTING --------
             plt.figure()
             plt.plot(freq, efstat, label='EF statistics')
@@ -71,6 +103,8 @@ def main():
             plt.ylabel('EF Statistics')
             _ = plt.legend()
             plt.savefig(output_plot)
+
+            print(f"Plot saved: {output_plot}")
 
             with h5py.File(output_file, 'w') as out:
                 savehdf5(freq, efstat, out)

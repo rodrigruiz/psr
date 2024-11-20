@@ -1,0 +1,5 @@
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/nue/reco/gsg_elec-CC_1.0-100.0GeV.1.km3sim.jte.jmergefit.aanet.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/nue/reco/gsg_elec-CC_1.0-100.0GeV.2.km3sim.jte.jmergefit.aanet.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/nue/reco/gsg_elec-CC_1.0-100.0GeV.3.km3sim.jte.jmergefit.aanet.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/nue/reco/gsg_elec-CC_1.0-100.0GeV.4.km3sim.jte.jmergefit.aanet.root
+/home/hpc/capn/mppi104h/wecapstor3/out/ORCA_115/nue/reco/gsg_elec-CC_1.0-100.0GeV.5.km3sim.jte.jmergefit.aanet.root

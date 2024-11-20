@@ -2,27 +2,42 @@ process ConvertFilesKM3NeT{
     input:
     // path input_file
     // val detectorname
-    tuple path(input_file), val(detectorname)
+    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
 
     output:
     // path "*.h5", emit: converted_file
-    tuple path("*.h5"), val(detectorname), emit: converted_file
+    tuple path("*.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold), emit: converted_file
     // tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
 
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ConvertKM3NeTFiles.py -i "${input_file}" -o "./"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ConvertKM3NeTFiles.py -i "${input_file}" -o "./" 
+    """
+}
+
+process ClassifyEventsKM3NeT{
+    input:
+    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
+
+    output:
+    tuple path("*classified.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold), emit: classified_file
+
+    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ClassifyEventsKM3NeT.py -i "${input_file}" -o "./" 
     """
 
 }
 
 process BlindDataKM3NET{
     input:
-    tuple path(input_file), val(detectorname)
+    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
     output:
-    tuple path("*blinded.h5"), val(detectorname), emit: blinded_file
+    tuple path("*blinded.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold), emit: blinded_file
 
     publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true;
 
@@ -96,10 +111,11 @@ process InjectSignalKM3NeT{
 
 process CombineEventListsKM3NeT{
     input:
-    tuple val(ratio), path(input_files), val(iteration)
-    
+    // tuple val(ratio), path(input_files), val(iteration)
+    path input_files
     output:
-    tuple val(ratio), path("*combined_eventlist.hdf5"), val(iteration), emit: combined_file
+    // tuple val(ratio), path("*combined_eventlist.hdf5"), val(iteration), emit: combined_file
+    path "*combined_eventlist.hdf5", emit: combined_file
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
@@ -256,3 +272,26 @@ process MultiRatioWorkflowKM3NeT{
     """
 }
 
+process CreateEventListKM3NeT_new{
+    input:
+    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
+    // tuple val(ratio), path(input_file), val(iteration)
+    path source_specs_file
+    // path ar_shower_file
+    // path ar_track_file
+    // val trackscore_threshold
+    // val energy_threshold
+    // val energy_low
+    // val energy_high
+    // val shower_reco_name
+
+    output:
+    path "*eventlist_new.hdf5", emit: eventlist_new
+    // tuple val(ratio), path('*eventlist.hdf5'), val(iteration), emit: eventlist
+
+    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
+
+    """
+    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT_new.py -i "${input_file}" -o "./" -s "${source_specs_file}" -e "${ar_shower_file}" -t "${ar_track_file}" --energy_th ${energy_threshold} --trackscore_th ${trackscore_threshold} --detector ${detectorname} --energy_low ${energy_low} --energy_high ${energy_high} --shower_reco_name ${shower_reco_name}
+    """
+}
