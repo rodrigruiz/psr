@@ -3,7 +3,7 @@ nextflow.enable.dsl = 2
 include{
     ConvertFilesKM3NeT;
     BlindDataKM3NET;
-    ClassifyEventsKM3NeT;
+    AddTrackScoreKM3NeT;
     CreateEventListKM3NeT_new;
     CorrectEventListKM3NeT;
     InjectSignalKM3NeT;
@@ -98,8 +98,8 @@ workflow{
     // that get used when creating the EventList 
     // BUT: Takes quite long to calculate the angular resolution over the energy from multiple files
 
-    ClassifyEventsKM3NeT(ConvertFilesKM3NeT.out, input.parampid_folder)
-    BlindDataKM3NET(ClassifyEventsKM3NeT.out)
+    AddTrackScoreKM3NeT(ConvertFilesKM3NeT.out, input.parampid_folder)
+    BlindDataKM3NET(AddTrackScoreKM3NeT.out)
     CreateEventListKM3NeT_new(BlindDataKM3NET.out, input.source_file, input.delta_search_min)
 
     // 2024-12-02 working

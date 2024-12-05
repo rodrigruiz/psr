@@ -19,7 +19,7 @@ process ConvertFilesKM3NeT{
     """
 }
 
-process ClassifyEventsKM3NeT{
+process AddTrackScoreKM3NeT{
     input:
     tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
     val parampid_folder
@@ -31,7 +31,7 @@ process ClassifyEventsKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ClassifyEventsKM3NeT.py -i "${input_file}" -p "${parampid_folder}" -o "./" --detector ${detectorname}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AddTrackScoreKM3NeT.py -i "${input_file}" -p "${parampid_folder}" -o "./" --detector ${detectorname}
     """
 
 }
