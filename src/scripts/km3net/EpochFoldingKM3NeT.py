@@ -22,13 +22,35 @@ import re
 import numpy as np
 from matplotlib import pyplot as plt
 
-from astropy.io.misc.hdf5 import read_table_hdf5
+import stingray
+import inspect
 
-# PLENS Imports
-import plens.EventList as EL
+from astropy.io.misc.hdf5 import read_table_hdf5
+from astropy.timeseries import TimeSeries
+
 
 from stingray.pulse.search import epoch_folding_search, z_n_search
 from epochfolding.stingray_epochfolding import savehdf5, get_testfrequencies
+
+def readEventList(file):
+    """Read EventList from HDF5-file constucted by CreateEventlist. 
+    
+    Parameters
+    ----------
+    file : h5py.File
+        Input file to read EventList.
+    
+    Returns
+    -------
+    timeseries : astropy.timeseries.BinnedTimeSeries
+        The BinnedTimeSeries has four columns: 'time_bin_start'
+    
+    """
+
+    timeseries = TimeSeries.read(file, format='hdf5', time_column='time', time_format='unix')
+
+    
+    return timeseries
 
 def main():
     arguments = docopt(__doc__)
@@ -64,36 +86,45 @@ def main():
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
 
+    expocorr = False
+
     for idx, file in enumerate(input_files):
         # Determine GTI for the current input file
         current_gti = None
         if gti_files:
+            expocorr = True
             gti_file = gti_files[0] if len(gti_files) == 1 else gti_files[idx]
 
             gti_table = read_table_hdf5(gti_file)
             gti_start = gti_table['gti_start']
             gti_stop = gti_table['gti_stop']
             current_gti = np.array([gti_start, gti_stop]).T
-            print(f"GTIs: {current_gti}")
+            # print(f"GTIs: {current_gti}")
 
         # Fetching filename for usage in output filename
         folder_path, file_name = os.path.split(file)
         file_name = os.path.splitext(file_name)[0]
 
-        output_plot = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
-        output_file = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
+        #output_plot = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
+        #output_file = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
+
+        output_plot = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
+        output_file = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
 
         with h5py.File(file, 'r') as input_file:
-            EventList = EL.readEventList(input_file)
+            EventList = readEventList(input_file)
             frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
-
+            #print(f"First 10 Current GTIs: {current_gti[:10]}")
+            #print(f"Last 10 Current GTIs: {current_gti[-10:]}")
+            print(f"First 10 Times: {[f'{x:.3f}' for x in np.array(EventList['time'].value)[:10]]}")
+            print(f"Last 10 Times: {[f'{x:.3f}' for x in np.array(EventList['time'].value)[-10:]]}")
             freq, efstat = epoch_folding_search(
                 np.array(EventList['time'].value),
                 frequencies,
                 nbin=int(data['nbin']),
-                segment_size=float(data['segment_size']),
-                gti=current_gti
-            )
+                #segment_size=float(data['segment_size']),
+                #gti=current_gti
+            ) 
             # ---- PLOTTING --------
             plt.figure()
             plt.plot(freq, efstat, label='EF statistics')
@@ -105,6 +136,8 @@ def main():
             plt.savefig(output_plot)
 
             print(f"Plot saved: {output_plot}")
+            print(f"Stingray version: {stingray.__version__}")
+            print(f"epoch_folding_search is defined in: {inspect.getfile(epoch_folding_search)}")
 
             with h5py.File(output_file, 'w') as out:
                 savehdf5(freq, efstat, out)

@@ -5,7 +5,7 @@ include{
     AngularResolutionKM3NeT;
     MultifileAngularResolutionKM3NeT;
     CombineAngularResolutionKM3NeT;
-} from './processes/km3net_processes.nf'
+} from '../processes/km3net_processes.nf'
 
 evaluate(new File(params.input_file))
 

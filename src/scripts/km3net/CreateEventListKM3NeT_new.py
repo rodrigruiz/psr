@@ -1,6 +1,6 @@
 """ Load KM3NeT root data files and convert them to astropy tables. 
 
-Usage: CreateEventListKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE -e AR_SHOWER_FILE -t AR_TRACK_FILE [--energy_th=<float>] [--trackscore_th=<float>] [--detector=<detector>] [--energy_low=<energy_low>] [--energy_high=<energy_high>] [--shower_reco_name=<shower_reco_name>]
+Usage: CreateEventListKM3NeT_new.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE -e AR_SHOWER_FILE -t AR_TRACK_FILE [--energy_th=<float>] [--trackscore_th=<float>] [--detector=<detector>] [--energy_low=<energy_low>] [--energy_high=<energy_high>] [--shower_reco_name=<shower_reco_name>] [--delta_search_min=<delta_search_min>] [--ang_res_source=<ang_res_source>]
 
 Options:
   -h --help                              Help
@@ -15,6 +15,8 @@ Options:
      --energy_low=<int>                  Energy lower limit exponent (2 -> energy: 1e2) [default: 2]
      --energy_high=<int>                 Energy upper limit exponent (8 -> energy: 1e8) [default: 8]
      --shower_reco_name=<string>         Reco name of shower reco ('aashower' or 'jshower') [default: aashower]
+     --delta_search_min=<float>          Minimal angular search cone size in degrees [default: 8]
+     --ang_res_source=<float>            Angular resolution of source in marcsec [default: 1]
 """
 #python3 psr/src/scripts/CreateEventListKM3NeT.py -i '/home/hpc/capn/capn107h/software/hdf5TestOutput/*' -o eventlistTestOutput/ -s hdf5SourceFiles/Vela_X-1.h5
 
@@ -157,7 +159,7 @@ def add_angular_resolution_to_events(event_table, shower_angres_function, track_
     # event_table['angular_resolution'] = angular_resolution
 
      # Add the angular resolution column to the event_table using add_column
-    event_table.add_column(Column(name='angular_resolution', data=angular_resolution))
+    event_table.add_column(Column(name='angular_resolution', data=angular_resolution*u.deg))
 
 
     return event_table
@@ -212,6 +214,25 @@ def select_events_based_on_track_score(tables, trackscore_threshold, shower_reco
 
     return event_table
 
+def calc_search_cone(ang_res_km3net, min_err, ang_res_source):
+    # Ensure all inputs have compatible units
+    ang_res_km3net = ang_res_km3net.to(u.deg)
+    min_err = min_err.to(u.deg)
+    ang_res_source = ang_res_source.to(u.deg)
+    
+    # Extract the numerical values for computation
+    ang_res_km3net_val = ang_res_km3net.value
+    min_err_val = min_err.value
+    ang_res_source_val = ang_res_source.value
+    
+    # Perform the calculation
+    search_cone_val = 1.58 * np.sqrt(
+        np.maximum(ang_res_km3net_val**2, min_err_val**2) + ang_res_source_val**2
+    ) 
+    
+    # Reapply the units (deg) to the result
+    return search_cone_val * u.deg
+
 
 def main():
     arguments = docopt(__doc__)
@@ -236,6 +257,9 @@ def main():
     trackscore_threshold = float(data['trackscore_th'])
     shower_reco_name = data['shower_reco_name']
     detector_location = data['detector']
+    min_err = float(data['delta_search_min'])/1.58 * u.deg
+    ang_res_source = float(data['ang_res_source']) * u.marcsec
+
 
     if detector_location == 'arca':
         shower_angres_function = fit_angular_resolution(data['ar_shower_file'], data['output_dir'], int(data['energy_low']), int(data['energy_high']), 'polymial')
@@ -297,6 +321,8 @@ def main():
         times = event_table['tracktime_utc']
         angular_resolution = event_table['angular_resolution']
 
+        search_cone_val = calc_search_cone(angular_resolution, min_err, ang_res_source )
+
         # Filter by source location (angular distance)
         if source_location is not None:
             event_location = local_event(np.array(event_table['theta_detectorframe']),
@@ -310,7 +336,8 @@ def main():
 
             
 
-            location_mask = separation <= angular_resolution * u.deg
+            location_mask = separation <= search_cone_val # angular_resolution #*u.deg 
+            # (if it doesn't work, remove the *u.deg in the creation of the angular resolution Table above and include it here)
 
             # Apply location mask
             event_table = event_table[location_mask]
@@ -331,7 +358,8 @@ def main():
 
         # Create the output table
         event_list = Table([ event_id, rec_type, rec_stage, times, energy, separation_deg, detector_name],
-                           names=['event_id', 'rec_type', 'rec_stage', 'time', 'energy', 'separation', 'detector'])
+                           names=['event_id', 'rec_type', 'rec_stage', 'time', 'energy', 'separation', 'detector'],
+                           dtype=['int64', 'int64', 'int64', 'float64', 'float64', 'float64', 'str'] )
 
         print(event_list)
 

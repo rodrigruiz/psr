@@ -1,4 +1,6 @@
 process ConvertFilesKM3NeT{
+    errorStrategy 'ignore'
+
     input:
     // path input_file
     // val detectorname
@@ -13,22 +15,23 @@ process ConvertFilesKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ConvertKM3NeTFiles.py -i "${input_file}" -o "./" 
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ConvertKM3NeTFiles.py -i "${input_file}" -o "./" 
     """
 }
 
 process ClassifyEventsKM3NeT{
     input:
     tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
-
+    val parampid_folder
+    
     output:
     tuple path("*classified.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold), emit: classified_file
-
+    
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/ClassifyEventsKM3NeT.py -i "${input_file}" -o "./" 
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ClassifyEventsKM3NeT.py -i "${input_file}" -p "${parampid_folder}" -o "./" --detector ${detectorname}
     """
 
 }
@@ -43,7 +46,7 @@ process BlindDataKM3NET{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/BlindDataKM3NeT.py -i "${input_file}" -o "./"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/BlindDataKM3NeT.py -i "${input_file}" -o "./"
     """
 
 }
@@ -58,12 +61,12 @@ process CreateEventListKM3NeT{
 
     output:
     path "*eventlist.hdf5", emit: eventlist
-    // tuple val(ratio), path('*eventlist.hdf5'), val(iteration), emit: eventlist
+    tuple val(ratio), path('*eventlist.hdf5'), val(iteration), emit: eventlist
 
     publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
 
     """
-    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist} --detector ${detectorname}
+    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CreateEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist} --detector ${detectorname}
     """
 }
 
@@ -82,7 +85,7 @@ process CorrectEventListKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CorrectEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CorrectEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}"
     """
 }
 
@@ -105,24 +108,24 @@ process InjectSignalKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/InjectSignalKM3NeT.py -i ${input_file} -o "./" --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/InjectSignalKM3NeT.py -i ${input_file} -o "./" --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa}
     """
 }
 
 process CombineEventListsKM3NeT{
     input:
-    // tuple val(ratio), path(input_files), val(iteration)
-    path input_files
+    tuple val(ratio), path(input_files), val(iteration)
+    //path input_files
     output:
-    // tuple val(ratio), path("*combined_eventlist.hdf5"), val(iteration), emit: combined_file
-    path "*combined_eventlist.hdf5", emit: combined_file
+    tuple val(ratio), path("*combined_eventlist.hdf5"), val(iteration), emit: combined_file
+    //path "*combined_eventlist.hdf5", emit: combined_file
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CombineEventListsKM3NeT.py ${inputFilesString} -o "./"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CombineEventListsKM3NeT.py ${inputFilesString} -o "./"
     """
 }
 
@@ -135,6 +138,7 @@ process EpochFoldingKM3NeT{
     val number_of_testf
     val df
     val nbin
+    val segment_size
 
     output:
     tuple val(ratio), path("*epochfolding_results.hdf5"), val(iteration), emit: hdf5;
@@ -144,7 +148,7 @@ process EpochFoldingKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio} --iteration ${iteration}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/EpochFoldingKM3NeT.py -i "${input_file}" -o "./" --frequency ${frequency} --number_of_testf ${number_of_testf} --df ${df} --nbin ${nbin} --ratio ${ratio} --iteration ${iteration} --segment_size ${segment_size}
     """
 }
 
@@ -162,7 +166,7 @@ process Chi2HistogramKM3NeT{
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/Chi2HistogramKM3NeT.py ${inputFilesString} -o "./" --ratio ${ratio} --nhbins ${nhbins}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/Chi2HistogramKM3NeT.py ${inputFilesString} -o "./" --ratio ${ratio} --nhbins ${nhbins}
     """
 }
 
@@ -181,7 +185,7 @@ process SignalNoiseStatisticsKM3NeT{
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./" --nbin ${nbin}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./" --nbin ${nbin}
     """
 }
 
@@ -202,7 +206,7 @@ process AngularResolutionKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/AngularResolutionKM3NeT.py -i "${input_file}" -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AngularResolutionKM3NeT.py -i "${input_file}" -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
     """
 }
 
@@ -224,7 +228,7 @@ process MultifileAngularResolutionKM3NeT{
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/MultifileAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/MultifileAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
     """
 }
 
@@ -246,7 +250,7 @@ process CombineAngularResolutionKM3NeT{
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/CombineAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CombineAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detector} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
     """
 }
 
@@ -273,17 +277,13 @@ process MultiRatioWorkflowKM3NeT{
 }
 
 process CreateEventListKM3NeT_new{
+    // errorStrategy 'ignore'
     input:
     tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), path(ar_shower_file), path(ar_track_file), val(trackscore_threshold)
     // tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
-    // path ar_shower_file
-    // path ar_track_file
-    // val trackscore_threshold
-    // val energy_threshold
-    // val energy_low
-    // val energy_high
-    // val shower_reco_name
+    val delta_search_min
+
 
     output:
     path "*eventlist_new.hdf5", emit: eventlist_new
@@ -292,6 +292,84 @@ process CreateEventListKM3NeT_new{
     publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
 
     """
-    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/CreateEventListKM3NeT_new.py -i "${input_file}" -o "./" -s "${source_specs_file}" -e "${ar_shower_file}" -t "${ar_track_file}" --energy_th ${energy_threshold} --trackscore_th ${trackscore_threshold} --detector ${detectorname} --energy_low ${energy_low} --energy_high ${energy_high} --shower_reco_name ${shower_reco_name}
+    python3  /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CreateEventListKM3NeT_new.py -i "${input_file}" -o "./" -s "${source_specs_file}" -e "${ar_shower_file}" -t "${ar_track_file}" --energy_th ${energy_threshold} --trackscore_th ${trackscore_threshold} --detector ${detectorname} --energy_low ${energy_low} --energy_high ${energy_high} --shower_reco_name ${shower_reco_name} --delta_search_min ${delta_search_min}
+    """
+}
+
+
+process ExtractHitFeatures{
+    errorStrategy 'ignore'
+
+    input:
+    path(input_file)
+    val(detectorname)
+
+    output:
+    // path "*.h5", emit: converted_file
+    path "*.h5", emit: converted_file
+    // tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
+
+    publishDir "${params.output_dir}/extracted_hitfeatures", mode: 'link', overwrite: true;
+
+    script:
+    def scriptOptions = detectorname == 'ORCA' ? '-jsh -jg' : '-as -jg'
+    """
+    python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/extractor_ARCA.py -f "${input_file}" -dir "./" ${scriptOptions}
+    """
+}
+
+process ConcatFiles{
+
+    input:
+    path input_files
+
+    output:
+    // path "*.h5", emit: converted_file
+    path "*concatenated.h5", emit: concatenated_file
+
+    publishDir "${params.output_dir}/concatenated_hitfeatures", mode: 'link', overwrite: true;
+    
+    """
+    python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/concat.py -f ${input_files.join(' ')} -o "./extracthitfeatures_concatenated.h5"
+    """
+}
+
+process TrainPID{
+
+    input:
+    path input_file
+    path columntable_file
+    val detectorname
+    
+    output:
+    // path "*.h5", emit: converted_file
+    path "*.rdf", emit: rd_file
+    path "Accuracy*.png", emit: accuracy_plot;
+    path "Separability*.png", emit: separability_plot;
+    path "pid_track_score*.png", emit: trackscore_plot;
+
+    publishDir "${params.output_dir}/trained_rdfiles", mode: 'link', overwrite: true;
+
+    """
+    python3 /home/hpc/capn/capn107h/software/parampid/APC_PID.py -i "${input_file}" -w "./" -d ${detectorname} -c ${columntable_file} -t track -s track_score
+    """
+
+}
+
+process ApplyClassifierPID{
+
+    input:
+    path input_file
+    path rd_file
+    path columntable_file
+
+    output:
+    path "*.h5", emit: output_file
+
+    publishDir "${params.output_dir}/classified_files", mode: 'link', overwrite: true;
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/parampid/scripts/applyRDF.py -i ${input_file} -r ${rd_file} -c ${columntable_file} -o ${input_file.toString().replace('.h5', '_scored.h5')} -s track_score
     """
 }
