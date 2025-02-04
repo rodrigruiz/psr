@@ -12,8 +12,8 @@ input = [km3net_arca_energy_threshold : 1e2,
          df : 1e-5,
          testf_df: 1e-6,
          ratio_min : 0.01, // Lower limit of the ratio
-         ratio_max : 0.16, // Upper limit of the ratio
-         ratio_step : 0.005, // Step for the ratio
+         ratio_max : 0.61, // Upper limit of the ratio
+         ratio_step : 0.05, // Step for the ratio
          repetitions : 5, // Number of repetitions for each ratio
          number_of_testf : 1000,
          nbin : 32,
@@ -31,7 +31,7 @@ input = [km3net_arca_energy_threshold : 1e2,
          ar_track_file_arca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jmuon_mcv8.1.gsg_numu-CCHEDIS_1e2-1e8GeV.sirene.jterbr000132.hdf5",
          ar_shower_file_orca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jshower_gsg_elec-CC_1.0-100.0GeV_orca.hdf5",
          ar_track_file_orca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jmuon_gsg_muon-CC_1.0-100.0GeV_orca.hdf5",
-         delta_search_min : 90.0,
+         delta_search_min : 10.0,
          folding_segment_size : 1e6,
          parampid_folder : "/home/hpc/capn/capn107h/software/nextflow_output/parampid/classified_files",
          ]

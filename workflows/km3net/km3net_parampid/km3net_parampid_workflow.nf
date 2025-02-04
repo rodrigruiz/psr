@@ -18,31 +18,31 @@ workflow{
     Channel
     .fromPath(input.train_files_arca_numu)
     .splitText(by: 1)
-    .set {ARCA_numu_TrainFiles_Channel}
+    .set {Numu_TrainFiles_Channel}
 
     Channel
     .fromPath(input.train_files_arca_anue)
     .splitText(by: 1)
-    .mix(ARCA_numu_TrainFiles_Channel)
-    .set {ARCA_TrainFiles_Channel}
+    .mix(Numu_TrainFiles_Channel)
+    .set {TrainFiles_Channel}
     
     
-    ExtractHitFeaturesTraining(ARCA_TrainFiles_Channel,'ARCA')
+    ExtractHitFeaturesTraining(TrainFiles_Channel, input.detectorname)
     ConcatFiles(ExtractHitFeaturesTraining.out.converted_file.collect())
-    TrainPID(ConcatFiles.out.concatenated_file,input.column_table_file,'ARCA')
+    TrainPID(ConcatFiles.out.concatenated_file,input.column_table_file, input.detectorname)
 
     Channel
     .fromPath(input.files_arca_numu)
     .splitText(by: 1)
-    .set {ARCA_numu_Files_Channel}
+    .set {Numu_Files_Channel}
 
     Channel
     .fromPath(input.files_arca_anue)
     .splitText(by: 1)
-    .mix(ARCA_numu_Files_Channel)
-    .set {ARCA_Files_Channel}
+    .mix(Numu_Files_Channel)
+    .set {Files_Channel}
 
-    ExtractHitFeaturesClassification(ARCA_Files_Channel, 'ARCA')
+    ExtractHitFeaturesClassification(Files_Channel, input.detectorname)
     ApplyClassifierPID(ExtractHitFeaturesClassification.out.converted_file, TrainPID.out.rd_file, input.column_table_file)
 
 

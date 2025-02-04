@@ -43,13 +43,17 @@ def main():
     print("CombinedEventlist:")
     print(CombinedEventList)
 
+    event_count = len(CombinedEventList)
+
+
     # Extract common prefix from input filenames
     common_prefix = os.path.commonprefix(input_files)
     # Remove any trailing non-alphanumeric characters from common prefix
     common_prefix = os.path.basename(common_prefix).rstrip("_-.")
     if not common_prefix:
         common_prefix = "Test"
-    output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist.hdf5")
+    #output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist.hdf5")
+    output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist_{event_count}events.hdf5")
 
 
     # Save the combined EventList

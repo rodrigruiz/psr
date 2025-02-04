@@ -49,6 +49,12 @@ def main():
             # Append the results to the list
             max_chi2_list.append(mean_max_chi2)
             ratio_list.append(ratio)
+
+    #combined_list = list(zip(ratio_list, max_chi2_list))
+    #combined_list.sort(key=lambda x: x[0])
+    #sorted_ratio_list, sorted_max_chi2_list = zip(*combined_list)
+
+
     
 
     pvalue = chi2.sf(max_chi2_list , int(arguments['--nbin']) -1)
@@ -92,7 +98,7 @@ def main():
 
 
     # Convert the list to an Astropy Table
-    chi2_over_snr_table = Table([ratio_list,max_chi2_list], names=('SNR', 'Max_Mean_Chi2'))
+    chi2_over_snr_table = Table([ratio_list,max_chi2_list,pvalue], names=('SNR', 'Max_Mean_Chi2', 'p_Value'))
 
     # Save the combined EventList
     chi2_over_snr_table.write(output_file, format='hdf5', path='histogram_data', overwrite=True, serialize_meta = True)

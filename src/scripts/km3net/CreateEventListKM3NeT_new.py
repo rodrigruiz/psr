@@ -227,7 +227,7 @@ def calc_search_cone(ang_res_km3net, min_err, ang_res_source):
     
     # Perform the calculation
     search_cone_val = 1.58 * np.sqrt(
-        np.maximum(ang_res_km3net_val**2, min_err_val**2) + ang_res_source_val**2
+        np.minimum(ang_res_km3net_val**2, min_err_val**2) + ang_res_source_val**2
     ) 
     
     # Reapply the units (deg) to the result
@@ -316,18 +316,27 @@ def main():
             energy_mask = event_table['energy'] >= energy_threshold
             event_table = event_table[energy_mask]
 
+        nanmask = np.isfinite(event_table['theta_detectorframe']) & np.isfinite(event_table['phi_detectorframe'])  # Add more columns if necessary
+        event_table = event_table[nanmask]
+
         # Extract the times
         # times = event_table['tracktime_utc'] if reco_type != "mc" else event_table['timeslice_utc_time']
-        times = event_table['tracktime_utc']
-        angular_resolution = event_table['angular_resolution']
+        #times = event_table['tracktime_utc']
+        #angular_resolution = event_table['angular_resolution']
 
-        search_cone_val = calc_search_cone(angular_resolution, min_err, ang_res_source )
+        search_cone_val = calc_search_cone(event_table['angular_resolution'], min_err, ang_res_source )
+        # Mask rows with NaN values in any column
+        
 
         # Filter by source location (angular distance)
         if source_location is not None:
+            print("Theta: ",np.array(event_table['theta_detectorframe']))
+            print("Phi: ",np.array(event_table['phi_detectorframe']))
+            print("Theta Max: ",np.max(np.array(event_table['theta_detectorframe'])))
+            print("Phi Max: ",np.max(np.array(event_table['phi_detectorframe'])))
             event_location = local_event(np.array(event_table['theta_detectorframe']),
                                          np.array(event_table['phi_detectorframe']),
-                                         times, detector_location)
+                                         event_table['tracktime_utc'], detector_location)
             separation = event_location.separation(source_location)
 
             # print("Separation:", separation)
@@ -348,6 +357,7 @@ def main():
         times = event_table['tracktime_utc']
         energy = event_table['energy']
         event_id = event_table['event_id']
+
 
         rec_type = event_table['rec_type']
         rec_stage = event_table['rec_stage']

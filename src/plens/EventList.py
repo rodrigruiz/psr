@@ -105,6 +105,9 @@ def barycentric_correction(timeseries, skycoord):
 
 
 def injectSignal( time, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None ):
+    #
+    # Hannes: Redistribute events rather than just add new ones at some point!
+    #
     """Injects a signal with a MVM pulseshape into an existing time sequence (eventlist).
     
     Parameters
@@ -146,3 +149,65 @@ def injectSignal( time, bin_time, pulseshape, frequency, baseline, a, phi, kappa
     ev.simulate_times(lc)
 
     return np.sort(np.concatenate((time, ev.time)))
+
+
+def injectSignalRedistribute( time, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None ):
+
+    """Injects a signal with a MVM pulseshape into an existing time sequence (eventlist) by first deleting random counts to ensure an unchanged total count number.
+    
+    Parameters
+    ----------
+        time : np.array
+        
+        bin_time : float
+        
+        frequency : float
+            Frequency of the pulse train.
+            
+        baseline : float
+            Offset along the y-axis.
+            
+        a : float
+            Amplitude of the Pulse. Equates to the area of one pulse.
+            
+        phi : float
+            Phase offset of the pulse train.
+            
+        kappa : float
+            Shape parameter giving the width of the function.
+        
+    Returns
+    -------
+        np.array
+        New times with injected pulsetrain.
+        
+    """
+    
+    if pulseshape == 'mvm':
+        counts = MVMD(time, frequency, phi, kappa, a, baseline=baseline)
+    elif pulseshape == 'sine':
+        counts = sinusoid(time, frequency, baseline, a, phi)
+
+    # Create a light curve with the desired signal
+    lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
+    
+    # Simulate event times from the light curve
+    ev = EventList()
+    ev.simulate_times(lc)
+    
+    new_event_times = ev.time
+    
+    # Determine the number of new events
+    num_new_events = len(new_event_times)
+    
+    # Randomly select events to remove from the original times
+    if num_new_events > 0:
+        indices_to_remove = np.random.choice(len(time), num_new_events, replace=False)
+        remaining_original_events = np.delete(time, indices_to_remove)
+    else:
+        remaining_original_events = time
+    
+    # Combine the remaining original events with the new events
+    combined_events = np.sort(np.concatenate((remaining_original_events, new_event_times)))
+
+    return combined_events

@@ -32,6 +32,7 @@ import plens.antares_hdf5
 import plens.antares_hdf5 as antares_hdf5
 
 from stingray import EventList, Lightcurve
+import warnings
 
 def injectSignalRedistribute( time, ratio, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None ):
 
@@ -79,7 +80,7 @@ def injectSignalRedistribute( time, ratio, bin_time, pulseshape, frequency, base
     # Create a light curve with the desired signal
     lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
 
-    lc.plot()
+    #lc.plot()
     
     # Simulate event times from the light curve
     ev = EventList()
@@ -90,33 +91,52 @@ def injectSignalRedistribute( time, ratio, bin_time, pulseshape, frequency, base
     
         # Determine the desired number of new events based on the ratio
     total_events = len(time)
-    num_new_events = int(ratio * total_events)
+    num_new_events = int(round(ratio * total_events))
     num_original_events_to_keep = total_events - num_new_events
 
-    print(f"len(time): {len(time)}")
+    print("Total Events:", total_events)
+    print("New Events: ", num_new_events)
+    print("Original Events: ", num_original_events_to_keep)
 
-    print(f"num_new_events: {num_new_events}")
-    print(f"num_original_events_to_keep: {num_original_events_to_keep}")
+    print("new_event_times: ", new_event_times)
+    print("num_new_events: ", num_new_events)
+    print("len(new_event_times): ", len(new_event_times))
+    
 
     
     if num_original_events_to_keep < 0:
         raise ValueError("Number of original events to keep is negative. "
                          "Ensure that ratio is between 0 and 1.")
     
-    # Randomly select events to remove from the new events if necessary
-    if len(new_event_times) > num_new_events:
+    # The following seems to break when len(new_event_times) == 0.
+    # Adjust selection to ensure enough new events
+    if len(new_event_times) >= num_new_events:
         indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=False)
         new_event_times = new_event_times[indices_to_keep_new]
+    else:
+        # Allow replacement to reach the desired number of new events
+        indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=True)
+        new_event_times = new_event_times[indices_to_keep_new]
+ 
     
     # Randomly select events to keep from the original times
     indices_to_keep_original = np.random.choice(len(time), num_original_events_to_keep, replace=False)
     remaining_original_events = time[indices_to_keep_original]
-    
+
+
+
+    print("Remaining Original Events: ", len(remaining_original_events))
+    print("Remaining Original Event Indices: ", len(indices_to_keep_original))
+
+    print("New Events: ", len(new_event_times))
+    print("New Event Indices:", len(indices_to_keep_new))
     #print(f"len(new_event_times): {len(new_event_times)}")
     #print(f"len(remaining_original_events): {len(remaining_original_events)}")
     
     # Combine the remaining original events with the new events
     combined_events = np.sort(np.concatenate((remaining_original_events, new_event_times)))
+
+    
 
     return combined_events
 
@@ -186,6 +206,8 @@ def main():
             print("File already existed. Deleting File...")
             os.remove(output_file)  # Remove the file if it already exists
         with h5py.File(output_file, 'w') as output:  
+
+            
 
             InjectedEventList.write(output, format='hdf5', overwrite=True, serialize_meta=True)
 

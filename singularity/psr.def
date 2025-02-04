@@ -18,3 +18,4 @@ From: ubuntu:latest
 
 %files
     /home/hpc/capn/mppi104h/Software/psr /psr
+

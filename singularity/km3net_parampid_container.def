@@ -1,0 +1,63 @@
+Bootstrap: docker
+From: python:3.9-slim
+
+%help
+    Container for paramPID classification with necessary dependencies and KM3NeT's jppy.
+
+%post
+    # Install system dependencies
+    apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        python3-dev \
+        cmake \
+        git \
+        libssl-dev \
+        pybind11-dev
+
+    # Clean up apt cache
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    # Install Python dependencies
+    pip install --no-cache-dir --upgrade pip setuptools wheel numpy pandas h5py
+
+    GIT_USERNAME="hwarnhofer"
+    GIT_TOKEN="parampid_container_token2"
+
+    # Clone paramPID repositories
+    mkdir -p /opt/km3net
+    cd /opt/km3net
+    git clone git@git.km3net.de/parapid/parampid.git
+    git clone git@git.km3net.de/parapid/newhitfeatures.git
+
+
+
+
+    # Install jppy manually
+    git clone --recursive https://git.km3net.de/km3py/jppy.git /opt/km3net/jppy
+    cd /opt/km3net/jppy
+    export JPP_DIR=$(pwd)/jpp
+
+    # Add CFLAGS to point to the include directory for JPhysics headers
+    export CFLAGS="-I$JPP_DIR/JPhysics"
+    pip install .
+
+    # Activate virtual environment and install additional dependencies
+    python -m venv /opt/venvs/pidvenv
+    source /opt/venvs/pidvenv/bin/activate
+    pip install -r /opt/km3net/parampid/requirements.txt
+
+%environment
+    # Set environment variables for the container
+    export PATH=/opt/venvs/pidvenv/bin:$PATH
+    export JPP_DIR=/opt/km3net/jppy/jpp
+    export PYTHONPATH=/opt/km3net/parampid:/opt/km3net/newhitfeatures:$PYTHONPATH
+
+%runscript
+    # Default command when running the container
+    echo "Singularity container for paramPID is ready!"
+    exec "$@"
+
+%test
+    # Test installation
+    python -c "import jppy; print('jppy loaded successfully')"
+    python -c "print('paramPID container works')"
