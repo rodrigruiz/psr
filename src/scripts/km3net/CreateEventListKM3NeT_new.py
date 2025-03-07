@@ -1,6 +1,6 @@
 """ Load KM3NeT root data files and convert them to astropy tables. 
 
-Usage: CreateEventListKM3NeT_new.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE -e AR_SHOWER_FILE -t AR_TRACK_FILE [--energy_th=<float>] [--trackscore_th=<float>] [--detector=<detector>] [--energy_low=<energy_low>] [--energy_high=<energy_high>] [--shower_reco_name=<shower_reco_name>] [--delta_search_min=<delta_search_min>] [--ang_res_source=<ang_res_source>]
+Usage: CreateEventListKM3NeT_new.py -i INPUT_FILES... -o OUTPUT_DIR -s SOURCE_SPECS_FILE -e AR_SHOWER_FILE -t AR_TRACK_FILE [--energy_th=<float>] [--trackscore_th=<float>] [--detector=<detector>] [--energy_low=<energy_low>] [--energy_high=<energy_high>] [--delta_search_min=<delta_search_min>] [--ang_res_source=<ang_res_source>]
 
 Options:
   -h --help                              Help
@@ -14,7 +14,6 @@ Options:
      --detector=<string>                 Detector location ('arca','orca','antares') [default: arca]
      --energy_low=<int>                  Energy lower limit exponent (2 -> energy: 1e2) [default: 2]
      --energy_high=<int>                 Energy upper limit exponent (8 -> energy: 1e8) [default: 8]
-     --shower_reco_name=<string>         Reco name of shower reco ('aashower' or 'jshower') [default: aashower]
      --delta_search_min=<float>          Minimal angular search cone size in degrees [default: 8]
      --ang_res_source=<float>            Angular resolution of source in marcsec [default: 1]
 """
@@ -122,7 +121,7 @@ def fit_angular_resolution(file_path, output_dir, energy_low, energy_high, fit_t
 
     return fit_func
 
-def add_angular_resolution_to_events(event_table, shower_angres_function, track_angres_function, shower_reco_name = 'aashower'):
+def add_angular_resolution_to_events(event_table, shower_angres_function, track_angres_function, detector_name = 'arca'):
     """
     Calculate and add the angular resolution to the event_table based on the reconstruction type.
 
@@ -142,10 +141,10 @@ def add_angular_resolution_to_events(event_table, shower_angres_function, track_
     muon_mask = (event_table['rec_type'] == kd.reconstruction.JPP_RECONSTRUCTION_TYPE) & \
                 (event_table['rec_stage'] == kd.reconstruction.JMUONBEGIN)
     
-    if shower_reco_name == 'aashower':
+    if detector_name == 'arca':
         shower_mask = (event_table['rec_type'] == kd.reconstruction.AANET_RECONSTRUCTION_TYPE) & \
                         (event_table['rec_stage'] == kd.reconstruction.AASHOWERBEGIN)
-    elif shower_reco_name == 'jshower':
+    elif detector_name == 'orca':
         shower_mask = (event_table['rec_type'] == kd.reconstruction.JPP_RECONSTRUCTION_TYPE) & \
                     (event_table['rec_stage'] == kd.reconstruction.JSHOWERBEGIN)
     else: print("Unknwon shower reco type...")
@@ -164,7 +163,7 @@ def add_angular_resolution_to_events(event_table, shower_angres_function, track_
 
     return event_table
 
-def select_events_based_on_track_score(tables, trackscore_threshold, shower_reco_name = "aashower" ):
+def select_events_based_on_track_score(tables, trackscore_threshold, detector_name = "arca" ):
     """
     Select events based on the track score and reconstruction type using a single mask.
 
@@ -196,11 +195,11 @@ def select_events_based_on_track_score(tables, trackscore_threshold, shower_reco
                    tables.reco_table['rec_stage'][i] == kd.reconstruction.JMUONBEGIN:
                     combined_mask[i] = True
             else:  # Low score, select shower events
-                if shower_reco_name == 'aashower':
+                if detector_name == 'arca':
                     if tables.reco_table['rec_type'][i] == kd.reconstruction.AANET_RECONSTRUCTION_TYPE and \
                     tables.reco_table['rec_stage'][i] == kd.reconstruction.AASHOWERBEGIN:
                         combined_mask[i] = True
-                elif shower_reco_name == 'jshower':
+                elif detector_name == 'orca':
                     if tables.reco_table['rec_type'][i] == kd.reconstruction.JPP_RECONSTRUCTION_TYPE and \
                     tables.reco_table['rec_stage'][i] == kd.reconstruction.JSHOWERBEGIN:
                         combined_mask[i] = True
@@ -255,16 +254,15 @@ def main():
 
     energy_threshold = float(data['energy_th']) if data['energy_th'] != 0 else None
     trackscore_threshold = float(data['trackscore_th'])
-    shower_reco_name = data['shower_reco_name']
-    detector_location = data['detector']
+    detector_name = data['detector']
     min_err = float(data['delta_search_min'])/1.58 * u.deg
     ang_res_source = float(data['ang_res_source']) * u.marcsec
 
 
-    if detector_location == 'arca':
+    if detector_name == 'arca':
         shower_angres_function = fit_angular_resolution(data['ar_shower_file'], data['output_dir'], int(data['energy_low']), int(data['energy_high']), 'polymial')
         track_angres_function = fit_angular_resolution(data['ar_track_file'], data['output_dir'], int(data['energy_low']), int(data['energy_high']), 'logistic')
-    elif detector_location == 'orca':
+    elif detector_name == 'orca':
         shower_angres_function = fit_angular_resolution(data['ar_shower_file'], data['output_dir'], int(data['energy_low']), int(data['energy_high']), 'polymial')
         track_angres_function = fit_angular_resolution(data['ar_track_file'], data['output_dir'], int(data['energy_low']), int(data['energy_high']), 'polymial')
     else: print("Wrong detector name... ")
@@ -292,11 +290,11 @@ def main():
 
         tables = load_hdf5_tables(file)
 
-        event_table = select_events_based_on_track_score(tables, trackscore_threshold, shower_reco_name)
+        event_table = select_events_based_on_track_score(tables, trackscore_threshold, detector_name)
 
         print(event_table)
 
-        event_table = add_angular_resolution_to_events(event_table, shower_angres_function, track_angres_function, shower_reco_name)
+        event_table = add_angular_resolution_to_events(event_table, shower_angres_function, track_angres_function, detector_name)
 
                 # Find the events with angular resolution > 100 degrees
         problematic_events = event_table[event_table['angular_resolution'] > 100]
@@ -336,7 +334,7 @@ def main():
             print("Phi Max: ",np.max(np.array(event_table['phi_detectorframe'])))
             event_location = local_event(np.array(event_table['theta_detectorframe']),
                                          np.array(event_table['phi_detectorframe']),
-                                         event_table['tracktime_utc'], detector_location)
+                                         event_table['tracktime_utc'], detector_name)
             separation = event_location.separation(source_location)
 
             # print("Separation:", separation)
@@ -363,11 +361,11 @@ def main():
         rec_stage = event_table['rec_stage']
 
         separation_deg = separation[location_mask].to(u.deg).value  # Filtered separation
-        detector_name = [detector_location] * len(times)  # Detector name for each event
+        detector_name_list = [detector_name] * len(times)  # Detector name for each event
         run_ids = [run_id] * len(times)
 
         # Create the output table
-        event_list = Table([ event_id, rec_type, rec_stage, times, energy, separation_deg, detector_name],
+        event_list = Table([ event_id, rec_type, rec_stage, times, energy, separation_deg, detector_name_list],
                            names=['event_id', 'rec_type', 'rec_stage', 'time', 'energy', 'separation', 'detector'],
                            dtype=['int64', 'int64', 'int64', 'float64', 'float64', 'float64', 'str'] )
 

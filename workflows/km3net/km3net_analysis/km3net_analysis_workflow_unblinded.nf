@@ -111,12 +111,12 @@ workflow{
     AddTrackScoreKM3NeT(ConvertFilesKM3NeT.out, input.parampid_folder)
 
     // Blind the data
-    BlindDataKM3NET(AddTrackScoreKM3NeT.out)
+    // BlindDataKM3NET(AddTrackScoreKM3NeT.out)
     
     // Create Event Lists
     //CreateEventListKM3NeT_new(BlindDataKM3NET.out, input.source_file, input.delta_search_min, input.ar_shower_file_arca, input.ar_track_file_arca, input.ar_shower_file_orca, input.ar_track_file_orca)
     CreateEventListKM3NeT_new(
-    BlindDataKM3NET.out,
+    AddTrackScoreKM3NeT.out,
     input.source_file,
     input.delta_search_min,
     input.ar_shower_file_arca,
@@ -141,15 +141,15 @@ workflow{
     Combined_Channel = SNR_Channel.combine(CombineEventListsKM3NeT.out).combine(Iteration_Channel)
     
     // Inject signal into the combined channel
-    InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
+    // InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
     
     // Combine the event lists after signal injection
     // CombineEventListsKM3NeT(InjectSignalKM3NeT.out.groupTuple(by: [0,2]))
 
     // Epoch folding and Chi2 histogram
-    EpochFoldingKM3NeT(InjectSignalKM3NeT.out, input.frequency, input.number_of_testf, input.testf_df, input.nbin, input.folding_segment_size)
-    Chi2HistogramKM3NeT(EpochFoldingKM3NeT.out.hdf5.groupTuple(by: 0), input.nhbins)
-    SignalNoiseStatisticsKM3NeT(Chi2HistogramKM3NeT.out.hdf5.collect(), input.nbin)
+    EpochFoldingKM3NeT(Combined_Channel, input.frequency, input.number_of_testf, input.testf_df, input.nbin, input.folding_segment_size)
+    //Chi2HistogramKM3NeT(EpochFoldingKM3NeT.out.hdf5.groupTuple(by: 0), input.nhbins)
+    //SignalNoiseStatisticsKM3NeT(Chi2HistogramKM3NeT.out.hdf5.collect(), input.nbin)
 }
 workflow.onComplete = {
   println "Pipeline complete"

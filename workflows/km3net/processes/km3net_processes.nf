@@ -4,11 +4,11 @@ process ConvertFilesKM3NeT{
     input:
     // path input_file
     // val detectorname
-    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold)
+    tuple path(input_file), val(detectorname)
 
     output:
     // path "*.h5", emit: converted_file
-    tuple path("*.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold), emit: converted_file
+    tuple path("*.h5"), val(detectorname), emit: converted_file
     // tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
 
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
@@ -22,11 +22,11 @@ process ConvertFilesKM3NeT{
 process AddTrackScoreKM3NeT{
     errorStrategy 'ignore'
     input:
-    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold)
+    tuple path(input_file), val(detectorname)
     val parampid_folder
     
     output:
-    tuple path("*classified.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold), emit: classified_file
+    tuple path("*classified.h5"), val(detectorname), emit: classified_file
     
     publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
 
@@ -39,9 +39,9 @@ process AddTrackScoreKM3NeT{
 
 process BlindDataKM3NET{
     input:
-    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold)
+    tuple path(input_file), val(detectorname)
     output:
-    tuple path("*blinded.h5"), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold), emit: blinded_file
+    tuple path("*blinded.h5"), val(detectorname), emit: blinded_file
 
     publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true;
 
@@ -117,11 +117,11 @@ process InjectSignalKM3NeT{
 
 process CombineEventListsKM3NeT{
     input:
-    tuple val(ratio), path(input_files), val(iteration)
-    //path input_files
+    // tuple val(ratio), path(input_files), val(iteration)
+    path input_files
     output:
-    tuple val(ratio), path("*combined_eventlist*.hdf5"), val(iteration), emit: combined_file
-    //path "*combined_eventlist.hdf5", emit: combined_file
+    //tuple val(ratio), path("*combined_eventlist*.hdf5"), val(iteration), emit: combined_file
+    path "*combined_eventlist*.hdf5", emit: combined_file
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
@@ -301,7 +301,7 @@ process CreateEventListKM3NeT_new_old{
 
 process CreateEventListKM3NeT_new {
     input:
-    tuple path(input_file), val(detectorname), val(shower_reco_name), val(energy_threshold), val(energy_low), val(energy_high), val(trackscore_threshold)
+    tuple path(input_file), val(detectorname)
     path source_specs_file
     val delta_search_min
 
@@ -309,6 +309,17 @@ process CreateEventListKM3NeT_new {
     path ar_track_file_arca
     path ar_shower_file_orca
     path ar_track_file_orca    
+
+    val energy_low_arca
+    val energy_high_arca
+    val energy_low_orca
+    val energy_high_orca
+
+    val energy_threshold_arca
+    val trackscore_threshold_arca
+    val energy_threshold_orca
+    val trackscore_threshold_orca
+
 
     output:
     path "*eventlist_new.hdf5", emit: eventlist_new
@@ -328,12 +339,11 @@ process CreateEventListKM3NeT_new {
             -s "${source_specs_file}" \
             -e "${ar_shower_file_arca}" \
             -t "${ar_track_file_arca}" \
-            --energy_th ${energy_threshold} \
-            --trackscore_th ${trackscore_threshold} \
+            --energy_th ${energy_threshold_arca} \
+            --trackscore_th ${trackscore_threshold_arca} \
             --detector ${detectorname} \
-            --energy_low ${energy_low} \
-            --energy_high ${energy_high} \
-            --shower_reco_name ${shower_reco_name} \
+            --energy_low ${energy_low_arca} \
+            --energy_high ${energy_high_arca} \
             --delta_search_min ${delta_search_min}
     elif [[ "${detectorname}" == "orca" ]]; then
         python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CreateEventListKM3NeT_new.py \
@@ -342,12 +352,11 @@ process CreateEventListKM3NeT_new {
             -s "${source_specs_file}" \
             -e "${ar_shower_file_orca}" \
             -t "${ar_track_file_orca}" \
-            --energy_th ${energy_threshold} \
-            --trackscore_th ${trackscore_threshold} \
+            --energy_th ${energy_threshold_orca} \
+            --trackscore_th ${trackscore_threshold_orca} \
             --detector ${detectorname} \
-            --energy_low ${energy_low} \
-            --energy_high ${energy_high} \
-            --shower_reco_name ${shower_reco_name} \
+            --energy_low ${energy_low_orca} \
+            --energy_high ${energy_high_orca} \
             --delta_search_min ${delta_search_min}
     else
         echo "Error: Unknown detector name: ${detectorname}"
@@ -361,11 +370,13 @@ process CreateEventListKM3NeT_new {
 
 
 process ExtractHitFeatures {
-    errorStrategy 'ignore'
+    //errorStrategy 'ignore'
+    //label 'short'
 
     input:
     path input_file
     val detectorname
+    val filetype
 
     output:
     path "*.h5", emit: converted_file
@@ -379,13 +390,17 @@ process ExtractHitFeatures {
     // Set the appropriate script options
     def scriptOptions = detectorname == 'ORCA' ? '-jsh -jg' : '-as -jg'
     
+    // Allow option for data files
+    def filetypeOption = filetype == 'data' ? '-dat' : ''
+
     """
-    python3 /newhitfeatures/scripts/${scriptPath} -f "${input_file}" -dir "./" ${scriptOptions}
-    #python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/extractor_ARCA.py -f "${input_file}" -dir "./" ${scriptOptions}
+    python3 /newhitfeatures/scripts/${scriptPath} -f "${input_file}" -dir "./" ${scriptOptions} ${filetypeOption}
+    #python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/extractor_ARCA.py -f "${input_file}" -dir "./" ${scriptOptions} ${filetypeOption}
     """
 }
 
 process ConcatFiles{
+    label 'short'
 
     input:
     path input_files
@@ -403,6 +418,8 @@ process ConcatFiles{
 
 process TrainPID{
 
+    label 'long'
+
     input:
     path input_file
     path columntable_file
@@ -418,12 +435,13 @@ process TrainPID{
     publishDir "${params.output_dir}/trained_rdfiles", mode: 'link', overwrite: true;
 
     """
-    python3 /parampid/APC_PID.py -i "${input_file}" -w "./" -d ${detectorname} -c ${columntable_file} -t track -s track_score
+    python3 /parampid/APC_PID.py -i "${input_file}" -w "./" -d ${detectorname} -c ${columntable_file} -t track -sn track_score
     """
 
 }
 
 process ApplyClassifierPID{
+    label 'long'
 
     input:
     path input_file
@@ -438,5 +456,37 @@ process ApplyClassifierPID{
     script:
     """
     python3 /parampid/scripts/applyRDF.py -i ${input_file} -r ${rd_file} -c ${columntable_file} -o ${input_file.toString().replace('.h5', '_scored.h5')} -s track_score
+    """
+}
+
+process TestProcess{
+
+    input:
+    path input_file
+
+    output:
+    path "*.txt"
+
+    script:
+    def filename = input_file.getBaseName()
+    def txt_file = "${filename}.txt"
+    """
+    echo "$filename" > $txt_file
+    """
+
+}
+
+process TestProcess2{
+
+    input:
+    val number
+
+    output:
+    path "*.txt"
+
+    script:
+    def txt_file = "testfile${number}.txt"
+    """
+    echo "$number" > $txt_file
     """
 }
