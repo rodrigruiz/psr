@@ -47,7 +47,7 @@ def main():
         folder_path, file_name = os.path.split(file) 
         file_name = os.path.splitext(file_name)[0]
         output_filename = data['output_dir'] + file_name + "_" + det_name + ".h5"
-        io.root_to_hdf5(file, output_file = output_filename)
+        io.root_to_hdf5(file, det_name ,output_file = output_filename)
 
             
 if __name__ == "__main__":

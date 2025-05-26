@@ -29,8 +29,9 @@ from astropy.io.misc.hdf5 import read_table_hdf5
 from astropy.timeseries import TimeSeries
 
 
-from stingray.pulse.search import epoch_folding_search, z_n_search
+from stingray.pulse.search import epoch_folding_search, z_n_search, search_best_peaks
 from epochfolding.stingray_epochfolding import savehdf5, get_testfrequencies
+from epochfolding.gtis import loadGTIs
 
 def readEventList(file):
     """Read EventList from HDF5-file constucted by CreateEventlist. 
@@ -95,11 +96,13 @@ def main():
             expocorr = True
             gti_file = gti_files[0] if len(gti_files) == 1 else gti_files[idx]
 
-            gti_table = read_table_hdf5(gti_file)
-            gti_start = gti_table['gti_start']
-            gti_stop = gti_table['gti_stop']
+            #gti_table = read_table_hdf5(gti_file)
+            print(gti_file)
+            gti_table = loadGTIs(gti_file)
+            gti_start = gti_table[:,0]
+            gti_stop = gti_table[:,1]
             current_gti = np.array([gti_start, gti_stop]).T
-            # print(f"GTIs: {current_gti}")
+            print(f"GTIs: {current_gti}")
 
         # Fetching filename for usage in output filename
         folder_path, file_name = os.path.split(file)
@@ -118,21 +121,41 @@ def main():
             #print(f"Last 10 Current GTIs: {current_gti[-10:]}")
             print(f"First 10 Times: {[f'{x:.3f}' for x in np.array(EventList['time'].value)[:10]]}")
             print(f"Last 10 Times: {[f'{x:.3f}' for x in np.array(EventList['time'].value)[-10:]]}")
+            print(f"Number of available events: {len(np.array(EventList['time'].value))}")
+            print(f"Test frequencies: {frequencies}")
+            print(f"nbins: {int(data['nbin'])}")
+
             freq, efstat = epoch_folding_search(
                 np.array(EventList['time'].value),
                 frequencies,
                 nbin=int(data['nbin']),
-                #segment_size=float(data['segment_size']),
-                #gti=current_gti
+                segment_size=float(data['segment_size']),
+                gti=current_gti
             ) 
             # ---- PLOTTING --------
             plt.figure()
-            plt.plot(freq, efstat, label='EF statistics')
+            plt.plot(freq, efstat, label='EF statistics', alpha=0.8)
             plt.axhline(int(data['nbin']) - 1, ls='--', lw=3, color='k', label='n - 1')
             plt.axvline(float(data['frequency']), lw=3, alpha=0.5, color='r', label='Correct frequency')
             plt.xlabel('Frequency (Hz)')
             plt.ylabel('EF Statistics')
             _ = plt.legend()
+
+            threshold = (np.max(efstat)*0.1+int(data['nbin']) - 1)
+            best_x, best_y = search_best_peaks(freq,efstat,threshold)
+            y_min, y_max = plt.ylim()
+            offset = 0.04 * (y_max - y_min)
+
+            '''
+            for i, (x_value, y_value) in enumerate(zip(best_x, best_y)):
+                label = 'peaks' if i == 0 else None  # Label only the first line
+                plt.axvline(x_value, ls='dotted', lw=2, color='k', label=label)
+
+                # Annotate the peak with its y-value slightly to the righ
+                #plt.text(x_value + 0.03e-5, y_value, f"{y_value:.2f}", color='darkorange', fontsize=10)
+                plt.text(x_value + 0.03e-5, y_value, f"{x_value:.4e}", color='darkorange', fontsize=10)
+                plt.text(x_value + 0.03e-5, y_value-offset, f"{(float(data['frequency'])/x_value):.2f}", color='darkorange', fontsize=10)
+            '''
             plt.savefig(output_plot)
 
             print(f"Plot saved: {output_plot}")

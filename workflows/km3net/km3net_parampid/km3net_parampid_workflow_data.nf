@@ -4,8 +4,12 @@ include{
     ExtractHitFeatures as ExtractHitFeaturesTraining;
     ExtractHitFeatures as ExtractHitFeaturesClassification;
     ConcatFiles;
-    TrainPID;
-    ApplyClassifierPID;
+    TrainPID as TrainPIDTrack;
+    TrainPID as TrainPIDMuon1;
+    TrainPID as TrainPIDMuon2;
+    ApplyClassifierPID as ApplyClassifierPIDTrack;
+    ApplyClassifierPID as ApplyClassifierPIDMuon;
+    FilterMuonScore as FilterMuonScore;
 } from '../processes/km3net_processes.nf'
 
 evaluate(new File(params.input_file))
@@ -16,23 +20,29 @@ workflow{
     
 
     Channel
-    .fromPath(input.mc_files_arca)
+    .fromPath(input.mc_files)
     .splitText(by: 1)
     .set {TrainFiles_Channel}
     
     
     ExtractHitFeaturesTraining(TrainFiles_Channel, input.detectorname, 'mc')
     ConcatFiles(ExtractHitFeaturesTraining.out.converted_file.collect())
-    TrainPID(ConcatFiles.out.concatenated_file,input.column_table_file, input.detectorname)
 
+    TrainPIDTrack(ConcatFiles.out.concatenated_file,input.column_table_file, input.detectorname,'track','track_score')
+
+    //TrainPIDMuon1(ConcatFiles.out.concatenated_file,input.column_table_file, input.detectorname,'muon','muon_score1')
+    //FilterMuonScore(TrainPIDMuon1.out.pid_output , 0.8)
+    //TrainPIDMuon2(FilterMuonScore.out.filtered_file,input.column_table_file, input.detectorname,'muon','muon_score2')
+    
     Channel
-    .fromPath(input.data_files_arca)
+    .fromPath(input.data_files)
     .splitText(by: 1)
     .set {Files_Channel}
 
     ExtractHitFeaturesClassification(Files_Channel, input.detectorname, 'data')
-    ApplyClassifierPID(ExtractHitFeaturesClassification.out.converted_file, TrainPID.out.rd_file, input.column_table_file)
 
+    ApplyClassifierPIDTrack(ExtractHitFeaturesClassification.out.converted_file, TrainPIDTrack.out.rd_file, input.column_table_file, 'track_score')
+    //ApplyClassifierPIDMuon(ApplyClassifierPIDTrack.out.output_file, TrainPIDMuon2.out.rd_file,  input.column_table_file, 'muon_score')
 
 
 } 

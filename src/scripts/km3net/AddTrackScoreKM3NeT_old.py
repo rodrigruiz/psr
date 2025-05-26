@@ -3,7 +3,7 @@ Extract the track_score column from h5 km3net files that were classified using P
 The filename of the rootfilename should be given, as well as the folder where the classified files are located.
 Those are named rootfilename_scored.h5 and this script expects this to be the case because it appends the _scored.h5 part to the filepath of the rootfile.
 Usage: 
-    AddTrackScoreKM3NeT.py -i INPUT_FILES... -p=<parampid_folder> -o OUTPUT_DIR [--detector=<detector>] [--random_track_score]
+    AddTrackScoreKM3NeT.py -i INPUT_FILES... -p=<parampid_folder> -o OUTPUT_DIR [--detector=<detector>]
 
 Options:
     -h --help                                      Show this help message.
@@ -11,7 +11,6 @@ Options:
     -p --parampid_folder=<parampid_folder>         Folder with the classified files from parampid
     -o --output_dir OUTPUT_DIR                     Output directory.
        --detector=<detector>                       Name of the Detector. 'arca' or 'orca' [default: arca]
-       --random_track_score                        If set, assigns a random track_score between 0 and 1 to each event
 """
 
 from docopt import docopt
@@ -31,22 +30,46 @@ def calculate_random_track_score(id_table):
 def calculate_track_score(id_table, parampid_filepath):
     """Load track_score values from ParamPID file and map them to id_table based on event_id."""
 
+    # Load the ParamPID file
     try:
         df = pd.read_hdf(parampid_filepath, 'summary')
     except Exception as e:
         raise IOError(f"Error reading ParamPID file: {parampid_filepath}. Details: {e}")
 
-    if 'group_id' not in df.columns or 'track_score' not in df.columns:
-        raise ValueError(f"ParamPID file {parampid_filepath} is missing required columns 'group_id', 'track_score'.")
+    # Ensure required columns exist
+    if 'group_id' not in df.columns or 'track_score' not in df.columns: # or 'muon_score' not in df.columns:
+        raise ValueError(f"ParamPID file {parampid_filepath} is missing required columns 'group_id', 'track_score' or 'muon_score'.")
 
+
+    print(f"Loaded ParamPID Data (first 5 rows):\n{df.head()}")
+
+    # Map group_id (ParamPID) to event_id (id_table) for track_score
     event_ids = id_table['event_id']
     track_score_map = dict(zip(df['group_id'], df['track_score']))
-    unmatched_event_ids = [eid for eid in event_ids if eid not in track_score_map]
+    #muon_score_map = dict(zip(df['group_id'], df['muon_score']))
+
+
+    print(f"Track Score Mapping (first 10 items): {list(track_score_map.items())[:10]}")
+    #print(f"Muon Score Mapping (first 10 items): {list(muon_score_map.items())[:10]}")
+    print(f"Event IDs from ID Table (first 10): {event_ids[:10]}")
+
+    # Find unmatched event_ids
+    unmatched_event_ids = [event_id for event_id in event_ids if event_id not in track_score_map]
 
     if unmatched_event_ids:
-        print(f"Warning: {len(unmatched_event_ids)} unmatched event_ids. First 10: {unmatched_event_ids[:10]}")
+        print(f"Warning: {len(unmatched_event_ids)} event_ids have no matching group_id in ParamPID file.")
+        print(f"First 10 unmatched event_ids: {unmatched_event_ids[:10]}")
+    else:
+        print("All event_ids have matching group_id entries in the ParamPID file.")
 
-    return [track_score_map.get(eid, np.nan) for eid in event_ids]
+    track_scores = [track_score_map.get(event_id, np.nan) for event_id in event_ids]
+    #muon_scores = [muon_score_map.get(event_id, np.nan) for event_id in event_ids]
+
+    print(f"Mapped Track Scores (first 10): {track_scores[:10]}")
+    #print(f"Mapped Muon Scores (first 10): {muon_scores[:10]}")
+
+
+    return track_scores #, muon_scores
 
 
 def main():
@@ -62,45 +85,55 @@ def main():
     input_files.sort()
 
     if not input_files:
-        print(f"No files matching pattern: {data['input_files']}")
+        print(f"No files matching pattern: {input_files}")
         return
 
     parampid_folder = str(data['parampid_folder'])
     det_name = str(data['detector'])
-    use_random_score = data.get('random_track_score', False)
 
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
 
+    # Process each file
     for file in input_files:
         folder_path, file_name = os.path.split(file)
+
         end_of_name = f"_{det_name}.h5"
 
         if not file_name.endswith(end_of_name):
             raise ValueError(f"Input filename must end with '{end_of_name}'")
 
+
         file_name = os.path.splitext(file_name)[0]
+        
+        # base_name = file_name.replace(end_of_name, "")
+
+        ## create filepaths for loading classified parampid files
+        parampid_filename = file_name.replace(f"_{det_name}", ".root") + "_scored.h5" # + "_scored_scored.h5"
+        parampid_filepath = os.path.join(parampid_folder, parampid_filename)
+        print(f"ParamPID Filepath: {parampid_filepath}")
+
+
         output_file_name = f"{file_name}_classified.h5"
         output_file_path = os.path.join(data['output_dir'], output_file_name)
 
         tables = load_hdf5_tables(file)
         print(f"Available tables in {file}: {list(tables.__dict__.keys())}")
 
+
         if hasattr(tables, 'id_table'):
+
             print("Calculating track score...")
-            if use_random_score:
-                track_score = calculate_random_track_score(tables.id_table)
-            else:
-                parampid_filename = file_name.replace(f"_{det_name}", ".root") + "_scored.h5"
-                parampid_filepath = os.path.join(parampid_folder, parampid_filename)
-                print(f"ParamPID Filepath: {parampid_filepath}")
-                track_score = calculate_track_score(tables.id_table, parampid_filepath)
+            track_score = calculate_track_score(tables.id_table, parampid_filepath)
+            track_score_column = Column(track_score, name= 'track_score')
+            #muon_score_column = Column(muon_score, name = 'muon_score')
 
-            track_score_column = Column(track_score, name='track_score')
-
-            with h5py.File(output_file_path, 'w') as h5file:
+            with h5py.File(output_file_path,'w') as h5file:
+                
                 tables.id_table.add_column(track_score_column)
-                print(f"ID Table with Track Score:\n{tables.id_table[:10]}")
+                #tables.id_table.add_column(muon_score_column)
+                print(f"ID Table with Track adn Muon Scores:\n{tables.id_table[:10]}")
+
 
                 write_table_hdf5(tables.header_table, h5file, path='HEADER', serialize_meta=True)
                 write_table_hdf5(tables.id_table, h5file, path='ID', serialize_meta=True)
@@ -108,15 +141,14 @@ def main():
                 reco_grp = h5file.create_group("RECO")
                 write_table_hdf5(tables.reco_table, reco_grp, path="RECO_EVENTS", serialize_meta=True)
                 write_table_hdf5(tables.fitinf_table, reco_grp, path="FITINF", serialize_meta=True)
-
                 if tables.mc_table is not None:
                     mc_grp = h5file.create_group("MC")
                     write_table_hdf5(tables.mc_table, mc_grp, path='MC_EVENTS', serialize_meta=True)
-
-                print(f"New HDF5 file written: {output_file_path}")
+                print(f"New HDF5 file written: {h5file}")
         else:
             print(f"Error loading 'id_table' from {file}.")
 
 
 if __name__ == "__main__":
     main()
+

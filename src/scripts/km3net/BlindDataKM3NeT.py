@@ -70,9 +70,9 @@ def main():
         print(f"Processing file: {file}")
 
         # Check and shuffle times and columns for each table if it exists
-        # if hasattr(tables, 'id_table'):
-        #     print("Shuffling times in ID table...")
-        #     tables.id_table = shuffle_columns(tables.id_table, ['timeslice_utc_time'])
+        if hasattr(tables, 'id_table'):
+             print("Shuffling times in ID table...")
+             tables.id_table = shuffle_columns(tables.id_table, ['timeslice_utc_time'])
 
         if hasattr(tables, 'mc_table') and tables.mc_table is not None:
             print("Shuffling columns in MC table...")
@@ -94,6 +94,8 @@ def main():
             if hasattr(tables, 'reco_table'):
                 reco_grp = h5file.create_group("RECO")
                 write_table_hdf5(tables.reco_table, reco_grp, path="RECO_EVENTS", serialize_meta=True)
+                # Write RECO_FITINF table
+                write_table_hdf5(tables.fitinf_table, reco_grp, path="FITINF", serialize_meta=True)
             # Write MC_EVENTS table
             if hasattr(tables, 'mc_table') and tables.mc_table is not None:
                 mc_grp = h5file.create_group("MC")

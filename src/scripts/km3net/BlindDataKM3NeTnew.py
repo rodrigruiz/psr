@@ -42,6 +42,8 @@ def shuffle_columns(table, columns):
             data = table[column]
             shuffled_data = np.random.permutation(data)
             table[column] = shuffled_data
+            # maybe also shuffle phi and theta on their own to have them random? 
+            # Or does every column get randomly shuffled here?
     return table
 
 def main():

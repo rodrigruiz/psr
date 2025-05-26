@@ -2,19 +2,22 @@ input = [energy_threshold_arca : 1e2,
          energy_low_arca : 2,
          energy_high_arca : 8,
          trackscore_threshold_arca : 0.3,
-         energy_threshold_orca : 0,
+         muonscore_threshold_arca : 0.5,
+         energy_threshold_orca : 1e-2,
          energy_low_orca : 0,
          energy_high_orca : 2,
          trackscore_threshold_orca : 0.3,
+         muonscore_threshold_orca : 0.5,
          bins_per_file  : 200,
          pulseshape : "mvm",
-         frequency : 1.1574e-5,
-         df : 1e-7,
-         testf_df: 1e-10,
-         ratio_min : 0.01, // Lower limit of the ratio
-         ratio_max : 0.01, // Upper limit of the ratio
+         frequency : 1.1e-4,
+         inject_method : 'classic',  
+         df : 1e-5,
+         testf_df: 2e-8,
+         ratio_min : 0.001, // Lower limit of the ratio
+         ratio_max : 0.5, // Upper limit of the ratio
          ratio_step : 0.05, // Step for the ratio
-         repetitions : 1, // Number of repetitions for each ratio
+         repetitions : 20, // Number of repetitions for each ratio
          number_of_testf : 500,
          nbin : 32,
          kappa : 5.0,
@@ -26,15 +29,21 @@ input = [energy_threshold_arca : 1e2,
 	     km3net_arca_numu_files : "${WORKFLOW_DIR}/inputs/arca_runs_numu_test.txt",
          km3net_arca_anue_files : "${WORKFLOW_DIR}/inputs/arca_runs_anue_test.txt",
          km3net_arca_data_files : "${WORKFLOW_DIR}/../data_files_arca.txt", 
+         km3net_arca_mc_files : "${WORKFLOW_DIR}/../mc_files_arca.txt", 
          km3net_orca_numu_files : "${WORKFLOW_DIR}/inputs/orca_runs_numu_test.txt",
          km3net_orca_anue_files : "${WORKFLOW_DIR}/inputs/orca_runs_anue_test.txt",
+         km3net_orca_data_files : "${WORKFLOW_DIR}/../data_files_orca.txt", 
+         km3net_orca_mc_files : "${WORKFLOW_DIR}/../mc_files_orca.txt", 
          ar_shower_file_arca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_aashower_mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013.hdf5",
          ar_track_file_arca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jmuon_mcv8.1.gsg_numu-CCHEDIS_1e2-1e8GeV.sirene.jterbr000132.hdf5",
          ar_shower_file_orca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jshower_gsg_elec-CC_1.0-100.0GeV_orca.hdf5",
          ar_track_file_orca : "${WORKFLOW_DIR}/inputs/angular_res_files/AngularResolutionOverEnergy_jmuon_gsg_muon-CC_1.0-100.0GeV_orca.hdf5",
-         delta_search_min : 30.0,
-         folding_segment_size : 1e10,
+         delta_search_min : 5.0,
+         folding_segment_size : 1e11,
          parampid_folder : "/home/hpc/capn/capn107h/software/nextflow_output/parampid/classified_files",
+         filestype : "data",
+         detector : "arcaorca",
+         cone_all : "False",
          ]
 
          // /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_sensitivity/inputs/runs.txt
