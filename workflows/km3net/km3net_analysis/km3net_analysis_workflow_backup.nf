@@ -87,6 +87,7 @@ workflow{
     */
 
 
+
     SNR_Channel = Channel.fromList(snr_list)
     Iteration_Channel = Channel.fromList(iteration_list)
 
@@ -97,7 +98,6 @@ workflow{
     BlindDataKM3NET(AddTrackScoreKM3NeT.out)
     CreateEventListKM3NeT_new(BlindDataKM3NET.out, input.source_file, input.delta_search_min, input.ar_shower_file_arca, input.ar_track_file_arca, input.ar_shower_file_orca, input.ar_track_file_orca)
     CorrectEventListKM3NeT(CreateEventListKM3NeT_new.out, input.source_file)  
-
     Combined_Channel = SNR_Channel.combine(CorrectEventListKM3NeT.out).combine(Iteration_Channel)
     InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)
     CombineEventListsKM3NeT(InjectSignalKM3NeT.out.groupTuple(by: [0,2]))

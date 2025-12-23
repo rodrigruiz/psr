@@ -11,12 +11,12 @@ evaluate(new File(params.input_file))
 
 workflow{
 
-    println "Input file path: ${input.km3net_orca_files}"
+    println "Input file path: ${input.km3net_files}"
 
     Channel
-    .fromPath(input.km3net_orca_files)
+    .fromPath(input.km3net_files)
     .splitText(by: 1)
-    .combine(Channel.of('orca'))
+    .combine(Channel.of(input.detector))
     .set {Files_Channel}
 
     ConvertFilesKM3NeT(Files_Channel)

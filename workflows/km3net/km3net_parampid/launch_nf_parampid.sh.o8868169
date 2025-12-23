@@ -1,0 +1,750 @@
+### Starting TaskPrologue of job 8868169 on w2230 at Thu Aug 14 03:22:04 CEST 2025
+#   SLURM_JOB_NODELIST=w2230
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_parampid_workflow_data.nf` [voluminous_leavitt] DSL2 - revision: b88794b1f7
+
+WARN: Nextflow version 24.10.1 does not match workflow required version: 24.04.3 -- Execution will continue, but things may break!
+[-        ] ExtractHitFeaturesTraining     -
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[-        ] Ext…tHitFeaturesClassification -
+[-        ] ApplyClassifierPIDTrack        -
+
+[-        ] ExtractHitFeaturesTraining     | 0 of 30
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[-        ] Ext…tHitFeaturesClassification | 0 of 32
+[-        ] ApplyClassifierPIDTrack        -
+
+[-        ] ExtractHitFeaturesTraining     | 0 of 56
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[-        ] Ext…tHitFeaturesClassification | 0 of 60
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (4)
+[b1/7de614] Ext…ctHitFeaturesTraining (11) | 0 of 92
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[d1/9d80ff] Ext…eaturesClassification (25) | 0 of 99
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (8)
+[9b/f15eed] ExtractHitFeaturesTraining (8) | 0 of 140
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[47/eecc1d] Ext…eaturesClassification (14) | 0 of 141
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (11)
+[d5/a1bd91] Ext…ctHitFeaturesTraining (29) | 0 of 183
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[e0/afe724] Ext…eaturesClassification (24) | 0 of 191
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (15)
+[79/9eac4e] Ext…ctHitFeaturesTraining (32) | 0 of 226
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[18/b9246f] Ext…eaturesClassification (31) | 0 of 234
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (19)
+[15/afa8c6] Ext…ctHitFeaturesTraining (16) | 0 of 273
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[a5/1004e1] Ext…FeaturesClassification (9) | 0 of 277
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (23)
+[44/9336b9] ExtractHitFeaturesTraining (6) | 0 of 311
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[a6/36cf24] Ext…eaturesClassification (21) | 0 of 317
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (27)
+[44/9336b9] ExtractHitFeaturesTraining (6) | 0 of 352
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[d2/1344b2] Ext…eaturesClassification (16) | 0 of 363
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (30)
+[5b/4f5a43] Ext…ctHitFeaturesTraining (15) | 0 of 398
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[47/ba159e] Ext…FeaturesClassification (5) | 0 of 407
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (34)
+[da/2802e0] Ext…ctHitFeaturesTraining (30) | 0 of 438
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[7e/938b24] Ext…eaturesClassification (22) | 0 of 449
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (39)
+[f1/937af9] Ext…ctHitFeaturesTraining (10) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c6/27449b] Ext…eaturesClassification (32) | 0 of 499
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (42)
+[fd/96c03f] Ext…ctHitFeaturesTraining (46) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c6/27449b] Ext…eaturesClassification (32) | 0 of 580
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (45)
+[8a/cb1cb8] Ext…ctHitFeaturesTraining (27) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[55/95f352] Ext…eaturesClassification (23) | 0 of 661
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (45)
+[8a/cb1cb8] Ext…ctHitFeaturesTraining (27) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[55/95f352] Ext…eaturesClassification (23) | 0 of 683
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (50)
+[bb/796164] ExtractHitFeaturesTraining (2) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[f2/254b89] Ext…FeaturesClassification (1) | 0 of 763
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (54)
+[51/d05dac] Ext…ctHitFeaturesTraining (25) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[61/1f2a9d] Ext…FeaturesClassification (8) | 0 of 838
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (58)
+[e9/40aea7] Ext…ctHitFeaturesTraining (21) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[bb/dfd6c8] Ext…eaturesClassification (13) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (61)
+[1b/258f68] Ext…ctHitFeaturesTraining (20) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[92/2c3085] Ext…eaturesClassification (27) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (65)
+[58/d78ac3] ExtractHitFeaturesTraining (7) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[45/540779] Ext…eaturesClassification (17) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (69)
+[80/eff18e] Ext…ctHitFeaturesTraining (35) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[45/540779] Ext…eaturesClassification (17) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (74)
+[e6/a87ed8] Ext…ctHitFeaturesTraining (36) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[68/568fe4] Ext…eaturesClassification (37) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (78)
+[cc/bc1c6e] Ext…ctHitFeaturesTraining (40) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[68/568fe4] Ext…eaturesClassification (37) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (81)
+[cc/bc1c6e] Ext…ctHitFeaturesTraining (40) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[23/b6d2bc] Ext…eaturesClassification (38) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (86)
+[ec/97ba57] Ext…ctHitFeaturesTraining (41) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[64/96497d] Ext…eaturesClassification (42) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (90)
+[17/ca4187] Ext…ctHitFeaturesTraining (43) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[8a/2ed36c] Ext…eaturesClassification (45) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (95)
+[17/ca4187] Ext…ctHitFeaturesTraining (43) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[5a/56bc1b] Ext…eaturesClassification (49) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (99)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[76/4b7caf] Ext…eaturesClassification (50) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (100)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[c9/295c87] Ext…eaturesClassification (51) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (101)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 0 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[f2/ce21f3] Ext…eaturesClassification (82) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (101)
+[d5/a1bd91] Ext…ctHitFeaturesTraining (29) | 1 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[f2/ce21f3] Ext…eaturesClassification (82) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (101)
+[d5/a1bd91] Ext…ctHitFeaturesTraining (29) | 1 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[f2/ce21f3] Ext…eaturesClassification (82) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (101)
+[cf/c01b3e] ExtractHitFeaturesTraining (9) | 2 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[f2/ce21f3] Ext…eaturesClassification (82) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (102)
+[cf/c01b3e] ExtractHitFeaturesTraining (9) | 2 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[3a/cb31c9] Ext…eaturesClassification (68) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (102)
+[cf/c01b3e] ExtractHitFeaturesTraining (9) | 2 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[3a/cb31c9] Ext…eaturesClassification (68) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (103)
+[f1/937af9] Ext…ctHitFeaturesTraining (10) | 5 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[cd/baea8c] Ext…eaturesClassification (52) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (105)
+[af/06279b] Ext…ctHitFeaturesTraining (48) | 5 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[78/7aabe8] Ext…eaturesClassification (54) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (106)
+[15/afa8c6] Ext…ctHitFeaturesTraining (16) | 6 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[22/ee5e56] Ext…eaturesClassification (55) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (108)
+[27/b6dbb1] Ext…ctHitFeaturesTraining (50) | 8 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[22/ee5e56] Ext…eaturesClassification (55) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (111)
+[cd/a58240] Ext…ctHitFeaturesTraining (53) | 11 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[6b/7f7415] Ext…eaturesClassification (57) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (111)
+[cd/a58240] Ext…ctHitFeaturesTraining (53) | 11 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[6b/7f7415] Ext…eaturesClassification (57) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (114)
+[62/95ac5a] Ext…ctHitFeaturesTraining (56) | 14 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[6b/7f7415] Ext…eaturesClassification (57) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (114)
+[62/95ac5a] Ext…ctHitFeaturesTraining (56) | 14 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[6b/7f7415] Ext…eaturesClassification (57) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (114)
+[e9/40aea7] Ext…ctHitFeaturesTraining (21) | 16 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[6b/7f7415] Ext…eaturesClassification (57) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (116)
+[78/e276c5] Ext…ctHitFeaturesTraining (57) | 16 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[49/78a215] Ext…eaturesClassification (59) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (116)
+[78/e276c5] Ext…ctHitFeaturesTraining (57) | 16 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[49/78a215] Ext…eaturesClassification (59) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (117)
+[82/de0adf] Ext…ctHitFeaturesTraining (58) | 21 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[49/78a215] Ext…eaturesClassification (59) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (121)
+[1b/76a128] Ext…ctHitFeaturesTraining (52) | 21 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[60/0e14e4] Ext…eaturesClassification (61) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (121)
+[fd/96c03f] Ext…ctHitFeaturesTraining (46) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[60/0e14e4] Ext…eaturesClassification (61) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (124)
+[51/e713ec] Ext…ctHitFeaturesTraining (60) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[44/98fc37] Ext…eaturesClassification (62) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (127)
+[51/e713ec] Ext…ctHitFeaturesTraining (60) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[1f/b3b02b] Ext…eaturesClassification (58) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (129)
+[24/e0f4fb] Ext…ctHitFeaturesTraining (61) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[1f/b3b02b] Ext…eaturesClassification (58) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (130)
+[24/e0f4fb] Ext…ctHitFeaturesTraining (61) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[4f/43d96d] Ext…eaturesClassification (65) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (130)
+[24/e0f4fb] Ext…ctHitFeaturesTraining (61) | 30 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[4f/43d96d] Ext…eaturesClassification (65) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (132)
+[f3/05b506] Ext…ctHitFeaturesTraining (63) | 32 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[b9/9e52ec] Ext…eaturesClassification (70) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (132)
+[f3/05b506] Ext…ctHitFeaturesTraining (63) | 32 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[b9/9e52ec] Ext…eaturesClassification (70) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (134)
+[2c/8626dd] Ext…ctHitFeaturesTraining (47) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[27/82d55c] Ext…eaturesClassification (75) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (137)
+[56/a8ac8e] Ext…ctHitFeaturesTraining (72) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[27/82d55c] Ext…eaturesClassification (75) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (142)
+[c5/15e247] Ext…ctHitFeaturesTraining (75) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[ac/d0913d] Ext…aturesClassification (103) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (146)
+[b6/d5f07d] Ext…ctHitFeaturesTraining (65) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[d4/6ce986] Ext…eaturesClassification (74) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (147)
+[a1/ec32c9] Ext…ctHitFeaturesTraining (69) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[d4/6ce986] Ext…eaturesClassification (74) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (147)
+[a1/ec32c9] Ext…ctHitFeaturesTraining (69) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[d4/6ce986] Ext…eaturesClassification (74) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+
+executor >  slurm (150)
+[58/59dee8] Ext…tHitFeaturesTraining (101) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[7d/970c9e] Ext…eaturesClassification (66) | 0 of 923
+[-        ] ApplyClassifierPIDTrack        -
+ERROR ~ Error executing process > 'ExtractHitFeaturesClassification (30)'
+
+Caused by:
+  Process `ExtractHitFeaturesClassification (30)` terminated with an error exit status (140)
+
+
+Command executed:
+
+  python3 /newhitfeatures/scripts/extractor.py -f "KM3NeT_00000148_00016602.data.jppmuon_jppshower_dynamic.offline.v9.2.root" -dir "./" -d "/home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/calibration_00000148_00016545.detx" -jsh -jg -dat
+  #python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/extractor_ARCA.py -f "KM3NeT_00000148_00016602.data.jppmuon_jppshower_dynamic.offline.v9.2.root" -dir "./" -jsh -jg -dat
+
+Command exit status:
+  140
+
+Command output:
+  loading input from file /jpp/data/J1p.dat... OK
+  loading input from file /jpp/data/J2p.dat... OK
+  loading input from file /jpp/data/J3p.dat... OK
+  loading input from file /jpp/data/J4p.dat... OK
+  loading input from file /jpp/data/J5p.dat... OK
+  loading input from file /jpp/data/J6p.dat... OK
+  adding PDFs... OK
+  bluring PDFs... OK
+  loading input from file /jpp/data/J14p.dat... OK
+  loading input from file /jpp/data/J13p.dat... OK
+  bluring PDFs... OK
+  loading input from file /jpp/data/J14p.dat... OK
+  loading input from file /jpp/data/J13p.dat... OK
+  loading PDF from file /jpp/data/J1p.dat... OK
+  loading PDF from file /jpp/data/J2p.dat... OK
+  loading PDF from file /jpp/data/J5p.dat... OK
+  loading PDF from file /jpp/data/J6p.dat... OK
+  loading PDF from file /jpp/data/J3p.dat... OK
+  loading PDF from file /jpp/data/J4p.dat... OK
+  adding PDFs... OK
+
+Command error:
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+
+Work dir:
+  /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/work/ff/03b34144f79db9fb4b88f64201fcf9
+
+Container:
+  /home/hpc/capn/capn107h/software/singularity_testdir/km3net_parampid_container.sif
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+Pipeline complete
+Command line: nextflow -C parampid_profiles.config run km3net_parampid_workflow_data.nf -profile woody_hannes_orca_data
+
+executor >  slurm (151)
+[58/59dee8] Ext…tHitFeaturesTraining (101) | 47 of 481
+[-        ] ConcatFiles                    -
+[-        ] TrainPIDTrack                  -
+[71/1a183b] Ext…eaturesClassification (72) | 4 of 923, failed: 4
+[-        ] ApplyClassifierPIDTrack        -
+Oops... something went wrong
+ERROR ~ Error executing process > 'ExtractHitFeaturesClassification (30)'
+
+Caused by:
+  Process `ExtractHitFeaturesClassification (30)` terminated with an error exit status (140)
+
+
+Command executed:
+
+  python3 /newhitfeatures/scripts/extractor.py -f "KM3NeT_00000148_00016602.data.jppmuon_jppshower_dynamic.offline.v9.2.root" -dir "./" -d "/home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/calibration_00000148_00016545.detx" -jsh -jg -dat
+  #python3 /home/hpc/capn/capn107h/software/newhitfeatures/scripts/extractor_ARCA.py -f "KM3NeT_00000148_00016602.data.jppmuon_jppshower_dynamic.offline.v9.2.root" -dir "./" -jsh -jg -dat
+
+Command exit status:
+  140
+
+Command output:
+  loading input from file /jpp/data/J1p.dat... OK
+  loading input from file /jpp/data/J2p.dat... OK
+  loading input from file /jpp/data/J3p.dat... OK
+  loading input from file /jpp/data/J4p.dat... OK
+  loading input from file /jpp/data/J5p.dat... OK
+  loading input from file /jpp/data/J6p.dat... OK
+  adding PDFs... OK
+  bluring PDFs... OK
+  loading input from file /jpp/data/J14p.dat... OK
+  loading input from file /jpp/data/J13p.dat... OK
+  bluring PDFs... OK
+  loading input from file /jpp/data/J14p.dat... OK
+  loading input from file /jpp/data/J13p.dat... OK
+  loading PDF from file /jpp/data/J1p.dat... OK
+  loading PDF from file /jpp/data/J2p.dat... OK
+  loading PDF from file /jpp/data/J5p.dat... OK
+  loading PDF from file /jpp/data/J6p.dat... OK
+  loading PDF from file /jpp/data/J3p.dat... OK
+  loading PDF from file /jpp/data/J4p.dat... OK
+  adding PDFs... OK
+
+Command error:
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+  2025-08-14 03:30:03 WARNING ++ km3pipe.hardware: DOMs with different number of PMTs are detected, this can cause some unexpected behaviour.
+
+Work dir:
+  /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/work/ff/03b34144f79db9fb4b88f64201fcf9
+
+Container:
+  /home/hpc/capn/capn107h/software/singularity_testdir/km3net_parampid_container.sif
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+WARN: Killing running tasks (100)
+
+=== JOB_STATISTICS ===
+=== current date     : Thu Aug 14 03:36:45 CEST 2025
+= Job-ID             : 8868169 on woody
+= Job-Name           : launch_nf_parampid.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/launch_nf_parampid.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 23:00:00
+= Elapsed runtime    : 00:14:43
+= Total RAM usage    : 1.0 GiB of requested  GiB (%)   
+= Node list          : w2230
+= Subm/Elig/Start/End: 2025-08-14T02:40:42 / 2025-08-14T02:40:42 / 2025-08-14T03:22:02 / 2025-08-14T03:36:45
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc             101.8G   104.9G   209.7G        N/A     229K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

@@ -1,0 +1,140 @@
+### Starting TaskPrologue of job 8815544 on w2402 at Mon Aug  4 15:23:38 CEST 2025
+#   SLURM_JOB_NODELIST=w2402
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_analysis_workflow_creategti.nf` [dreamy_swanson] DSL2 - revision: 1024523f26
+
+WARN: Access to undefined parameter `delta_search_min` -- Initialise it to a default value eg. `params.delta_search_min = some_value`
+WARN: Access to undefined parameter `source_file` -- Initialise it to a default value eg. `params.source_file = some_value`
+WARN: Access to undefined parameter `cone_all` -- Initialise it to a default value eg. `params.cone_all = some_value`
+[-        ] CreateFullSkyEventList -
+
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[28/9f0a68] CreateFullSkyEventList (8)   | 32 of 32, cached: 32
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[98/e5e4b5] CreateFullSkyEventList (62)  | 64 of 64, cached: 64
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[81/4c7a9c] CreateFullSkyEventList (87)  | 81 of 81, cached: 81
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[da/b2be5a] CreateFullSkyEventList (124) | 127 of 127, cached: 127
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[ad/1dd283] CreateFullSkyEventList (147) | 159 of 159, cached: 159
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[32/e2c88e] CreateFullSkyEventList (209) | 216 of 216, cached: 216
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[cd/303435] CreateFullSkyEventList (268) | 267 of 267, cached: 267
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[34/093977] CreateFullSkyEventList (331) | 333 of 333, cached: 333
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[85/628015] CreateFullSkyEventList (398) | 392 of 392, cached: 392
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[d5/f32155] CreateFullSkyEventList (456) | 458 of 458, cached: 458
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[95/790620] CreateFullSkyEventList (534) | 535 of 535, cached: 535
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[7f/c7cd6b] CreateFullSkyEventList (631) | 631 of 631, cached: 631
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[86/b9aba8] CreateFullSkyEventList (672) | 668 of 668, cached: 668
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[55/c691ae] CreateFullSkyEventList (725) | 725 of 725, cached: 725 ✔
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[55/c691ae] CreateFullSkyEventList (725) | 725 of 725, cached: 725 ✔
+[-        ] CombineEventListsRunsFullSky | 0 of 1
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (1)
+[55/c691ae] CreateFullSkyEventList (725)   | 725 of 725, cached: 725 ✔
+[f6/49cdf9] Com…eEventListsRunsFullSky (1) | 0 of 1
+[-        ] FindGTIsKM3NeTCombined         -
+
+executor >  local (1)
+[55/c691ae] CreateFullSkyEventList (725)   | 725 of 725, cached: 725 ✔
+[f6/49cdf9] Com…eEventListsRunsFullSky (1) | 1 of 1 ✔
+[-        ] FindGTIsKM3NeTCombined         -
+
+executor >  local (2)
+[55/c691ae] CreateFullSkyEventList (725)   | 725 of 725, cached: 725 ✔
+[f6/49cdf9] Com…eEventListsRunsFullSky (1) | 1 of 1 ✔
+[a7/d9029c] FindGTIsKM3NeTCombined         | 0 of 1
+
+executor >  local (2)
+[55/c691ae] CreateFullSkyEventList (725)   | 725 of 725, cached: 725 ✔
+[f6/49cdf9] Com…eEventListsRunsFullSky (1) | 1 of 1 ✔
+[a7/d9029c] FindGTIsKM3NeTCombined         | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti.nf -profile woody_hannes_container_analysis --filestype data --add_trackscore False --convert False -resume -with-report
+
+executor >  local (2)
+[55/c691ae] CreateFullSkyEventList (725)   | 725 of 725, cached: 725 ✔
+[f6/49cdf9] Com…eEventListsRunsFullSky (1) | 1 of 1 ✔
+[a7/d9029c] FindGTIsKM3NeTCombined         | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti.nf -profile woody_hannes_container_analysis --filestype data --add_trackscore False --convert False -resume -with-report
+Completed at: 04-Aug-2025 17:58:40
+Duration    : 2h 30m 17s
+CPU hours   : 12.6 (80.2% cached)
+Succeeded   : 2
+Cached      : 725
+
+
+=== JOB_STATISTICS ===
+=== current date     : Mon Aug  4 17:58:42 CEST 2025
+= Job-ID             : 8815544 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 02:35:02
+= Total RAM usage    : 65.7 GiB of requested  GiB (%)   
+= Node list          : w2402
+= Subm/Elig/Start/End: 2025-08-04T15:08:24 / 2025-08-04T15:08:24 / 2025-08-04T15:23:38 / 2025-08-04T17:58:40
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+!!! /home/hpc             184.1G   104.9G   209.7G  -29404days     204K     500K   1,000K        N/A !!!
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

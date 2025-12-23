@@ -1,0 +1,3373 @@
+### Starting TaskPrologue of job 8861201 on w2517 at Tue Aug 12 16:09:53 CEST 2025
+#   SLURM_JOB_NODELIST=w2517
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_convertfiles.nf` [scruffy_aryabhata] DSL2 - revision: dcfc982ae0
+
+[-        ] ConvertFilesKM3NeT -
+
+[-        ] ConvertFilesKM3NeT | 0 of 8
+
+[-        ] ConvertFilesKM3NeT | 0 of 67
+
+executor >  slurm (2)
+[d8/a20646] ConvertFilesKM3NeT (12) | 0 of 135
+
+executor >  slurm (5)
+[46/c2d00e] ConvertFilesKM3NeT (13) | 0 of 202
+
+executor >  slurm (8)
+[30/cc19cd] ConvertFilesKM3NeT (23) | 0 of 281
+
+executor >  slurm (11)
+[cc/603b52] ConvertFilesKM3NeT (11) | 0 of 374
+
+executor >  slurm (13)
+[40/826556] ConvertFilesKM3NeT (10) | 0 of 463
+
+executor >  slurm (16)
+[68/219b53] ConvertFilesKM3NeT (1)  | 0 of 558
+
+executor >  slurm (20)
+[be/781a8b] ConvertFilesKM3NeT (4)  | 0 of 646
+
+executor >  slurm (23)
+[99/5013cd] ConvertFilesKM3NeT (15) | 0 of 739
+
+executor >  slurm (27)
+[42/9043fb] ConvertFilesKM3NeT (17) | 0 of 826
+
+executor >  slurm (30)
+[05/60fb75] ConvertFilesKM3NeT (29) | 0 of 892
+
+executor >  slurm (33)
+[8d/2b5862] ConvertFilesKM3NeT (33) | 0 of 966
+
+executor >  slurm (33)
+[8d/2b5862] ConvertFilesKM3NeT (33) | 0 of 1045
+
+executor >  slurm (34)
+[2f/200b80] ConvertFilesKM3NeT (34) | 0 of 1125
+
+executor >  slurm (34)
+[2f/200b80] ConvertFilesKM3NeT (34) | 0 of 1199
+
+executor >  slurm (34)
+[2f/200b80] ConvertFilesKM3NeT (34) | 0 of 1272
+
+executor >  slurm (36)
+[e8/d63ab0] ConvertFilesKM3NeT (36) | 0 of 1318
+
+executor >  slurm (40)
+[68/6468ad] ConvertFilesKM3NeT (40) | 0 of 1318
+
+executor >  slurm (44)
+[76/db553d] ConvertFilesKM3NeT (44) | 0 of 1318
+
+executor >  slurm (48)
+[46/3fe2bb] ConvertFilesKM3NeT (48) | 0 of 1318
+
+executor >  slurm (52)
+[7d/6aa787] ConvertFilesKM3NeT (53) | 0 of 1318
+
+executor >  slurm (55)
+[ca/e3ee3b] ConvertFilesKM3NeT (74) | 0 of 1318
+
+executor >  slurm (58)
+[ad/b14d76] ConvertFilesKM3NeT (57) | 0 of 1318
+
+executor >  slurm (63)
+[f8/fde536] ConvertFilesKM3NeT (62) | 0 of 1318
+
+executor >  slurm (67)
+[24/331671] ConvertFilesKM3NeT (65) | 0 of 1318
+
+executor >  slurm (71)
+[bf/b41d2f] ConvertFilesKM3NeT (73) | 0 of 1318
+
+executor >  slurm (73)
+[4b/830d15] ConvertFilesKM3NeT (77) | 0 of 1318
+
+executor >  slurm (74)
+[86/70fe43] ConvertFilesKM3NeT (78) | 0 of 1318
+
+executor >  slurm (78)
+[5d/c142e2] ConvertFilesKM3NeT (70) | 0 of 1318
+
+executor >  slurm (80)
+[12/191fb8] ConvertFilesKM3NeT (81) | 0 of 1318
+
+executor >  slurm (84)
+[62/ee3db2] ConvertFilesKM3NeT (83) | 0 of 1318
+
+executor >  slurm (88)
+[73/5d3b48] ConvertFilesKM3NeT (85) | 0 of 1318
+
+executor >  slurm (93)
+[b5/ed7d80] ConvertFilesKM3NeT (95) | 0 of 1318
+
+executor >  slurm (96)
+[ce/1478ce] ConvertFilesKM3NeT (98) | 0 of 1318
+
+executor >  slurm (100)
+[34/fd9fe4] ConvertFilesKM3NeT (100) | 0 of 1318
+
+executor >  slurm (100)
+[34/fd9fe4] ConvertFilesKM3NeT (100) | 0 of 1318
+
+executor >  slurm (100)
+[34/fd9fe4] ConvertFilesKM3NeT (100) | 0 of 1318
+
+executor >  slurm (100)
+[34/fd9fe4] ConvertFilesKM3NeT (100) | 0 of 1318
+
+executor >  slurm (101)
+[77/89e949] ConvertFilesKM3NeT (39) | 1 of 1318
+
+executor >  slurm (104)
+[84/e23b5f] ConvertFilesKM3NeT (105) | 4 of 1318
+
+executor >  slurm (104)
+[84/e23b5f] ConvertFilesKM3NeT (105) | 4 of 1318
+
+executor >  slurm (104)
+[84/e23b5f] ConvertFilesKM3NeT (105) | 4 of 1318
+
+executor >  slurm (105)
+[fc/2d9e21] ConvertFilesKM3NeT (104) | 5 of 1318
+
+executor >  slurm (106)
+[0e/8001f4] ConvertFilesKM3NeT (106) | 6 of 1318
+
+executor >  slurm (106)
+[0e/8001f4] ConvertFilesKM3NeT (106) | 6 of 1318
+
+executor >  slurm (107)
+[98/847aae] ConvertFilesKM3NeT (107) | 7 of 1318
+
+executor >  slurm (107)
+[98/847aae] ConvertFilesKM3NeT (107) | 7 of 1318
+
+executor >  slurm (108)
+[70/dd89e3] ConvertFilesKM3NeT (108) | 9 of 1318
+
+executor >  slurm (109)
+[74/910178] ConvertFilesKM3NeT (110) | 9 of 1318
+
+executor >  slurm (113)
+[00/b3878f] ConvertFilesKM3NeT (113) | 14 of 1318
+
+executor >  slurm (114)
+[d6/819fcf] ConvertFilesKM3NeT (115) | 14 of 1318
+
+executor >  slurm (114)
+[d6/819fcf] ConvertFilesKM3NeT (115) | 14 of 1318
+
+executor >  slurm (114)
+[d6/819fcf] ConvertFilesKM3NeT (115) | 14 of 1318
+
+executor >  slurm (114)
+[d6/819fcf] ConvertFilesKM3NeT (115) | 14 of 1318
+
+executor >  slurm (114)
+[78/b6f4e0] ConvertFilesKM3NeT (21)  | 16 of 1318
+
+executor >  slurm (118)
+[20/bbf38e] ConvertFilesKM3NeT (25)  | 22 of 1318
+
+executor >  slurm (123)
+[c5/897a3b] ConvertFilesKM3NeT (124) | 27 of 1318
+
+executor >  slurm (126)
+[0e/805268] ConvertFilesKM3NeT (37)  | 32 of 1318
+
+executor >  slurm (129)
+[76/db553d] ConvertFilesKM3NeT (44)  | 37 of 1318
+
+executor >  slurm (132)
+[0f/4927da] ConvertFilesKM3NeT (147) | 42 of 1318
+
+executor >  slurm (137)
+[ea/4d812d] ConvertFilesKM3NeT (132) | 42 of 1318
+
+executor >  slurm (141)
+[fc/3c7fb2] ConvertFilesKM3NeT (149) | 42 of 1318
+
+executor >  slurm (142)
+[6b/119b6d] ConvertFilesKM3NeT (139) | 42 of 1318
+
+executor >  slurm (144)
+[a6/68e898] ConvertFilesKM3NeT (158) | 46 of 1318
+
+executor >  slurm (146)
+[7d/5f28bd] ConvertFilesKM3NeT (163) | 46 of 1318
+
+executor >  slurm (147)
+[97/8a2d28] ConvertFilesKM3NeT (165) | 47 of 1318
+
+executor >  slurm (149)
+[9e/5b08be] ConvertFilesKM3NeT (146) | 49 of 1318
+
+executor >  slurm (150)
+[ca/29f594] ConvertFilesKM3NeT (176) | 50 of 1318
+
+executor >  slurm (152)
+[ec/0d7685] ConvertFilesKM3NeT (170) | 52 of 1318
+
+executor >  slurm (152)
+[ec/0d7685] ConvertFilesKM3NeT (170) | 52 of 1318
+
+executor >  slurm (152)
+[ec/0d7685] ConvertFilesKM3NeT (170) | 52 of 1318
+
+executor >  slurm (155)
+[dd/646a06] ConvertFilesKM3NeT (55)  | 57 of 1318
+
+executor >  slurm (159)
+[6a/21b405] ConvertFilesKM3NeT (173) | 61 of 1318
+
+executor >  slurm (161)
+[ba/e25a48] ConvertFilesKM3NeT (174) | 61 of 1318
+
+executor >  slurm (162)
+[0b/9319bd] ConvertFilesKM3NeT (177) | 62 of 1318
+
+executor >  slurm (163)
+[f2/e531ce] ConvertFilesKM3NeT (145) | 63 of 1318
+
+executor >  slurm (164)
+[93/72f06b] ConvertFilesKM3NeT (148) | 64 of 1318
+
+executor >  slurm (164)
+[93/72f06b] ConvertFilesKM3NeT (148) | 64 of 1318
+
+executor >  slurm (165)
+[6d/133117] ConvertFilesKM3NeT (180) | 65 of 1318
+
+executor >  slurm (166)
+[9a/0109c2] ConvertFilesKM3NeT (182) | 66 of 1318
+
+executor >  slurm (166)
+[9a/0109c2] ConvertFilesKM3NeT (182) | 66 of 1318
+
+executor >  slurm (168)
+[ab/212ab1] ConvertFilesKM3NeT (135) | 68 of 1318
+
+executor >  slurm (169)
+[e0/ab6562] ConvertFilesKM3NeT (143) | 71 of 1318
+
+executor >  slurm (171)
+[17/172add] ConvertFilesKM3NeT (164) | 71 of 1318
+
+executor >  slurm (172)
+[22/a2e51e] ConvertFilesKM3NeT (167) | 72 of 1318
+
+executor >  slurm (172)
+[22/a2e51e] ConvertFilesKM3NeT (167) | 72 of 1318
+
+executor >  slurm (172)
+[22/a2e51e] ConvertFilesKM3NeT (167) | 72 of 1318
+
+executor >  slurm (172)
+[45/90a113] ConvertFilesKM3NeT (66)  | 74 of 1318
+
+executor >  slurm (177)
+[44/9341f5] ConvertFilesKM3NeT (189) | 79 of 1318
+
+executor >  slurm (181)
+[bc/076651] ConvertFilesKM3NeT (86)  | 85 of 1318
+
+executor >  slurm (186)
+[70/aabad8] ConvertFilesKM3NeT (84)  | 91 of 1318
+
+executor >  slurm (190)
+[c8/2d20bb] ConvertFilesKM3NeT (218) | 91 of 1318
+
+executor >  slurm (191)
+[9a/f06ea5] ConvertFilesKM3NeT (207) | 91 of 1318
+
+executor >  slurm (191)
+[9a/f06ea5] ConvertFilesKM3NeT (207) | 91 of 1318
+
+executor >  slurm (194)
+[6b/fe99d6] ConvertFilesKM3NeT (221) | 98 of 1318
+
+executor >  slurm (198)
+[2f/a077ea] ConvertFilesKM3NeT (224) | 98 of 1318
+
+executor >  slurm (200)
+[d7/b04317] ConvertFilesKM3NeT (226) | 100 of 1318
+
+executor >  slurm (200)
+[d7/b04317] ConvertFilesKM3NeT (226) | 100 of 1318
+
+executor >  slurm (202)
+[bd/afff71] ConvertFilesKM3NeT (150) | 102 of 1318
+
+executor >  slurm (202)
+[bd/afff71] ConvertFilesKM3NeT (150) | 102 of 1318
+
+executor >  slurm (206)
+[eb/1e5ac2] ConvertFilesKM3NeT (237) | 107 of 1318
+
+executor >  slurm (207)
+[2a/b12aef] ConvertFilesKM3NeT (193) | 107 of 1318
+
+executor >  slurm (208)
+[53/20e2ff] ConvertFilesKM3NeT (138) | 109 of 1318
+
+executor >  slurm (209)
+[de/0aa6fc] ConvertFilesKM3NeT (208) | 109 of 1318
+
+executor >  slurm (209)
+[00/b3878f] ConvertFilesKM3NeT (113) | 110 of 1318
+
+executor >  slurm (210)
+[a1/5f926c] ConvertFilesKM3NeT (192) | 110 of 1318
+
+executor >  slurm (211)
+[52/63b747] ConvertFilesKM3NeT (223) | 112 of 1318
+
+executor >  slurm (212)
+[03/6fb16f] ConvertFilesKM3NeT (215) | 112 of 1318
+
+executor >  slurm (214)
+[b7/eddfd3] ConvertFilesKM3NeT (200) | 115 of 1318
+
+executor >  slurm (215)
+[63/d7cbdf] ConvertFilesKM3NeT (195) | 115 of 1318
+
+executor >  slurm (215)
+[63/d7cbdf] ConvertFilesKM3NeT (195) | 115 of 1318
+
+executor >  slurm (215)
+[91/68851c] ConvertFilesKM3NeT (114) | 117 of 1318
+
+executor >  slurm (216)
+[89/1aae8f] ConvertFilesKM3NeT (188) | 117 of 1318
+
+executor >  slurm (217)
+[bb/4603cd] ConvertFilesKM3NeT (238) | 117 of 1318
+
+executor >  slurm (219)
+[45/874d48] ConvertFilesKM3NeT (1286) | 119 of 1318
+
+executor >  slurm (219)
+[67/1565ee] ConvertFilesKM3NeT (121) | 120 of 1318
+
+executor >  slurm (220)
+[12/a1b43a] ConvertFilesKM3NeT (239) | 120 of 1318
+
+executor >  slurm (220)
+[12/a1b43a] ConvertFilesKM3NeT (239) | 120 of 1318
+
+executor >  slurm (220)
+[12/a1b43a] ConvertFilesKM3NeT (239) | 120 of 1318
+
+executor >  slurm (222)
+[22/258bf7] ConvertFilesKM3NeT (241) | 122 of 1318
+
+executor >  slurm (223)
+[6e/ec5c71] ConvertFilesKM3NeT (242) | 123 of 1318
+
+executor >  slurm (223)
+[6e/ec5c71] ConvertFilesKM3NeT (242) | 123 of 1318
+
+executor >  slurm (223)
+[6e/ec5c71] ConvertFilesKM3NeT (242) | 123 of 1318
+
+executor >  slurm (225)
+[d8/4fc877] ConvertFilesKM3NeT (250) | 126 of 1318
+
+executor >  slurm (227)
+[7c/92cd5e] ConvertFilesKM3NeT (212) | 127 of 1318
+
+executor >  slurm (230)
+[95/e2d59b] ConvertFilesKM3NeT (209) | 132 of 1318
+
+executor >  slurm (232)
+[aa/fb991a] ConvertFilesKM3NeT (257) | 132 of 1318
+
+executor >  slurm (232)
+[d5/fec9bf] ConvertFilesKM3NeT (153) | 134 of 1318
+
+executor >  slurm (235)
+[4b/dc47d0] ConvertFilesKM3NeT (246) | 145 of 1318
+
+executor >  slurm (238)
+[39/032df9] ConvertFilesKM3NeT (187) | 145 of 1318
+
+executor >  slurm (243)
+[9d/c198d1] ConvertFilesKM3NeT (213) | 145 of 1318
+
+executor >  slurm (245)
+[fb/0591c0] ConvertFilesKM3NeT (204) | 145 of 1318
+
+executor >  slurm (246)
+[1a/c9ef70] ConvertFilesKM3NeT (190) | 146 of 1318
+
+executor >  slurm (246)
+[1a/c9ef70] ConvertFilesKM3NeT (190) | 146 of 1318
+
+executor >  slurm (246)
+[1a/c9ef70] ConvertFilesKM3NeT (190) | 146 of 1318
+
+executor >  slurm (246)
+[1f/7f764b] ConvertFilesKM3NeT (137) | 148 of 1318
+
+executor >  slurm (250)
+[c1/dbb74b] ConvertFilesKM3NeT (236) | 151 of 1318
+
+executor >  slurm (251)
+[1a/dc4363] ConvertFilesKM3NeT (247) | 151 of 1318
+
+executor >  slurm (252)
+[89/c537e2] ConvertFilesKM3NeT (230) | 153 of 1318
+
+executor >  slurm (256)
+[2e/448f46] ConvertFilesKM3NeT (251) | 158 of 1318
+
+executor >  slurm (258)
+[5a/654030] ConvertFilesKM3NeT (235) | 158 of 1318
+
+executor >  slurm (259)
+[7b/70b05e] ConvertFilesKM3NeT (225) | 159 of 1318
+
+executor >  slurm (260)
+[e9/1b62ab] ConvertFilesKM3NeT (264) | 160 of 1318
+
+executor >  slurm (260)
+[e9/1b62ab] ConvertFilesKM3NeT (264) | 160 of 1318
+
+executor >  slurm (262)
+[0b/9319bd] ConvertFilesKM3NeT (177) | 164 of 1318
+
+executor >  slurm (264)
+[4a/7cfab9] ConvertFilesKM3NeT (274) | 164 of 1318
+
+executor >  slurm (264)
+[e0/ab6562] ConvertFilesKM3NeT (143) | 166 of 1318
+
+executor >  slurm (267)
+[73/d9ba1c] ConvertFilesKM3NeT (275) | 167 of 1318
+
+executor >  slurm (267)
+[73/d9ba1c] ConvertFilesKM3NeT (275) | 167 of 1318
+
+executor >  slurm (267)
+[4e/dc5c4c] ConvertFilesKM3NeT (144) | 168 of 1318
+
+executor >  slurm (271)
+[a4/2c57cb] ConvertFilesKM3NeT (263) | 171 of 1318
+
+executor >  slurm (272)
+[3e/d42701] ConvertFilesKM3NeT (267) | 174 of 1318
+
+executor >  slurm (274)
+[a0/e1ec79] ConvertFilesKM3NeT (268) | 174 of 1318
+
+executor >  slurm (275)
+[dc/953672] ConvertFilesKM3NeT (262) | 175 of 1318
+
+executor >  slurm (275)
+[dc/953672] ConvertFilesKM3NeT (262) | 175 of 1318
+
+executor >  slurm (275)
+[dc/953672] ConvertFilesKM3NeT (262) | 175 of 1318
+
+executor >  slurm (275)
+[44/9341f5] ConvertFilesKM3NeT (189) | 176 of 1318
+
+executor >  slurm (276)
+[f5/b20c8a] ConvertFilesKM3NeT (256) | 176 of 1318
+
+executor >  slurm (277)
+[7a/e39998] ConvertFilesKM3NeT (278) | 177 of 1318
+
+executor >  slurm (277)
+[7a/e39998] ConvertFilesKM3NeT (278) | 177 of 1318
+
+executor >  slurm (279)
+[3d/8bc55a] ConvertFilesKM3NeT (276) | 179 of 1318
+
+executor >  slurm (279)
+[7d/3aff57] ConvertFilesKM3NeT (249) | 184 of 1318
+
+executor >  slurm (283)
+[bc/e6a159] ConvertFilesKM3NeT (282) | 184 of 1318
+
+executor >  slurm (284)
+[3f/e80567] ConvertFilesKM3NeT (283) | 184 of 1318
+
+executor >  slurm (285)
+[e1/1cab1f] ConvertFilesKM3NeT (284) | 185 of 1318
+
+executor >  slurm (285)
+[e1/1cab1f] ConvertFilesKM3NeT (284) | 185 of 1318
+
+executor >  slurm (286)
+[07/8ab501] ConvertFilesKM3NeT (286) | 187 of 1318
+
+executor >  slurm (287)
+[20/92bf78] ConvertFilesKM3NeT (287) | 187 of 1318
+
+executor >  slurm (290)
+[d7/9611af] ConvertFilesKM3NeT (289) | 190 of 1318
+
+executor >  slurm (293)
+[bc/38dd2d] ConvertFilesKM3NeT (292) | 198 of 1318
+
+executor >  slurm (297)
+[33/f20a5c] ConvertFilesKM3NeT (296) | 198 of 1318
+
+executor >  slurm (298)
+[db/a652c0] ConvertFilesKM3NeT (297) | 198 of 1318
+
+executor >  slurm (298)
+[db/a652c0] ConvertFilesKM3NeT (297) | 198 of 1318
+
+executor >  slurm (301)
+[0c/ab7364] ConvertFilesKM3NeT (300) | 203 of 1318
+
+executor >  slurm (304)
+[cb/9ccc94] ConvertFilesKM3NeT (325) | 204 of 1318
+
+executor >  slurm (304)
+[e2/81fd08] ConvertFilesKM3NeT (231) | 205 of 1318
+
+executor >  slurm (305)
+[b9/f4223c] ConvertFilesKM3NeT (303) | 205 of 1318
+
+executor >  slurm (306)
+[71/75f616] ConvertFilesKM3NeT (304) | 207 of 1318
+
+executor >  slurm (307)
+[82/8b3393] ConvertFilesKM3NeT (306) | 207 of 1318
+
+executor >  slurm (307)
+[82/8b3393] ConvertFilesKM3NeT (306) | 207 of 1318
+
+executor >  slurm (308)
+[31/2a8c48] ConvertFilesKM3NeT (307) | 214 of 1318
+
+executor >  slurm (313)
+[13/7ae7af] ConvertFilesKM3NeT (305) | 214 of 1318
+
+executor >  slurm (314)
+[54/a93b5d] ConvertFilesKM3NeT (314) | 214 of 1318
+
+executor >  slurm (315)
+[4e/85af25] ConvertFilesKM3NeT (234) | 217 of 1318
+
+executor >  slurm (319)
+[ba/21c0e3] ConvertFilesKM3NeT (319) | 220 of 1318
+
+executor >  slurm (320)
+[77/8166d0] ConvertFilesKM3NeT (309) | 220 of 1318
+
+executor >  slurm (322)
+[d9/402626] ConvertFilesKM3NeT (313) | 223 of 1318
+
+executor >  slurm (323)
+[2d/c525ff] ConvertFilesKM3NeT (321) | 223 of 1318
+
+executor >  slurm (326)
+[fb/856fea] ConvertFilesKM3NeT (352) | 226 of 1318
+
+executor >  slurm (327)
+[3c/d29b33] ConvertFilesKM3NeT (324) | 227 of 1318
+
+executor >  slurm (327)
+[d8/4fc877] ConvertFilesKM3NeT (250) | 228 of 1318
+
+executor >  slurm (328)
+[74/580cfb] ConvertFilesKM3NeT (329) | 228 of 1318
+
+executor >  slurm (328)
+[74/580cfb] ConvertFilesKM3NeT (329) | 228 of 1318
+
+executor >  slurm (328)
+[74/580cfb] ConvertFilesKM3NeT (329) | 228 of 1318
+
+executor >  slurm (329)
+[22/39525a] ConvertFilesKM3NeT (327) | 229 of 1318
+
+executor >  slurm (331)
+[ee/5cdc17] ConvertFilesKM3NeT (326) | 231 of 1318
+
+executor >  slurm (331)
+[ee/5cdc17] ConvertFilesKM3NeT (326) | 231 of 1318
+
+executor >  slurm (333)
+[0f/166065] ConvertFilesKM3NeT (331) | 234 of 1318
+
+executor >  slurm (336)
+[d5/8644a0] ConvertFilesKM3NeT (362) | 236 of 1318
+
+executor >  slurm (338)
+[d8/ffb91c] ConvertFilesKM3NeT (335) | 238 of 1318
+
+executor >  slurm (338)
+[d8/ffb91c] ConvertFilesKM3NeT (335) | 238 of 1318
+
+executor >  slurm (339)
+[14/f3f4c2] ConvertFilesKM3NeT (336) | 239 of 1318
+
+executor >  slurm (339)
+[14/f3f4c2] ConvertFilesKM3NeT (336) | 239 of 1318
+
+executor >  slurm (341)
+[a5/c3a5ce] ConvertFilesKM3NeT (339) | 242 of 1318
+
+executor >  slurm (344)
+[1f/f01cda] ConvertFilesKM3NeT (342) | 244 of 1318
+
+executor >  slurm (345)
+[66/0df8e8] ConvertFilesKM3NeT (344) | 246 of 1318
+
+executor >  slurm (346)
+[ef/5eb0b5] ConvertFilesKM3NeT (345) | 246 of 1318
+
+executor >  slurm (348)
+[7d/7cc3d5] ConvertFilesKM3NeT (347) | 248 of 1318
+
+executor >  slurm (351)
+[95/20b89b] ConvertFilesKM3NeT (351) | 254 of 1318
+
+executor >  slurm (354)
+[f3/3e4d4d] ConvertFilesKM3NeT (356) | 254 of 1318
+
+executor >  slurm (354)
+[f3/3e4d4d] ConvertFilesKM3NeT (356) | 254 of 1318
+
+executor >  slurm (355)
+[10/9b7e8e] ConvertFilesKM3NeT (358) | 255 of 1318
+
+executor >  slurm (355)
+[7b/70b05e] ConvertFilesKM3NeT (225) | 256 of 1318
+
+executor >  slurm (356)
+[1d/f51d93] ConvertFilesKM3NeT (359) | 256 of 1318
+
+executor >  slurm (359)
+[73/d9ba1c] ConvertFilesKM3NeT (275) | 261 of 1318
+
+executor >  slurm (364)
+[59/863df9] ConvertFilesKM3NeT (389) | 267 of 1318
+
+executor >  slurm (368)
+[a6/1bebce] ConvertFilesKM3NeT (366) | 270 of 1318
+
+executor >  slurm (370)
+[83/ec8675] ConvertFilesKM3NeT (368) | 270 of 1318
+
+executor >  slurm (373)
+[1a/be3a9e] ConvertFilesKM3NeT (229) | 276 of 1318
+
+executor >  slurm (377)
+[6a/60c739] ConvertFilesKM3NeT (375) | 277 of 1318
+
+executor >  slurm (378)
+[4b/9ebd75] ConvertFilesKM3NeT (377) | 278 of 1318
+
+executor >  slurm (378)
+[4b/9ebd75] ConvertFilesKM3NeT (377) | 278 of 1318
+
+executor >  slurm (378)
+[4b/9ebd75] ConvertFilesKM3NeT (377) | 278 of 1318
+
+executor >  slurm (380)
+[0c/2e2326] ConvertFilesKM3NeT (379) | 280 of 1318
+
+executor >  slurm (381)
+[6b/5040c2] ConvertFilesKM3NeT (381) | 281 of 1318
+
+executor >  slurm (381)
+[fe/4278bd] ConvertFilesKM3NeT (279) | 283 of 1318
+
+executor >  slurm (383)
+[66/8d96ee] ConvertFilesKM3NeT (380) | 283 of 1318
+
+executor >  slurm (383)
+[bc/e6a159] ConvertFilesKM3NeT (282) | 284 of 1318
+
+executor >  slurm (384)
+[11/0deb00] ConvertFilesKM3NeT (378) | 284 of 1318
+
+executor >  slurm (384)
+[11/0deb00] ConvertFilesKM3NeT (378) | 284 of 1318
+
+executor >  slurm (385)
+[30/62b04f] ConvertFilesKM3NeT (383) | 285 of 1318
+
+executor >  slurm (386)
+[24/4143a5] ConvertFilesKM3NeT (385) | 286 of 1318
+
+executor >  slurm (387)
+[b7/e17337] ConvertFilesKM3NeT (384) | 287 of 1318
+
+executor >  slurm (387)
+[b7/e17337] ConvertFilesKM3NeT (384) | 287 of 1318
+
+executor >  slurm (389)
+[b0/a96a3e] ConvertFilesKM3NeT (387) | 291 of 1318
+
+executor >  slurm (391)
+[91/e67416] ConvertFilesKM3NeT (390) | 291 of 1318
+
+executor >  slurm (392)
+[ef/072f14] ConvertFilesKM3NeT (391) | 292 of 1318
+
+executor >  slurm (393)
+[28/f9486c] ConvertFilesKM3NeT (392) | 293 of 1318
+
+executor >  slurm (393)
+[28/f9486c] ConvertFilesKM3NeT (392) | 293 of 1318
+
+executor >  slurm (394)
+[f2/de5f8e] ConvertFilesKM3NeT (394) | 294 of 1318
+
+executor >  slurm (394)
+[c3/96e219] ConvertFilesKM3NeT (291) | 295 of 1318
+
+executor >  slurm (395)
+[25/591ded] ConvertFilesKM3NeT (393) | 295 of 1318
+
+executor >  slurm (395)
+[25/591ded] ConvertFilesKM3NeT (393) | 295 of 1318
+
+executor >  slurm (395)
+[6b/9bb290] ConvertFilesKM3NeT (294) | 297 of 1318
+
+executor >  slurm (399)
+[42/f0545f] ConvertFilesKM3NeT (399) | 299 of 1318
+
+executor >  slurm (400)
+[09/348961] ConvertFilesKM3NeT (400) | 300 of 1318
+
+executor >  slurm (401)
+[30/3a4a87] ConvertFilesKM3NeT (396) | 301 of 1318
+
+executor >  slurm (403)
+[32/b4821f] ConvertFilesKM3NeT (402) | 304 of 1318
+
+executor >  slurm (404)
+[89/bd047a] ConvertFilesKM3NeT (403) | 304 of 1318
+
+executor >  slurm (404)
+[89/bd047a] ConvertFilesKM3NeT (403) | 304 of 1318
+
+executor >  slurm (406)
+[82/8b3393] ConvertFilesKM3NeT (306) | 308 of 1318
+
+executor >  slurm (408)
+[56/de4bd3] ConvertFilesKM3NeT (409) | 308 of 1318
+
+executor >  slurm (409)
+[3e/20182d] ConvertFilesKM3NeT (406) | 309 of 1318
+
+executor >  slurm (409)
+[f3/3e4d4d] ConvertFilesKM3NeT (356) | 311 of 1318
+
+executor >  slurm (411)
+[07/6da9bb] ConvertFilesKM3NeT (410) | 311 of 1318
+
+executor >  slurm (411)
+[4e/6e7f07] ConvertFilesKM3NeT (323) | 314 of 1318
+
+executor >  slurm (414)
+[52/2a9f58] ConvertFilesKM3NeT (412) | 314 of 1318
+
+executor >  slurm (415)
+[c2/0270a4] ConvertFilesKM3NeT (413) | 318 of 1318
+
+executor >  slurm (418)
+[22/4dd0cc] ConvertFilesKM3NeT (418) | 318 of 1318
+
+executor >  slurm (418)
+[45/c7a2ad] ConvertFilesKM3NeT (311) | 319 of 1318
+
+executor >  slurm (423)
+[f2/5f1972] ConvertFilesKM3NeT (422) | 324 of 1318
+
+executor >  slurm (424)
+[cc/cac0cb] ConvertFilesKM3NeT (423) | 324 of 1318
+
+executor >  slurm (424)
+[cc/cac0cb] ConvertFilesKM3NeT (423) | 324 of 1318
+
+executor >  slurm (425)
+[89/5c32d8] ConvertFilesKM3NeT (424) | 326 of 1318
+
+executor >  slurm (426)
+[c6/58f517] ConvertFilesKM3NeT (428) | 326 of 1318
+
+executor >  slurm (427)
+[07/bcc5c4] ConvertFilesKM3NeT (427) | 327 of 1318
+
+executor >  slurm (429)
+[c4/698def] ConvertFilesKM3NeT (434) | 336 of 1318
+
+executor >  slurm (432)
+[5d/7136e2] ConvertFilesKM3NeT (436) | 336 of 1318
+
+executor >  slurm (435)
+[35/09fbf0] ConvertFilesKM3NeT (449) | 336 of 1318
+
+executor >  slurm (436)
+[ee/c15a89] ConvertFilesKM3NeT (450) | 336 of 1318
+
+executor >  slurm (436)
+[ee/c15a89] ConvertFilesKM3NeT (450) | 336 of 1318
+
+executor >  slurm (438)
+[1a/e4c1fe] ConvertFilesKM3NeT (334) | 340 of 1318
+
+executor >  slurm (442)
+[67/bfc041] ConvertFilesKM3NeT (447) | 343 of 1318
+
+executor >  slurm (443)
+[34/664916] ConvertFilesKM3NeT (453) | 343 of 1318
+
+executor >  slurm (443)
+[34/664916] ConvertFilesKM3NeT (453) | 343 of 1318
+
+executor >  slurm (444)
+[5e/14a617] ConvertFilesKM3NeT (440) | 344 of 1318
+
+executor >  slurm (444)
+[77/8166d0] ConvertFilesKM3NeT (309) | 345 of 1318
+
+executor >  slurm (445)
+[1f/0a1ede] ConvertFilesKM3NeT (452) | 345 of 1318
+
+executor >  slurm (445)
+[66/0df8e8] ConvertFilesKM3NeT (344) | 348 of 1318
+
+executor >  slurm (448)
+[cb/2dfaa1] ConvertFilesKM3NeT (435) | 348 of 1318
+
+executor >  slurm (448)
+[dc/a18c11] ConvertFilesKM3NeT (348) | 349 of 1318
+
+executor >  slurm (449)
+[38/eadcb8] ConvertFilesKM3NeT (443) | 349 of 1318
+
+executor >  slurm (449)
+[e2/2b3247] ConvertFilesKM3NeT (340) | 351 of 1318
+
+executor >  slurm (452)
+[42/f90a45] ConvertFilesKM3NeT (455) | 352 of 1318
+
+executor >  slurm (452)
+[42/f90a45] ConvertFilesKM3NeT (455) | 352 of 1318
+
+executor >  slurm (454)
+[36/86b13c] ConvertFilesKM3NeT (448) | 354 of 1318
+
+executor >  slurm (454)
+[36/86b13c] ConvertFilesKM3NeT (448) | 354 of 1318
+
+executor >  slurm (455)
+[0f/d95afd] ConvertFilesKM3NeT (456) | 355 of 1318
+
+executor >  slurm (456)
+[af/fb19d5] ConvertFilesKM3NeT (457) | 356 of 1318
+
+executor >  slurm (456)
+[af/fb19d5] ConvertFilesKM3NeT (457) | 356 of 1318
+
+executor >  slurm (456)
+[af/fb19d5] ConvertFilesKM3NeT (457) | 356 of 1318
+
+executor >  slurm (459)
+[0b/5af5ca] ConvertFilesKM3NeT (462) | 359 of 1318
+
+executor >  slurm (459)
+[0b/5af5ca] ConvertFilesKM3NeT (462) | 359 of 1318
+
+executor >  slurm (460)
+[59/641036] ConvertFilesKM3NeT (463) | 360 of 1318
+
+executor >  slurm (463)
+[51/aad0cf] ConvertFilesKM3NeT (445) | 367 of 1318
+
+executor >  slurm (467)
+[a7/826f05] ConvertFilesKM3NeT (465) | 367 of 1318
+
+executor >  slurm (467)
+[a7/826f05] ConvertFilesKM3NeT (465) | 367 of 1318
+
+executor >  slurm (467)
+[9f/26be2c] ConvertFilesKM3NeT (373) | 368 of 1318
+
+executor >  slurm (468)
+[99/207736] ConvertFilesKM3NeT (467) | 368 of 1318
+
+executor >  slurm (468)
+[99/207736] ConvertFilesKM3NeT (467) | 368 of 1318
+
+executor >  slurm (468)
+[59/863df9] ConvertFilesKM3NeT (389) | 369 of 1318
+
+executor >  slurm (470)
+[d3/286a6b] ConvertFilesKM3NeT (473) | 370 of 1318
+
+executor >  slurm (471)
+[b2/877588] ConvertFilesKM3NeT (474) | 374 of 1318
+
+executor >  slurm (474)
+[88/0658bb] ConvertFilesKM3NeT (477) | 374 of 1318
+
+executor >  slurm (475)
+[be/ac39f1] ConvertFilesKM3NeT (501) | 378 of 1318
+
+executor >  slurm (478)
+[e6/8db0a7] ConvertFilesKM3NeT (472) | 378 of 1318
+
+executor >  slurm (478)
+[e6/8db0a7] ConvertFilesKM3NeT (472) | 378 of 1318
+
+executor >  slurm (479)
+[0c/2e2326] ConvertFilesKM3NeT (379) | 381 of 1318
+
+executor >  slurm (482)
+[c1/631113] ConvertFilesKM3NeT (482) | 384 of 1318
+
+executor >  slurm (485)
+[8f/8c0250] ConvertFilesKM3NeT (483) | 386 of 1318
+
+executor >  slurm (486)
+[eb/5b7d53] ConvertFilesKM3NeT (484) | 386 of 1318
+
+executor >  slurm (486)
+[bc/e5acff] ConvertFilesKM3NeT (382) | 387 of 1318
+
+executor >  slurm (487)
+[00/f52e30] ConvertFilesKM3NeT (485) | 387 of 1318
+
+executor >  slurm (487)
+[b8/50451b] ConvertFilesKM3NeT (397) | 391 of 1318
+
+executor >  slurm (491)
+[ab/2a344d] ConvertFilesKM3NeT (489) | 391 of 1318
+
+executor >  slurm (492)
+[1c/636de2] ConvertFilesKM3NeT (478) | 392 of 1318
+
+executor >  slurm (494)
+[5b/c30e82] ConvertFilesKM3NeT (491) | 394 of 1318
+
+executor >  slurm (494)
+[5b/c30e82] ConvertFilesKM3NeT (491) | 394 of 1318
+
+executor >  slurm (495)
+[28/f9486c] ConvertFilesKM3NeT (392) | 397 of 1318
+
+executor >  slurm (500)
+[52/4b2e0c] ConvertFilesKM3NeT (497) | 400 of 1318
+
+executor >  slurm (502)
+[c3/05f3f4] ConvertFilesKM3NeT (499) | 402 of 1318
+
+executor >  slurm (502)
+[c3/05f3f4] ConvertFilesKM3NeT (499) | 402 of 1318
+
+executor >  slurm (504)
+[e2/71c8cc] ConvertFilesKM3NeT (502) | 404 of 1318
+
+executor >  slurm (504)
+[e2/71c8cc] ConvertFilesKM3NeT (502) | 404 of 1318
+
+executor >  slurm (504)
+[30/3a4a87] ConvertFilesKM3NeT (396) | 405 of 1318
+
+executor >  slurm (505)
+[f3/7665d3] ConvertFilesKM3NeT (503) | 405 of 1318
+
+executor >  slurm (505)
+[f3/7665d3] ConvertFilesKM3NeT (503) | 405 of 1318
+
+executor >  slurm (508)
+[66/b42ee0] ConvertFilesKM3NeT (506) | 408 of 1318
+
+executor >  slurm (508)
+[66/b42ee0] ConvertFilesKM3NeT (506) | 408 of 1318
+
+executor >  slurm (509)
+[56/de4bd3] ConvertFilesKM3NeT (409) | 409 of 1318
+
+executor >  slurm (510)
+[93/23b3fc] ConvertFilesKM3NeT (510) | 410 of 1318
+
+executor >  slurm (511)
+[7b/925604] ConvertFilesKM3NeT (511) | 413 of 1318
+
+executor >  slurm (513)
+[b3/267d25] ConvertFilesKM3NeT (513) | 413 of 1318
+
+executor >  slurm (513)
+[b3/267d25] ConvertFilesKM3NeT (513) | 413 of 1318
+
+executor >  slurm (513)
+[b3/267d25] ConvertFilesKM3NeT (513) | 413 of 1318
+
+executor >  slurm (515)
+[8f/dd147e] ConvertFilesKM3NeT (514) | 416 of 1318
+
+executor >  slurm (517)
+[9b/339ead] ConvertFilesKM3NeT (517) | 417 of 1318
+
+executor >  slurm (520)
+[bd/b991dc] ConvertFilesKM3NeT (520) | 420 of 1318
+
+executor >  slurm (522)
+[97/d1973e] ConvertFilesKM3NeT (547) | 422 of 1318
+
+executor >  slurm (522)
+[cc/cac0cb] ConvertFilesKM3NeT (423) | 425 of 1318
+
+executor >  slurm (525)
+[fe/c13c17] ConvertFilesKM3NeT (523) | 425 of 1318
+
+executor >  slurm (525)
+[fe/c13c17] ConvertFilesKM3NeT (523) | 425 of 1318
+
+executor >  slurm (525)
+[fe/c13c17] ConvertFilesKM3NeT (523) | 425 of 1318
+
+executor >  slurm (525)
+[07/bcc5c4] ConvertFilesKM3NeT (427) | 426 of 1318
+
+executor >  slurm (528)
+[88/f38b1b] ConvertFilesKM3NeT (526) | 428 of 1318
+
+executor >  slurm (528)
+[35/09fbf0] ConvertFilesKM3NeT (449) | 431 of 1318
+
+executor >  slurm (531)
+[1d/ddd274] ConvertFilesKM3NeT (534) | 431 of 1318
+
+executor >  slurm (532)
+[77/be399b] ConvertFilesKM3NeT (533) | 432 of 1318
+
+executor >  slurm (532)
+[c1/631113] ConvertFilesKM3NeT (482) | 433 of 1318
+
+executor >  slurm (533)
+[df/3070b4] ConvertFilesKM3NeT (535) | 433 of 1318
+
+executor >  slurm (534)
+[b9/ee0987] ConvertFilesKM3NeT (537) | 434 of 1318
+
+executor >  slurm (534)
+[b9/ee0987] ConvertFilesKM3NeT (537) | 434 of 1318
+
+executor >  slurm (536)
+[95/a598ed] ConvertFilesKM3NeT (446) | 438 of 1318
+
+executor >  slurm (539)
+[d4/bae880] ConvertFilesKM3NeT (543) | 441 of 1318
+
+executor >  slurm (541)
+[07/129e34] ConvertFilesKM3NeT (532) | 441 of 1318
+
+executor >  slurm (544)
+[cb/3e488c] ConvertFilesKM3NeT (538) | 444 of 1318
+
+executor >  slurm (548)
+[9a/1c913e] ConvertFilesKM3NeT (545) | 449 of 1318
+
+executor >  slurm (549)
+[68/4ae01f] ConvertFilesKM3NeT (546) | 449 of 1318
+
+executor >  slurm (550)
+[76/7f158e] ConvertFilesKM3NeT (548) | 450 of 1318
+
+executor >  slurm (550)
+[76/7f158e] ConvertFilesKM3NeT (548) | 450 of 1318
+
+executor >  slurm (550)
+[76/7f158e] ConvertFilesKM3NeT (548) | 450 of 1318
+
+executor >  slurm (550)
+[76/7f158e] ConvertFilesKM3NeT (548) | 450 of 1318
+
+executor >  slurm (554)
+[46/748f4b] ConvertFilesKM3NeT (554) | 455 of 1318
+
+executor >  slurm (555)
+[81/5c5b95] ConvertFilesKM3NeT (552) | 455 of 1318
+
+executor >  slurm (556)
+[3b/b083d3] ConvertFilesKM3NeT (553) | 456 of 1318
+
+executor >  slurm (556)
+[3b/b083d3] ConvertFilesKM3NeT (553) | 456 of 1318
+
+executor >  slurm (557)
+[42/83782e] ConvertFilesKM3NeT (557) | 459 of 1318
+
+executor >  slurm (559)
+[1e/edba2a] ConvertFilesKM3NeT (558) | 459 of 1318
+
+executor >  slurm (560)
+[61/fd743f] ConvertFilesKM3NeT (556) | 460 of 1318
+
+executor >  slurm (560)
+[61/fd743f] ConvertFilesKM3NeT (556) | 460 of 1318
+
+executor >  slurm (561)
+[5d/29aec0] ConvertFilesKM3NeT (559) | 461 of 1318
+
+executor >  slurm (561)
+[df/3330fb] ConvertFilesKM3NeT (468) | 462 of 1318
+
+executor >  slurm (562)
+[4e/99ec97] ConvertFilesKM3NeT (560) | 462 of 1318
+
+executor >  slurm (563)
+[49/d34ac7] ConvertFilesKM3NeT (561) | 463 of 1318
+
+executor >  slurm (563)
+[c3/05f3f4] ConvertFilesKM3NeT (499) | 464 of 1318
+
+executor >  slurm (564)
+[e0/9daaa9] ConvertFilesKM3NeT (562) | 464 of 1318
+
+executor >  slurm (564)
+[e0/9daaa9] ConvertFilesKM3NeT (562) | 464 of 1318
+
+executor >  slurm (565)
+[5c/04e75e] ConvertFilesKM3NeT (441) | 467 of 1318
+
+executor >  slurm (568)
+[f2/3fd908] ConvertFilesKM3NeT (566) | 470 of 1318
+
+executor >  slurm (572)
+[16/7a4f14] ConvertFilesKM3NeT (570) | 474 of 1318
+
+executor >  slurm (574)
+[6d/9bdadb] ConvertFilesKM3NeT (571) | 474 of 1318
+
+executor >  slurm (574)
+[be/ac39f1] ConvertFilesKM3NeT (501) | 478 of 1318
+
+executor >  slurm (578)
+[9b/ad4f3c] ConvertFilesKM3NeT (576) | 478 of 1318
+
+executor >  slurm (579)
+[0c/bc1811] ConvertFilesKM3NeT (577) | 483 of 1318
+
+executor >  slurm (583)
+[87/2ee0a1] ConvertFilesKM3NeT (607) | 483 of 1318
+
+executor >  slurm (584)
+[8b/6ae0aa] ConvertFilesKM3NeT (581) | 486 of 1318
+
+executor >  slurm (586)
+[07/2fd8fc] ConvertFilesKM3NeT (583) | 486 of 1318
+
+executor >  slurm (587)
+[7b/d02e02] ConvertFilesKM3NeT (584) | 487 of 1318
+
+executor >  slurm (587)
+[7b/d02e02] ConvertFilesKM3NeT (584) | 487 of 1318
+
+executor >  slurm (589)
+[75/75a600] ConvertFilesKM3NeT (586) | 492 of 1318
+
+executor >  slurm (592)
+[e4/78ff88] ConvertFilesKM3NeT (589) | 492 of 1318
+
+executor >  slurm (594)
+[55/4e4d96] ConvertFilesKM3NeT (592) | 495 of 1318
+
+executor >  slurm (595)
+[2e/148ff0] ConvertFilesKM3NeT (591) | 495 of 1318
+
+executor >  slurm (597)
+[b9/1b11ad] ConvertFilesKM3NeT (594) | 498 of 1318
+
+executor >  slurm (600)
+[8d/38e315] ConvertFilesKM3NeT (615) | 503 of 1318
+
+executor >  slurm (603)
+[fa/1ef79a] ConvertFilesKM3NeT (602) | 503 of 1318
+
+executor >  slurm (604)
+[2e/07b649] ConvertFilesKM3NeT (603) | 504 of 1318
+
+executor >  slurm (607)
+[2e/3cbb33] ConvertFilesKM3NeT (608) | 509 of 1318
+
+executor >  slurm (609)
+[6e/3b64fd] ConvertFilesKM3NeT (610) | 509 of 1318
+
+executor >  slurm (609)
+[6e/3b64fd] ConvertFilesKM3NeT (610) | 509 of 1318
+
+executor >  slurm (609)
+[6e/3b64fd] ConvertFilesKM3NeT (610) | 509 of 1318
+
+executor >  slurm (610)
+[4c/a33560] ConvertFilesKM3NeT (599) | 510 of 1318
+
+executor >  slurm (610)
+[93/23b3fc] ConvertFilesKM3NeT (510) | 513 of 1318
+
+executor >  slurm (611)
+[b3/0b0e1b] ConvertFilesKM3NeT (600) | 513 of 1318
+
+executor >  slurm (613)
+[17/80303a] ConvertFilesKM3NeT (611) | 513 of 1318
+
+executor >  slurm (613)
+[17/80303a] ConvertFilesKM3NeT (611) | 513 of 1318
+
+executor >  slurm (613)
+[17/80303a] ConvertFilesKM3NeT (611) | 513 of 1318
+
+executor >  slurm (613)
+[17/80303a] ConvertFilesKM3NeT (611) | 513 of 1318
+
+executor >  slurm (614)
+[b3/267d25] ConvertFilesKM3NeT (513) | 515 of 1318
+
+executor >  slurm (615)
+[e3/3831f3] ConvertFilesKM3NeT (613) | 515 of 1318
+
+executor >  slurm (616)
+[7d/693b6e] ConvertFilesKM3NeT (614) | 516 of 1318
+
+executor >  slurm (616)
+[7d/693b6e] ConvertFilesKM3NeT (614) | 516 of 1318
+
+executor >  slurm (616)
+[7d/693b6e] ConvertFilesKM3NeT (614) | 516 of 1318
+
+executor >  slurm (616)
+[6f/906af1] ConvertFilesKM3NeT (516) | 517 of 1318
+
+executor >  slurm (620)
+[7a/715b17] ConvertFilesKM3NeT (528) | 523 of 1318
+
+executor >  slurm (624)
+[c2/e60409] ConvertFilesKM3NeT (623) | 529 of 1318
+
+executor >  slurm (629)
+[af/c83f90] ConvertFilesKM3NeT (629) | 529 of 1318
+
+executor >  slurm (630)
+[c8/b85a35] ConvertFilesKM3NeT (630) | 533 of 1318
+
+executor >  slurm (633)
+[8a/5a914c] ConvertFilesKM3NeT (633) | 533 of 1318
+
+executor >  slurm (634)
+[bd/470583] ConvertFilesKM3NeT (634) | 538 of 1318
+
+executor >  slurm (637)
+[9a/360443] ConvertFilesKM3NeT (636) | 538 of 1318
+
+executor >  slurm (638)
+[c4/34df16] ConvertFilesKM3NeT (640) | 538 of 1318
+
+executor >  slurm (638)
+[c4/34df16] ConvertFilesKM3NeT (640) | 538 of 1318
+
+executor >  slurm (640)
+[48/2696dc] ConvertFilesKM3NeT (642) | 542 of 1318
+
+executor >  slurm (642)
+[4a/c298d5] ConvertFilesKM3NeT (645) | 542 of 1318
+
+executor >  slurm (642)
+[4a/c298d5] ConvertFilesKM3NeT (645) | 542 of 1318
+
+executor >  slurm (644)
+[bd/1d857b] ConvertFilesKM3NeT (643) | 545 of 1318
+
+executor >  slurm (645)
+[bc/926e06] ConvertFilesKM3NeT (647) | 545 of 1318
+
+executor >  slurm (646)
+[f8/aca882] ConvertFilesKM3NeT (672) | 547 of 1318
+
+executor >  slurm (647)
+[27/f7fe00] ConvertFilesKM3NeT (646) | 547 of 1318
+
+executor >  slurm (649)
+[21/5d82cf] ConvertFilesKM3NeT (649) | 549 of 1318
+
+executor >  slurm (649)
+[21/5d82cf] ConvertFilesKM3NeT (649) | 549 of 1318
+
+executor >  slurm (649)
+[2d/93f4c1] ConvertFilesKM3NeT (507) | 550 of 1318
+
+executor >  slurm (650)
+[74/b641b4] ConvertFilesKM3NeT (650) | 550 of 1318
+
+executor >  slurm (650)
+[ac/60ada6] ConvertFilesKM3NeT (572) | 551 of 1318
+
+executor >  slurm (654)
+[7e/22f75e] ConvertFilesKM3NeT (652) | 554 of 1318
+
+executor >  slurm (655)
+[d3/b32bc1] ConvertFilesKM3NeT (653) | 555 of 1318
+
+executor >  slurm (655)
+[d3/b32bc1] ConvertFilesKM3NeT (653) | 555 of 1318
+
+executor >  slurm (656)
+[91/5fadc5] ConvertFilesKM3NeT (654) | 556 of 1318
+
+executor >  slurm (656)
+[91/5fadc5] ConvertFilesKM3NeT (654) | 556 of 1318
+
+executor >  slurm (657)
+[c0/9710db] ConvertFilesKM3NeT (655) | 558 of 1318
+
+executor >  slurm (660)
+[b7/b844b1] ConvertFilesKM3NeT (658) | 560 of 1318
+
+executor >  slurm (662)
+[5d/57f5e3] ConvertFilesKM3NeT (660) | 564 of 1318
+
+executor >  slurm (664)
+[bb/df2f33] ConvertFilesKM3NeT (662) | 564 of 1318
+
+executor >  slurm (665)
+[27/27c525] ConvertFilesKM3NeT (663) | 565 of 1318
+
+executor >  slurm (665)
+[27/27c525] ConvertFilesKM3NeT (663) | 565 of 1318
+
+executor >  slurm (665)
+[27/27c525] ConvertFilesKM3NeT (663) | 565 of 1318
+
+executor >  slurm (665)
+[27/27c525] ConvertFilesKM3NeT (663) | 565 of 1318
+
+executor >  slurm (668)
+[00/5ab6c0] ConvertFilesKM3NeT (565) | 570 of 1318
+
+executor >  slurm (672)
+[7a/50af13] ConvertFilesKM3NeT (574) | 575 of 1318
+
+executor >  slurm (674)
+[0c/bc1811] ConvertFilesKM3NeT (577) | 578 of 1318
+
+executor >  slurm (678)
+[81/1ef7e9] ConvertFilesKM3NeT (678) | 579 of 1318
+
+executor >  slurm (679)
+[c8/e4f704] ConvertFilesKM3NeT (679) | 579 of 1318
+
+executor >  slurm (680)
+[0e/85c824] ConvertFilesKM3NeT (680) | 580 of 1318
+
+executor >  slurm (681)
+[77/89eef2] ConvertFilesKM3NeT (681) | 585 of 1318
+
+executor >  slurm (685)
+[55/63a7ce] ConvertFilesKM3NeT (685) | 585 of 1318
+
+executor >  slurm (686)
+[7b/79fbda] ConvertFilesKM3NeT (686) | 586 of 1318
+
+executor >  slurm (686)
+[23/2a626b] ConvertFilesKM3NeT (582) | 588 of 1318
+
+executor >  slurm (690)
+[a4/cc78c9] ConvertFilesKM3NeT (689) | 593 of 1318
+
+executor >  slurm (693)
+[8f/a18f5f] ConvertFilesKM3NeT (692) | 593 of 1318
+
+executor >  slurm (693)
+[8f/a18f5f] ConvertFilesKM3NeT (692) | 593 of 1318
+
+executor >  slurm (694)
+[b9/242b95] ConvertFilesKM3NeT (693) | 594 of 1318
+
+executor >  slurm (694)
+[b9/242b95] ConvertFilesKM3NeT (693) | 594 of 1318
+
+executor >  slurm (694)
+[55/4e4d96] ConvertFilesKM3NeT (592) | 595 of 1318
+
+executor >  slurm (695)
+[74/8337ef] ConvertFilesKM3NeT (694) | 595 of 1318
+
+executor >  slurm (695)
+[8a/5a914c] ConvertFilesKM3NeT (633) | 596 of 1318
+
+executor >  slurm (696)
+[14/1b13c0] ConvertFilesKM3NeT (695) | 596 of 1318
+
+executor >  slurm (696)
+[14/1b13c0] ConvertFilesKM3NeT (695) | 596 of 1318
+
+executor >  slurm (697)
+[fc/7563db] ConvertFilesKM3NeT (696) | 600 of 1318
+
+executor >  slurm (700)
+[78/01ada0] ConvertFilesKM3NeT (699) | 600 of 1318
+
+executor >  slurm (700)
+[78/01ada0] ConvertFilesKM3NeT (699) | 600 of 1318
+
+executor >  slurm (701)
+[29/325fd2] ConvertFilesKM3NeT (700) | 601 of 1318
+
+executor >  slurm (701)
+[b9/1b11ad] ConvertFilesKM3NeT (594) | 602 of 1318
+
+executor >  slurm (702)
+[53/aec77d] ConvertFilesKM3NeT (598) | 603 of 1318
+
+executor >  slurm (702)
+[ef/295318] ConvertFilesKM3NeT (597) | 604 of 1318
+
+executor >  slurm (703)
+[2a/756fd5] ConvertFilesKM3NeT (702) | 606 of 1318
+
+executor >  slurm (707)
+[5e/fa44db] ConvertFilesKM3NeT (705) | 607 of 1318
+
+executor >  slurm (708)
+[b9/15a1d3] ConvertFilesKM3NeT (707) | 608 of 1318
+
+executor >  slurm (710)
+[29/609c5f] ConvertFilesKM3NeT (708) | 610 of 1318
+
+executor >  slurm (710)
+[e9/c9406d] ConvertFilesKM3NeT (620) | 615 of 1318
+
+executor >  slurm (713)
+[2f/1e86d2] ConvertFilesKM3NeT (712) | 615 of 1318
+
+executor >  slurm (715)
+[da/de14d1] ConvertFilesKM3NeT (716) | 615 of 1318
+
+executor >  slurm (715)
+[da/de14d1] ConvertFilesKM3NeT (716) | 615 of 1318
+
+executor >  slurm (715)
+[da/de14d1] ConvertFilesKM3NeT (716) | 615 of 1318
+
+executor >  slurm (715)
+[bd/470583] ConvertFilesKM3NeT (634) | 616 of 1318
+
+executor >  slurm (717)
+[2c/f6c834] ConvertFilesKM3NeT (714) | 617 of 1318
+
+executor >  slurm (717)
+[87/06ee14] ConvertFilesKM3NeT (605) | 618 of 1318
+
+executor >  slurm (721)
+[01/b0363f] ConvertFilesKM3NeT (617) | 624 of 1318
+
+executor >  slurm (724)
+[c2/5ae77e] ConvertFilesKM3NeT (723) | 624 of 1318
+
+executor >  slurm (725)
+[fb/9922b0] ConvertFilesKM3NeT (724) | 625 of 1318
+
+executor >  slurm (727)
+[24/0f7cec] ConvertFilesKM3NeT (726) | 634 of 1318
+
+executor >  slurm (730)
+[46/35d91b] ConvertFilesKM3NeT (729) | 634 of 1318
+
+executor >  slurm (734)
+[0e/a16eae] ConvertFilesKM3NeT (732) | 634 of 1318
+
+executor >  slurm (734)
+[0e/a16eae] ConvertFilesKM3NeT (732) | 634 of 1318
+
+executor >  slurm (734)
+[0e/a16eae] ConvertFilesKM3NeT (732) | 634 of 1318
+
+executor >  slurm (735)
+[58/7ed615] ConvertFilesKM3NeT (733) | 635 of 1318
+
+executor >  slurm (735)
+[58/7ed615] ConvertFilesKM3NeT (733) | 635 of 1318
+
+executor >  slurm (735)
+[58/7ed615] ConvertFilesKM3NeT (733) | 635 of 1318
+
+executor >  slurm (735)
+[9a/360443] ConvertFilesKM3NeT (636) | 637 of 1318
+
+executor >  slurm (739)
+[4a/c298d5] ConvertFilesKM3NeT (645) | 642 of 1318
+
+executor >  slurm (743)
+[6a/a0e640] ConvertFilesKM3NeT (741) | 643 of 1318
+
+executor >  slurm (744)
+[e5/24d422] ConvertFilesKM3NeT (742) | 645 of 1318
+
+executor >  slurm (745)
+[9e/75c762] ConvertFilesKM3NeT (743) | 645 of 1318
+
+executor >  slurm (746)
+[d6/afce28] ConvertFilesKM3NeT (744) | 646 of 1318
+
+executor >  slurm (747)
+[b3/8a372b] ConvertFilesKM3NeT (745) | 647 of 1318
+
+executor >  slurm (749)
+[3f/4d7933] ConvertFilesKM3NeT (747) | 649 of 1318
+
+executor >  slurm (750)
+[f5/5d2d97] ConvertFilesKM3NeT (748) | 651 of 1318
+
+executor >  slurm (751)
+[6b/7c33d7] ConvertFilesKM3NeT (749) | 651 of 1318
+
+executor >  slurm (751)
+[6b/7c33d7] ConvertFilesKM3NeT (749) | 651 of 1318
+
+executor >  slurm (752)
+[74/b641b4] ConvertFilesKM3NeT (650) | 653 of 1318
+
+executor >  slurm (756)
+[60/d56d86] ConvertFilesKM3NeT (754) | 658 of 1318
+
+executor >  slurm (759)
+[19/63758f] ConvertFilesKM3NeT (757) | 659 of 1318
+
+executor >  slurm (761)
+[3b/89d6df] ConvertFilesKM3NeT (760) | 661 of 1318
+
+executor >  slurm (764)
+[33/742643] ConvertFilesKM3NeT (763) | 665 of 1318
+
+executor >  slurm (765)
+[82/4cf60a] ConvertFilesKM3NeT (764) | 665 of 1318
+
+executor >  slurm (765)
+[27/27c525] ConvertFilesKM3NeT (663) | 666 of 1318
+
+executor >  slurm (766)
+[d5/52edd8] ConvertFilesKM3NeT (766) | 666 of 1318
+
+executor >  slurm (767)
+[f3/3b1c50] ConvertFilesKM3NeT (765) | 667 of 1318
+
+executor >  slurm (767)
+[f3/3b1c50] ConvertFilesKM3NeT (765) | 667 of 1318
+
+executor >  slurm (767)
+[f3/632f96] ConvertFilesKM3NeT (668) | 669 of 1318
+
+executor >  slurm (771)
+[87/3a0bf8] ConvertFilesKM3NeT (770) | 673 of 1318
+
+executor >  slurm (773)
+[a3/7cb4a1] ConvertFilesKM3NeT (772) | 673 of 1318
+
+executor >  slurm (774)
+[a0/b535e2] ConvertFilesKM3NeT (773) | 675 of 1318
+
+executor >  slurm (775)
+[88/924210] ConvertFilesKM3NeT (774) | 675 of 1318
+
+executor >  slurm (775)
+[88/924210] ConvertFilesKM3NeT (774) | 675 of 1318
+
+executor >  slurm (776)
+[3d/d5cf3c] ConvertFilesKM3NeT (775) | 676 of 1318
+
+executor >  slurm (776)
+[3d/d5cf3c] ConvertFilesKM3NeT (775) | 676 of 1318
+
+executor >  slurm (776)
+[3d/d5cf3c] ConvertFilesKM3NeT (775) | 676 of 1318
+
+executor >  slurm (777)
+[cb/b9d248] ConvertFilesKM3NeT (776) | 680 of 1318
+
+executor >  slurm (780)
+[a9/661afa] ConvertFilesKM3NeT (781) | 680 of 1318
+
+executor >  slurm (780)
+[a9/661afa] ConvertFilesKM3NeT (781) | 680 of 1318
+
+executor >  slurm (780)
+[77/89eef2] ConvertFilesKM3NeT (681) | 682 of 1318
+
+executor >  slurm (784)
+[7b/79fbda] ConvertFilesKM3NeT (686) | 687 of 1318
+
+executor >  slurm (787)
+[44/8ef0ed] ConvertFilesKM3NeT (786) | 687 of 1318
+
+executor >  slurm (787)
+[44/8ef0ed] ConvertFilesKM3NeT (786) | 687 of 1318
+
+executor >  slurm (787)
+[44/8ef0ed] ConvertFilesKM3NeT (786) | 687 of 1318
+
+executor >  slurm (789)
+[96/05ad67] ConvertFilesKM3NeT (788) | 694 of 1318
+
+executor >  slurm (794)
+[8e/ebdffc] ConvertFilesKM3NeT (791) | 694 of 1318
+
+executor >  slurm (796)
+[00/8906f6] ConvertFilesKM3NeT (794) | 696 of 1318
+
+executor >  slurm (798)
+[98/c7b23d] ConvertFilesKM3NeT (796) | 698 of 1318
+
+executor >  slurm (801)
+[cd/8f48cc] ConvertFilesKM3NeT (798) | 702 of 1318
+
+executor >  slurm (805)
+[c8/a8d8a4] ConvertFilesKM3NeT (801) | 705 of 1318
+
+executor >  slurm (805)
+[c8/a8d8a4] ConvertFilesKM3NeT (801) | 705 of 1318
+
+executor >  slurm (805)
+[c8/a8d8a4] ConvertFilesKM3NeT (801) | 705 of 1318
+
+executor >  slurm (805)
+[b9/15a1d3] ConvertFilesKM3NeT (707) | 708 of 1318
+
+executor >  slurm (808)
+[58/27ee32] ConvertFilesKM3NeT (805) | 708 of 1318
+
+executor >  slurm (808)
+[58/27ee32] ConvertFilesKM3NeT (805) | 708 of 1318
+
+executor >  slurm (808)
+[58/27ee32] ConvertFilesKM3NeT (805) | 708 of 1318
+
+executor >  slurm (809)
+[37/8aa51c] ConvertFilesKM3NeT (806) | 714 of 1318
+
+executor >  slurm (812)
+[ff/88cfe5] ConvertFilesKM3NeT (809) | 715 of 1318
+
+executor >  slurm (815)
+[1f/a53554] ConvertFilesKM3NeT (812) | 715 of 1318
+
+executor >  slurm (815)
+[1f/a53554] ConvertFilesKM3NeT (812) | 715 of 1318
+
+executor >  slurm (816)
+[48/bf99da] ConvertFilesKM3NeT (813) | 716 of 1318
+
+executor >  slurm (818)
+[8f/daac93] ConvertFilesKM3NeT (815) | 719 of 1318
+
+executor >  slurm (819)
+[65/d97526] ConvertFilesKM3NeT (817) | 719 of 1318
+
+executor >  slurm (819)
+[2c/f6c834] ConvertFilesKM3NeT (714) | 720 of 1318
+
+executor >  slurm (820)
+[05/feb3f3] ConvertFilesKM3NeT (818) | 720 of 1318
+
+executor >  slurm (821)
+[09/62e58b] ConvertFilesKM3NeT (819) | 722 of 1318
+
+executor >  slurm (822)
+[c9/d55ac2] ConvertFilesKM3NeT (820) | 722 of 1318
+
+executor >  slurm (823)
+[a5/2eb095] ConvertFilesKM3NeT (821) | 723 of 1318
+
+executor >  slurm (823)
+[a5/2eb095] ConvertFilesKM3NeT (821) | 723 of 1318
+
+executor >  slurm (824)
+[30/5e69ce] ConvertFilesKM3NeT (822) | 729 of 1318
+
+executor >  slurm (828)
+[f4/a64d1a] ConvertFilesKM3NeT (823) | 729 of 1318
+
+executor >  slurm (829)
+[5c/8a3110] ConvertFilesKM3NeT (827) | 729 of 1318
+
+executor >  slurm (831)
+[5d/fcd27d] ConvertFilesKM3NeT (835) | 732 of 1318
+
+executor >  slurm (834)
+[48/2517be] ConvertFilesKM3NeT (839) | 734 of 1318
+
+executor >  slurm (835)
+[55/1e6f8d] ConvertFilesKM3NeT (840) | 735 of 1318
+
+executor >  slurm (835)
+[bf/a9cb49] ConvertFilesKM3NeT (740) | 741 of 1318
+
+executor >  slurm (837)
+[0c/969e10] ConvertFilesKM3NeT (837) | 741 of 1318
+
+executor >  slurm (841)
+[1b/cc3425] ConvertFilesKM3NeT (842) | 741 of 1318
+
+executor >  slurm (843)
+[61/e06a30] ConvertFilesKM3NeT (844) | 744 of 1318
+
+executor >  slurm (844)
+[ba/bee3f1] ConvertFilesKM3NeT (832) | 744 of 1318
+
+executor >  slurm (845)
+[07/ccba4a] ConvertFilesKM3NeT (830) | 745 of 1318
+
+executor >  slurm (845)
+[07/ccba4a] ConvertFilesKM3NeT (830) | 745 of 1318
+
+executor >  slurm (847)
+[66/ec0d60] ConvertFilesKM3NeT (746) | 749 of 1318
+
+executor >  slurm (851)
+[c2/5207e1] ConvertFilesKM3NeT (850) | 751 of 1318
+
+executor >  slurm (853)
+[4f/5603c7] ConvertFilesKM3NeT (851) | 753 of 1318
+
+executor >  slurm (853)
+[4f/5603c7] ConvertFilesKM3NeT (851) | 753 of 1318
+
+executor >  slurm (853)
+[4f/5603c7] ConvertFilesKM3NeT (851) | 753 of 1318
+
+executor >  slurm (854)
+[8a/e29901] ConvertFilesKM3NeT (853) | 754 of 1318
+
+executor >  slurm (854)
+[8a/e29901] ConvertFilesKM3NeT (853) | 754 of 1318
+
+executor >  slurm (855)
+[6b/691f2b] ConvertFilesKM3NeT (854) | 755 of 1318
+
+executor >  slurm (856)
+[bf/b943f3] ConvertFilesKM3NeT (855) | 756 of 1318
+
+executor >  slurm (857)
+[b4/d8e5f0] ConvertFilesKM3NeT (856) | 757 of 1318
+
+executor >  slurm (857)
+[b4/d8e5f0] ConvertFilesKM3NeT (856) | 757 of 1318
+
+executor >  slurm (858)
+[f1/eacb79] ConvertFilesKM3NeT (857) | 758 of 1318
+
+executor >  slurm (861)
+[44/a035c6] ConvertFilesKM3NeT (859) | 761 of 1318
+
+executor >  slurm (861)
+[3d/d5cf3c] ConvertFilesKM3NeT (775) | 766 of 1318
+
+executor >  slurm (866)
+[e4/f559f2] ConvertFilesKM3NeT (864) | 766 of 1318
+
+executor >  slurm (870)
+[3e/39da70] ConvertFilesKM3NeT (868) | 772 of 1318
+
+executor >  slurm (874)
+[ed/32162d] ConvertFilesKM3NeT (778) | 778 of 1318
+
+executor >  slurm (879)
+[83/cda532] ConvertFilesKM3NeT (877) | 780 of 1318
+
+executor >  slurm (880)
+[5b/742180] ConvertFilesKM3NeT (878) | 780 of 1318
+
+executor >  slurm (880)
+[5b/742180] ConvertFilesKM3NeT (878) | 780 of 1318
+
+executor >  slurm (881)
+[b7/b08c7f] ConvertFilesKM3NeT (879) | 785 of 1318
+
+executor >  slurm (885)
+[d4/165240] ConvertFilesKM3NeT (883) | 785 of 1318
+
+executor >  slurm (885)
+[d4/165240] ConvertFilesKM3NeT (883) | 785 of 1318
+
+executor >  slurm (885)
+[50/3052db] ConvertFilesKM3NeT (790) | 786 of 1318
+
+executor >  slurm (886)
+[eb/482a27] ConvertFilesKM3NeT (884) | 786 of 1318
+
+executor >  slurm (886)
+[eb/482a27] ConvertFilesKM3NeT (884) | 786 of 1318
+
+executor >  slurm (888)
+[bc/8b47af] ConvertFilesKM3NeT (913) | 788 of 1318
+
+executor >  slurm (889)
+[7a/6e2c72] ConvertFilesKM3NeT (886) | 789 of 1318
+
+executor >  slurm (889)
+[67/d04cc9] ConvertFilesKM3NeT (784) | 790 of 1318
+
+executor >  slurm (890)
+[2d/fe09d9] ConvertFilesKM3NeT (888) | 790 of 1318
+
+executor >  slurm (890)
+[2d/fe09d9] ConvertFilesKM3NeT (888) | 790 of 1318
+
+executor >  slurm (890)
+[b0/77031e] ConvertFilesKM3NeT (793) | 791 of 1318
+
+executor >  slurm (891)
+[10/d873f2] ConvertFilesKM3NeT (889) | 791 of 1318
+
+executor >  slurm (892)
+[ea/078dfa] ConvertFilesKM3NeT (890) | 794 of 1318
+
+executor >  slurm (894)
+[a9/64f96b] ConvertFilesKM3NeT (892) | 794 of 1318
+
+executor >  slurm (895)
+[82/7d4a7c] ConvertFilesKM3NeT (893) | 795 of 1318
+
+executor >  slurm (895)
+[82/7d4a7c] ConvertFilesKM3NeT (893) | 795 of 1318
+
+executor >  slurm (895)
+[82/7d4a7c] ConvertFilesKM3NeT (893) | 795 of 1318
+
+executor >  slurm (896)
+[2d/c4b59a] ConvertFilesKM3NeT (894) | 798 of 1318
+
+executor >  slurm (899)
+[f3/5406a5] ConvertFilesKM3NeT (897) | 801 of 1318
+
+executor >  slurm (901)
+[40/f53f68] ConvertFilesKM3NeT (898) | 801 of 1318
+
+executor >  slurm (904)
+[04/ae00d0] ConvertFilesKM3NeT (930) | 807 of 1318
+
+executor >  slurm (907)
+[00/6195d8] ConvertFilesKM3NeT (904) | 807 of 1318
+
+executor >  slurm (909)
+[8b/766154] ConvertFilesKM3NeT (906) | 809 of 1318
+
+executor >  slurm (909)
+[8b/766154] ConvertFilesKM3NeT (906) | 809 of 1318
+
+executor >  slurm (911)
+[18/d6cd5c] ConvertFilesKM3NeT (807) | 814 of 1318
+
+executor >  slurm (916)
+[da/23accb] ConvertFilesKM3NeT (914) | 818 of 1318
+
+executor >  slurm (919)
+[32/483152] ConvertFilesKM3NeT (916) | 819 of 1318
+
+executor >  slurm (919)
+[4f/5603c7] ConvertFilesKM3NeT (851) | 823 of 1318
+
+executor >  slurm (923)
+[ef/9d2566] ConvertFilesKM3NeT (920) | 823 of 1318
+
+executor >  slurm (924)
+[1d/912eb6] ConvertFilesKM3NeT (921) | 824 of 1318
+
+executor >  slurm (924)
+[1d/912eb6] ConvertFilesKM3NeT (921) | 824 of 1318
+
+executor >  slurm (925)
+[04/2ac9da] ConvertFilesKM3NeT (924) | 825 of 1318
+
+executor >  slurm (926)
+[c6/f5b96e] ConvertFilesKM3NeT (928) | 827 of 1318
+
+executor >  slurm (927)
+[a0/4908f7] ConvertFilesKM3NeT (929) | 827 of 1318
+
+executor >  slurm (928)
+[cb/37c8ac] ConvertFilesKM3NeT (923) | 828 of 1318
+
+executor >  slurm (928)
+[cb/37c8ac] ConvertFilesKM3NeT (923) | 828 of 1318
+
+executor >  slurm (930)
+[17/b72e7f] ConvertFilesKM3NeT (926) | 830 of 1318
+
+executor >  slurm (930)
+[48/2517be] ConvertFilesKM3NeT (839) | 833 of 1318
+
+executor >  slurm (933)
+[13/d0cfd7] ConvertFilesKM3NeT (925) | 833 of 1318
+
+executor >  slurm (933)
+[13/d0cfd7] ConvertFilesKM3NeT (925) | 833 of 1318
+
+executor >  slurm (933)
+[55/1e6f8d] ConvertFilesKM3NeT (840) | 834 of 1318
+
+executor >  slurm (934)
+[b2/0a3776] ConvertFilesKM3NeT (933) | 834 of 1318
+
+executor >  slurm (935)
+[b7/91a1f3] ConvertFilesKM3NeT (932) | 836 of 1318
+
+executor >  slurm (937)
+[62/9f433f] ConvertFilesKM3NeT (935) | 837 of 1318
+
+executor >  slurm (938)
+[81/dea387] ConvertFilesKM3NeT (936) | 843 of 1318
+
+executor >  slurm (942)
+[d5/cdff99] ConvertFilesKM3NeT (940) | 843 of 1318
+
+executor >  slurm (943)
+[62/ba6bdd] ConvertFilesKM3NeT (941) | 843 of 1318
+
+executor >  slurm (944)
+[ff/695159] ConvertFilesKM3NeT (942) | 844 of 1318
+
+executor >  slurm (945)
+[d8/83e742] ConvertFilesKM3NeT (945) | 845 of 1318
+
+executor >  slurm (948)
+[d3/248260] ConvertFilesKM3NeT (948) | 854 of 1318
+
+executor >  slurm (952)
+[c0/57fbd0] ConvertFilesKM3NeT (952) | 854 of 1318
+
+executor >  slurm (954)
+[55/71b100] ConvertFilesKM3NeT (953) | 854 of 1318
+
+executor >  slurm (954)
+[55/71b100] ConvertFilesKM3NeT (953) | 854 of 1318
+
+executor >  slurm (958)
+[71/5bba61] ConvertFilesKM3NeT (959) | 858 of 1318
+
+executor >  slurm (959)
+[e0/02b043] ConvertFilesKM3NeT (958) | 860 of 1318
+
+executor >  slurm (960)
+[37/ca628f] ConvertFilesKM3NeT (960) | 860 of 1318
+
+executor >  slurm (961)
+[fe/861e61] ConvertFilesKM3NeT (961) | 861 of 1318
+
+executor >  slurm (961)
+[fe/861e61] ConvertFilesKM3NeT (961) | 861 of 1318
+
+executor >  slurm (961)
+[fe/861e61] ConvertFilesKM3NeT (961) | 861 of 1318
+
+executor >  slurm (962)
+[8f/c984b0] ConvertFilesKM3NeT (862) | 864 of 1318
+
+executor >  slurm (965)
+[75/effed7] ConvertFilesKM3NeT (966) | 865 of 1318
+
+executor >  slurm (967)
+[39/ce0824] ConvertFilesKM3NeT (969) | 867 of 1318
+
+executor >  slurm (967)
+[39/ce0824] ConvertFilesKM3NeT (969) | 867 of 1318
+
+executor >  slurm (967)
+[39/ce0824] ConvertFilesKM3NeT (969) | 867 of 1318
+
+executor >  slurm (968)
+[51/cf047b] ConvertFilesKM3NeT (957) | 868 of 1318
+
+executor >  slurm (969)
+[29/6c1033] ConvertFilesKM3NeT (970) | 872 of 1318
+
+executor >  slurm (972)
+[ef/eb2a94] ConvertFilesKM3NeT (974) | 872 of 1318
+
+executor >  slurm (972)
+[ef/eb2a94] ConvertFilesKM3NeT (974) | 872 of 1318
+
+executor >  slurm (972)
+[ef/eb2a94] ConvertFilesKM3NeT (974) | 872 of 1318
+
+executor >  slurm (972)
+[a3/575f81] ConvertFilesKM3NeT (875) | 874 of 1318
+
+executor >  slurm (973)
+[d9/ddb49a] ConvertFilesKM3NeT (975) | 879 of 1318
+
+executor >  slurm (974)
+[a5/90759d] ConvertFilesKM3NeT (976) | 879 of 1318
+
+executor >  slurm (978)
+[88/c97753] ConvertFilesKM3NeT (978) | 879 of 1318
+
+executor >  slurm (979)
+[61/284d2c] ConvertFilesKM3NeT (979) | 879 of 1318
+
+executor >  slurm (981)
+[14/59edb3] ConvertFilesKM3NeT (981) | 885 of 1318
+
+executor >  slurm (985)
+[24/139edc] ConvertFilesKM3NeT (984) | 885 of 1318
+
+executor >  slurm (985)
+[24/139edc] ConvertFilesKM3NeT (984) | 885 of 1318
+
+executor >  slurm (985)
+[7a/6e2c72] ConvertFilesKM3NeT (886) | 886 of 1318
+
+executor >  slurm (988)
+[dd/bbebb6] ConvertFilesKM3NeT (987) | 888 of 1318
+
+executor >  slurm (989)
+[fa/4b0be7] ConvertFilesKM3NeT (990) | 889 of 1318
+
+executor >  slurm (990)
+[10/d873f2] ConvertFilesKM3NeT (889) | 891 of 1318
+
+executor >  slurm (994)
+[f3/5406a5] ConvertFilesKM3NeT (897) | 896 of 1318
+
+executor >  slurm (996)
+[f1/2a604a] ConvertFilesKM3NeT (988) | 896 of 1318
+
+executor >  slurm (998)
+[37/462f34] ConvertFilesKM3NeT (998) | 900 of 1318
+
+executor >  slurm (1000)
+[81/8ed7ab] ConvertFilesKM3NeT (1025) | 900 of 1318
+
+executor >  slurm (1000)
+[81/8ed7ab] ConvertFilesKM3NeT (1025) | 900 of 1318
+
+executor >  slurm (1001)
+[7f/18fddc] ConvertFilesKM3NeT (1000) | 903 of 1318
+
+executor >  slurm (1003)
+[48/e99d8b] ConvertFilesKM3NeT (1002) | 903 of 1318
+
+executor >  slurm (1003)
+[00/6195d8] ConvertFilesKM3NeT (904)  | 904 of 1318
+
+executor >  slurm (1004)
+[d7/0e45a8] ConvertFilesKM3NeT (1003) | 904 of 1318
+
+executor >  slurm (1004)
+[d7/0e45a8] ConvertFilesKM3NeT (1003) | 904 of 1318
+
+executor >  slurm (1004)
+[d7/0e45a8] ConvertFilesKM3NeT (1003) | 904 of 1318
+
+executor >  slurm (1006)
+[1b/9e55d3] ConvertFilesKM3NeT (1004) | 906 of 1318
+
+executor >  slurm (1006)
+[1b/9e55d3] ConvertFilesKM3NeT (1004) | 906 of 1318
+
+executor >  slurm (1007)
+[d7/8dc854] ConvertFilesKM3NeT (1005) | 908 of 1318
+
+executor >  slurm (1008)
+[84/f2b550] ConvertFilesKM3NeT (1007) | 908 of 1318
+
+executor >  slurm (1008)
+[84/f2b550] ConvertFilesKM3NeT (1007) | 908 of 1318
+
+executor >  slurm (1012)
+[6e/88b1c8] ConvertFilesKM3NeT (1011) | 913 of 1318
+
+executor >  slurm (1013)
+[a4/3aeadc] ConvertFilesKM3NeT (1012) | 913 of 1318
+
+executor >  slurm (1013)
+[a4/3aeadc] ConvertFilesKM3NeT (1012) | 913 of 1318
+
+executor >  slurm (1013)
+[a4/3aeadc] ConvertFilesKM3NeT (1012) | 913 of 1318
+
+executor >  slurm (1014)
+[48/524906] ConvertFilesKM3NeT (1013) | 915 of 1318
+
+executor >  slurm (1017)
+[9d/3e52f4] ConvertFilesKM3NeT (919)  | 921 of 1318
+
+executor >  slurm (1020)
+[d2/e4b78d] ConvertFilesKM3NeT (1020) | 921 of 1318
+
+executor >  slurm (1021)
+[78/ba5073] ConvertFilesKM3NeT (1021) | 921 of 1318
+
+executor >  slurm (1023)
+[94/1855bf] ConvertFilesKM3NeT (1010) | 923 of 1318
+
+executor >  slurm (1024)
+[15/5b795e] ConvertFilesKM3NeT (1019) | 924 of 1318
+
+executor >  slurm (1027)
+[61/c4e6cf] ConvertFilesKM3NeT (1024) | 927 of 1318
+
+executor >  slurm (1028)
+[05/81b9b7] ConvertFilesKM3NeT (1026) | 928 of 1318
+
+executor >  slurm (1028)
+[05/81b9b7] ConvertFilesKM3NeT (1026) | 928 of 1318
+
+executor >  slurm (1031)
+[13/d0cfd7] ConvertFilesKM3NeT (925)  | 933 of 1318
+
+executor >  slurm (1035)
+[5a/46c956] ConvertFilesKM3NeT (937)  | 938 of 1318
+
+executor >  slurm (1039)
+[2a/dd15e6] ConvertFilesKM3NeT (1039) | 940 of 1318
+
+executor >  slurm (1040)
+[25/f6511e] ConvertFilesKM3NeT (1041) | 940 of 1318
+
+executor >  slurm (1040)
+[b6/391642] ConvertFilesKM3NeT (939)  | 942 of 1318
+
+executor >  slurm (1042)
+[c7/b26d99] ConvertFilesKM3NeT (1042) | 942 of 1318
+
+executor >  slurm (1043)
+[a6/98f9ec] ConvertFilesKM3NeT (1043) | 943 of 1318
+
+executor >  slurm (1043)
+[a6/98f9ec] ConvertFilesKM3NeT (1043) | 943 of 1318
+
+executor >  slurm (1044)
+[49/061709] ConvertFilesKM3NeT (1044) | 944 of 1318
+
+executor >  slurm (1046)
+[5b/018a73] ConvertFilesKM3NeT (1045) | 946 of 1318
+
+executor >  slurm (1046)
+[5b/018a73] ConvertFilesKM3NeT (1045) | 946 of 1318
+
+executor >  slurm (1047)
+[99/d7f847] ConvertFilesKM3NeT (1046) | 947 of 1318
+
+executor >  slurm (1047)
+[d9/5015f4] ConvertFilesKM3NeT (947) | 948 of 1318
+
+executor >  slurm (1048)
+[0e/2090b0] ConvertFilesKM3NeT (1033) | 948 of 1318
+
+executor >  slurm (1048)
+[0e/2090b0] ConvertFilesKM3NeT (1033) | 948 of 1318
+
+executor >  slurm (1048)
+[d3/248260] ConvertFilesKM3NeT (948)  | 949 of 1318
+
+executor >  slurm (1052)
+[4a/98bdcd] ConvertFilesKM3NeT (1051) | 952 of 1318
+
+executor >  slurm (1053)
+[1b/4930bb] ConvertFilesKM3NeT (1052) | 953 of 1318
+
+executor >  slurm (1054)
+[bf/83b095] ConvertFilesKM3NeT (1053) | 954 of 1318
+
+executor >  slurm (1055)
+[ef/bbcb26] ConvertFilesKM3NeT (1054) | 955 of 1318
+
+executor >  slurm (1056)
+[3e/78439e] ConvertFilesKM3NeT (1048) | 956 of 1318
+
+executor >  slurm (1056)
+[3e/78439e] ConvertFilesKM3NeT (1048) | 956 of 1318
+
+executor >  slurm (1058)
+[75/effed7] ConvertFilesKM3NeT (966)  | 960 of 1318
+
+executor >  slurm (1061)
+[ac/3aa0b3] ConvertFilesKM3NeT (1059) | 961 of 1318
+
+executor >  slurm (1062)
+[1c/acf63e] ConvertFilesKM3NeT (1060) | 962 of 1318
+
+executor >  slurm (1064)
+[23/197ca4] ConvertFilesKM3NeT (1062) | 964 of 1318
+
+executor >  slurm (1064)
+[23/197ca4] ConvertFilesKM3NeT (1062) | 964 of 1318
+
+executor >  slurm (1064)
+[82/0fde73] ConvertFilesKM3NeT (971)  | 968 of 1318
+
+executor >  slurm (1068)
+[f6/761ff3] ConvertFilesKM3NeT (1066) | 968 of 1318
+
+executor >  slurm (1068)
+[f6/761ff3] ConvertFilesKM3NeT (1066) | 968 of 1318
+
+executor >  slurm (1068)
+[f6/761ff3] ConvertFilesKM3NeT (1066) | 968 of 1318
+
+executor >  slurm (1068)
+[55/71b100] ConvertFilesKM3NeT (953)  | 969 of 1318
+
+executor >  slurm (1069)
+[53/6ff489] ConvertFilesKM3NeT (1067) | 969 of 1318
+
+executor >  slurm (1070)
+[25/bf8ea1] ConvertFilesKM3NeT (1068) | 970 of 1318
+
+executor >  slurm (1071)
+[67/385fa5] ConvertFilesKM3NeT (1069) | 973 of 1318
+
+executor >  slurm (1073)
+[da/fb7ff3] ConvertFilesKM3NeT (1073) | 973 of 1318
+
+executor >  slurm (1074)
+[b7/38fbf2] ConvertFilesKM3NeT (1072) | 974 of 1318
+
+executor >  slurm (1076)
+[6e/c98618] ConvertFilesKM3NeT (1074) | 976 of 1318
+
+executor >  slurm (1078)
+[c7/f9bfa3] ConvertFilesKM3NeT (1077) | 978 of 1318
+
+executor >  slurm (1078)
+[c7/f9bfa3] ConvertFilesKM3NeT (1077) | 978 of 1318
+
+executor >  slurm (1081)
+[d6/580bf0] ConvertFilesKM3NeT (1080) | 982 of 1318
+
+executor >  slurm (1082)
+[06/0e250b] ConvertFilesKM3NeT (1081) | 982 of 1318
+
+executor >  slurm (1082)
+[d7/d51f6e] ConvertFilesKM3NeT (985)  | 983 of 1318
+
+executor >  slurm (1083)
+[8a/e18049] ConvertFilesKM3NeT (1082) | 983 of 1318
+
+executor >  slurm (1083)
+[8a/e18049] ConvertFilesKM3NeT (1082) | 983 of 1318
+
+executor >  slurm (1084)
+[70/eaf139] ConvertFilesKM3NeT (1083) | 984 of 1318
+
+executor >  slurm (1084)
+[70/eaf139] ConvertFilesKM3NeT (1083) | 984 of 1318
+
+executor >  slurm (1085)
+[81/71410a] ConvertFilesKM3NeT (1084) | 986 of 1318
+
+executor >  slurm (1086)
+[b4/6e7548] ConvertFilesKM3NeT (1085) | 986 of 1318
+
+executor >  slurm (1088)
+[cf/621e72] ConvertFilesKM3NeT (1087) | 988 of 1318
+
+executor >  slurm (1088)
+[cf/621e72] ConvertFilesKM3NeT (1087) | 988 of 1318
+
+executor >  slurm (1089)
+[ad/1c3549] ConvertFilesKM3NeT (1088) | 989 of 1318
+
+executor >  slurm (1089)
+[ad/1c3549] ConvertFilesKM3NeT (1088) | 989 of 1318
+
+executor >  slurm (1091)
+[87/3b3919] ConvertFilesKM3NeT (1090) | 992 of 1318
+
+executor >  slurm (1092)
+[01/93d091] ConvertFilesKM3NeT (1111) | 992 of 1318
+
+executor >  slurm (1092)
+[29/644ac9] ConvertFilesKM3NeT (993) | 996 of 1318
+
+executor >  slurm (1093)
+[08/f30185] ConvertFilesKM3NeT (1091) | 996 of 1318
+
+executor >  slurm (1095)
+[bf/5281c5] ConvertFilesKM3NeT (1093) | 996 of 1318
+
+executor >  slurm (1096)
+[bb/f2126f] ConvertFilesKM3NeT (1094) | 996 of 1318
+
+executor >  slurm (1096)
+[37/462f34] ConvertFilesKM3NeT (998)  | 997 of 1318
+
+executor >  slurm (1097)
+[4d/96d421] ConvertFilesKM3NeT (1095) | 997 of 1318
+
+executor >  slurm (1097)
+[48/524906] ConvertFilesKM3NeT (1013) | 998 of 1318
+
+executor >  slurm (1099)
+[ba/517ca4] ConvertFilesKM3NeT (1097) | 999 of 1318
+
+executor >  slurm (1100)
+[56/4e5f74] ConvertFilesKM3NeT (1098) | 1001 of 1318
+
+executor >  slurm (1101)
+[13/52d459] ConvertFilesKM3NeT (1099) | 1001 of 1318
+
+executor >  slurm (1102)
+[25/9c4a3b] ConvertFilesKM3NeT (1100) | 1002 of 1318
+
+executor >  slurm (1102)
+[25/9c4a3b] ConvertFilesKM3NeT (1100) | 1002 of 1318
+
+executor >  slurm (1104)
+[3d/91372d] ConvertFilesKM3NeT (999)  | 1006 of 1318
+
+executor >  slurm (1108)
+[0f/4c5034] ConvertFilesKM3NeT (1106) | 1008 of 1318
+
+executor >  slurm (1109)
+[4d/78ded1] ConvertFilesKM3NeT (1108) | 1009 of 1318
+
+executor >  slurm (1112)
+[0d/298cb2] ConvertFilesKM3NeT (1114) | 1012 of 1318
+
+executor >  slurm (1112)
+[0d/298cb2] ConvertFilesKM3NeT (1114) | 1012 of 1318
+
+executor >  slurm (1112)
+[0d/298cb2] ConvertFilesKM3NeT (1114) | 1012 of 1318
+
+executor >  slurm (1112)
+[81/8ed7ab] ConvertFilesKM3NeT (1025) | 1013 of 1318
+
+executor >  slurm (1115)
+[fc/dec9a7] ConvertFilesKM3NeT (1116) | 1015 of 1318
+
+executor >  slurm (1116)
+[d9/0e0793] ConvertFilesKM3NeT (1117) | 1016 of 1318
+
+executor >  slurm (1116)
+[d9/0e0793] ConvertFilesKM3NeT (1117) | 1016 of 1318
+
+executor >  slurm (1118)
+[4a/e87705] ConvertFilesKM3NeT (1119) | 1018 of 1318
+
+executor >  slurm (1118)
+[4a/e87705] ConvertFilesKM3NeT (1119) | 1018 of 1318
+
+executor >  slurm (1119)
+[d3/8bf4b8] ConvertFilesKM3NeT (1006) | 1022 of 1318
+
+executor >  slurm (1122)
+[90/7246a5] ConvertFilesKM3NeT (1122) | 1022 of 1318
+
+executor >  slurm (1122)
+[90/7246a5] ConvertFilesKM3NeT (1122) | 1022 of 1318
+
+executor >  slurm (1122)
+[90/7246a5] ConvertFilesKM3NeT (1122) | 1022 of 1318
+
+executor >  slurm (1123)
+[cb/ffb3ab] ConvertFilesKM3NeT (1110) | 1023 of 1318
+
+executor >  slurm (1123)
+[15/5b795e] ConvertFilesKM3NeT (1019) | 1024 of 1318
+
+executor >  slurm (1124)
+[85/10d9bc] ConvertFilesKM3NeT (1120) | 1024 of 1318
+
+executor >  slurm (1124)
+[85/10d9bc] ConvertFilesKM3NeT (1120) | 1024 of 1318
+
+executor >  slurm (1126)
+[d9/5d4441] ConvertFilesKM3NeT (1125) | 1026 of 1318
+
+executor >  slurm (1126)
+[4e/b89e43] ConvertFilesKM3NeT (1023) | 1027 of 1318
+
+executor >  slurm (1127)
+[b7/0ce8e4] ConvertFilesKM3NeT (1126) | 1027 of 1318
+
+executor >  slurm (1128)
+[14/9f3543] ConvertFilesKM3NeT (1127) | 1037 of 1318
+
+executor >  slurm (1132)
+[f3/2ab0da] ConvertFilesKM3NeT (1131) | 1037 of 1318
+
+executor >  slurm (1135)
+[2c/782142] ConvertFilesKM3NeT (1135) | 1037 of 1318
+
+executor >  slurm (1137)
+[2d/3b7b2a] ConvertFilesKM3NeT (1124) | 1037 of 1318
+
+executor >  slurm (1138)
+[17/c4adf9] ConvertFilesKM3NeT (1132) | 1038 of 1318
+
+executor >  slurm (1139)
+[3b/022f6c] ConvertFilesKM3NeT (1037) | 1041 of 1318
+
+executor >  slurm (1143)
+[ac/b7d888] ConvertFilesKM3NeT (1141) | 1043 of 1318
+
+executor >  slurm (1144)
+[e2/87b2a7] ConvertFilesKM3NeT (1142) | 1044 of 1318
+
+executor >  slurm (1146)
+[69/5a2442] ConvertFilesKM3NeT (1145) | 1046 of 1318
+
+executor >  slurm (1146)
+[69/5a2442] ConvertFilesKM3NeT (1145) | 1046 of 1318
+
+executor >  slurm (1148)
+[9f/d68bed] ConvertFilesKM3NeT (1147) | 1050 of 1318
+
+executor >  slurm (1151)
+[0b/f05c46] ConvertFilesKM3NeT (1150) | 1051 of 1318
+
+executor >  slurm (1151)
+[3e/78439e] ConvertFilesKM3NeT (1048) | 1052 of 1318
+
+executor >  slurm (1152)
+[dc/08557f] ConvertFilesKM3NeT (1151) | 1052 of 1318
+
+executor >  slurm (1153)
+[6b/c499e8] ConvertFilesKM3NeT (1152) | 1053 of 1318
+
+executor >  slurm (1154)
+[87/3b3919] ConvertFilesKM3NeT (1090) | 1057 of 1318
+
+executor >  slurm (1157)
+[f0/103c70] ConvertFilesKM3NeT (1156) | 1057 of 1318
+
+executor >  slurm (1158)
+[1d/4b95c9] ConvertFilesKM3NeT (1157) | 1058 of 1318
+
+executor >  slurm (1160)
+[f9/c05414] ConvertFilesKM3NeT (1162) | 1062 of 1318
+
+executor >  slurm (1162)
+[59/834f23] ConvertFilesKM3NeT (1185) | 1062 of 1318
+
+executor >  slurm (1163)
+[89/225771] ConvertFilesKM3NeT (1188) | 1063 of 1318
+
+executor >  slurm (1165)
+[3a/ff79d6] ConvertFilesKM3NeT (1160) | 1065 of 1318
+
+executor >  slurm (1167)
+[32/4bad37] ConvertFilesKM3NeT (1165) | 1067 of 1318
+
+executor >  slurm (1167)
+[08/f30185] ConvertFilesKM3NeT (1091) | 1068 of 1318
+
+executor >  slurm (1168)
+[02/449589] ConvertFilesKM3NeT (1164) | 1068 of 1318
+
+executor >  slurm (1168)
+[02/449589] ConvertFilesKM3NeT (1164) | 1068 of 1318
+
+executor >  slurm (1168)
+[7c/4a6928] ConvertFilesKM3NeT (1064) | 1069 of 1318
+
+executor >  slurm (1172)
+[85/951d29] ConvertFilesKM3NeT (1168) | 1075 of 1318
+
+executor >  slurm (1175)
+[e1/b828df] ConvertFilesKM3NeT (1171) | 1076 of 1318
+
+executor >  slurm (1176)
+[4b/b18915] ConvertFilesKM3NeT (1172) | 1076 of 1318
+
+executor >  slurm (1177)
+[fb/ec70e0] ConvertFilesKM3NeT (1173) | 1077 of 1318
+
+executor >  slurm (1178)
+[c6/dab744] ConvertFilesKM3NeT (1174) | 1078 of 1318
+
+executor >  slurm (1180)
+[32/d158f5] ConvertFilesKM3NeT (1176) | 1088 of 1318
+
+executor >  slurm (1184)
+[de/169d62] ConvertFilesKM3NeT (1180) | 1088 of 1318
+
+executor >  slurm (1188)
+[cf/841269] ConvertFilesKM3NeT (1184) | 1088 of 1318
+
+executor >  slurm (1188)
+[cf/841269] ConvertFilesKM3NeT (1184) | 1088 of 1318
+
+executor >  slurm (1189)
+[f1/8339f5] ConvertFilesKM3NeT (1186) | 1090 of 1318
+
+executor >  slurm (1190)
+[0a/a2ecba] ConvertFilesKM3NeT (1187) | 1090 of 1318
+
+executor >  slurm (1191)
+[77/86c949] ConvertFilesKM3NeT (1189) | 1091 of 1318
+
+executor >  slurm (1192)
+[88/5751e0] ConvertFilesKM3NeT (1190) | 1092 of 1318
+
+executor >  slurm (1192)
+[88/5751e0] ConvertFilesKM3NeT (1190) | 1092 of 1318
+
+executor >  slurm (1195)
+[c6/819bdf] ConvertFilesKM3NeT (1193) | 1095 of 1318
+
+executor >  slurm (1195)
+[c6/819bdf] ConvertFilesKM3NeT (1193) | 1095 of 1318
+
+executor >  slurm (1198)
+[9a/af3ad1] ConvertFilesKM3NeT (1197) | 1099 of 1318
+
+executor >  slurm (1199)
+[97/9091bf] ConvertFilesKM3NeT (1198) | 1099 of 1318
+
+executor >  slurm (1200)
+[6a/8fc902] ConvertFilesKM3NeT (1199) | 1100 of 1318
+
+executor >  slurm (1201)
+[c3/f6ee22] ConvertFilesKM3NeT (1200) | 1105 of 1318
+
+executor >  slurm (1205)
+[32/53b8a5] ConvertFilesKM3NeT (1204) | 1105 of 1318
+
+executor >  slurm (1205)
+[32/53b8a5] ConvertFilesKM3NeT (1204) | 1105 of 1318
+
+executor >  slurm (1206)
+[05/f505d7] ConvertFilesKM3NeT (1205) | 1107 of 1318
+
+executor >  slurm (1207)
+[24/5aa377] ConvertFilesKM3NeT (1206) | 1107 of 1318
+
+executor >  slurm (1208)
+[f6/ad3b1d] ConvertFilesKM3NeT (1208) | 1108 of 1318
+
+executor >  slurm (1209)
+[55/7d05e4] ConvertFilesKM3NeT (1209) | 1109 of 1318
+
+executor >  slurm (1212)
+[06/e94098] ConvertFilesKM3NeT (1211) | 1112 of 1318
+
+executor >  slurm (1213)
+[35/9015d1] ConvertFilesKM3NeT (1212) | 1113 of 1318
+
+executor >  slurm (1213)
+[35/9015d1] ConvertFilesKM3NeT (1212) | 1113 of 1318
+
+executor >  slurm (1213)
+[69/5a2442] ConvertFilesKM3NeT (1145) | 1114 of 1318
+
+executor >  slurm (1214)
+[e4/3751a6] ConvertFilesKM3NeT (1213) | 1114 of 1318
+
+executor >  slurm (1214)
+[83/985b09] ConvertFilesKM3NeT (1115) | 1117 of 1318
+
+executor >  slurm (1218)
+[27/08bf5e] ConvertFilesKM3NeT (1216) | 1120 of 1318
+
+executor >  slurm (1220)
+[c0/45ba41] ConvertFilesKM3NeT (1245) | 1120 of 1318
+
+executor >  slurm (1220)
+[c0/45ba41] ConvertFilesKM3NeT (1245) | 1120 of 1318
+
+executor >  slurm (1223)
+[cb/ffb3ab] ConvertFilesKM3NeT (1110) | 1126 of 1318
+
+executor >  slurm (1227)
+[01/08c7ab] ConvertFilesKM3NeT (1129) | 1131 of 1318
+
+executor >  slurm (1231)
+[67/8a98c2] ConvertFilesKM3NeT (1228) | 1133 of 1318
+
+executor >  slurm (1233)
+[33/6540c1] ConvertFilesKM3NeT (1230) | 1133 of 1318
+
+executor >  slurm (1234)
+[60/0e6e0c] ConvertFilesKM3NeT (1231) | 1135 of 1318
+
+executor >  slurm (1235)
+[95/ceea53] ConvertFilesKM3NeT (1224) | 1135 of 1318
+
+executor >  slurm (1235)
+[95/ceea53] ConvertFilesKM3NeT (1224) | 1135 of 1318
+
+executor >  slurm (1235)
+[95/ceea53] ConvertFilesKM3NeT (1224) | 1135 of 1318
+
+executor >  slurm (1236)
+[2c/782142] ConvertFilesKM3NeT (1135) | 1138 of 1318
+
+executor >  slurm (1240)
+[12/860e53] ConvertFilesKM3NeT (1235) | 1140 of 1318
+
+executor >  slurm (1241)
+[be/e73db5] ConvertFilesKM3NeT (1237) | 1141 of 1318
+
+executor >  slurm (1241)
+[be/e73db5] ConvertFilesKM3NeT (1237) | 1141 of 1318
+
+executor >  slurm (1241)
+[ac/b7d888] ConvertFilesKM3NeT (1141) | 1144 of 1318
+
+executor >  slurm (1242)
+[a9/5fecb7] ConvertFilesKM3NeT (1238) | 1144 of 1318
+
+executor >  slurm (1244)
+[51/6e8445] ConvertFilesKM3NeT (1240) | 1144 of 1318
+
+executor >  slurm (1244)
+[9e/1bb4c4] ConvertFilesKM3NeT (1143) | 1145 of 1318
+
+executor >  slurm (1245)
+[76/ea958a] ConvertFilesKM3NeT (1242) | 1145 of 1318
+
+executor >  slurm (1245)
+[9f/d68bed] ConvertFilesKM3NeT (1147) | 1147 of 1318
+
+executor >  slurm (1247)
+[ef/d12ba3] ConvertFilesKM3NeT (1244) | 1147 of 1318
+
+executor >  slurm (1248)
+[b1/0c29b2] ConvertFilesKM3NeT (1247) | 1149 of 1318
+
+executor >  slurm (1249)
+[96/ed8b2b] ConvertFilesKM3NeT (1248) | 1149 of 1318
+
+executor >  slurm (1250)
+[88/a7ea02] ConvertFilesKM3NeT (1249) | 1150 of 1318
+
+executor >  slurm (1251)
+[c9/a716c6] ConvertFilesKM3NeT (1276) | 1151 of 1318
+
+executor >  slurm (1251)
+[c9/a716c6] ConvertFilesKM3NeT (1276) | 1151 of 1318
+
+executor >  slurm (1252)
+[5f/11c399] ConvertFilesKM3NeT (1250) | 1153 of 1318
+
+executor >  slurm (1254)
+[07/69ae4a] ConvertFilesKM3NeT (1252) | 1154 of 1318
+
+executor >  slurm (1254)
+[07/69ae4a] ConvertFilesKM3NeT (1252) | 1154 of 1318
+
+executor >  slurm (1255)
+[80/fa63fd] ConvertFilesKM3NeT (1253) | 1155 of 1318
+
+executor >  slurm (1259)
+[ad/9d6b71] ConvertFilesKM3NeT (1257) | 1160 of 1318
+
+executor >  slurm (1260)
+[1a/a66246] ConvertFilesKM3NeT (1258) | 1160 of 1318
+
+executor >  slurm (1260)
+[1a/a66246] ConvertFilesKM3NeT (1258) | 1160 of 1318
+
+executor >  slurm (1263)
+[e5/b448a3] ConvertFilesKM3NeT (1261) | 1165 of 1318
+
+executor >  slurm (1266)
+[45/c3f0be] ConvertFilesKM3NeT (1264) | 1166 of 1318
+
+executor >  slurm (1266)
+[45/c3f0be] ConvertFilesKM3NeT (1264) | 1166 of 1318
+
+executor >  slurm (1266)
+[85/951d29] ConvertFilesKM3NeT (1168) | 1173 of 1318
+
+executor >  slurm (1266)
+[e1/b828df] ConvertFilesKM3NeT (1171) | 1174 of 1318
+
+executor >  slurm (1267)
+[e5/b4fb89] ConvertFilesKM3NeT (1265) | 1174 of 1318
+
+executor >  slurm (1270)
+[18/161554] ConvertFilesKM3NeT (1268) | 1174 of 1318
+
+executor >  slurm (1274)
+[a8/46167d] ConvertFilesKM3NeT (1272) | 1174 of 1318
+
+executor >  slurm (1275)
+[f5/886ab1] ConvertFilesKM3NeT (1273) | 1179 of 1318
+
+executor >  slurm (1279)
+[c2/f2de22] ConvertFilesKM3NeT (1280) | 1179 of 1318
+
+executor >  slurm (1279)
+[c2/f2de22] ConvertFilesKM3NeT (1280) | 1179 of 1318
+
+executor >  slurm (1280)
+[f3/6efc9f] ConvertFilesKM3NeT (1281) | 1180 of 1318
+
+executor >  slurm (1280)
+[f3/6efc9f] ConvertFilesKM3NeT (1281) | 1180 of 1318
+
+executor >  slurm (1281)
+[de/169d62] ConvertFilesKM3NeT (1180) | 1183 of 1318
+
+executor >  slurm (1283)
+[5a/e03b11] ConvertFilesKM3NeT (1284) | 1183 of 1318
+
+executor >  slurm (1283)
+[5a/e03b11] ConvertFilesKM3NeT (1284) | 1183 of 1318
+
+executor >  slurm (1283)
+[8c/9546ef] ConvertFilesKM3NeT (1179) | 1184 of 1318
+
+executor >  slurm (1284)
+[b6/6875ac] ConvertFilesKM3NeT (1287) | 1184 of 1318
+
+executor >  slurm (1285)
+[23/7b63b5] ConvertFilesKM3NeT (1288) | 1185 of 1318
+
+executor >  slurm (1287)
+[52/9ba355] ConvertFilesKM3NeT (1285) | 1187 of 1318
+
+executor >  slurm (1287)
+[27/08bf5e] ConvertFilesKM3NeT (1216) | 1188 of 1318
+
+executor >  slurm (1288)
+[94/33a809] ConvertFilesKM3NeT (1278) | 1188 of 1318
+
+executor >  slurm (1289)
+[45/771db6] ConvertFilesKM3NeT (1279) | 1189 of 1318
+
+executor >  slurm (1289)
+[45/771db6] ConvertFilesKM3NeT (1279) | 1189 of 1318
+
+executor >  slurm (1289)
+[a1/cbdf0e] ConvertFilesKM3NeT (1182) | 1190 of 1318
+
+executor >  slurm (1293)
+[2e/a302b6] ConvertFilesKM3NeT (1294) | 1193 of 1318
+
+executor >  slurm (1293)
+[f1/8339f5] ConvertFilesKM3NeT (1186) | 1194 of 1318
+
+executor >  slurm (1294)
+[66/58f021] ConvertFilesKM3NeT (1195) | 1198 of 1318
+
+executor >  slurm (1297)
+[07/bc4d0d] ConvertFilesKM3NeT (1297) | 1200 of 1318
+
+executor >  slurm (1300)
+[df/edc8d1] ConvertFilesKM3NeT (1300) | 1200 of 1318
+
+executor >  slurm (1300)
+[97/9091bf] ConvertFilesKM3NeT (1198) | 1202 of 1318
+
+executor >  slurm (1302)
+[a1/2a63d2] ConvertFilesKM3NeT (1302) | 1202 of 1318
+
+executor >  slurm (1303)
+[5e/da0556] ConvertFilesKM3NeT (1303) | 1203 of 1318
+
+executor >  slurm (1303)
+[5e/da0556] ConvertFilesKM3NeT (1303) | 1203 of 1318
+
+executor >  slurm (1304)
+[2c/4ba037] ConvertFilesKM3NeT (1304) | 1208 of 1318
+
+executor >  slurm (1308)
+[ec/ae131f] ConvertFilesKM3NeT (1308) | 1208 of 1318
+
+executor >  slurm (1310)
+[aa/2bf0f1] ConvertFilesKM3NeT (1310) | 1210 of 1318
+
+executor >  slurm (1315)
+[5b/c9509e] ConvertFilesKM3NeT (1315) | 1217 of 1318
+
+executor >  slurm (1317)
+[a1/8b017c] ConvertFilesKM3NeT (1317) | 1217 of 1318
+
+executor >  slurm (1317)
+[a1/8b017c] ConvertFilesKM3NeT (1317) | 1217 of 1318
+
+executor >  slurm (1317)
+[a1/8b017c] ConvertFilesKM3NeT (1317) | 1217 of 1318
+
+executor >  slurm (1318)
+[5a/e09627] ConvertFilesKM3NeT (1246) | 1221 of 1318
+
+executor >  slurm (1318)
+[12/860e53] ConvertFilesKM3NeT (1235) | 1222 of 1318
+
+executor >  slurm (1318)
+[12/860e53] ConvertFilesKM3NeT (1235) | 1222 of 1318
+
+executor >  slurm (1318)
+[6d/f5a007] ConvertFilesKM3NeT (1218) | 1223 of 1318
+
+executor >  slurm (1318)
+[bf/75841f] ConvertFilesKM3NeT (1219) | 1225 of 1318
+
+executor >  slurm (1318)
+[f8/6aabaf] ConvertFilesKM3NeT (1226) | 1228 of 1318
+
+executor >  slurm (1318)
+[f8/6aabaf] ConvertFilesKM3NeT (1226) | 1228 of 1318
+
+executor >  slurm (1318)
+[f8/6aabaf] ConvertFilesKM3NeT (1226) | 1228 of 1318
+
+executor >  slurm (1318)
+[67/8a98c2] ConvertFilesKM3NeT (1228) | 1231 of 1318
+
+executor >  slurm (1318)
+[5c/5e014d] ConvertFilesKM3NeT (1232) | 1237 of 1318
+
+executor >  slurm (1318)
+[2e/0b7536] ConvertFilesKM3NeT (1233) | 1238 of 1318
+
+executor >  slurm (1318)
+[41/c30068] ConvertFilesKM3NeT (1234) | 1239 of 1318
+
+executor >  slurm (1318)
+[41/c30068] ConvertFilesKM3NeT (1234) | 1239 of 1318
+
+executor >  slurm (1318)
+[41/c30068] ConvertFilesKM3NeT (1234) | 1239 of 1318
+
+executor >  slurm (1318)
+[b1/0c29b2] ConvertFilesKM3NeT (1247) | 1244 of 1318
+
+executor >  slurm (1318)
+[07/69ae4a] ConvertFilesKM3NeT (1252) | 1248 of 1318
+
+executor >  slurm (1318)
+[51/6e8445] ConvertFilesKM3NeT (1240) | 1249 of 1318
+
+executor >  slurm (1318)
+[f3/8b25ec] ConvertFilesKM3NeT (1239) | 1250 of 1318, failed: 1
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[f3/8b25ec] ConvertFilesKM3NeT (1239) | 1250 of 1318, failed: 1
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[be/e73db5] ConvertFilesKM3NeT (1237) | 1251 of 1318, failed: 1
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[76/ea958a] ConvertFilesKM3NeT (1242) | 1252 of 1318, failed: 1
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[be/734644] ConvertFilesKM3NeT (1255) | 1255 of 1318, failed: 4
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+[88/a7ea02] NOTE: Process `ConvertFilesKM3NeT (1249)` terminated with an error exit status (1) -- Error is ignored
+[38/e559f5] NOTE: Process `ConvertFilesKM3NeT (1254)` terminated with an error exit status (1) -- Error is ignored
+[be/734644] NOTE: Process `ConvertFilesKM3NeT (1255)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[c9/a716c6] ConvertFilesKM3NeT (1276) | 1256 of 1318, failed: 5
+[f3/8b25ec] NOTE: Process `ConvertFilesKM3NeT (1239)` terminated with an error exit status (1) -- Error is ignored
+[88/a7ea02] NOTE: Process `ConvertFilesKM3NeT (1249)` terminated with an error exit status (1) -- Error is ignored
+[38/e559f5] NOTE: Process `ConvertFilesKM3NeT (1254)` terminated with an error exit status (1) -- Error is ignored
+[be/734644] NOTE: Process `ConvertFilesKM3NeT (1255)` terminated with an error exit status (1) -- Error is ignored
+[c9/a716c6] NOTE: Process `ConvertFilesKM3NeT (1276)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[52/9ba355] ConvertFilesKM3NeT (1285) | 1258 of 1318, failed: 7
+[88/a7ea02] NOTE: Process `ConvertFilesKM3NeT (1249)` terminated with an error exit status (1) -- Error is ignored
+[38/e559f5] NOTE: Process `ConvertFilesKM3NeT (1254)` terminated with an error exit status (1) -- Error is ignored
+[be/734644] NOTE: Process `ConvertFilesKM3NeT (1255)` terminated with an error exit status (1) -- Error is ignored
+[c9/a716c6] NOTE: Process `ConvertFilesKM3NeT (1276)` terminated with an error exit status (1) -- Error is ignored
+[23/7b63b5] NOTE: Process `ConvertFilesKM3NeT (1288)` terminated with an error exit status (1) -- Error is ignored
+[52/9ba355] NOTE: Process `ConvertFilesKM3NeT (1285)` terminated with an error exit status (1) -- Error is ignored
+
+
+executor >  slurm (1318)
+[ad/9d6b71] ConvertFilesKM3NeT (1257) | 1261 of 1318, failed: 10
+[88/a7ea02] NOTE: Process `ConvertFilesKM3NeT (1249)` terminated with an error exit status (1) -- Error is ignored
+[38/e559f5] NOTE: Process `ConvertFilesKM3NeT (1254)` terminated with an error exit status (1) -- Error is ignored
+[be/734644] NOTE: Process `ConvertFilesKM3NeT (1255)` terminated with an error exit status (1) -- Error is ignored
+[c9/a716c6] NOTE: Process `ConvertFilesKM3NeT (1276)` terminated with an error exit status (1) -- Error is ignored
+[23/7b63b5] NOTE: Process `ConvertFilesKM3NeT (1288)` terminated with an error exit status (1) -- Error is ignored
+[52/9ba355] NOTE: Process `ConvertFilesKM3NeT (1285)` terminated with an error exit status (1) -- Error is ignored
+[80/fa63fd] NOTE: Process `ConvertFilesKM3NeT (1253)` terminated with an error exit status (1) -- Error is ignored
+[07/60a830] NOTE: Process `ConvertFilesKM3NeT (1256)` terminated with an error exit status (1) -- Error is ignored
+[ad/9d6b71] NOTE: Process `ConvertFilesKM3NeT (1257)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[69/ffb8ce] ConvertFilesKM3NeT (1259) | 1262 of 1318, failed: 11
+[c9/a716c6] NOTE: Process `ConvertFilesKM3NeT (1276)` terminated with an error exit status (1) -- Error is ignored
+[23/7b63b5] NOTE: Process `ConvertFilesKM3NeT (1288)` terminated with an error exit status (1) -- Error is ignored
+[52/9ba355] NOTE: Process `ConvertFilesKM3NeT (1285)` terminated with an error exit status (1) -- Error is ignored
+[80/fa63fd] NOTE: Process `ConvertFilesKM3NeT (1253)` terminated with an error exit status (1) -- Error is ignored
+[07/60a830] NOTE: Process `ConvertFilesKM3NeT (1256)` terminated with an error exit status (1) -- Error is ignored
+[ad/9d6b71] NOTE: Process `ConvertFilesKM3NeT (1257)` terminated with an error exit status (1) -- Error is ignored
+[69/ffb8ce] NOTE: Process `ConvertFilesKM3NeT (1259)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+executor >  slurm (1318)
+[e5/b448a3] ConvertFilesKM3NeT (1261) | 1263 of 1318, failed: 12
+[23/7b63b5] NOTE: Process `ConvertFilesKM3NeT (1288)` terminated with an error exit status (1) -- Error is ignored
+[52/9ba355] NOTE: Process `ConvertFilesKM3NeT (1285)` terminated with an error exit status (1) -- Error is ignored
+[80/fa63fd] NOTE: Process `ConvertFilesKM3NeT (1253)` terminated with an error exit status (1) -- Error is ignored
+[07/60a830] NOTE: Process `ConvertFilesKM3NeT (1256)` terminated with an error exit status (1) -- Error is ignored
+[ad/9d6b71] NOTE: Process `ConvertFilesKM3NeT (1257)` terminated with an error exit status (1) -- Error is ignored
+[69/ffb8ce] NOTE: Process `ConvertFilesKM3NeT (1259)` terminated with an error exit status (1) -- Error is ignored
+[e5/b448a3] NOTE: Process `ConvertFilesKM3NeT (1261)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+executor >  slurm (1318)
+[e5/b448a3] ConvertFilesKM3NeT (1261) | 1263 of 1318, failed: 12
+[80/fa63fd] NOTE: Process `ConvertFilesKM3NeT (1253)` terminated with an error exit status (1) -- Error is ignored
+[07/60a830] NOTE: Process `ConvertFilesKM3NeT (1256)` terminated with an error exit status (1) -- Error is ignored
+[ad/9d6b71] NOTE: Process `ConvertFilesKM3NeT (1257)` terminated with an error exit status (1) -- Error is ignored
+[69/ffb8ce] NOTE: Process `ConvertFilesKM3NeT (1259)` terminated with an error exit status (1) -- Error is ignored
+[e5/b448a3] NOTE: Process `ConvertFilesKM3NeT (1261)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+executor >  slurm (1318)
+[1a/a66246] ConvertFilesKM3NeT (1258) | 1264 of 1318, failed: 13
+[07/60a830] NOTE: Process `ConvertFilesKM3NeT (1256)` terminated with an error exit status (1) -- Error is ignored
+[ad/9d6b71] NOTE: Process `ConvertFilesKM3NeT (1257)` terminated with an error exit status (1) -- Error is ignored
+[69/ffb8ce] NOTE: Process `ConvertFilesKM3NeT (1259)` terminated with an error exit status (1) -- Error is ignored
+[e5/b448a3] NOTE: Process `ConvertFilesKM3NeT (1261)` terminated with an error exit status (1) -- Error is ignored
+[1a/a66246] NOTE: Process `ConvertFilesKM3NeT (1258)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+executor >  slurm (1318)
+[1a/a66246] ConvertFilesKM3NeT (1258) | 1264 of 1318, failed: 13
+[1a/a66246] NOTE: Process `ConvertFilesKM3NeT (1258)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+executor >  slurm (1318)
+[f8/428ce9] ConvertFilesKM3NeT (1263) | 1267 of 1318, failed: 16
+[1a/a66246] NOTE: Process `ConvertFilesKM3NeT (1258)` terminated with an error exit status (1) -- Error is ignored
+[fe/b84c0d] NOTE: Process `ConvertFilesKM3NeT (1260)` terminated with an error exit status (1) -- Error is ignored
+[3e/f7b027] NOTE: Process `ConvertFilesKM3NeT (1262)` terminated with an error exit status (1) -- Error is ignored
+[f8/428ce9] NOTE: Process `ConvertFilesKM3NeT (1263)` terminated with an error exit status (1) -- Error is ignored
+
+
+executor >  slurm (1318)
+[6b/b268e6] ConvertFilesKM3NeT (1270) | 1269 of 1318, failed: 18
+[fe/4a8b11] NOTE: Process `ConvertFilesKM3NeT (1266)` terminated with an error exit status (1) -- Error is ignored
+[6b/b268e6] NOTE: Process `ConvertFilesKM3NeT (1270)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+executor >  slurm (1318)
+[6b/b268e6] ConvertFilesKM3NeT (1270) | 1269 of 1318, failed: 18
+[fe/4a8b11] NOTE: Process `ConvertFilesKM3NeT (1266)` terminated with an error exit status (1) -- Error is ignored
+[6b/b268e6] NOTE: Process `ConvertFilesKM3NeT (1270)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+executor >  slurm (1318)
+[18/161554] ConvertFilesKM3NeT (1268) | 1273 of 1318, failed: 22
+[fe/4a8b11] NOTE: Process `ConvertFilesKM3NeT (1266)` terminated with an error exit status (1) -- Error is ignored
+[6b/b268e6] NOTE: Process `ConvertFilesKM3NeT (1270)` terminated with an error exit status (1) -- Error is ignored
+[45/c3f0be] NOTE: Process `ConvertFilesKM3NeT (1264)` terminated with an error exit status (1) -- Error is ignored
+[e5/b4fb89] NOTE: Process `ConvertFilesKM3NeT (1265)` terminated with an error exit status (1) -- Error is ignored
+[27/b49dd3] NOTE: Process `ConvertFilesKM3NeT (1267)` terminated with an error exit status (1) -- Error is ignored
+[18/161554] NOTE: Process `ConvertFilesKM3NeT (1268)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[45/d4ec5e] ConvertFilesKM3NeT (1291) | 1276 of 1318, failed: 25
+[fe/4a8b11] NOTE: Process `ConvertFilesKM3NeT (1266)` terminated with an error exit status (1) -- Error is ignored
+[6b/b268e6] NOTE: Process `ConvertFilesKM3NeT (1270)` terminated with an error exit status (1) -- Error is ignored
+[45/c3f0be] NOTE: Process `ConvertFilesKM3NeT (1264)` terminated with an error exit status (1) -- Error is ignored
+[e5/b4fb89] NOTE: Process `ConvertFilesKM3NeT (1265)` terminated with an error exit status (1) -- Error is ignored
+[27/b49dd3] NOTE: Process `ConvertFilesKM3NeT (1267)` terminated with an error exit status (1) -- Error is ignored
+[18/161554] NOTE: Process `ConvertFilesKM3NeT (1268)` terminated with an error exit status (1) -- Error is ignored
+[52/bfaed8] NOTE: Process `ConvertFilesKM3NeT (1269)` terminated with an error exit status (1) -- Error is ignored
+[23/4dba80] NOTE: Process `ConvertFilesKM3NeT (1290)` terminated with an error exit status (1) -- Error is ignored
+[45/d4ec5e] NOTE: Process `ConvertFilesKM3NeT (1291)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[45/d4ec5e] ConvertFilesKM3NeT (1291) | 1276 of 1318, failed: 25
+[45/c3f0be] NOTE: Process `ConvertFilesKM3NeT (1264)` terminated with an error exit status (1) -- Error is ignored
+[e5/b4fb89] NOTE: Process `ConvertFilesKM3NeT (1265)` terminated with an error exit status (1) -- Error is ignored
+[27/b49dd3] NOTE: Process `ConvertFilesKM3NeT (1267)` terminated with an error exit status (1) -- Error is ignored
+[18/161554] NOTE: Process `ConvertFilesKM3NeT (1268)` terminated with an error exit status (1) -- Error is ignored
+[52/bfaed8] NOTE: Process `ConvertFilesKM3NeT (1269)` terminated with an error exit status (1) -- Error is ignored
+[23/4dba80] NOTE: Process `ConvertFilesKM3NeT (1290)` terminated with an error exit status (1) -- Error is ignored
+[45/d4ec5e] NOTE: Process `ConvertFilesKM3NeT (1291)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+executor >  slurm (1318)
+[45/d4ec5e] ConvertFilesKM3NeT (1291) | 1276 of 1318, failed: 25
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[a8/46167d] ConvertFilesKM3NeT (1272) | 1278 of 1318, failed: 27
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+executor >  slurm (1318)
+[9c/8ee339] ConvertFilesKM3NeT (1274) | 1279 of 1318, failed: 28
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[b6/6875ac] ConvertFilesKM3NeT (1287) | 1284 of 1318, failed: 33
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+[3d/d42eed] NOTE: Process `ConvertFilesKM3NeT (1277)` terminated with an error exit status (1) -- Error is ignored
+[c2/f2de22] NOTE: Process `ConvertFilesKM3NeT (1280)` terminated with an error exit status (1) -- Error is ignored
+[f3/6efc9f] NOTE: Process `ConvertFilesKM3NeT (1281)` terminated with an error exit status (1) -- Error is ignored
+[b6/6875ac] NOTE: Process `ConvertFilesKM3NeT (1287)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[f5/886ab1] ConvertFilesKM3NeT (1273) | 1285 of 1318, failed: 34
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+[3d/d42eed] NOTE: Process `ConvertFilesKM3NeT (1277)` terminated with an error exit status (1) -- Error is ignored
+[c2/f2de22] NOTE: Process `ConvertFilesKM3NeT (1280)` terminated with an error exit status (1) -- Error is ignored
+[f3/6efc9f] NOTE: Process `ConvertFilesKM3NeT (1281)` terminated with an error exit status (1) -- Error is ignored
+[b6/6875ac] NOTE: Process `ConvertFilesKM3NeT (1287)` terminated with an error exit status (1) -- Error is ignored
+[f5/886ab1] NOTE: Process `ConvertFilesKM3NeT (1273)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[9a/5ea936] ConvertFilesKM3NeT (1292) | 1287 of 1318, failed: 36
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+[3d/d42eed] NOTE: Process `ConvertFilesKM3NeT (1277)` terminated with an error exit status (1) -- Error is ignored
+[c2/f2de22] NOTE: Process `ConvertFilesKM3NeT (1280)` terminated with an error exit status (1) -- Error is ignored
+[f3/6efc9f] NOTE: Process `ConvertFilesKM3NeT (1281)` terminated with an error exit status (1) -- Error is ignored
+[b6/6875ac] NOTE: Process `ConvertFilesKM3NeT (1287)` terminated with an error exit status (1) -- Error is ignored
+[f5/886ab1] NOTE: Process `ConvertFilesKM3NeT (1273)` terminated with an error exit status (1) -- Error is ignored
+[3a/aac592] NOTE: Process `ConvertFilesKM3NeT (1282)` terminated with an error exit status (1) -- Error is ignored
+[9a/5ea936] NOTE: Process `ConvertFilesKM3NeT (1292)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[e8/20b658] ConvertFilesKM3NeT (1306) | 1288 of 1318, failed: 37
+[02/209054] NOTE: Process `ConvertFilesKM3NeT (1271)` terminated with an error exit status (1) -- Error is ignored
+[a8/46167d] NOTE: Process `ConvertFilesKM3NeT (1272)` terminated with an error exit status (1) -- Error is ignored
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+[3d/d42eed] NOTE: Process `ConvertFilesKM3NeT (1277)` terminated with an error exit status (1) -- Error is ignored
+[c2/f2de22] NOTE: Process `ConvertFilesKM3NeT (1280)` terminated with an error exit status (1) -- Error is ignored
+[f3/6efc9f] NOTE: Process `ConvertFilesKM3NeT (1281)` terminated with an error exit status (1) -- Error is ignored
+[b6/6875ac] NOTE: Process `ConvertFilesKM3NeT (1287)` terminated with an error exit status (1) -- Error is ignored
+[f5/886ab1] NOTE: Process `ConvertFilesKM3NeT (1273)` terminated with an error exit status (1) -- Error is ignored
+[3a/aac592] NOTE: Process `ConvertFilesKM3NeT (1282)` terminated with an error exit status (1) -- Error is ignored
+[9a/5ea936] NOTE: Process `ConvertFilesKM3NeT (1292)` terminated with an error exit status (1) -- Error is ignored
+[e8/20b658] NOTE: Process `ConvertFilesKM3NeT (1306)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[94/33a809] ConvertFilesKM3NeT (1278) | 1289 of 1318, failed: 38
+[9c/8ee339] NOTE: Process `ConvertFilesKM3NeT (1274)` terminated with an error exit status (1) -- Error is ignored
+[32/db9d3b] NOTE: Process `ConvertFilesKM3NeT (1275)` terminated with an error exit status (1) -- Error is ignored
+[3d/d42eed] NOTE: Process `ConvertFilesKM3NeT (1277)` terminated with an error exit status (1) -- Error is ignored
+[c2/f2de22] NOTE: Process `ConvertFilesKM3NeT (1280)` terminated with an error exit status (1) -- Error is ignored
+[f3/6efc9f] NOTE: Process `ConvertFilesKM3NeT (1281)` terminated with an error exit status (1) -- Error is ignored
+[b6/6875ac] NOTE: Process `ConvertFilesKM3NeT (1287)` terminated with an error exit status (1) -- Error is ignored
+[f5/886ab1] NOTE: Process `ConvertFilesKM3NeT (1273)` terminated with an error exit status (1) -- Error is ignored
+[3a/aac592] NOTE: Process `ConvertFilesKM3NeT (1282)` terminated with an error exit status (1) -- Error is ignored
+[9a/5ea936] NOTE: Process `ConvertFilesKM3NeT (1292)` terminated with an error exit status (1) -- Error is ignored
+[e8/20b658] NOTE: Process `ConvertFilesKM3NeT (1306)` terminated with an error exit status (1) -- Error is ignored
+[94/33a809] NOTE: Process `ConvertFilesKM3NeT (1278)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+executor >  slurm (1318)
+[45/771db6] ConvertFilesKM3NeT (1279) | 1290 of 1318, failed: 39
+[94/33a809] NOTE: Process `ConvertFilesKM3NeT (1278)` terminated with an error exit status (1) -- Error is ignored
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[5a/e03b11] ConvertFilesKM3NeT (1284) | 1291 of 1318, failed: 40
+[94/33a809] NOTE: Process `ConvertFilesKM3NeT (1278)` terminated with an error exit status (1) -- Error is ignored
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[cf/36c3f3] ConvertFilesKM3NeT (1289) | 1292 of 1318, failed: 41
+[94/33a809] NOTE: Process `ConvertFilesKM3NeT (1278)` terminated with an error exit status (1) -- Error is ignored
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[07/bc4d0d] ConvertFilesKM3NeT (1297) | 1296 of 1318, failed: 45
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+[34/40a5fd] NOTE: Process `ConvertFilesKM3NeT (1283)` terminated with an error exit status (1) -- Error is ignored
+[fe/c0b263] NOTE: Process `ConvertFilesKM3NeT (1293)` terminated with an error exit status (1) -- Error is ignored
+[9c/d1eaa7] NOTE: Process `ConvertFilesKM3NeT (1295)` terminated with an error exit status (1) -- Error is ignored
+[07/bc4d0d] NOTE: Process `ConvertFilesKM3NeT (1297)` terminated with an error exit status (1) -- Error is ignored
+
+
+executor >  slurm (1318)
+[df/edc8d1] ConvertFilesKM3NeT (1300) | 1299 of 1318, failed: 48
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+[34/40a5fd] NOTE: Process `ConvertFilesKM3NeT (1283)` terminated with an error exit status (1) -- Error is ignored
+[fe/c0b263] NOTE: Process `ConvertFilesKM3NeT (1293)` terminated with an error exit status (1) -- Error is ignored
+[9c/d1eaa7] NOTE: Process `ConvertFilesKM3NeT (1295)` terminated with an error exit status (1) -- Error is ignored
+[07/bc4d0d] NOTE: Process `ConvertFilesKM3NeT (1297)` terminated with an error exit status (1) -- Error is ignored
+[34/500135] NOTE: Process `ConvertFilesKM3NeT (1296)` terminated with an error exit status (1) -- Error is ignored
+[2f/6f2548] NOTE: Process `ConvertFilesKM3NeT (1299)` terminated with an error exit status (1) -- Error is ignored
+[df/edc8d1] NOTE: Process `ConvertFilesKM3NeT (1300)` terminated with an error exit status (1) -- Error is ignored
+[9b/b05974] NOTE: Process `ConvertFilesKM3NeT (1307)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[9b/b05974] ConvertFilesKM3NeT (1307) | 1300 of 1318, failed: 49
+[45/771db6] NOTE: Process `ConvertFilesKM3NeT (1279)` terminated with an error exit status (1) -- Error is ignored
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+[34/40a5fd] NOTE: Process `ConvertFilesKM3NeT (1283)` terminated with an error exit status (1) -- Error is ignored
+[fe/c0b263] NOTE: Process `ConvertFilesKM3NeT (1293)` terminated with an error exit status (1) -- Error is ignored
+[9c/d1eaa7] NOTE: Process `ConvertFilesKM3NeT (1295)` terminated with an error exit status (1) -- Error is ignored
+[07/bc4d0d] NOTE: Process `ConvertFilesKM3NeT (1297)` terminated with an error exit status (1) -- Error is ignored
+[34/500135] NOTE: Process `ConvertFilesKM3NeT (1296)` terminated with an error exit status (1) -- Error is ignored
+[2f/6f2548] NOTE: Process `ConvertFilesKM3NeT (1299)` terminated with an error exit status (1) -- Error is ignored
+[df/edc8d1] NOTE: Process `ConvertFilesKM3NeT (1300)` terminated with an error exit status (1) -- Error is ignored
+[9b/b05974] NOTE: Process `ConvertFilesKM3NeT (1307)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[a1/2a63d2] ConvertFilesKM3NeT (1302) | 1302 of 1318, failed: 51
+[5a/e03b11] NOTE: Process `ConvertFilesKM3NeT (1284)` terminated with an error exit status (1) -- Error is ignored
+[cf/36c3f3] NOTE: Process `ConvertFilesKM3NeT (1289)` terminated with an error exit status (1) -- Error is ignored
+[34/40a5fd] NOTE: Process `ConvertFilesKM3NeT (1283)` terminated with an error exit status (1) -- Error is ignored
+[fe/c0b263] NOTE: Process `ConvertFilesKM3NeT (1293)` terminated with an error exit status (1) -- Error is ignored
+[9c/d1eaa7] NOTE: Process `ConvertFilesKM3NeT (1295)` terminated with an error exit status (1) -- Error is ignored
+[07/bc4d0d] NOTE: Process `ConvertFilesKM3NeT (1297)` terminated with an error exit status (1) -- Error is ignored
+[34/500135] NOTE: Process `ConvertFilesKM3NeT (1296)` terminated with an error exit status (1) -- Error is ignored
+[2f/6f2548] NOTE: Process `ConvertFilesKM3NeT (1299)` terminated with an error exit status (1) -- Error is ignored
+[df/edc8d1] NOTE: Process `ConvertFilesKM3NeT (1300)` terminated with an error exit status (1) -- Error is ignored
+[9b/b05974] NOTE: Process `ConvertFilesKM3NeT (1307)` terminated with an error exit status (1) -- Error is ignored
+[84/207232] NOTE: Process `ConvertFilesKM3NeT (1301)` terminated with an error exit status (1) -- Error is ignored
+[a1/2a63d2] NOTE: Process `ConvertFilesKM3NeT (1302)` terminated with an error exit status (1) -- Error is ignored
+
+
+executor >  slurm (1318)
+[2e/a302b6] ConvertFilesKM3NeT (1294) | 1303 of 1318, failed: 52
+[84/207232] NOTE: Process `ConvertFilesKM3NeT (1301)` terminated with an error exit status (1) -- Error is ignored
+[a1/2a63d2] NOTE: Process `ConvertFilesKM3NeT (1302)` terminated with an error exit status (1) -- Error is ignored
+[2e/a302b6] NOTE: Process `ConvertFilesKM3NeT (1294)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[5e/da0556] ConvertFilesKM3NeT (1303) | 1304 of 1318, failed: 53
+[84/207232] NOTE: Process `ConvertFilesKM3NeT (1301)` terminated with an error exit status (1) -- Error is ignored
+[a1/2a63d2] NOTE: Process `ConvertFilesKM3NeT (1302)` terminated with an error exit status (1) -- Error is ignored
+[2e/a302b6] NOTE: Process `ConvertFilesKM3NeT (1294)` terminated with an error exit status (1) -- Error is ignored
+[5e/da0556] NOTE: Process `ConvertFilesKM3NeT (1303)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[2c/4ba037] ConvertFilesKM3NeT (1304) | 1306 of 1318, failed: 55
+[84/207232] NOTE: Process `ConvertFilesKM3NeT (1301)` terminated with an error exit status (1) -- Error is ignored
+[a1/2a63d2] NOTE: Process `ConvertFilesKM3NeT (1302)` terminated with an error exit status (1) -- Error is ignored
+[2e/a302b6] NOTE: Process `ConvertFilesKM3NeT (1294)` terminated with an error exit status (1) -- Error is ignored
+[5e/da0556] NOTE: Process `ConvertFilesKM3NeT (1303)` terminated with an error exit status (1) -- Error is ignored
+[cc/025d64] NOTE: Process `ConvertFilesKM3NeT (1298)` terminated with an error exit status (1) -- Error is ignored
+[2c/4ba037] NOTE: Process `ConvertFilesKM3NeT (1304)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[ec/ae131f] ConvertFilesKM3NeT (1308) | 1308 of 1318, failed: 57
+[84/207232] NOTE: Process `ConvertFilesKM3NeT (1301)` terminated with an error exit status (1) -- Error is ignored
+[a1/2a63d2] NOTE: Process `ConvertFilesKM3NeT (1302)` terminated with an error exit status (1) -- Error is ignored
+[2e/a302b6] NOTE: Process `ConvertFilesKM3NeT (1294)` terminated with an error exit status (1) -- Error is ignored
+[5e/da0556] NOTE: Process `ConvertFilesKM3NeT (1303)` terminated with an error exit status (1) -- Error is ignored
+[cc/025d64] NOTE: Process `ConvertFilesKM3NeT (1298)` terminated with an error exit status (1) -- Error is ignored
+[2c/4ba037] NOTE: Process `ConvertFilesKM3NeT (1304)` terminated with an error exit status (1) -- Error is ignored
+[52/f4907a] NOTE: Process `ConvertFilesKM3NeT (1305)` terminated with an error exit status (1) -- Error is ignored
+[ec/ae131f] NOTE: Process `ConvertFilesKM3NeT (1308)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[63/2d56bc] ConvertFilesKM3NeT (1311) | 1309 of 1318, failed: 58
+[2e/a302b6] NOTE: Process `ConvertFilesKM3NeT (1294)` terminated with an error exit status (1) -- Error is ignored
+[5e/da0556] NOTE: Process `ConvertFilesKM3NeT (1303)` terminated with an error exit status (1) -- Error is ignored
+[cc/025d64] NOTE: Process `ConvertFilesKM3NeT (1298)` terminated with an error exit status (1) -- Error is ignored
+[2c/4ba037] NOTE: Process `ConvertFilesKM3NeT (1304)` terminated with an error exit status (1) -- Error is ignored
+[52/f4907a] NOTE: Process `ConvertFilesKM3NeT (1305)` terminated with an error exit status (1) -- Error is ignored
+[ec/ae131f] NOTE: Process `ConvertFilesKM3NeT (1308)` terminated with an error exit status (1) -- Error is ignored
+[63/2d56bc] NOTE: Process `ConvertFilesKM3NeT (1311)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+executor >  slurm (1318)
+[40/4733d6] ConvertFilesKM3NeT (1312) | 1312 of 1318, failed: 61
+[ba/bec280] NOTE: Process `ConvertFilesKM3NeT (1309)` terminated with an error exit status (1) -- Error is ignored
+[aa/2bf0f1] NOTE: Process `ConvertFilesKM3NeT (1310)` terminated with an error exit status (1) -- Error is ignored
+[40/4733d6] NOTE: Process `ConvertFilesKM3NeT (1312)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+
+
+
+
+
+executor >  slurm (1318)
+[a1/8b017c] ConvertFilesKM3NeT (1317) | 1317 of 1318, failed: 66
+[ba/bec280] NOTE: Process `ConvertFilesKM3NeT (1309)` terminated with an error exit status (1) -- Error is ignored
+[aa/2bf0f1] NOTE: Process `ConvertFilesKM3NeT (1310)` terminated with an error exit status (1) -- Error is ignored
+[40/4733d6] NOTE: Process `ConvertFilesKM3NeT (1312)` terminated with an error exit status (1) -- Error is ignored
+[b6/41ff8b] NOTE: Process `ConvertFilesKM3NeT (1313)` terminated with an error exit status (1) -- Error is ignored
+[43/2f45a3] NOTE: Process `ConvertFilesKM3NeT (1314)` terminated with an error exit status (1) -- Error is ignored
+[5b/c9509e] NOTE: Process `ConvertFilesKM3NeT (1315)` terminated with an error exit status (1) -- Error is ignored
+[31/56f18d] NOTE: Process `ConvertFilesKM3NeT (1316)` terminated with an error exit status (1) -- Error is ignored
+[a1/8b017c] NOTE: Process `ConvertFilesKM3NeT (1317)` terminated with an error exit status (1) -- Error is ignored
+
+
+
+executor >  slurm (1318)
+[3c/dc49ed] ConvertFilesKM3NeT (1318) | 1318 of 1318, failed: 67 ✔
+[ba/bec280] NOTE: Process `ConvertFilesKM3NeT (1309)` terminated with an error exit status (1) -- Error is ignored
+[aa/2bf0f1] NOTE: Process `ConvertFilesKM3NeT (1310)` terminated with an error exit status (1) -- Error is ignored
+[40/4733d6] NOTE: Process `ConvertFilesKM3NeT (1312)` terminated with an error exit status (1) -- Error is ignored
+[b6/41ff8b] NOTE: Process `ConvertFilesKM3NeT (1313)` terminated with an error exit status (1) -- Error is ignored
+[43/2f45a3] NOTE: Process `ConvertFilesKM3NeT (1314)` terminated with an error exit status (1) -- Error is ignored
+[5b/c9509e] NOTE: Process `ConvertFilesKM3NeT (1315)` terminated with an error exit status (1) -- Error is ignored
+[31/56f18d] NOTE: Process `ConvertFilesKM3NeT (1316)` terminated with an error exit status (1) -- Error is ignored
+[a1/8b017c] NOTE: Process `ConvertFilesKM3NeT (1317)` terminated with an error exit status (1) -- Error is ignored
+[3c/dc49ed] NOTE: Process `ConvertFilesKM3NeT (1318)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[3c/dc49ed] ConvertFilesKM3NeT (1318) | 1318 of 1318, failed: 67 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_convertfiles.nf -profile woody_hannes_container_analysis --filestype data_arca -with-report
+[ba/bec280] NOTE: Process `ConvertFilesKM3NeT (1309)` terminated with an error exit status (1) -- Error is ignored
+[aa/2bf0f1] NOTE: Process `ConvertFilesKM3NeT (1310)` terminated with an error exit status (1) -- Error is ignored
+[40/4733d6] NOTE: Process `ConvertFilesKM3NeT (1312)` terminated with an error exit status (1) -- Error is ignored
+[b6/41ff8b] NOTE: Process `ConvertFilesKM3NeT (1313)` terminated with an error exit status (1) -- Error is ignored
+[43/2f45a3] NOTE: Process `ConvertFilesKM3NeT (1314)` terminated with an error exit status (1) -- Error is ignored
+[5b/c9509e] NOTE: Process `ConvertFilesKM3NeT (1315)` terminated with an error exit status (1) -- Error is ignored
+[31/56f18d] NOTE: Process `ConvertFilesKM3NeT (1316)` terminated with an error exit status (1) -- Error is ignored
+[a1/8b017c] NOTE: Process `ConvertFilesKM3NeT (1317)` terminated with an error exit status (1) -- Error is ignored
+[3c/dc49ed] NOTE: Process `ConvertFilesKM3NeT (1318)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  slurm (1318)
+[3c/dc49ed] ConvertFilesKM3NeT (1318) | 1318 of 1318, failed: 67 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_convertfiles.nf -profile woody_hannes_container_analysis --filestype data_arca -with-report
+[ba/bec280] NOTE: Process `ConvertFilesKM3NeT (1309)` terminated with an error exit status (1) -- Error is ignored
+[aa/2bf0f1] NOTE: Process `ConvertFilesKM3NeT (1310)` terminated with an error exit status (1) -- Error is ignored
+[40/4733d6] NOTE: Process `ConvertFilesKM3NeT (1312)` terminated with an error exit status (1) -- Error is ignored
+[b6/41ff8b] NOTE: Process `ConvertFilesKM3NeT (1313)` terminated with an error exit status (1) -- Error is ignored
+[43/2f45a3] NOTE: Process `ConvertFilesKM3NeT (1314)` terminated with an error exit status (1) -- Error is ignored
+[5b/c9509e] NOTE: Process `ConvertFilesKM3NeT (1315)` terminated with an error exit status (1) -- Error is ignored
+[31/56f18d] NOTE: Process `ConvertFilesKM3NeT (1316)` terminated with an error exit status (1) -- Error is ignored
+[a1/8b017c] NOTE: Process `ConvertFilesKM3NeT (1317)` terminated with an error exit status (1) -- Error is ignored
+[3c/dc49ed] NOTE: Process `ConvertFilesKM3NeT (1318)` terminated with an error exit status (1) -- Error is ignored
+WARN: Failed to render execution report -- see the log file for details
+Completed at: 12-Aug-2025 18:43:54
+Duration    : 2h 29m 17s
+CPU hours   : 105.0 (4.2% failed)
+Succeeded   : 1'251
+Ignored     : 67
+Failed      : 67
+
+
+=== JOB_STATISTICS ===
+=== current date     : Tue Aug 12 18:43:55 CEST 2025
+= Job-ID             : 8861201 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 02:34:02
+= Total RAM usage    : 1.0 GiB of requested  GiB (%)   
+= Node list          : w2517
+= Subm/Elig/Start/End: 2025-08-12T15:32:48 / 2025-08-12T15:32:48 / 2025-08-12T16:09:52 / 2025-08-12T18:43:54
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+!!! /home/hpc             209.2G   104.9G   209.7G  -29391days     195K     500K   1,000K        N/A !!!
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

@@ -135,10 +135,10 @@ workflow{
 
     // Apply correction to the combined event lists
     CorrectEventListKM3NeT(CreateEventListKM3NeT_new.out, input.source_file)  
-    CombineEventListsKM3NeT(CorrectEventListKM3NeT.out.collect())
+    CombineEventListsKM3NeT(CorrectEventListKM3NeT.out.collect(),input.source_file)
 
     // Create a combined channel (SNR, Corrected Event List, Iteration info)
-    Combined_Channel = SNR_Channel.combine(CombineEventListsKM3NeT.out).combine(Iteration_Channel)
+    Combined_Channel = SNR_Channel.combine(CombineEventListsKM3NeT.out.combined_file).combine(Iteration_Channel)
     
     // Inject signal into the combined channel
     // InjectSignalKM3NeT(Combined_Channel, input.frequency, input.pulseshape, input.df, input.baseline, input.a, input.phi, input.kappa)

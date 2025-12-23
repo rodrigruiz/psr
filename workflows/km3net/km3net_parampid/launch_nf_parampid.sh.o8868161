@@ -1,0 +1,32 @@
+### Starting TaskPrologue of job 8868161 on w2315 at Thu Aug 14 01:40:13 CEST 2025
+#   SLURM_JOB_NODELIST=w2315
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+Expected a command, got parampid_profiles.config -- Check the available commands and options and syntax with 'help'
+=== JOB_STATISTICS ===
+=== current date     : Thu Aug 14 01:44:54 CEST 2025
+= Job-ID             : 8868161 on woody
+= Job-Name           : launch_nf_parampid.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid/launch_nf_parampid.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_parampid
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 23:00:00
+= Elapsed runtime    : 00:04:42
+= Total RAM usage    : 0.2 GiB of requested  GiB (%)   
+= Node list          : w2315
+= Subm/Elig/Start/End: 2025-08-14T01:25:44 / 2025-08-14T01:25:44 / 2025-08-14T01:40:12 / 2025-08-14T01:44:54
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc              90.7G   104.9G   209.7G        N/A     195K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

@@ -1,0 +1,5993 @@
+### Starting TaskPrologue of job 8901522 on w2326 at Fri Aug 22 15:19:40 CEST 2025
+#   SLURM_JOB_NODELIST=w2326
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_analysis_workflow_creategti_selected.nf` [evil_austin] DSL2 - revision: ef9da27f32
+
+WARN: Access to undefined parameter `source_file` -- Initialise it to a default value eg. `params.source_file = some_value`
+WARN: Access to undefined parameter `cone_all` -- Initialise it to a default value eg. `params.cone_all = some_value`
+WARN: Access to undefined parameter `convert` -- Initialise it to a default value eg. `params.convert = some_value`
+[-        ] CreateSelectedEventList       -
+[-        ] CombineEventListsRunsSelected -
+
+[-        ] CreateSelectedEventList       | 0 of 16
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (1)
+[db/74f4cf] CreateSelectedEventList (17)  | 0 of 45
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (5)
+[24/2ac9a8] CreateSelectedEventList (20)  | 0 of 93
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (8)
+[7f/a67a71] CreateSelectedEventList (11)  | 0 of 138
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (12)
+[3c/d51acf] CreateSelectedEventList (32)  | 0 of 183
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (15)
+[b1/7b6d38] CreateSelectedEventList (4)   | 0 of 226
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (17)
+[f6/533f00] CreateSelectedEventList (14)  | 0 of 280
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (19)
+[4d/9e4e24] CreateSelectedEventList (19)  | 0 of 310
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (22)
+[55/7ff08c] CreateSelectedEventList (29)  | 0 of 346
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (25)
+[91/3202f2] CreateSelectedEventList (13)  | 0 of 400
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (28)
+[7a/68813d] CreateSelectedEventList (25)  | 0 of 455
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (31)
+[17/315f8f] CreateSelectedEventList (30)  | 0 of 509
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 548
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 638
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 675
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 714
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 752
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 800
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 845
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 910
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 977
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 1040
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 1114
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 1186
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[76/0168f3] CreateSelectedEventList (23)  | 0 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (33)
+[60/b4a0f4] CreateSelectedEventList (33)  | 0 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (33)
+[a7/c315d4] CreateSelectedEventList (12)  | 1 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (34)
+[1c/0e5939] CreateSelectedEventList (9)   | 2 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (35)
+[4d/9e4e24] CreateSelectedEventList (19)  | 3 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (38)
+[db/74f4cf] CreateSelectedEventList (17)  | 6 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (43)
+[08/bae0bd] CreateSelectedEventList (43)  | 11 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (43)
+[08/bae0bd] CreateSelectedEventList (43)  | 11 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (44)
+[38/c9fd26] CreateSelectedEventList (44)  | 12 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (44)
+[38/c9fd26] CreateSelectedEventList (44)  | 12 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (48)
+[73/692a74] CreateSelectedEventList (49)  | 16 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (48)
+[91/3202f2] CreateSelectedEventList (13)  | 17 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (52)
+[00/0c0173] CreateSelectedEventList (52)  | 20 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (53)
+[51/789e60] CreateSelectedEventList (53)  | 21 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (54)
+[01/23c040] CreateSelectedEventList (54)  | 22 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (54)
+[01/23c040] CreateSelectedEventList (54)  | 22 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (55)
+[ad/7aee88] CreateSelectedEventList (56)  | 23 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (57)
+[7a/afa793] CreateSelectedEventList (241) | 25 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (58)
+[43/528970] CreateSelectedEventList (55)  | 26 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (60)
+[a7/db88fb] CreateSelectedEventList (2)   | 28 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (62)
+[0a/eb7447] CreateSelectedEventList (62)  | 30 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (62)
+[0a/eb7447] CreateSelectedEventList (62)  | 30 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (63)
+[8c/521d8a] CreateSelectedEventList (60)  | 31 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (64)
+[4d/8fd7a7] CreateSelectedEventList (63)  | 32 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (65)
+[f1/1e8890] CreateSelectedEventList (64)  | 33 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (66)
+[9a/927f4e] CreateSelectedEventList (66)  | 34 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (68)
+[38/115d9f] CreateSelectedEventList (67)  | 36 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (69)
+[cf/a54fac] CreateSelectedEventList (68)  | 37 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (69)
+[cf/a54fac] CreateSelectedEventList (68)  | 37 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (71)
+[4f/2655de] CreateSelectedEventList (71)  | 39 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (72)
+[60/0f124a] CreateSelectedEventList (73)  | 40 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (74)
+[42/2179d1] CreateSelectedEventList (74)  | 42 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (75)
+[41/bd52b9] CreateSelectedEventList (75)  | 43 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (78)
+[71/b49d2f] CreateSelectedEventList (76)  | 46 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (79)
+[5a/d19791] CreateSelectedEventList (77)  | 47 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (79)
+[5a/d19791] CreateSelectedEventList (77)  | 47 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (80)
+[6b/3c0a58] CreateSelectedEventList (79)  | 48 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (81)
+[1a/59d992] CreateSelectedEventList (80)  | 49 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (84)
+[3a/c4521e] CreateSelectedEventList (84)  | 52 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (87)
+[5b/52d0ab] CreateSelectedEventList (82)  | 55 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (89)
+[5f/a82caa] CreateSelectedEventList (89)  | 57 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (89)
+[b2/88c153] CreateSelectedEventList (47)  | 58 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (90)
+[e3/156888] CreateSelectedEventList (91)  | 58 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (91)
+[ce/a823a3] CreateSelectedEventList (90)  | 59 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (91)
+[ce/a823a3] CreateSelectedEventList (90)  | 59 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (92)
+[5f/c155d8] CreateSelectedEventList (88)  | 60 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (93)
+[fa/76c019] CreateSelectedEventList (93)  | 61 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (94)
+[01/3cf6e7] CreateSelectedEventList (92)  | 62 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (95)
+[94/5a9946] CreateSelectedEventList (95)  | 63 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (95)
+[94/5a9946] CreateSelectedEventList (95)  | 63 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (96)
+[4d/8fd7a7] CreateSelectedEventList (63)  | 64 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (96)
+[f1/1e8890] CreateSelectedEventList (64)  | 65 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (97)
+[d6/754221] CreateSelectedEventList (94)  | 65 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (98)
+[40/42390d] CreateSelectedEventList (97)  | 66 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (99)
+[0a/59b738] CreateSelectedEventList (99)  | 67 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (103)
+[d8/bd0a78] CreateSelectedEventList (102) | 71 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (103)
+[d8/bd0a78] CreateSelectedEventList (102) | 71 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (104)
+[c8/028770] CreateSelectedEventList (101) | 72 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (105)
+[03/9b6018] CreateSelectedEventList (105) | 73 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (107)
+[42/c145dd] CreateSelectedEventList (107) | 75 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (109)
+[75/507bef] CreateSelectedEventList (108) | 77 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (109)
+[75/507bef] CreateSelectedEventList (108) | 77 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (113)
+[3b/efde52] CreateSelectedEventList (114) | 81 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (114)
+[52/bfd2c6] CreateSelectedEventList (110) | 82 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (116)
+[5a/0d008c] CreateSelectedEventList (115) | 84 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (117)
+[71/b49d2f] CreateSelectedEventList (76)  | 85 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (117)
+[71/b49d2f] CreateSelectedEventList (76)  | 85 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (118)
+[a2/fedfd2] CreateSelectedEventList (119) | 86 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (121)
+[bb/01ecd5] CreateSelectedEventList (118) | 89 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (122)
+[dd/5869e3] CreateSelectedEventList (120) | 90 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (123)
+[b0/fcbed8] CreateSelectedEventList (123) | 91 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (123)
+[b0/fcbed8] CreateSelectedEventList (123) | 91 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (124)
+[36/64a52e] CreateSelectedEventList (122) | 92 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (125)
+[8c/ecc6e9] CreateSelectedEventList (125) | 93 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (126)
+[ed/edff52] CreateSelectedEventList (126) | 94 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (126)
+[ed/edff52] CreateSelectedEventList (126) | 94 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (127)
+[f3/e298a1] CreateSelectedEventList (143) | 95 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (127)
+[f3/e298a1] CreateSelectedEventList (143) | 95 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (127)
+[94/5a9946] CreateSelectedEventList (95)  | 96 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (128)
+[10/0161ed] CreateSelectedEventList (124) | 96 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (129)
+[6f/50c6d8] CreateSelectedEventList (127) | 97 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (130)
+[25/e2d431] CreateSelectedEventList (128) | 98 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (130)
+[25/e2d431] CreateSelectedEventList (128) | 98 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (131)
+[2c/0de1b0] CreateSelectedEventList (137) | 99 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (132)
+[2f/1399a3] CreateSelectedEventList (129) | 100 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (133)
+[b1/f53956] CreateSelectedEventList (136) | 101 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (134)
+[a6/d93da6] CreateSelectedEventList (133) | 102 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (135)
+[bf/a8041b] CreateSelectedEventList (135) | 103 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (136)
+[63/759311] CreateSelectedEventList (134) | 104 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (137)
+[4b/568ae0] CreateSelectedEventList (138) | 105 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (139)
+[57/696e48] CreateSelectedEventList (130) | 107 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (140)
+[22/2108fe] CreateSelectedEventList (132) | 108 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (140)
+[8c/ecc6e9] CreateSelectedEventList (125) | 110 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (142)
+[5c/879a45] CreateSelectedEventList (131) | 110 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (145)
+[5e/e23aea] CreateSelectedEventList (141) | 113 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (147)
+[24/a492f0] CreateSelectedEventList (146) | 115 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (148)
+[f5/aa26eb] CreateSelectedEventList (148) | 116 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (149)
+[e9/694296] CreateSelectedEventList (103) | 117 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (151)
+[84/b69ae6] CreateSelectedEventList (152) | 119 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (151)
+[84/b69ae6] CreateSelectedEventList (152) | 119 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (152)
+[39/d5be51] CreateSelectedEventList (150) | 120 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (153)
+[db/d4cd43] CreateSelectedEventList (151) | 121 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (153)
+[db/d4cd43] CreateSelectedEventList (151) | 121 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (154)
+[7c/64e0ef] CreateSelectedEventList (149) | 122 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (156)
+[84/f68882] CreateSelectedEventList (155) | 124 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (156)
+[84/f68882] CreateSelectedEventList (155) | 124 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (157)
+[b7/a28346] CreateSelectedEventList (158) | 125 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (158)
+[28/82fc7c] CreateSelectedEventList (174) | 126 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (159)
+[01/ef91ec] CreateSelectedEventList (160) | 127 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (160)
+[6f/50c6d8] CreateSelectedEventList (127) | 128 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (161)
+[92/834a1d] CreateSelectedEventList (156) | 129 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (161)
+[92/834a1d] CreateSelectedEventList (156) | 129 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (162)
+[8d/797194] CreateSelectedEventList (164) | 130 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (162)
+[8d/797194] CreateSelectedEventList (164) | 130 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (163)
+[b6/7908f5] CreateSelectedEventList (162) | 131 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (165)
+[c4/6b9e90] CreateSelectedEventList (157) | 133 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (166)
+[d8/9461e9] CreateSelectedEventList (180) | 134 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (168)
+[0e/c7cc8f] CreateSelectedEventList (166) | 136 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (168)
+[0e/c7cc8f] CreateSelectedEventList (166) | 136 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (169)
+[25/36427b] CreateSelectedEventList (172) | 137 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (172)
+[e2/08d33e] CreateSelectedEventList (278) | 140 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (173)
+[4c/612b9b] CreateSelectedEventList (178) | 141 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (175)
+[30/1b7fc6] CreateSelectedEventList (167) | 143 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (175)
+[30/1b7fc6] CreateSelectedEventList (167) | 143 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (177)
+[ec/9a5155] CreateSelectedEventList (177) | 145 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (179)
+[9e/709e5e] CreateSelectedEventList (181) | 147 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (179)
+[9e/709e5e] CreateSelectedEventList (181) | 147 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (180)
+[11/28be64] CreateSelectedEventList (168) | 148 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (183)
+[44/8e6502] CreateSelectedEventList (171) | 151 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (184)
+[95/ef03a7] CreateSelectedEventList (182) | 152 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (184)
+[95/ef03a7] CreateSelectedEventList (182) | 152 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (185)
+[1d/7897bd] CreateSelectedEventList (187) | 153 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (186)
+[f7/c00057] CreateSelectedEventList (142) | 154 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (186)
+[f7/c00057] CreateSelectedEventList (142) | 154 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (187)
+[e4/abcd17] CreateSelectedEventList (154) | 155 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (188)
+[14/ff9a44] CreateSelectedEventList (190) | 156 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (189)
+[12/6a1525] CreateSelectedEventList (188) | 157 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (189)
+[b7/a28346] CreateSelectedEventList (158) | 158 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (190)
+[48/d314b6] CreateSelectedEventList (191) | 158 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (191)
+[08/7c4230] CreateSelectedEventList (189) | 159 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (192)
+[e2/a2c29c] CreateSelectedEventList (192) | 160 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (193)
+[4c/86b2f3] CreateSelectedEventList (193) | 161 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (193)
+[4c/86b2f3] CreateSelectedEventList (193) | 161 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (194)
+[ba/e3b564] CreateSelectedEventList (186) | 162 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (194)
+[ba/e3b564] CreateSelectedEventList (186) | 162 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (195)
+[ef/bcebb5] CreateSelectedEventList (184) | 163 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (195)
+[ef/bcebb5] CreateSelectedEventList (184) | 163 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (196)
+[b6/04042e] CreateSelectedEventList (196) | 164 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (197)
+[c4/6b9e90] CreateSelectedEventList (157) | 165 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (197)
+[da/785ab3] CreateSelectedEventList (200) | 165 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (198)
+[c1/65f4fa] CreateSelectedEventList (199) | 166 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (199)
+[9d/1ba3aa] CreateSelectedEventList (198) | 167 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (200)
+[30/1b7fc6] CreateSelectedEventList (167) | 168 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (201)
+[92/a4f1b9] CreateSelectedEventList (195) | 169 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (202)
+[8e/49e5f4] CreateSelectedEventList (201) | 170 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (204)
+[6b/d28051] CreateSelectedEventList (207) | 172 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (205)
+[40/4b9a20] CreateSelectedEventList (211) | 173 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (207)
+[4e/ad9746] CreateSelectedEventList (204) | 175 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (210)
+[0f/9e7c1a] CreateSelectedEventList (175) | 178 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (211)
+[17/23da19] CreateSelectedEventList (212) | 179 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (212)
+[9f/67c5cb] CreateSelectedEventList (208) | 180 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (213)
+[a8/2d7c72] CreateSelectedEventList (216) | 181 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (213)
+[a8/2d7c72] CreateSelectedEventList (216) | 181 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (214)
+[92/852329] CreateSelectedEventList (218) | 182 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (214)
+[92/852329] CreateSelectedEventList (218) | 182 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (215)
+[e7/6b9840] CreateSelectedEventList (219) | 183 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (217)
+[7b/bf936e] CreateSelectedEventList (209) | 185 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (217)
+[7b/bf936e] CreateSelectedEventList (209) | 185 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (218)
+[91/1cbe1b] CreateSelectedEventList (213) | 186 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (218)
+[91/1cbe1b] CreateSelectedEventList (213) | 186 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (219)
+[2c/1316d0] CreateSelectedEventList (206) | 187 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (219)
+[2c/1316d0] CreateSelectedEventList (206) | 187 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (220)
+[11/28be64] CreateSelectedEventList (168) | 188 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (220)
+[11/28be64] CreateSelectedEventList (168) | 188 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (221)
+[89/282bcc] CreateSelectedEventList (215) | 189 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (221)
+[89/282bcc] CreateSelectedEventList (215) | 189 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (222)
+[1a/2fe5f9] CreateSelectedEventList (226) | 190 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (223)
+[85/6cca73] CreateSelectedEventList (221) | 191 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (223)
+[85/6cca73] CreateSelectedEventList (221) | 191 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (224)
+[e4/5d03d4] CreateSelectedEventList (214) | 192 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (224)
+[e4/5d03d4] CreateSelectedEventList (214) | 192 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (225)
+[d0/dd7452] CreateSelectedEventList (222) | 193 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (226)
+[f1/e4f320] CreateSelectedEventList (225) | 194 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (226)
+[f1/e4f320] CreateSelectedEventList (225) | 194 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (227)
+[8a/a2a2c0] CreateSelectedEventList (230) | 195 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (228)
+[b2/c5f4b8] CreateSelectedEventList (223) | 196 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (228)
+[b2/c5f4b8] CreateSelectedEventList (223) | 196 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (229)
+[78/030b9d] CreateSelectedEventList (228) | 197 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (229)
+[78/030b9d] CreateSelectedEventList (228) | 197 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (230)
+[70/0faf79] CreateSelectedEventList (227) | 198 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (231)
+[f5/adb7d2] CreateSelectedEventList (232) | 199 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (232)
+[6d/0fb769] CreateSelectedEventList (235) | 200 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (233)
+[14/0ded04] CreateSelectedEventList (237) | 201 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (234)
+[5a/4e3af2] CreateSelectedEventList (231) | 202 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (236)
+[b7/3ca5e7] CreateSelectedEventList (239) | 204 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (236)
+[b7/3ca5e7] CreateSelectedEventList (239) | 204 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (237)
+[ae/ab4305] CreateSelectedEventList (229) | 205 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (238)
+[cd/717325] CreateSelectedEventList (203) | 206 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (240)
+[03/6762a5] CreateSelectedEventList (240) | 208 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (241)
+[eb/25e62e] CreateSelectedEventList (234) | 209 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (242)
+[ad/cd4c48] CreateSelectedEventList (245) | 210 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (243)
+[81/bb6b88] CreateSelectedEventList (251) | 211 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (243)
+[81/bb6b88] CreateSelectedEventList (251) | 211 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (244)
+[5e/c4c027] CreateSelectedEventList (250) | 212 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (245)
+[cd/5537f1] CreateSelectedEventList (233) | 213 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (245)
+[cd/5537f1] CreateSelectedEventList (233) | 213 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (246)
+[1b/6ad417] CreateSelectedEventList (247) | 214 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (247)
+[bd/0794a6] CreateSelectedEventList (249) | 215 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (247)
+[bd/0794a6] CreateSelectedEventList (249) | 215 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (248)
+[0d/f1ff59] CreateSelectedEventList (261) | 216 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (250)
+[b1/72c7e4] CreateSelectedEventList (254) | 218 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (250)
+[b1/72c7e4] CreateSelectedEventList (254) | 218 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (251)
+[92/b0ac49] CreateSelectedEventList (244) | 219 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (252)
+[e1/164d7e] CreateSelectedEventList (252) | 220 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (254)
+[b6/c9e965] CreateSelectedEventList (246) | 222 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (254)
+[b6/c9e965] CreateSelectedEventList (246) | 222 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (255)
+[fb/5ce722] CreateSelectedEventList (238) | 223 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (255)
+[fb/5ce722] CreateSelectedEventList (238) | 223 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (256)
+[60/dfa4e8] CreateSelectedEventList (256) | 224 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (257)
+[11/9bfe0b] CreateSelectedEventList (257) | 225 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (257)
+[f1/e4f320] CreateSelectedEventList (225) | 226 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (258)
+[a7/68a70d] CreateSelectedEventList (262) | 226 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (259)
+[bc/b250fc] CreateSelectedEventList (264) | 227 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (259)
+[bc/b250fc] CreateSelectedEventList (264) | 227 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (260)
+[56/975b83] CreateSelectedEventList (242) | 228 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (260)
+[56/975b83] CreateSelectedEventList (242) | 228 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (261)
+[bb/42e17b] CreateSelectedEventList (255) | 229 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (261)
+[bb/42e17b] CreateSelectedEventList (255) | 229 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (262)
+[48/440d6f] CreateSelectedEventList (263) | 230 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (262)
+[48/440d6f] CreateSelectedEventList (263) | 230 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (263)
+[db/05431f] CreateSelectedEventList (265) | 231 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (263)
+[db/05431f] CreateSelectedEventList (265) | 231 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (266)
+[36/2021f9] CreateSelectedEventList (266) | 234 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (267)
+[c2/16da7f] CreateSelectedEventList (280) | 235 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (268)
+[80/ec6732] CreateSelectedEventList (267) | 236 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (269)
+[63/4034d6] CreateSelectedEventList (269) | 237 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (269)
+[63/4034d6] CreateSelectedEventList (269) | 237 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (270)
+[f8/df1f8c] CreateSelectedEventList (260) | 238 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (271)
+[42/5618a3] CreateSelectedEventList (276) | 239 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (272)
+[63/59dd31] CreateSelectedEventList (285) | 240 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (272)
+[63/59dd31] CreateSelectedEventList (285) | 240 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (273)
+[89/35d9fd] CreateSelectedEventList (271) | 241 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (273)
+[89/35d9fd] CreateSelectedEventList (271) | 241 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (274)
+[81/bb6b88] CreateSelectedEventList (251) | 242 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (275)
+[d7/ae88f2] CreateSelectedEventList (283) | 243 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (276)
+[4f/1cc21a] CreateSelectedEventList (281) | 244 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (276)
+[4f/1cc21a] CreateSelectedEventList (281) | 244 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (277)
+[ad/cd4c48] CreateSelectedEventList (245) | 245 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (278)
+[ea/6c760f] CreateSelectedEventList (272) | 246 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (278)
+[ea/6c760f] CreateSelectedEventList (272) | 246 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (278)
+[b1/72c7e4] CreateSelectedEventList (254) | 247 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (280)
+[c4/52671c] CreateSelectedEventList (258) | 248 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (281)
+[89/da4ddd] CreateSelectedEventList (296) | 249 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (282)
+[8a/dae9cb] CreateSelectedEventList (299) | 250 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (282)
+[8a/dae9cb] CreateSelectedEventList (299) | 250 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (283)
+[31/e20b67] CreateSelectedEventList (270) | 251 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (284)
+[dd/142d10] CreateSelectedEventList (275) | 252 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (285)
+[b6/c9e965] CreateSelectedEventList (246) | 253 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (285)
+[b6/c9e965] CreateSelectedEventList (246) | 253 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (286)
+[ec/c1ebb7] CreateSelectedEventList (268) | 254 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (286)
+[ec/c1ebb7] CreateSelectedEventList (268) | 254 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (287)
+[65/27421e] CreateSelectedEventList (287) | 255 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (287)
+[65/27421e] CreateSelectedEventList (287) | 255 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (288)
+[fa/db1e49] CreateSelectedEventList (288) | 256 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (289)
+[5b/d2572f] CreateSelectedEventList (279) | 257 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (289)
+[5b/d2572f] CreateSelectedEventList (279) | 257 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (290)
+[c2/8b8f39] CreateSelectedEventList (282) | 258 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (291)
+[02/41fde4] CreateSelectedEventList (293) | 259 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (291)
+[02/41fde4] CreateSelectedEventList (293) | 259 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (292)
+[f4/b1e9e5] CreateSelectedEventList (286) | 260 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (292)
+[f4/b1e9e5] CreateSelectedEventList (286) | 260 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (293)
+[2f/bf30c0] CreateSelectedEventList (291) | 261 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (293)
+[2f/bf30c0] CreateSelectedEventList (291) | 261 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (294)
+[2b/e66f7a] CreateSelectedEventList (292) | 262 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (295)
+[6a/399f1d] CreateSelectedEventList (298) | 263 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (295)
+[6a/399f1d] CreateSelectedEventList (298) | 263 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (296)
+[cb/1dbebf] CreateSelectedEventList (294) | 264 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (296)
+[cb/1dbebf] CreateSelectedEventList (294) | 264 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (299)
+[06/e2f8d9] CreateSelectedEventList (311) | 267 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (299)
+[06/e2f8d9] CreateSelectedEventList (311) | 267 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (300)
+[e9/e0d857] CreateSelectedEventList (313) | 268 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (300)
+[e9/e0d857] CreateSelectedEventList (313) | 268 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (301)
+[c2/3aede3] CreateSelectedEventList (314) | 269 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (301)
+[06/fd8ee9] CreateSelectedEventList (289) | 270 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (303)
+[7c/4249ea] CreateSelectedEventList (301) | 271 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (304)
+[39/081dee] CreateSelectedEventList (305) | 272 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (304)
+[39/081dee] CreateSelectedEventList (305) | 272 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (305)
+[62/d7349f] CreateSelectedEventList (297) | 273 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (306)
+[f2/26c05c] CreateSelectedEventList (307) | 274 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (306)
+[f8/df1f8c] CreateSelectedEventList (260) | 275 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (308)
+[42/09ebba] CreateSelectedEventList (302) | 276 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (309)
+[54/6e2b7c] CreateSelectedEventList (319) | 277 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (309)
+[54/6e2b7c] CreateSelectedEventList (319) | 277 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (310)
+[f0/1857fe] CreateSelectedEventList (316) | 278 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (311)
+[a3/ca86fe] CreateSelectedEventList (303) | 279 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (311)
+[a3/ca86fe] CreateSelectedEventList (303) | 279 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (312)
+[17/0f31a9] CreateSelectedEventList (323) | 280 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (313)
+[66/7e4867] CreateSelectedEventList (310) | 281 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (313)
+[66/7e4867] CreateSelectedEventList (310) | 281 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (314)
+[ef/1b7f80] CreateSelectedEventList (304) | 282 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (315)
+[31/e20b67] CreateSelectedEventList (270) | 283 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (315)
+[8a/dae9cb] CreateSelectedEventList (299) | 284 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (316)
+[c4/b6f143] CreateSelectedEventList (320) | 284 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (317)
+[1d/a7cdd1] CreateSelectedEventList (322) | 285 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (317)
+[1d/a7cdd1] CreateSelectedEventList (322) | 285 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (318)
+[49/a1adbd] CreateSelectedEventList (317) | 286 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (319)
+[fc/2cfa62] CreateSelectedEventList (308) | 287 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (319)
+[fc/2cfa62] CreateSelectedEventList (308) | 287 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (320)
+[4f/86a486] CreateSelectedEventList (330) | 288 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (321)
+[36/6f55d2] CreateSelectedEventList (306) | 289 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (322)
+[fc/2ddadb] CreateSelectedEventList (318) | 290 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (322)
+[fc/2ddadb] CreateSelectedEventList (318) | 290 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (322)
+[c2/8b8f39] CreateSelectedEventList (282) | 291 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (324)
+[d4/946b5e] CreateSelectedEventList (325) | 292 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (325)
+[3a/54ea52] CreateSelectedEventList (331) | 293 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (326)
+[ac/a1d94b] CreateSelectedEventList (350) | 294 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (327)
+[ca/edae26] CreateSelectedEventList (327) | 295 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (329)
+[12/71ff0d] CreateSelectedEventList (334) | 297 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (329)
+[12/71ff0d] CreateSelectedEventList (334) | 297 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (330)
+[c5/dcb802] CreateSelectedEventList (341) | 298 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (330)
+[c5/dcb802] CreateSelectedEventList (341) | 298 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (331)
+[1e/79d3c7] CreateSelectedEventList (339) | 299 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (331)
+[1e/79d3c7] CreateSelectedEventList (339) | 299 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (333)
+[0b/e9b017] CreateSelectedEventList (337) | 301 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (334)
+[d2/6c221b] CreateSelectedEventList (321) | 302 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (335)
+[85/79acf1] CreateSelectedEventList (332) | 303 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (336)
+[f6/02b658] CreateSelectedEventList (343) | 304 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (337)
+[94/c86915] CreateSelectedEventList (326) | 305 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (337)
+[94/c86915] CreateSelectedEventList (326) | 305 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (338)
+[8b/d3bbd3] CreateSelectedEventList (338) | 306 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (338)
+[8b/d3bbd3] CreateSelectedEventList (338) | 306 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (339)
+[32/338fcc] CreateSelectedEventList (342) | 307 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (339)
+[a2/0598e8] CreateSelectedEventList (309) | 308 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (340)
+[0f/928954] CreateSelectedEventList (336) | 308 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (341)
+[eb/b204e8] CreateSelectedEventList (344) | 309 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (341)
+[eb/b204e8] CreateSelectedEventList (344) | 309 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (342)
+[a5/d39347] CreateSelectedEventList (328) | 310 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (343)
+[fc/92cfd6] CreateSelectedEventList (329) | 311 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (344)
+[4a/4583af] CreateSelectedEventList (335) | 312 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (347)
+[2f/1feed6] CreateSelectedEventList (346) | 315 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (347)
+[2f/1feed6] CreateSelectedEventList (346) | 315 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (348)
+[14/e45565] CreateSelectedEventList (345) | 316 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (348)
+[14/e45565] CreateSelectedEventList (345) | 316 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (349)
+[12/4b8605] CreateSelectedEventList (355) | 317 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (350)
+[c4/b6f143] CreateSelectedEventList (320) | 318 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (350)
+[c4/b6f143] CreateSelectedEventList (320) | 318 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (351)
+[32/81c1fe] CreateSelectedEventList (356) | 319 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (351)
+[32/81c1fe] CreateSelectedEventList (356) | 319 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (352)
+[ab/5818fc] CreateSelectedEventList (348) | 320 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (353)
+[94/e8d5d7] CreateSelectedEventList (349) | 321 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (353)
+[94/e8d5d7] CreateSelectedEventList (349) | 321 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (354)
+[f2/70d2e7] CreateSelectedEventList (352) | 322 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (354)
+[f2/70d2e7] CreateSelectedEventList (352) | 322 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (356)
+[81/df6a3b] CreateSelectedEventList (351) | 324 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (356)
+[81/df6a3b] CreateSelectedEventList (351) | 324 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (357)
+[f9/d0bf52] CreateSelectedEventList (357) | 325 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (357)
+[f9/d0bf52] CreateSelectedEventList (357) | 325 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (358)
+[36/6251f8] CreateSelectedEventList (354) | 326 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (359)
+[11/443c95] CreateSelectedEventList (358) | 327 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (359)
+[11/443c95] CreateSelectedEventList (358) | 327 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (360)
+[54/1794ca] CreateSelectedEventList (368) | 328 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (361)
+[60/ef519b] CreateSelectedEventList (364) | 329 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (362)
+[14/daf3aa] CreateSelectedEventList (372) | 330 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (363)
+[32/b9441b] CreateSelectedEventList (378) | 331 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (364)
+[9d/958558] CreateSelectedEventList (369) | 332 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (365)
+[38/ab0cc0] CreateSelectedEventList (361) | 333 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (366)
+[3f/e3db32] CreateSelectedEventList (371) | 334 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (366)
+[3f/e3db32] CreateSelectedEventList (371) | 334 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (367)
+[78/472827] CreateSelectedEventList (366) | 335 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (368)
+[f9/5110e8] CreateSelectedEventList (360) | 336 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (369)
+[e4/bc39c9] CreateSelectedEventList (362) | 337 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (369)
+[e4/bc39c9] CreateSelectedEventList (362) | 337 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (370)
+[e3/9c0e8c] CreateSelectedEventList (370) | 338 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (371)
+[0b/f88ead] CreateSelectedEventList (380) | 339 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (372)
+[4d/54b4d6] CreateSelectedEventList (359) | 340 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (373)
+[3d/2c88d1] CreateSelectedEventList (374) | 341 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (373)
+[3d/2c88d1] CreateSelectedEventList (374) | 341 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (374)
+[eb/b204e8] CreateSelectedEventList (344) | 342 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (375)
+[14/7988d3] CreateSelectedEventList (375) | 343 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (377)
+[66/a6adab] CreateSelectedEventList (373) | 345 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (378)
+[42/c5142e] CreateSelectedEventList (365) | 346 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (379)
+[07/f8593c] CreateSelectedEventList (379) | 347 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (380)
+[1e/d6cb1b] CreateSelectedEventList (381) | 348 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (380)
+[1e/d6cb1b] CreateSelectedEventList (381) | 348 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (381)
+[8a/bfe714] CreateSelectedEventList (382) | 349 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (381)
+[14/e45565] CreateSelectedEventList (345) | 350 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (382)
+[5f/f9f537] CreateSelectedEventList (395) | 350 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (382)
+[32/cb0f5c] CreateSelectedEventList (315) | 351 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (383)
+[ef/ff614f] CreateSelectedEventList (410) | 351 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (384)
+[9e/e0a8a3] CreateSelectedEventList (394) | 352 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (385)
+[27/ad69f0] CreateSelectedEventList (392) | 353 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (386)
+[0a/37c036] CreateSelectedEventList (398) | 354 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (387)
+[2f/99e697] CreateSelectedEventList (401) | 355 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (387)
+[2f/99e697] CreateSelectedEventList (401) | 355 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (389)
+[eb/be166c] CreateSelectedEventList (404) | 357 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (389)
+[eb/be166c] CreateSelectedEventList (404) | 357 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (391)
+[cb/a8f55b] CreateSelectedEventList (384) | 359 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (391)
+[cb/a8f55b] CreateSelectedEventList (384) | 359 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (392)
+[a2/5aa103] CreateSelectedEventList (391) | 360 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (392)
+[fe/28d96e] CreateSelectedEventList (363) | 361 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (393)
+[e2/ed80b1] CreateSelectedEventList (406) | 361 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (394)
+[c5/cce9d7] CreateSelectedEventList (385) | 362 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (394)
+[c5/cce9d7] CreateSelectedEventList (385) | 362 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (395)
+[0c/4e4fe5] CreateSelectedEventList (386) | 363 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (396)
+[b0/ba059d] CreateSelectedEventList (409) | 364 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (397)
+[ce/cb745e] CreateSelectedEventList (399) | 365 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (397)
+[ce/cb745e] CreateSelectedEventList (399) | 365 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (398)
+[00/738b08] CreateSelectedEventList (397) | 366 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (398)
+[00/738b08] CreateSelectedEventList (397) | 366 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (399)
+[53/b3ecde] CreateSelectedEventList (415) | 367 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (400)
+[b5/ee9278] CreateSelectedEventList (403) | 368 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (401)
+[a8/f7a108] CreateSelectedEventList (416) | 369 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (401)
+[a8/f7a108] CreateSelectedEventList (416) | 369 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (402)
+[92/6e8c72] CreateSelectedEventList (414) | 370 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (403)
+[f2/67e653] CreateSelectedEventList (402) | 371 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (404)
+[0b/f88ead] CreateSelectedEventList (380) | 372 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (407)
+[55/cb087f] CreateSelectedEventList (429) | 375 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (408)
+[7e/6e40ef] CreateSelectedEventList (388) | 376 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (409)
+[d8/3b4c30] CreateSelectedEventList (419) | 377 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (410)
+[19/075c9c] CreateSelectedEventList (433) | 378 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (411)
+[f9/942ef0] CreateSelectedEventList (411) | 379 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (412)
+[73/853426] CreateSelectedEventList (427) | 380 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (413)
+[8a/bfe714] CreateSelectedEventList (382) | 381 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (413)
+[8a/bfe714] CreateSelectedEventList (382) | 381 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (414)
+[de/a90da8] CreateSelectedEventList (393) | 382 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (415)
+[4d/bda81d] CreateSelectedEventList (425) | 383 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (416)
+[5d/921692] CreateSelectedEventList (413) | 384 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (416)
+[5d/921692] CreateSelectedEventList (413) | 384 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (417)
+[b4/dad977] CreateSelectedEventList (421) | 385 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (418)
+[8d/b57282] CreateSelectedEventList (408) | 386 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (419)
+[0e/dfb750] CreateSelectedEventList (424) | 387 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (420)
+[26/eebe9d] CreateSelectedEventList (422) | 388 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (421)
+[c9/77a23d] CreateSelectedEventList (420) | 389 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (422)
+[35/12c4fb] CreateSelectedEventList (376) | 390 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (424)
+[43/5e7a1e] CreateSelectedEventList (426) | 392 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (424)
+[43/5e7a1e] CreateSelectedEventList (426) | 392 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (426)
+[48/3ddd34] CreateSelectedEventList (383) | 394 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (427)
+[be/9d730c] CreateSelectedEventList (418) | 395 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (428)
+[49/89a091] CreateSelectedEventList (449) | 396 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (429)
+[c9/fdeedb] CreateSelectedEventList (396) | 397 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (430)
+[b1/1cc793] CreateSelectedEventList (431) | 398 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (431)
+[3e/e6d8c8] CreateSelectedEventList (432) | 399 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (432)
+[44/bb0340] CreateSelectedEventList (405) | 400 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (432)
+[44/bb0340] CreateSelectedEventList (405) | 400 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (434)
+[f3/84cc8a] CreateSelectedEventList (442) | 402 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (434)
+[f3/84cc8a] CreateSelectedEventList (442) | 402 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (435)
+[38/c42ba5] CreateSelectedEventList (436) | 403 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (436)
+[56/e792b6] CreateSelectedEventList (434) | 404 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (437)
+[d1/a56980] CreateSelectedEventList (445) | 405 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (437)
+[d1/a56980] CreateSelectedEventList (445) | 405 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (438)
+[b3/027f79] CreateSelectedEventList (443) | 406 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (439)
+[64/429152] CreateSelectedEventList (439) | 407 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (440)
+[cb/bfe19b] CreateSelectedEventList (444) | 408 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (441)
+[82/f2517f] CreateSelectedEventList (446) | 409 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (442)
+[90/c4ad36] CreateSelectedEventList (438) | 410 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (442)
+[90/c4ad36] CreateSelectedEventList (438) | 410 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (443)
+[f5/407299] CreateSelectedEventList (447) | 411 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (443)
+[f5/407299] CreateSelectedEventList (447) | 411 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (444)
+[4e/96d3c3] CreateSelectedEventList (452) | 412 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (445)
+[c6/c14a39] CreateSelectedEventList (435) | 413 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (446)
+[39/b0dddc] CreateSelectedEventList (451) | 414 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (446)
+[39/b0dddc] CreateSelectedEventList (451) | 414 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (446)
+[4d/bda81d] CreateSelectedEventList (425) | 415 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (447)
+[d7/e39d20] CreateSelectedEventList (450) | 415 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (448)
+[00/2f92f4] CreateSelectedEventList (430) | 416 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (448)
+[00/2f92f4] CreateSelectedEventList (430) | 416 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (449)
+[f4/0390ef] CreateSelectedEventList (453) | 417 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (450)
+[00/be7705] CreateSelectedEventList (440) | 418 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (450)
+[00/be7705] CreateSelectedEventList (440) | 418 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (451)
+[09/aaea51] CreateSelectedEventList (441) | 419 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (452)
+[51/70c0e2] CreateSelectedEventList (460) | 420 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (452)
+[51/70c0e2] CreateSelectedEventList (460) | 420 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (453)
+[ab/b1be89] CreateSelectedEventList (437) | 421 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (454)
+[ca/98ab2b] CreateSelectedEventList (448) | 422 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (454)
+[ca/98ab2b] CreateSelectedEventList (448) | 422 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (455)
+[3b/41a0ca] CreateSelectedEventList (464) | 423 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (455)
+[3b/41a0ca] CreateSelectedEventList (464) | 423 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (456)
+[f6/a685c6] CreateSelectedEventList (463) | 424 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (456)
+[f6/a685c6] CreateSelectedEventList (463) | 424 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (457)
+[b0/c9aa9f] CreateSelectedEventList (455) | 425 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (458)
+[2f/9a1b8c] CreateSelectedEventList (462) | 426 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (458)
+[2f/9a1b8c] CreateSelectedEventList (462) | 426 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (459)
+[1c/c03f37] CreateSelectedEventList (454) | 427 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (459)
+[1c/c03f37] CreateSelectedEventList (454) | 427 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (460)
+[23/704376] CreateSelectedEventList (466) | 428 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (460)
+[23/704376] CreateSelectedEventList (466) | 428 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (462)
+[ac/4af500] CreateSelectedEventList (461) | 430 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (462)
+[ac/4af500] CreateSelectedEventList (461) | 430 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (463)
+[fa/331bbc] CreateSelectedEventList (456) | 431 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (464)
+[c2/31c776] CreateSelectedEventList (467) | 432 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (464)
+[c2/31c776] CreateSelectedEventList (467) | 432 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (465)
+[45/d277bf] CreateSelectedEventList (468) | 433 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (466)
+[45/25d0a9] CreateSelectedEventList (473) | 434 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (467)
+[75/4b00a4] CreateSelectedEventList (476) | 435 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (467)
+[75/4b00a4] CreateSelectedEventList (476) | 435 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (467)
+[b3/027f79] CreateSelectedEventList (443) | 436 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (468)
+[e9/9f7112] CreateSelectedEventList (481) | 436 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (469)
+[54/924490] CreateSelectedEventList (482) | 437 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (469)
+[54/924490] CreateSelectedEventList (482) | 437 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (470)
+[c5/d38299] CreateSelectedEventList (458) | 438 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (470)
+[c5/d38299] CreateSelectedEventList (458) | 438 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (471)
+[fa/118872] CreateSelectedEventList (480) | 439 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (471)
+[fa/118872] CreateSelectedEventList (480) | 439 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (472)
+[de/806fd7] CreateSelectedEventList (475) | 440 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (474)
+[e8/ba65ea] CreateSelectedEventList (457) | 442 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (474)
+[e8/ba65ea] CreateSelectedEventList (457) | 442 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (475)
+[88/c046ce] CreateSelectedEventList (485) | 443 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (475)
+[88/c046ce] CreateSelectedEventList (485) | 443 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (476)
+[9d/c264b9] CreateSelectedEventList (471) | 444 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (477)
+[48/4fa9a6] CreateSelectedEventList (484) | 445 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (478)
+[19/722bed] CreateSelectedEventList (478) | 446 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (479)
+[1e/54eec3] CreateSelectedEventList (469) | 447 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (479)
+[1e/54eec3] CreateSelectedEventList (469) | 447 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (480)
+[00/2f92f4] CreateSelectedEventList (430) | 448 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (481)
+[e3/afd0c3] CreateSelectedEventList (477) | 449 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (482)
+[cc/687208] CreateSelectedEventList (474) | 450 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (483)
+[67/e6ef3e] CreateSelectedEventList (486) | 451 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (483)
+[67/e6ef3e] CreateSelectedEventList (486) | 451 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (484)
+[5e/284653] CreateSelectedEventList (487) | 452 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (484)
+[5e/284653] CreateSelectedEventList (487) | 452 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (486)
+[1b/852fc3] CreateSelectedEventList (496) | 454 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (487)
+[9f/bf6a8f] CreateSelectedEventList (483) | 455 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (488)
+[42/ee400b] CreateSelectedEventList (498) | 456 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (489)
+[2e/c98583] CreateSelectedEventList (488) | 457 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (490)
+[55/8a0797] CreateSelectedEventList (489) | 458 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (490)
+[1c/c03f37] CreateSelectedEventList (454) | 459 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (491)
+[d0/73491b] CreateSelectedEventList (497) | 459 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (492)
+[13/4b2c38] CreateSelectedEventList (490) | 460 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (494)
+[f3/cfd120] CreateSelectedEventList (493) | 462 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (494)
+[f3/cfd120] CreateSelectedEventList (493) | 462 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (495)
+[92/344257] CreateSelectedEventList (494) | 463 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (495)
+[92/344257] CreateSelectedEventList (494) | 463 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (496)
+[c6/d37615] CreateSelectedEventList (499) | 464 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (496)
+[c6/d37615] CreateSelectedEventList (499) | 464 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (497)
+[a6/c815a7] CreateSelectedEventList (465) | 465 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (497)
+[a6/c815a7] CreateSelectedEventList (465) | 465 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (498)
+[2a/4c2f58] CreateSelectedEventList (504) | 466 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (498)
+[2a/4c2f58] CreateSelectedEventList (504) | 466 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (499)
+[32/ae617d] CreateSelectedEventList (501) | 467 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (499)
+[32/ae617d] CreateSelectedEventList (501) | 467 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (499)
+[54/924490] CreateSelectedEventList (482) | 468 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (500)
+[3d/505304] CreateSelectedEventList (495) | 468 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (501)
+[6d/6867ad] CreateSelectedEventList (507) | 469 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (501)
+[6d/6867ad] CreateSelectedEventList (507) | 469 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (502)
+[ee/993a1b] CreateSelectedEventList (503) | 470 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (503)
+[dc/28ed40] CreateSelectedEventList (506) | 471 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (504)
+[c0/62d7b0] CreateSelectedEventList (502) | 472 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (505)
+[46/f460b7] CreateSelectedEventList (508) | 473 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (506)
+[73/ebe431] CreateSelectedEventList (491) | 474 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (506)
+[73/ebe431] CreateSelectedEventList (491) | 474 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (507)
+[8a/2eda1f] CreateSelectedEventList (500) | 475 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (507)
+[8a/2eda1f] CreateSelectedEventList (500) | 475 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (509)
+[19/722bed] CreateSelectedEventList (478) | 478 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (510)
+[d4/d03d39] CreateSelectedEventList (509) | 478 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (511)
+[9f/bf6a8f] CreateSelectedEventList (483) | 479 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (511)
+[22/f8caad] CreateSelectedEventList (472) | 480 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (512)
+[cc/b460f3] CreateSelectedEventList (534) | 480 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (513)
+[90/7f6334] CreateSelectedEventList (516) | 481 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (514)
+[80/5aba61] CreateSelectedEventList (520) | 482 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (514)
+[80/5aba61] CreateSelectedEventList (520) | 482 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (515)
+[ad/2ba63c] CreateSelectedEventList (533) | 483 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (516)
+[3f/a47c15] CreateSelectedEventList (522) | 484 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (516)
+[3f/a47c15] CreateSelectedEventList (522) | 484 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (518)
+[2c/84f480] CreateSelectedEventList (514) | 486 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (519)
+[24/1d9d69] CreateSelectedEventList (515) | 487 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (520)
+[7d/31339c] CreateSelectedEventList (532) | 488 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (520)
+[7d/31339c] CreateSelectedEventList (532) | 488 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (521)
+[43/4245d7] CreateSelectedEventList (531) | 489 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (521)
+[43/4245d7] CreateSelectedEventList (531) | 489 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (522)
+[4e/f01d9d] CreateSelectedEventList (512) | 490 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (522)
+[4e/f01d9d] CreateSelectedEventList (512) | 490 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (523)
+[88/ca02bc] CreateSelectedEventList (518) | 491 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (524)
+[80/5d0bc1] CreateSelectedEventList (536) | 492 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (525)
+[05/b92aff] CreateSelectedEventList (540) | 493 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (526)
+[db/ed2e7f] CreateSelectedEventList (538) | 494 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (527)
+[11/22912a] CreateSelectedEventList (537) | 495 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (528)
+[fa/7898df] CreateSelectedEventList (541) | 496 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (529)
+[43/588bcf] CreateSelectedEventList (528) | 497 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (529)
+[43/588bcf] CreateSelectedEventList (528) | 497 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (530)
+[dc/64d8d7] CreateSelectedEventList (517) | 498 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (530)
+[dc/64d8d7] CreateSelectedEventList (517) | 498 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (531)
+[09/f55247] CreateSelectedEventList (519) | 499 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (532)
+[2a/e6d9c2] CreateSelectedEventList (526) | 500 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (532)
+[2a/e6d9c2] CreateSelectedEventList (526) | 500 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (533)
+[bd/8dff62] CreateSelectedEventList (527) | 501 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (535)
+[4f/1df360] CreateSelectedEventList (523) | 503 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (535)
+[4f/1df360] CreateSelectedEventList (523) | 503 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (536)
+[6d/4ebce8] CreateSelectedEventList (524) | 504 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (537)
+[ad/e05bf0] CreateSelectedEventList (510) | 505 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (538)
+[60/997f50] CreateSelectedEventList (535) | 506 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (539)
+[97/18a185] CreateSelectedEventList (539) | 507 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (539)
+[97/18a185] CreateSelectedEventList (539) | 507 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (540)
+[d9/4b738d] CreateSelectedEventList (529) | 508 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (541)
+[f2/edd7d9] CreateSelectedEventList (542) | 509 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (542)
+[ed/7477e3] CreateSelectedEventList (513) | 510 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (543)
+[73/ebe431] CreateSelectedEventList (491) | 511 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (544)
+[cc/b460f3] CreateSelectedEventList (534) | 512 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (544)
+[cc/b460f3] CreateSelectedEventList (534) | 512 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (545)
+[a8/5d134d] CreateSelectedEventList (553) | 513 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (546)
+[49/696986] CreateSelectedEventList (544) | 514 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (546)
+[49/696986] CreateSelectedEventList (544) | 514 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (547)
+[11/e163bf] CreateSelectedEventList (551) | 515 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (548)
+[dc/b2ce8f] CreateSelectedEventList (556) | 516 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (549)
+[c2/60dfa2] CreateSelectedEventList (559) | 517 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (549)
+[c2/60dfa2] CreateSelectedEventList (559) | 517 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (550)
+[b5/32f2f6] CreateSelectedEventList (560) | 518 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (551)
+[f1/fde380] CreateSelectedEventList (548) | 519 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (551)
+[f1/fde380] CreateSelectedEventList (548) | 519 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (552)
+[cf/bfcc72] CreateSelectedEventList (546) | 520 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (554)
+[4b/57be21] CreateSelectedEventList (552) | 522 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (554)
+[4b/57be21] CreateSelectedEventList (552) | 522 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (555)
+[ff/5f6014] CreateSelectedEventList (549) | 523 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (556)
+[1b/d01f6f] CreateSelectedEventList (557) | 524 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (556)
+[1b/d01f6f] CreateSelectedEventList (557) | 524 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (557)
+[50/4fb0cf] CreateSelectedEventList (555) | 525 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (558)
+[be/f40bdc] CreateSelectedEventList (547) | 526 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (558)
+[be/f40bdc] CreateSelectedEventList (547) | 526 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (559)
+[71/2b444e] CreateSelectedEventList (563) | 527 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (560)
+[67/bae2d6] CreateSelectedEventList (554) | 528 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (560)
+[67/bae2d6] CreateSelectedEventList (554) | 528 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (561)
+[cc/e8a38d] CreateSelectedEventList (561) | 529 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (562)
+[93/92615b] CreateSelectedEventList (569) | 530 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (563)
+[8d/2eb8b2] CreateSelectedEventList (568) | 531 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (564)
+[5f/1f60b1] CreateSelectedEventList (576) | 532 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (565)
+[3a/4effa0] CreateSelectedEventList (577) | 533 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (565)
+[3a/4effa0] CreateSelectedEventList (577) | 533 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (566)
+[9c/204c31] CreateSelectedEventList (564) | 534 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (566)
+[bd/8dff62] CreateSelectedEventList (527) | 535 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (567)
+[ac/d643c3] CreateSelectedEventList (558) | 535 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (569)
+[95/a94036] CreateSelectedEventList (575) | 537 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (571)
+[80/347979] CreateSelectedEventList (578) | 539 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (571)
+[80/347979] CreateSelectedEventList (578) | 539 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (572)
+[3e/09def9] CreateSelectedEventList (572) | 540 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (573)
+[84/678a31] CreateSelectedEventList (566) | 541 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (574)
+[26/d6b08e] CreateSelectedEventList (567) | 542 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (574)
+[26/d6b08e] CreateSelectedEventList (567) | 542 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (575)
+[d8/7720da] CreateSelectedEventList (562) | 543 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (576)
+[93/c4ee97] CreateSelectedEventList (574) | 544 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (577)
+[0c/5520db] CreateSelectedEventList (579) | 545 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (578)
+[c7/8939d1] CreateSelectedEventList (580) | 546 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (578)
+[c7/8939d1] CreateSelectedEventList (580) | 546 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (579)
+[ea/b82f0c] CreateSelectedEventList (581) | 547 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (581)
+[66/4ea80e] CreateSelectedEventList (582) | 549 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (581)
+[66/4ea80e] CreateSelectedEventList (582) | 549 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (582)
+[a0/6e14a7] CreateSelectedEventList (570) | 550 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (583)
+[09/1bbac9] CreateSelectedEventList (584) | 551 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (584)
+[81/77a774] CreateSelectedEventList (587) | 552 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (584)
+[81/77a774] CreateSelectedEventList (587) | 552 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (585)
+[25/2bc22d] CreateSelectedEventList (589) | 553 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (585)
+[25/2bc22d] CreateSelectedEventList (589) | 553 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (586)
+[e6/b0abfd] CreateSelectedEventList (585) | 554 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (587)
+[e6/f71986] CreateSelectedEventList (573) | 555 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (588)
+[b8/517580] CreateSelectedEventList (583) | 556 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (588)
+[b8/517580] CreateSelectedEventList (583) | 556 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (589)
+[85/7c98ac] CreateSelectedEventList (588) | 557 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (590)
+[22/cbbca0] CreateSelectedEventList (604) | 558 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (591)
+[c1/e34d95] CreateSelectedEventList (616) | 559 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (591)
+[c1/e34d95] CreateSelectedEventList (616) | 559 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (592)
+[90/859acb] CreateSelectedEventList (596) | 560 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (592)
+[90/859acb] CreateSelectedEventList (596) | 560 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (592)
+[9d/c34bcb] CreateSelectedEventList (565) | 561 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (595)
+[3a/e536fa] CreateSelectedEventList (593) | 563 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (595)
+[3a/e536fa] CreateSelectedEventList (593) | 563 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (596)
+[46/975a99] CreateSelectedEventList (608) | 564 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (596)
+[46/975a99] CreateSelectedEventList (608) | 564 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (597)
+[72/ec1a23] CreateSelectedEventList (599) | 565 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (597)
+[72/ec1a23] CreateSelectedEventList (599) | 565 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (598)
+[9f/aec9b4] CreateSelectedEventList (591) | 566 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (598)
+[9f/aec9b4] CreateSelectedEventList (591) | 566 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (599)
+[26/d6b08e] CreateSelectedEventList (567) | 567 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (599)
+[26/d6b08e] CreateSelectedEventList (567) | 567 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (600)
+[a5/d320af] CreateSelectedEventList (618) | 568 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (601)
+[4f/fbe2e2] CreateSelectedEventList (598) | 569 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (601)
+[4f/fbe2e2] CreateSelectedEventList (598) | 569 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (602)
+[3a/4effa0] CreateSelectedEventList (577) | 571 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (603)
+[4a/d9472c] CreateSelectedEventList (600) | 571 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (604)
+[de/cf1d55] CreateSelectedEventList (602) | 572 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (605)
+[68/a12846] CreateSelectedEventList (592) | 573 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (607)
+[c0/3a1ed4] CreateSelectedEventList (622) | 575 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (608)
+[55/a50700] CreateSelectedEventList (620) | 576 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (608)
+[55/a50700] CreateSelectedEventList (620) | 576 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (609)
+[0e/d3400b] CreateSelectedEventList (597) | 577 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (609)
+[0e/d3400b] CreateSelectedEventList (597) | 577 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (610)
+[51/37f781] CreateSelectedEventList (612) | 578 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (611)
+[01/bdaf78] CreateSelectedEventList (594) | 579 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (612)
+[1d/eb2bba] CreateSelectedEventList (609) | 580 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (612)
+[1d/eb2bba] CreateSelectedEventList (609) | 580 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (613)
+[cb/7c6b5f] CreateSelectedEventList (610) | 581 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (613)
+[cb/7c6b5f] CreateSelectedEventList (610) | 581 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (613)
+[ea/b82f0c] CreateSelectedEventList (581) | 582 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (614)
+[87/04614a] CreateSelectedEventList (611) | 582 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (615)
+[e4/748afb] CreateSelectedEventList (619) | 583 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (616)
+[7f/7085d6] CreateSelectedEventList (621) | 584 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (616)
+[7f/7085d6] CreateSelectedEventList (621) | 584 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (617)
+[fd/f54064] CreateSelectedEventList (613) | 585 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (618)
+[96/8408a3] CreateSelectedEventList (627) | 586 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (618)
+[96/8408a3] CreateSelectedEventList (627) | 586 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (619)
+[bf/495c81] CreateSelectedEventList (617) | 587 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (619)
+[bf/495c81] CreateSelectedEventList (617) | 587 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (620)
+[f7/d8446b] CreateSelectedEventList (614) | 588 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (620)
+[f7/d8446b] CreateSelectedEventList (614) | 588 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (621)
+[b1/184b70] CreateSelectedEventList (623) | 589 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (621)
+[b1/184b70] CreateSelectedEventList (623) | 589 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (621)
+[b8/517580] CreateSelectedEventList (583) | 590 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (623)
+[79/19d81e] CreateSelectedEventList (605) | 591 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (624)
+[31/b68f02] CreateSelectedEventList (629) | 592 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (625)
+[f2/f4fe3e] CreateSelectedEventList (607) | 593 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (626)
+[16/037071] CreateSelectedEventList (630) | 594 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (627)
+[1e/5c7257] CreateSelectedEventList (632) | 595 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (627)
+[1e/5c7257] CreateSelectedEventList (632) | 595 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (628)
+[5f/d22757] CreateSelectedEventList (633) | 596 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (629)
+[d3/a35b4f] CreateSelectedEventList (624) | 597 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (630)
+[ba/c0e815] CreateSelectedEventList (634) | 598 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (632)
+[16/41775b] CreateSelectedEventList (628) | 600 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (633)
+[96/39e06b] CreateSelectedEventList (638) | 601 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (633)
+[96/39e06b] CreateSelectedEventList (638) | 601 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (634)
+[c8/684ef9] CreateSelectedEventList (635) | 602 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (635)
+[4f/d21a79] CreateSelectedEventList (636) | 603 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (635)
+[4f/d21a79] CreateSelectedEventList (636) | 603 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (635)
+[de/cf1d55] CreateSelectedEventList (602) | 604 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (636)
+[11/a7e54f] CreateSelectedEventList (625) | 604 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (637)
+[39/9234cf] CreateSelectedEventList (639) | 605 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (637)
+[39/9234cf] CreateSelectedEventList (639) | 605 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (638)
+[6a/1a409c] CreateSelectedEventList (631) | 606 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (639)
+[87/093d85] CreateSelectedEventList (641) | 607 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (640)
+[b1/184b70] CreateSelectedEventList (623) | 608 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (640)
+[71/99aa93] CreateSelectedEventList (655) | 608 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (640)
+[55/a50700] CreateSelectedEventList (620) | 609 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (641)
+[51/757a81] CreateSelectedEventList (653) | 609 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (642)
+[17/ef766a] CreateSelectedEventList (637) | 610 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (642)
+[17/ef766a] CreateSelectedEventList (637) | 610 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (643)
+[6b/f9e89b] CreateSelectedEventList (640) | 611 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (644)
+[f9/0f451e] CreateSelectedEventList (649) | 612 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (645)
+[4b/176f7b] CreateSelectedEventList (642) | 613 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (646)
+[72/cb900b] CreateSelectedEventList (657) | 614 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (647)
+[9c/192924] CreateSelectedEventList (644) | 615 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (647)
+[9c/192924] CreateSelectedEventList (644) | 615 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (648)
+[bb/5ef00b] CreateSelectedEventList (654) | 616 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (649)
+[fb/c7c7ff] CreateSelectedEventList (658) | 617 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (649)
+[fb/c7c7ff] CreateSelectedEventList (658) | 617 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (650)
+[ac/c5c37e] CreateSelectedEventList (646) | 618 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (650)
+[ac/c5c37e] CreateSelectedEventList (646) | 618 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (651)
+[5d/cb7ef9] CreateSelectedEventList (651) | 619 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (652)
+[ec/ab2950] CreateSelectedEventList (660) | 620 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (653)
+[f6/28f1d0] CreateSelectedEventList (647) | 621 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (654)
+[6c/52c8c9] CreateSelectedEventList (659) | 622 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (654)
+[ae/47ebed] CreateSelectedEventList (615) | 623 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (655)
+[18/c40fd9] CreateSelectedEventList (643) | 623 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (656)
+[c3/321f0d] CreateSelectedEventList (656) | 624 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (657)
+[be/c71849] CreateSelectedEventList (645) | 625 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (658)
+[9b/73e7f1] CreateSelectedEventList (648) | 626 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (659)
+[b2/857f1d] CreateSelectedEventList (652) | 627 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (661)
+[02/16cdcb] CreateSelectedEventList (663) | 629 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (662)
+[4f/a9a847] CreateSelectedEventList (664) | 630 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (663)
+[21/6355d3] CreateSelectedEventList (650) | 631 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (663)
+[21/6355d3] CreateSelectedEventList (650) | 631 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (664)
+[79/7c7830] CreateSelectedEventList (665) | 632 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (666)
+[17/a17319] CreateSelectedEventList (669) | 634 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (667)
+[06/325fa3] CreateSelectedEventList (670) | 635 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (668)
+[e2/9ec45a] CreateSelectedEventList (671) | 636 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (670)
+[6b/68e73e] CreateSelectedEventList (673) | 638 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (671)
+[1f/ecfe14] CreateSelectedEventList (672) | 639 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (673)
+[3d/65eb08] CreateSelectedEventList (668) | 641 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (674)
+[ab/49f641] CreateSelectedEventList (674) | 642 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (675)
+[00/571019] CreateSelectedEventList (678) | 643 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (675)
+[00/571019] CreateSelectedEventList (678) | 643 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (676)
+[d6/3885dd] CreateSelectedEventList (686) | 644 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (677)
+[1f/a8dba4] CreateSelectedEventList (681) | 645 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (677)
+[1f/a8dba4] CreateSelectedEventList (681) | 645 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (678)
+[9a/56b884] CreateSelectedEventList (687) | 646 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (679)
+[21/a2bd9d] CreateSelectedEventList (683) | 647 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (681)
+[87/f24cfc] CreateSelectedEventList (684) | 649 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (681)
+[87/f24cfc] CreateSelectedEventList (684) | 649 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (683)
+[32/07100e] CreateSelectedEventList (680) | 651 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (684)
+[d9/9284fd] CreateSelectedEventList (677) | 652 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (685)
+[92/323965] CreateSelectedEventList (690) | 653 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (686)
+[fe/09fa44] CreateSelectedEventList (682) | 654 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (686)
+[fe/09fa44] CreateSelectedEventList (682) | 654 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (687)
+[df/0d6ae7] CreateSelectedEventList (676) | 655 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (688)
+[78/c74985] CreateSelectedEventList (679) | 656 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (688)
+[78/c74985] CreateSelectedEventList (679) | 656 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (690)
+[67/6791ae] CreateSelectedEventList (691) | 658 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (691)
+[ce/f2c4c1] CreateSelectedEventList (689) | 659 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (692)
+[38/fccb86] CreateSelectedEventList (705) | 660 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (693)
+[4b/26a612] CreateSelectedEventList (707) | 661 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (694)
+[1b/9066ee] CreateSelectedEventList (698) | 662 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (695)
+[53/2f69f3] CreateSelectedEventList (703) | 663 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (696)
+[d5/27a909] CreateSelectedEventList (711) | 664 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (697)
+[bd/e17523] CreateSelectedEventList (692) | 665 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (698)
+[ac/0d390e] CreateSelectedEventList (721) | 666 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (700)
+[1a/19f5c1] CreateSelectedEventList (704) | 668 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (701)
+[b1/9d82de] CreateSelectedEventList (699) | 669 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (703)
+[b8/4ac363] CreateSelectedEventList (715) | 671 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (703)
+[b8/4ac363] CreateSelectedEventList (715) | 671 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (704)
+[59/e38df3] CreateSelectedEventList (720) | 672 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (705)
+[85/d7e5e5] CreateSelectedEventList (709) | 673 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (705)
+[85/d7e5e5] CreateSelectedEventList (709) | 673 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (706)
+[24/bfa506] CreateSelectedEventList (701) | 674 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (707)
+[04/81bfcd] CreateSelectedEventList (695) | 675 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (709)
+[8e/03da00] CreateSelectedEventList (700) | 677 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (709)
+[8e/03da00] CreateSelectedEventList (700) | 677 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (710)
+[33/fa38fa] CreateSelectedEventList (710) | 678 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (710)
+[00/571019] CreateSelectedEventList (678) | 679 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (712)
+[56/77a739] CreateSelectedEventList (718) | 680 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (712)
+[56/77a739] CreateSelectedEventList (718) | 680 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (713)
+[c7/020742] CreateSelectedEventList (694) | 681 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (714)
+[d9/a535e4] CreateSelectedEventList (717) | 682 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (715)
+[e6/5100ad] CreateSelectedEventList (712) | 683 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (716)
+[0c/a94e7b] CreateSelectedEventList (693) | 684 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (716)
+[0c/a94e7b] CreateSelectedEventList (693) | 684 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (717)
+[22/fdf36a] CreateSelectedEventList (714) | 685 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (718)
+[cb/3539ab] CreateSelectedEventList (708) | 686 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (719)
+[55/032d27] CreateSelectedEventList (725) | 687 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (719)
+[55/032d27] CreateSelectedEventList (725) | 687 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (721)
+[ef/966d92] CreateSelectedEventList (722) | 689 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (721)
+[ef/966d92] CreateSelectedEventList (722) | 689 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (722)
+[14/9d9791] CreateSelectedEventList (719) | 690 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (723)
+[0d/0d8ec4] CreateSelectedEventList (726) | 691 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (724)
+[1d/7f4667] CreateSelectedEventList (702) | 692 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (725)
+[e7/9b3cf5] CreateSelectedEventList (729) | 693 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (725)
+[0c/a94e7b] CreateSelectedEventList (693) | 694 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (726)
+[ae/4cc810] CreateSelectedEventList (723) | 694 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (730)
+[77/4e2575] CreateSelectedEventList (724) | 698 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (730)
+[77/4e2575] CreateSelectedEventList (724) | 698 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (731)
+[2e/4e1e23] CreateSelectedEventList (732) | 699 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (731)
+[2e/4e1e23] CreateSelectedEventList (732) | 699 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (732)
+[9a/76328b] CreateSelectedEventList (741) | 700 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (733)
+[ad/100f02] CreateSelectedEventList (737) | 701 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (734)
+[d7/18ef3d] CreateSelectedEventList (731) | 702 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (734)
+[d7/18ef3d] CreateSelectedEventList (731) | 702 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (736)
+[0b/ccc6d9] CreateSelectedEventList (730) | 704 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (737)
+[ee/f2f548] CreateSelectedEventList (728) | 705 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (738)
+[31/ffea30] CreateSelectedEventList (727) | 706 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (738)
+[31/ffea30] CreateSelectedEventList (727) | 706 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (739)
+[d1/1f2b51] CreateSelectedEventList (733) | 707 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (739)
+[d1/1f2b51] CreateSelectedEventList (733) | 707 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (740)
+[a1/a452f9] CreateSelectedEventList (736) | 708 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (741)
+[34/803b65] CreateSelectedEventList (738) | 709 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (742)
+[55/d41dec] CreateSelectedEventList (745) | 710 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (743)
+[6a/5fed51] CreateSelectedEventList (747) | 711 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (744)
+[dc/3be665] CreateSelectedEventList (743) | 712 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (744)
+[dc/3be665] CreateSelectedEventList (743) | 712 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (745)
+[3a/b4951b] CreateSelectedEventList (746) | 713 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (746)
+[7f/5a98fc] CreateSelectedEventList (754) | 714 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (747)
+[c3/3109d4] CreateSelectedEventList (755) | 715 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (747)
+[c3/3109d4] CreateSelectedEventList (755) | 715 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (748)
+[80/e7aa98] CreateSelectedEventList (749) | 716 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (748)
+[80/e7aa98] CreateSelectedEventList (749) | 716 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (749)
+[37/5ac614] CreateSelectedEventList (753) | 717 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (750)
+[be/12cf2f] CreateSelectedEventList (742) | 718 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (750)
+[be/12cf2f] CreateSelectedEventList (742) | 718 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (751)
+[94/0e7a8f] CreateSelectedEventList (748) | 719 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (751)
+[94/0e7a8f] CreateSelectedEventList (748) | 719 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (752)
+[9d/89e83e] CreateSelectedEventList (752) | 720 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (753)
+[b0/b6c0d1] CreateSelectedEventList (744) | 721 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (753)
+[b0/b6c0d1] CreateSelectedEventList (744) | 721 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (754)
+[03/494c63] CreateSelectedEventList (750) | 722 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (755)
+[d7/1fb1e3] CreateSelectedEventList (758) | 723 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (755)
+[d7/1fb1e3] CreateSelectedEventList (758) | 723 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (756)
+[c7/238891] CreateSelectedEventList (757) | 724 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (757)
+[d4/d80611] CreateSelectedEventList (763) | 725 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (758)
+[57/decd99] CreateSelectedEventList (759) | 726 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (759)
+[b3/f23bce] CreateSelectedEventList (773) | 727 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (760)
+[5d/a30dec] CreateSelectedEventList (779) | 728 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (761)
+[3e/0e8010] CreateSelectedEventList (767) | 729 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (761)
+[3e/0e8010] CreateSelectedEventList (767) | 729 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (762)
+[82/fa2abb] CreateSelectedEventList (765) | 730 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (762)
+[82/fa2abb] CreateSelectedEventList (765) | 730 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (764)
+[d5/1f382d] CreateSelectedEventList (756) | 732 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (765)
+[9b/324838] CreateSelectedEventList (760) | 733 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (766)
+[0a/9be186] CreateSelectedEventList (780) | 734 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (767)
+[5a/cac134] CreateSelectedEventList (762) | 735 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (768)
+[d0/987bc5] CreateSelectedEventList (771) | 736 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (768)
+[d0/987bc5] CreateSelectedEventList (771) | 736 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (769)
+[f9/b1d5f7] CreateSelectedEventList (766) | 737 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (769)
+[d7/18ef3d] CreateSelectedEventList (731) | 738 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (770)
+[35/9ebd86] CreateSelectedEventList (761) | 738 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (771)
+[21/4f39c9] CreateSelectedEventList (781) | 739 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (772)
+[fa/9d5ee1] CreateSelectedEventList (769) | 740 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (774)
+[e4/21143b] CreateSelectedEventList (764) | 742 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (775)
+[08/b82aa4] CreateSelectedEventList (772) | 743 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (776)
+[93/1eef59] CreateSelectedEventList (751) | 744 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (776)
+[93/1eef59] CreateSelectedEventList (751) | 744 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (778)
+[b3/ec6241] CreateSelectedEventList (793) | 746 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (778)
+[b3/ec6241] CreateSelectedEventList (793) | 746 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (779)
+[d7/45a33d] CreateSelectedEventList (794) | 747 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (780)
+[0a/c81f95] CreateSelectedEventList (789) | 748 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (781)
+[64/fc9d1e] CreateSelectedEventList (778) | 749 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (782)
+[3a/2a2ea8] CreateSelectedEventList (788) | 750 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (782)
+[3a/2a2ea8] CreateSelectedEventList (788) | 750 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (783)
+[44/d8f6ee] CreateSelectedEventList (797) | 751 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (784)
+[63/77b240] CreateSelectedEventList (770) | 752 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (784)
+[63/77b240] CreateSelectedEventList (770) | 752 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (785)
+[07/aedeac] CreateSelectedEventList (783) | 753 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (785)
+[07/aedeac] CreateSelectedEventList (783) | 753 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (786)
+[c6/dce65b] CreateSelectedEventList (799) | 754 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (786)
+[c6/dce65b] CreateSelectedEventList (799) | 754 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (787)
+[34/1edc66] CreateSelectedEventList (791) | 755 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (788)
+[6d/5b904c] CreateSelectedEventList (786) | 756 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (788)
+[6d/5b904c] CreateSelectedEventList (786) | 756 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (789)
+[1b/17a833] CreateSelectedEventList (777) | 757 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (790)
+[e9/e55dde] CreateSelectedEventList (792) | 758 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (791)
+[b1/8f5cbb] CreateSelectedEventList (768) | 759 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (793)
+[6c/9aa0a8] CreateSelectedEventList (787) | 761 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (794)
+[f0/11374a] CreateSelectedEventList (790) | 762 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (796)
+[63/9f1cd4] CreateSelectedEventList (775) | 764 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (797)
+[35/303f01] CreateSelectedEventList (798) | 765 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (797)
+[35/303f01] CreateSelectedEventList (798) | 765 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (798)
+[4f/a67125] CreateSelectedEventList (800) | 766 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (799)
+[5a/cac134] CreateSelectedEventList (762) | 767 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (800)
+[3c/96444b] CreateSelectedEventList (774) | 768 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (802)
+[21/b9975b] CreateSelectedEventList (806) | 770 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (803)
+[91/e5f63c] CreateSelectedEventList (784) | 771 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (804)
+[4c/70b142] CreateSelectedEventList (802) | 772 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (804)
+[4c/70b142] CreateSelectedEventList (802) | 772 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (805)
+[cf/6c5cac] CreateSelectedEventList (804) | 773 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (806)
+[a4/094315] CreateSelectedEventList (807) | 774 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (807)
+[93/1eef59] CreateSelectedEventList (751) | 775 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (807)
+[93/1eef59] CreateSelectedEventList (751) | 775 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (808)
+[d0/6e43f2] CreateSelectedEventList (805) | 776 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (808)
+[d0/6e43f2] CreateSelectedEventList (805) | 776 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (809)
+[2c/74ab4d] CreateSelectedEventList (810) | 777 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (810)
+[d5/24c885] CreateSelectedEventList (809) | 778 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (810)
+[d5/24c885] CreateSelectedEventList (809) | 778 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (811)
+[4d/d78c62] CreateSelectedEventList (811) | 779 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (811)
+[4d/d78c62] CreateSelectedEventList (811) | 779 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (812)
+[3b/9d0308] CreateSelectedEventList (812) | 780 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (813)
+[b6/652174] CreateSelectedEventList (814) | 781 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (814)
+[d8/5a7861] CreateSelectedEventList (813) | 782 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (815)
+[db/c45872] CreateSelectedEventList (816) | 783 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (816)
+[8f/346951] CreateSelectedEventList (815) | 784 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (816)
+[8f/346951] CreateSelectedEventList (815) | 784 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (818)
+[49/291f32] CreateSelectedEventList (818) | 786 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (818)
+[49/291f32] CreateSelectedEventList (818) | 786 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (819)
+[b4/3ffe90] CreateSelectedEventList (819) | 787 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (820)
+[3d/52ffa8] CreateSelectedEventList (820) | 788 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (822)
+[7d/21192e] CreateSelectedEventList (808) | 790 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (822)
+[7d/21192e] CreateSelectedEventList (808) | 790 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (823)
+[38/f7b123] CreateSelectedEventList (821) | 791 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (823)
+[38/f7b123] CreateSelectedEventList (821) | 791 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (824)
+[95/a721c7] CreateSelectedEventList (824) | 792 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (825)
+[a9/bee608] CreateSelectedEventList (826) | 793 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (827)
+[35/826bd6] CreateSelectedEventList (829) | 795 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (828)
+[77/b9879a] CreateSelectedEventList (834) | 796 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (828)
+[77/b9879a] CreateSelectedEventList (834) | 796 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (832)
+[1b/55ab02] CreateSelectedEventList (830) | 800 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (832)
+[1b/55ab02] CreateSelectedEventList (830) | 800 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (833)
+[a2/67e82d] CreateSelectedEventList (832) | 801 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (833)
+[a2/67e82d] CreateSelectedEventList (832) | 801 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (834)
+[5b/0bb9a9] CreateSelectedEventList (833) | 802 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (835)
+[dd/31b43f] CreateSelectedEventList (840) | 803 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (835)
+[dd/31b43f] CreateSelectedEventList (840) | 803 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (836)
+[f9/6572ff] CreateSelectedEventList (842) | 804 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (837)
+[18/a0c023] CreateSelectedEventList (839) | 805 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (837)
+[18/a0c023] CreateSelectedEventList (839) | 805 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (838)
+[13/c52dac] CreateSelectedEventList (837) | 806 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (838)
+[13/c52dac] CreateSelectedEventList (837) | 806 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (839)
+[d0/fc3fe3] CreateSelectedEventList (835) | 807 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (839)
+[d0/fc3fe3] CreateSelectedEventList (835) | 807 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (840)
+[90/7cfd70] CreateSelectedEventList (841) | 808 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (841)
+[80/ad04a9] CreateSelectedEventList (828) | 809 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (842)
+[a9/6bf9d0] CreateSelectedEventList (844) | 810 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (843)
+[cc/93ef87] CreateSelectedEventList (857) | 811 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (844)
+[8f/af83a6] CreateSelectedEventList (852) | 812 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (844)
+[8f/af83a6] CreateSelectedEventList (852) | 812 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (845)
+[c6/a51f6c] CreateSelectedEventList (845) | 813 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (845)
+[c6/a51f6c] CreateSelectedEventList (845) | 813 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (846)
+[6f/969a36] CreateSelectedEventList (858) | 814 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (846)
+[6f/969a36] CreateSelectedEventList (858) | 814 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (847)
+[a1/1dca6c] CreateSelectedEventList (838) | 815 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (847)
+[a1/1dca6c] CreateSelectedEventList (838) | 815 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (848)
+[eb/703ccf] CreateSelectedEventList (853) | 816 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (848)
+[eb/703ccf] CreateSelectedEventList (853) | 816 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (849)
+[af/858b29] CreateSelectedEventList (843) | 817 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (850)
+[c7/4647f8] CreateSelectedEventList (855) | 818 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (851)
+[52/5be031] CreateSelectedEventList (866) | 819 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (852)
+[cc/8f8dfd] CreateSelectedEventList (864) | 820 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (852)
+[cc/8f8dfd] CreateSelectedEventList (864) | 820 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (853)
+[6c/4f0112] CreateSelectedEventList (851) | 821 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (854)
+[d5/26478e] CreateSelectedEventList (860) | 822 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (855)
+[2a/1ff5cf] CreateSelectedEventList (847) | 823 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (856)
+[24/b7a31a] CreateSelectedEventList (878) | 824 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (856)
+[24/b7a31a] CreateSelectedEventList (878) | 824 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (857)
+[07/634329] CreateSelectedEventList (856) | 825 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (858)
+[2c/81caa9] CreateSelectedEventList (867) | 826 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (861)
+[3b/23792f] CreateSelectedEventList (863) | 829 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (861)
+[3b/23792f] CreateSelectedEventList (863) | 829 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (862)
+[6e/80c65f] CreateSelectedEventList (876) | 830 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (863)
+[80/c06e5f] CreateSelectedEventList (849) | 831 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (864)
+[cd/d59b3f] CreateSelectedEventList (869) | 832 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (864)
+[cd/d59b3f] CreateSelectedEventList (869) | 832 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (865)
+[69/789c02] CreateSelectedEventList (872) | 833 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (867)
+[4e/c842de] CreateSelectedEventList (859) | 835 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (867)
+[4e/c842de] CreateSelectedEventList (859) | 835 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (868)
+[42/6942dc] CreateSelectedEventList (868) | 836 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (868)
+[42/6942dc] CreateSelectedEventList (868) | 836 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (869)
+[26/c5127c] CreateSelectedEventList (874) | 837 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (869)
+[26/c5127c] CreateSelectedEventList (874) | 837 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (870)
+[4d/bd8e95] CreateSelectedEventList (865) | 838 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (870)
+[4d/bd8e95] CreateSelectedEventList (865) | 838 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (871)
+[7c/d3b0de] CreateSelectedEventList (846) | 839 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (872)
+[d4/71544f] CreateSelectedEventList (870) | 840 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (872)
+[d4/71544f] CreateSelectedEventList (870) | 840 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (873)
+[01/9c8545] CreateSelectedEventList (871) | 841 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (874)
+[0d/75dd7f] CreateSelectedEventList (879) | 842 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (875)
+[fe/442261] CreateSelectedEventList (854) | 843 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[a9/6bf9d0] CreateSelectedEventList (844) | 844 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (877)
+[6a/fcd829] CreateSelectedEventList (848) | 845 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (877)
+[6a/fcd829] CreateSelectedEventList (848) | 845 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (878)
+[43/b074c0] CreateSelectedEventList (877) | 846 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (878)
+[43/b074c0] CreateSelectedEventList (877) | 846 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (879)
+[f3/e348a3] CreateSelectedEventList (875) | 847 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (879)
+[f3/e348a3] CreateSelectedEventList (875) | 847 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (880)
+[b6/ac1b2e] CreateSelectedEventList (880) | 848 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (881)
+[c6/6db1ca] CreateSelectedEventList (881) | 849 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (882)
+[d7/45a5c0] CreateSelectedEventList (885) | 850 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (882)
+[d7/45a5c0] CreateSelectedEventList (885) | 850 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (883)
+[4c/714184] CreateSelectedEventList (886) | 851 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (883)
+[4c/714184] CreateSelectedEventList (886) | 851 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (884)
+[7a/5a10d4] CreateSelectedEventList (887) | 852 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (885)
+[aa/547677] CreateSelectedEventList (888) | 853 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (887)
+[96/cba091] CreateSelectedEventList (883) | 855 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (888)
+[0b/45d679] CreateSelectedEventList (890) | 856 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (888)
+[0b/45d679] CreateSelectedEventList (890) | 856 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (889)
+[cb/17dcb6] CreateSelectedEventList (892) | 857 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (890)
+[93/bdcba1] CreateSelectedEventList (894) | 858 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (892)
+[1e/f2c7c1] CreateSelectedEventList (884) | 860 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (895)
+[dc/d1407c] CreateSelectedEventList (900) | 863 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (895)
+[dc/d1407c] CreateSelectedEventList (900) | 863 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (896)
+[9e/94359f] CreateSelectedEventList (907) | 864 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (897)
+[2c/4efbfc] CreateSelectedEventList (901) | 865 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (897)
+[2c/4efbfc] CreateSelectedEventList (901) | 865 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (898)
+[73/fcd021] CreateSelectedEventList (911) | 866 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (900)
+[93/cba47b] CreateSelectedEventList (914) | 868 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (902)
+[46/b74b83] CreateSelectedEventList (891) | 870 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (903)
+[14/75569e] CreateSelectedEventList (906) | 871 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (904)
+[84/2f8b8d] CreateSelectedEventList (902) | 872 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (904)
+[84/2f8b8d] CreateSelectedEventList (902) | 872 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (905)
+[fa/773511] CreateSelectedEventList (903) | 873 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (906)
+[22/41b2b4] CreateSelectedEventList (895) | 874 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (907)
+[c1/b38674] CreateSelectedEventList (905) | 875 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (907)
+[c1/b38674] CreateSelectedEventList (905) | 875 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (909)
+[21/9daf2c] CreateSelectedEventList (910) | 877 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (909)
+[21/9daf2c] CreateSelectedEventList (910) | 877 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (911)
+[e4/c4e5af] CreateSelectedEventList (898) | 879 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (912)
+[fb/270b88] CreateSelectedEventList (928) | 880 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (913)
+[d0/ef8583] CreateSelectedEventList (899) | 881 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (914)
+[10/e59af8] CreateSelectedEventList (936) | 882 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (915)
+[2b/2bb76f] CreateSelectedEventList (913) | 883 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (916)
+[34/ea8c96] CreateSelectedEventList (915) | 884 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (917)
+[b4/068afc] CreateSelectedEventList (929) | 885 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (918)
+[cf/2af532] CreateSelectedEventList (897) | 886 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (918)
+[cf/2af532] CreateSelectedEventList (897) | 886 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (919)
+[d0/969367] CreateSelectedEventList (920) | 887 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (919)
+[d0/969367] CreateSelectedEventList (920) | 887 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (920)
+[cb/39947e] CreateSelectedEventList (918) | 888 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (921)
+[2f/97eef3] CreateSelectedEventList (933) | 889 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (922)
+[b2/f5d8f5] CreateSelectedEventList (921) | 890 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (923)
+[1a/1c6311] CreateSelectedEventList (946) | 891 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (924)
+[fc/85e89b] CreateSelectedEventList (925) | 892 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (925)
+[b1/a484b0] CreateSelectedEventList (924) | 893 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (925)
+[b1/a484b0] CreateSelectedEventList (924) | 893 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (926)
+[01/b2bf69] CreateSelectedEventList (916) | 894 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (927)
+[03/ac5287] CreateSelectedEventList (935) | 895 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (928)
+[7e/4460d8] CreateSelectedEventList (919) | 896 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (929)
+[c8/3aadc6] CreateSelectedEventList (927) | 897 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (929)
+[c8/3aadc6] CreateSelectedEventList (927) | 897 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (930)
+[ba/ca7799] CreateSelectedEventList (922) | 898 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (931)
+[c7/a85184] CreateSelectedEventList (932) | 899 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (934)
+[40/9682ad] CreateSelectedEventList (926) | 902 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (935)
+[6c/512b3e] CreateSelectedEventList (942) | 903 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (936)
+[93/18997c] CreateSelectedEventList (943) | 904 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (937)
+[a5/053785] CreateSelectedEventList (938) | 905 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (937)
+[a5/053785] CreateSelectedEventList (938) | 905 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (938)
+[85/3a6b2f] CreateSelectedEventList (941) | 906 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (938)
+[85/3a6b2f] CreateSelectedEventList (941) | 906 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (939)
+[46/5ff6ab] CreateSelectedEventList (944) | 907 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (939)
+[46/5ff6ab] CreateSelectedEventList (944) | 907 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (940)
+[c1/b38674] CreateSelectedEventList (905) | 908 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (940)
+[c1/b38674] CreateSelectedEventList (905) | 908 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (941)
+[1c/bedee8] CreateSelectedEventList (952) | 909 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (942)
+[63/513900] CreateSelectedEventList (939) | 910 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (943)
+[d1/44b8fd] CreateSelectedEventList (954) | 911 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (944)
+[6d/41c9d2] CreateSelectedEventList (940) | 912 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (944)
+[6d/41c9d2] CreateSelectedEventList (940) | 912 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (945)
+[a5/26d21a] CreateSelectedEventList (948) | 913 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (945)
+[a5/26d21a] CreateSelectedEventList (948) | 913 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (946)
+[30/e15acb] CreateSelectedEventList (953) | 914 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (947)
+[d1/b0b098] CreateSelectedEventList (931) | 915 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (948)
+[2d/655d4f] CreateSelectedEventList (949) | 916 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (949)
+[38/05604e] CreateSelectedEventList (934) | 917 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (950)
+[cc/6787ea] CreateSelectedEventList (950) | 918 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (950)
+[cc/6787ea] CreateSelectedEventList (950) | 918 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (951)
+[a2/9ae8b3] CreateSelectedEventList (955) | 919 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (951)
+[a2/9ae8b3] CreateSelectedEventList (955) | 919 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (952)
+[b1/6b1713] CreateSelectedEventList (956) | 920 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (952)
+[b1/6b1713] CreateSelectedEventList (956) | 920 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (953)
+[7c/3c13bc] CreateSelectedEventList (960) | 921 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (954)
+[76/b4a727] CreateSelectedEventList (937) | 922 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (954)
+[76/b4a727] CreateSelectedEventList (937) | 922 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (955)
+[85/782cfb] CreateSelectedEventList (947) | 923 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (955)
+[85/782cfb] CreateSelectedEventList (947) | 923 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (956)
+[d4/f4872a] CreateSelectedEventList (951) | 924 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (957)
+[89/32221a] CreateSelectedEventList (945) | 925 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (957)
+[89/32221a] CreateSelectedEventList (945) | 925 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (958)
+[42/c73af0] CreateSelectedEventList (957) | 926 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (959)
+[6a/7f6563] CreateSelectedEventList (958) | 927 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (959)
+[6a/7f6563] CreateSelectedEventList (958) | 927 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (960)
+[d0/a96426] CreateSelectedEventList (959) | 928 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (961)
+[83/1da576] CreateSelectedEventList (964) | 929 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (961)
+[83/1da576] CreateSelectedEventList (964) | 929 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (962)
+[6e/44be4d] CreateSelectedEventList (962) | 930 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (962)
+[6e/44be4d] CreateSelectedEventList (962) | 930 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (963)
+[55/0f3499] CreateSelectedEventList (963) | 931 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (964)
+[62/e4e9e9] CreateSelectedEventList (961) | 932 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (965)
+[07/82bc4b] CreateSelectedEventList (969) | 933 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (965)
+[03/7f5ce8] CreateSelectedEventList (923) | 934 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (966)
+[0f/100305] CreateSelectedEventList (966) | 934 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (968)
+[63/b579e7] CreateSelectedEventList (974) | 936 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (969)
+[03/d8eedb] CreateSelectedEventList (972) | 937 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (969)
+[03/d8eedb] CreateSelectedEventList (972) | 937 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (970)
+[85/34e447] CreateSelectedEventList (977) | 938 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (971)
+[f6/575e10] CreateSelectedEventList (968) | 939 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (971)
+[f6/575e10] CreateSelectedEventList (968) | 939 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (972)
+[4e/7e5d5e] CreateSelectedEventList (975) | 940 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (972)
+[4e/7e5d5e] CreateSelectedEventList (975) | 940 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (973)
+[66/ead5ad] CreateSelectedEventList (967) | 941 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (974)
+[b6/59038c] CreateSelectedEventList (930) | 943 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (975)
+[8d/878ca7] CreateSelectedEventList (978) | 943 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (976)
+[cf/8c8ae9] CreateSelectedEventList (971) | 944 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (976)
+[cf/8c8ae9] CreateSelectedEventList (971) | 944 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (977)
+[6d/41c9d2] CreateSelectedEventList (940) | 945 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (979)
+[30/e15acb] CreateSelectedEventList (953) | 948 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (980)
+[c8/6feafb] CreateSelectedEventList (976) | 948 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (981)
+[4e/08c84a] CreateSelectedEventList (982) | 949 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (982)
+[6e/ed4be2] CreateSelectedEventList (996) | 950 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (982)
+[6e/ed4be2] CreateSelectedEventList (996) | 950 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (983)
+[04/8b9016] CreateSelectedEventList (989) | 951 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (983)
+[04/8b9016] CreateSelectedEventList (989) | 951 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (984)
+[f9/3f7534] CreateSelectedEventList (981) | 952 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (984)
+[7c/3c13bc] CreateSelectedEventList (960) | 953 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (985)
+[a9/2ebcb9] CreateSelectedEventList (983) | 953 of 1215
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (986)
+[c0/21f4b0] CreateSelectedEventList (1004) | 954 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (987)
+[54/7058f8] CreateSelectedEventList (1000) | 955 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (988)
+[f7/2f9846] CreateSelectedEventList (984)  | 956 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (988)
+[f7/2f9846] CreateSelectedEventList (984)  | 956 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (989)
+[3b/112669] CreateSelectedEventList (990)  | 957 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (989)
+[42/c73af0] CreateSelectedEventList (957)  | 958 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (990)
+[eb/aaa602] CreateSelectedEventList (991)  | 958 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (991)
+[68/61752e] CreateSelectedEventList (985)  | 959 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (991)
+[68/61752e] CreateSelectedEventList (985)  | 959 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (992)
+[85/9cd1d8] CreateSelectedEventList (995)  | 960 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (993)
+[94/448bc6] CreateSelectedEventList (986)  | 961 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (994)
+[5d/cf363a] CreateSelectedEventList (998)  | 962 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (995)
+[83/1da576] CreateSelectedEventList (964)  | 963 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (996)
+[dc/e5db2d] CreateSelectedEventList (997)  | 964 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (997)
+[b0/322fe9] CreateSelectedEventList (987)  | 965 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (997)
+[b0/322fe9] CreateSelectedEventList (987)  | 965 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (998)
+[53/78a497] CreateSelectedEventList (1003) | 966 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (999)
+[c1/54a3a4] CreateSelectedEventList (994)  | 967 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1000)
+[85/34e447] CreateSelectedEventList (977)  | 968 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1000)
+[85/34e447] CreateSelectedEventList (977)  | 968 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1001)
+[50/4c960f] CreateSelectedEventList (1002) | 969 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1002)
+[4f/96a2b4] CreateSelectedEventList (1001) | 970 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1002)
+[4f/96a2b4] CreateSelectedEventList (1001) | 970 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1003)
+[36/0ab805] CreateSelectedEventList (1005) | 971 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1004)
+[00/bd950d] CreateSelectedEventList (992)  | 972 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1006)
+[e2/8acdb1] CreateSelectedEventList (1008) | 974 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1006)
+[e2/8acdb1] CreateSelectedEventList (1008) | 974 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1007)
+[d2/7c0e9c] CreateSelectedEventList (1009) | 975 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1008)
+[d7/2c8cb0] CreateSelectedEventList (1007) | 976 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1009)
+[74/f17b37] CreateSelectedEventList (1010) | 977 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1010)
+[0a/54b1ba] CreateSelectedEventList (1006) | 978 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1012)
+[e3/c8b563] CreateSelectedEventList (1020) | 980 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1013)
+[ff/cb134b] CreateSelectedEventList (1023) | 981 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1013)
+[ff/cb134b] CreateSelectedEventList (1023) | 981 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1015)
+[19/f78491] CreateSelectedEventList (1017) | 983 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1015)
+[19/f78491] CreateSelectedEventList (1017) | 983 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1016)
+[a6/d4e0a7] CreateSelectedEventList (1021) | 984 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1017)
+[fb/e8048c] CreateSelectedEventList (1022) | 985 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1017)
+[fb/e8048c] CreateSelectedEventList (1022) | 985 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1018)
+[d0/a9e977] CreateSelectedEventList (1026) | 986 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1018)
+[d0/a9e977] CreateSelectedEventList (1026) | 986 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1019)
+[e4/07c768] CreateSelectedEventList (1012) | 987 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1020)
+[d7/969b4b] CreateSelectedEventList (1019) | 988 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1021)
+[0a/2c3786] CreateSelectedEventList (1013) | 989 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1022)
+[b4/b86f74] CreateSelectedEventList (1031) | 990 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1023)
+[c0/c3c418] CreateSelectedEventList (1035) | 991 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1024)
+[e9/09a752] CreateSelectedEventList (1034) | 992 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1025)
+[3f/e87561] CreateSelectedEventList (1011) | 993 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1026)
+[dd/f7b082] CreateSelectedEventList (1028) | 994 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1027)
+[c0/712ffb] CreateSelectedEventList (1027) | 995 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1028)
+[e5/bddd9a] CreateSelectedEventList (1018) | 996 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1030)
+[35/4e59d7] CreateSelectedEventList (1043) | 998 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1030)
+[35/4e59d7] CreateSelectedEventList (1043) | 998 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1031)
+[36/1e7483] CreateSelectedEventList (1032) | 999 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1032)
+[b9/69c551] CreateSelectedEventList (1015) | 1000 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1032)
+[b9/69c551] CreateSelectedEventList (1015) | 1000 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1033)
+[8d/7d074c] CreateSelectedEventList (1040) | 1001 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1034)
+[3a/cdf887] CreateSelectedEventList (1042) | 1002 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1035)
+[e6/19dfe2] CreateSelectedEventList (1039) | 1003 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1035)
+[e6/19dfe2] CreateSelectedEventList (1039) | 1003 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1036)
+[93/e0a942] CreateSelectedEventList (1029) | 1004 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1038)
+[a1/fbdbe0] CreateSelectedEventList (1041) | 1006 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1038)
+[a1/fbdbe0] CreateSelectedEventList (1041) | 1006 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1039)
+[b9/11757f] CreateSelectedEventList (1025) | 1007 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1039)
+[b9/11757f] CreateSelectedEventList (1025) | 1007 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1040)
+[8a/4e4d19] CreateSelectedEventList (1049) | 1008 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1041)
+[ad/b5c80f] CreateSelectedEventList (1053) | 1009 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1041)
+[ad/b5c80f] CreateSelectedEventList (1053) | 1009 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1042)
+[a9/d4bb56] CreateSelectedEventList (1054) | 1010 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1044)
+[80/f56ad0] CreateSelectedEventList (1056) | 1012 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1044)
+[80/f56ad0] CreateSelectedEventList (1056) | 1012 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1045)
+[5a/22caf1] CreateSelectedEventList (1069) | 1013 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1045)
+[5a/22caf1] CreateSelectedEventList (1069) | 1013 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1046)
+[50/fceb40] CreateSelectedEventList (1070) | 1014 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1046)
+[50/fceb40] CreateSelectedEventList (1070) | 1014 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1046)
+[ff/cb134b] CreateSelectedEventList (1023) | 1015 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1047)
+[06/fa8d4b] CreateSelectedEventList (1058) | 1015 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1048)
+[6c/732528] CreateSelectedEventList (1055) | 1016 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1048)
+[6c/732528] CreateSelectedEventList (1055) | 1016 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1049)
+[03/3e5def] CreateSelectedEventList (1038) | 1017 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1050)
+[69/57c097] CreateSelectedEventList (1065) | 1018 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1050)
+[69/57c097] CreateSelectedEventList (1065) | 1018 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1051)
+[d5/6b5021] CreateSelectedEventList (1060) | 1019 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1052)
+[b9/f00110] CreateSelectedEventList (1044) | 1020 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1053)
+[aa/38f4b1] CreateSelectedEventList (1045) | 1021 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1055)
+[40/cfc977] CreateSelectedEventList (1057) | 1023 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1055)
+[40/cfc977] CreateSelectedEventList (1057) | 1023 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1056)
+[53/0bd139] CreateSelectedEventList (1066) | 1024 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1057)
+[a7/9f5af9] CreateSelectedEventList (1073) | 1025 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1057)
+[a7/9f5af9] CreateSelectedEventList (1073) | 1025 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1058)
+[4f/cc9fce] CreateSelectedEventList (1059) | 1026 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1059)
+[37/b0be4e] CreateSelectedEventList (1051) | 1027 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1059)
+[37/b0be4e] CreateSelectedEventList (1051) | 1027 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1060)
+[fa/c1b55c] CreateSelectedEventList (1068) | 1028 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1060)
+[fa/c1b55c] CreateSelectedEventList (1068) | 1028 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1061)
+[df/afc5d0] CreateSelectedEventList (1047) | 1029 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1062)
+[ea/9488c3] CreateSelectedEventList (1030) | 1030 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1063)
+[9c/7673ee] CreateSelectedEventList (1063) | 1031 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1063)
+[9c/7673ee] CreateSelectedEventList (1063) | 1031 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1064)
+[a2/5fbe23] CreateSelectedEventList (1061) | 1032 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1065)
+[58/c16140] CreateSelectedEventList (1071) | 1033 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1065)
+[58/c16140] CreateSelectedEventList (1071) | 1033 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1066)
+[d1/abb87c] CreateSelectedEventList (1050) | 1034 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1066)
+[d1/abb87c] CreateSelectedEventList (1050) | 1034 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1067)
+[66/926019] CreateSelectedEventList (1064) | 1035 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1068)
+[7c/338927] CreateSelectedEventList (1062) | 1036 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1069)
+[fb/5c0ff6] CreateSelectedEventList (1078) | 1037 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1070)
+[78/4d1b3e] CreateSelectedEventList (1036) | 1038 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1071)
+[0c/123076] CreateSelectedEventList (1037) | 1039 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1071)
+[0c/123076] CreateSelectedEventList (1037) | 1039 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1072)
+[18/782893] CreateSelectedEventList (1087) | 1040 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1073)
+[7f/b688d6] CreateSelectedEventList (1048) | 1041 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1074)
+[f1/7d0bdf] CreateSelectedEventList (1082) | 1042 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1075)
+[bf/962e87] CreateSelectedEventList (1081) | 1043 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1076)
+[35/dca6b6] CreateSelectedEventList (1079) | 1044 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1077)
+[8b/262733] CreateSelectedEventList (1075) | 1045 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1078)
+[7b/77b1ee] CreateSelectedEventList (1080) | 1046 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1079)
+[45/6de8b5] CreateSelectedEventList (1077) | 1047 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1080)
+[03/3e5def] CreateSelectedEventList (1038) | 1049 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1081)
+[c4/2006ef] CreateSelectedEventList (1072) | 1049 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1082)
+[2d/b5952a] CreateSelectedEventList (1076) | 1050 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1082)
+[2d/b5952a] CreateSelectedEventList (1076) | 1050 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1083)
+[fe/0d7ed0] CreateSelectedEventList (1074) | 1051 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1084)
+[61/8dbfcc] CreateSelectedEventList (1083) | 1052 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1085)
+[f0/52ff28] CreateSelectedEventList (1084) | 1053 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1086)
+[26/9c645d] CreateSelectedEventList (1086) | 1054 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1087)
+[d6/920102] CreateSelectedEventList (1089) | 1055 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1087)
+[d6/920102] CreateSelectedEventList (1089) | 1055 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1088)
+[e0/fd48d7] CreateSelectedEventList (1091) | 1056 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1089)
+[76/929d01] CreateSelectedEventList (1094) | 1057 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1089)
+[76/929d01] CreateSelectedEventList (1094) | 1057 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1090)
+[c6/a65e61] CreateSelectedEventList (1085) | 1058 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1090)
+[c6/a65e61] CreateSelectedEventList (1085) | 1058 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1091)
+[7a/64bae2] CreateSelectedEventList (1098) | 1059 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1092)
+[0b/7c4c94] CreateSelectedEventList (1100) | 1060 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1094)
+[f3/39c88d] CreateSelectedEventList (1102) | 1062 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1095)
+[b4/3d4368] CreateSelectedEventList (1088) | 1063 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1095)
+[b4/3d4368] CreateSelectedEventList (1088) | 1063 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1095)
+[d1/abb87c] CreateSelectedEventList (1050) | 1064 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1097)
+[38/8b61a7] CreateSelectedEventList (1101) | 1065 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1098)
+[59/0333d7] CreateSelectedEventList (1093) | 1066 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1099)
+[e3/0c55cb] CreateSelectedEventList (1095) | 1067 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1100)
+[f0/4ed71f] CreateSelectedEventList (1103) | 1068 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1101)
+[66/8ffb8e] CreateSelectedEventList (1097) | 1069 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1101)
+[66/8ffb8e] CreateSelectedEventList (1097) | 1069 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1102)
+[84/2ec0aa] CreateSelectedEventList (1106) | 1070 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1103)
+[6c/552619] CreateSelectedEventList (1090) | 1071 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1104)
+[97/a28ab1] CreateSelectedEventList (1104) | 1072 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1105)
+[7f/b688d6] CreateSelectedEventList (1048) | 1073 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1107)
+[e0/4b5104] CreateSelectedEventList (1110) | 1075 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1107)
+[e0/4b5104] CreateSelectedEventList (1110) | 1075 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1108)
+[82/c6f9a8] CreateSelectedEventList (1096) | 1076 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1109)
+[c9/6f734d] CreateSelectedEventList (1114) | 1077 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1109)
+[c9/6f734d] CreateSelectedEventList (1114) | 1077 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1110)
+[4c/0b6b5f] CreateSelectedEventList (1107) | 1078 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1111)
+[25/c70901] CreateSelectedEventList (1108) | 1079 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1112)
+[99/2d1481] CreateSelectedEventList (1115) | 1080 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1114)
+[5e/5fb5c8] CreateSelectedEventList (1113) | 1082 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1115)
+[df/4a3043] CreateSelectedEventList (1121) | 1083 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1116)
+[97/6172cd] CreateSelectedEventList (1118) | 1084 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1117)
+[cd/1d2fb4] CreateSelectedEventList (1122) | 1085 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1117)
+[cd/1d2fb4] CreateSelectedEventList (1122) | 1085 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1118)
+[e5/e40bda] CreateSelectedEventList (1133) | 1086 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1119)
+[9d/90508a] CreateSelectedEventList (1126) | 1087 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1120)
+[91/654025] CreateSelectedEventList (1132) | 1088 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1120)
+[91/654025] CreateSelectedEventList (1132) | 1088 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1121)
+[3c/7dd14e] CreateSelectedEventList (1123) | 1089 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1122)
+[7d/6fb39d] CreateSelectedEventList (1129) | 1090 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1122)
+[7d/6fb39d] CreateSelectedEventList (1129) | 1090 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1122)
+[7a/64bae2] CreateSelectedEventList (1098) | 1091 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1123)
+[26/a5f3e1] CreateSelectedEventList (1120) | 1091 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1124)
+[84/2a616f] CreateSelectedEventList (1137) | 1092 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1124)
+[84/2a616f] CreateSelectedEventList (1137) | 1092 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1125)
+[a0/aa3384] CreateSelectedEventList (1111) | 1093 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1125)
+[a0/aa3384] CreateSelectedEventList (1111) | 1093 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1127)
+[5e/98eb6e] CreateSelectedEventList (1112) | 1095 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1127)
+[5e/98eb6e] CreateSelectedEventList (1112) | 1095 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1128)
+[a8/334648] CreateSelectedEventList (1124) | 1096 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1129)
+[cc/44657e] CreateSelectedEventList (1135) | 1097 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1129)
+[cc/44657e] CreateSelectedEventList (1135) | 1097 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1131)
+[05/4f4a43] CreateSelectedEventList (1127) | 1099 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1132)
+[34/b9b4a6] CreateSelectedEventList (1142) | 1100 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1133)
+[10/c988c9] CreateSelectedEventList (1141) | 1101 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1133)
+[10/c988c9] CreateSelectedEventList (1141) | 1101 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1135)
+[66/208461] CreateSelectedEventList (1125) | 1103 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1135)
+[66/208461] CreateSelectedEventList (1125) | 1103 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1136)
+[05/b30c2a] CreateSelectedEventList (1119) | 1104 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1137)
+[2c/0cd7fe] CreateSelectedEventList (1128) | 1105 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1138)
+[1f/7cd24d] CreateSelectedEventList (1148) | 1106 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1139)
+[be/8954b6] CreateSelectedEventList (1139) | 1107 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1139)
+[be/8954b6] CreateSelectedEventList (1139) | 1107 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1141)
+[61/9c4f72] CreateSelectedEventList (1140) | 1109 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1141)
+[61/9c4f72] CreateSelectedEventList (1140) | 1109 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1142)
+[73/c3ac3d] CreateSelectedEventList (1138) | 1110 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1143)
+[40/208251] CreateSelectedEventList (1143) | 1111 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1145)
+[29/71c485] CreateSelectedEventList (1144) | 1113 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1146)
+[3e/a0492f] CreateSelectedEventList (1145) | 1114 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1146)
+[3e/a0492f] CreateSelectedEventList (1145) | 1114 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1147)
+[ce/4adb63] CreateSelectedEventList (1149) | 1115 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1149)
+[73/c58e2d] CreateSelectedEventList (1154) | 1117 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1149)
+[73/c58e2d] CreateSelectedEventList (1154) | 1117 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1150)
+[2e/12d982] CreateSelectedEventList (1155) | 1118 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1151)
+[8d/3df3da] CreateSelectedEventList (1162) | 1119 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1151)
+[8d/3df3da] CreateSelectedEventList (1162) | 1119 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1152)
+[43/6ca5eb] CreateSelectedEventList (1151) | 1120 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1152)
+[43/6ca5eb] CreateSelectedEventList (1151) | 1120 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1153)
+[5b/d529ae] CreateSelectedEventList (1136) | 1121 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1154)
+[8c/4e91f2] CreateSelectedEventList (1164) | 1122 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1155)
+[aa/c0a213] CreateSelectedEventList (1160) | 1123 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1155)
+[aa/c0a213] CreateSelectedEventList (1160) | 1123 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1157)
+[1b/c03ec6] CreateSelectedEventList (1161) | 1125 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1157)
+[1b/c03ec6] CreateSelectedEventList (1161) | 1125 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1158)
+[c8/0a4768] CreateSelectedEventList (1159) | 1126 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1158)
+[c8/0a4768] CreateSelectedEventList (1159) | 1126 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1159)
+[d3/2d46db] CreateSelectedEventList (1165) | 1127 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1160)
+[e6/8a998e] CreateSelectedEventList (1156) | 1128 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1161)
+[3e/bacc31] CreateSelectedEventList (1152) | 1129 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1161)
+[3e/bacc31] CreateSelectedEventList (1152) | 1129 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1162)
+[34/39fa3c] CreateSelectedEventList (1166) | 1130 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1164)
+[b7/ec499f] CreateSelectedEventList (1157) | 1132 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1164)
+[b7/ec499f] CreateSelectedEventList (1157) | 1132 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1165)
+[ba/c3b4d2] CreateSelectedEventList (1169) | 1133 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1165)
+[ba/c3b4d2] CreateSelectedEventList (1169) | 1133 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1166)
+[82/46ecd8] CreateSelectedEventList (1179) | 1134 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1166)
+[82/46ecd8] CreateSelectedEventList (1179) | 1134 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1167)
+[15/3ca27e] CreateSelectedEventList (1146) | 1135 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1167)
+[15/3ca27e] CreateSelectedEventList (1146) | 1135 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1168)
+[f2/6a29a8] CreateSelectedEventList (1163) | 1136 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1169)
+[e6/95375a] CreateSelectedEventList (1168) | 1137 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1169)
+[e6/95375a] CreateSelectedEventList (1168) | 1137 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1171)
+[bb/fde9af] CreateSelectedEventList (1171) | 1139 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1171)
+[bb/fde9af] CreateSelectedEventList (1171) | 1139 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1172)
+[26/29af8e] CreateSelectedEventList (1178) | 1140 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1173)
+[37/eb9d9f] CreateSelectedEventList (1183) | 1141 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1174)
+[f4/3d89b9] CreateSelectedEventList (1176) | 1142 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1176)
+[d3/765838] CreateSelectedEventList (1173) | 1144 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1177)
+[6e/dcbd6b] CreateSelectedEventList (1172) | 1145 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1178)
+[64/2531fb] CreateSelectedEventList (1177) | 1146 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1179)
+[c7/e8360d] CreateSelectedEventList (1170) | 1147 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1179)
+[c7/e8360d] CreateSelectedEventList (1170) | 1147 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1180)
+[e1/939a4d] CreateSelectedEventList (1180) | 1148 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1180)
+[e1/939a4d] CreateSelectedEventList (1180) | 1148 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1181)
+[ba/2754e3] CreateSelectedEventList (1175) | 1149 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1182)
+[32/6c126d] CreateSelectedEventList (1181) | 1150 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1183)
+[d5/11ba63] CreateSelectedEventList (1167) | 1151 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1184)
+[9b/642a06] CreateSelectedEventList (1187) | 1152 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1185)
+[de/f8fc14] CreateSelectedEventList (1190) | 1153 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1186)
+[44/a93292] CreateSelectedEventList (1191) | 1154 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1186)
+[44/a93292] CreateSelectedEventList (1191) | 1154 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1187)
+[0a/ac3ca7] CreateSelectedEventList (1197) | 1155 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1187)
+[0a/ac3ca7] CreateSelectedEventList (1197) | 1155 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1188)
+[eb/fc6e72] CreateSelectedEventList (1189) | 1156 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1189)
+[1c/695da0] CreateSelectedEventList (1184) | 1157 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1190)
+[45/f5701c] CreateSelectedEventList (1194) | 1158 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1191)
+[eb/de2b5c] CreateSelectedEventList (1185) | 1159 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1191)
+[eb/de2b5c] CreateSelectedEventList (1185) | 1159 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1192)
+[ca/daf81f] CreateSelectedEventList (1188) | 1160 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1194)
+[aa/5cab8f] CreateSelectedEventList (1196) | 1162 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1195)
+[e5/7ed4e0] CreateSelectedEventList (1195) | 1163 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1196)
+[ae/50a5a4] CreateSelectedEventList (1186) | 1164 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1196)
+[52/8300c7] CreateSelectedEventList (1182) | 1165 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1197)
+[12/dd7751] CreateSelectedEventList (1201) | 1165 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1198)
+[72/bc577f] CreateSelectedEventList (1198) | 1166 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1199)
+[3c/7547c9] CreateSelectedEventList (1211) | 1167 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1200)
+[3f/ba069a] CreateSelectedEventList (1207) | 1168 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1200)
+[3f/ba069a] CreateSelectedEventList (1207) | 1168 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1202)
+[bd/80af07] CreateSelectedEventList (1205) | 1170 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1203)
+[0d/693730] CreateSelectedEventList (1199) | 1171 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1203)
+[0d/693730] CreateSelectedEventList (1199) | 1171 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1204)
+[d9/8c601e] CreateSelectedEventList (1210) | 1172 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1205)
+[76/444a03] CreateSelectedEventList (1213) | 1173 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1206)
+[fc/20636d] CreateSelectedEventList (1193) | 1174 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1206)
+[fc/20636d] CreateSelectedEventList (1193) | 1174 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1207)
+[e7/127132] CreateSelectedEventList (1203) | 1175 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1207)
+[e7/127132] CreateSelectedEventList (1203) | 1175 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1208)
+[2d/1c8ee2] CreateSelectedEventList (1212) | 1176 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1208)
+[2d/1c8ee2] CreateSelectedEventList (1212) | 1176 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1209)
+[83/bc608c] CreateSelectedEventList (1208) | 1177 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1210)
+[8f/9df956] CreateSelectedEventList (1214) | 1178 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1211)
+[10/fa7c51] CreateSelectedEventList (1209) | 1179 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1212)
+[1c/695da0] CreateSelectedEventList (1184) | 1180 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1213)
+[45/8bfdf1] CreateSelectedEventList (1200) | 1181 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1214)
+[4b/47e428] CreateSelectedEventList (1206) | 1182 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1214)
+[4b/47e428] CreateSelectedEventList (1206) | 1182 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[40/8c2615] CreateSelectedEventList (1215) | 1183 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[9b/642a06] CreateSelectedEventList (1187) | 1184 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[44/a93292] CreateSelectedEventList (1191) | 1185 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[de/f8fc14] CreateSelectedEventList (1190) | 1186 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[d5/11ba63] CreateSelectedEventList (1167) | 1187 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[0a/ac3ca7] CreateSelectedEventList (1197) | 1189 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[45/f5701c] CreateSelectedEventList (1194) | 1190 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[eb/de2b5c] CreateSelectedEventList (1185) | 1191 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[ca/daf81f] CreateSelectedEventList (1188) | 1192 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[3c/7547c9] CreateSelectedEventList (1211) | 1193 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[72/bc577f] CreateSelectedEventList (1198) | 1194 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[bd/80af07] CreateSelectedEventList (1205) | 1195 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[aa/5cab8f] CreateSelectedEventList (1196) | 1196 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[a9/7f402f] CreateSelectedEventList (1192) | 1197 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[60/0af06d] CreateSelectedEventList (1204) | 1198 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[0d/693730] CreateSelectedEventList (1199) | 1199 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[3f/ba069a] CreateSelectedEventList (1207) | 1200 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[ae/50a5a4] CreateSelectedEventList (1186) | 1201 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[12/dd7751] CreateSelectedEventList (1201) | 1202 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[e5/7ed4e0] CreateSelectedEventList (1195) | 1203 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[d9/8c601e] CreateSelectedEventList (1210) | 1204 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[76/444a03] CreateSelectedEventList (1213) | 1205 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[8f/9df956] CreateSelectedEventList (1214) | 1206 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[2d/1c8ee2] CreateSelectedEventList (1212) | 1208 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[10/fa7c51] CreateSelectedEventList (1209) | 1209 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[fc/20636d] CreateSelectedEventList (1193) | 1210 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[b9/8589ec] CreateSelectedEventList (1202) | 1211 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[e7/127132] CreateSelectedEventList (1203) | 1212 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[40/8c2615] CreateSelectedEventList (1215) | 1213 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[45/8bfdf1] CreateSelectedEventList (1200) | 1214 of 1215
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[-        ] CombineEventListsRunsSelected  -
+
+executor >  local (1215)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[-        ] CombineEventListsRunsSelected  | 0 of 1
+
+executor >  local (1216)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[77/fb0ab9] Com…EventListsRunsSelected (1) | 0 of 1
+
+executor >  local (1216)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[77/fb0ab9] Com…EventListsRunsSelected (1) | 1 of 1 ✔
+
+executor >  local (1216)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[77/fb0ab9] Com…EventListsRunsSelected (1) | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti_selected.nf -profile woody_hannes_container_analysis --filestype data_arca_conv --delta_search_min 15.0 -with-report
+
+executor >  local (1216)
+[4b/47e428] CreateSelectedEventList (1206) | 1215 of 1215 ✔
+[77/fb0ab9] Com…EventListsRunsSelected (1) | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti_selected.nf -profile woody_hannes_container_analysis --filestype data_arca_conv --delta_search_min 15.0 -with-report
+Completed at: 22-Aug-2025 15:53:02
+Duration    : 28m 40s
+CPU hours   : 13.2
+Succeeded   : 1'216
+
+
+=== JOB_STATISTICS ===
+=== current date     : Fri Aug 22 15:53:03 CEST 2025
+= Job-ID             : 8901522 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:33:23
+= Total RAM usage    : 64.4 GiB of requested  GiB (%)   
+= Node list          : w2326
+= Subm/Elig/Start/End: 2025-08-22T15:08:38 / 2025-08-22T15:08:38 / 2025-08-22T15:19:40 / 2025-08-22T15:53:03
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+!!! /home/hpc             107.0G   104.9G   209.7G  -29381days     648K     500K   1,000K  -29381days !!!
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    

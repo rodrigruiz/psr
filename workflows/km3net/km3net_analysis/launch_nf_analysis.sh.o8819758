@@ -1,0 +1,31 @@
+### Starting TaskPrologue of job 8819758 on w2212 at Tue Aug  5 14:31:59 CEST 2025
+#   SLURM_JOB_NODELIST=w2212
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+/var/tmp/slurmd_spool/job8819758/slurm_script: line 18: nextflow: command not found
+=== JOB_STATISTICS ===
+=== current date     : Tue Aug  5 14:32:00 CEST 2025
+= Job-ID             : 8819758 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:00:01
+= Total RAM usage    : 0.0 GiB of requested  GiB (%)   
+= Node list          : w2212
+= Subm/Elig/Start/End: 2025-08-05T14:13:07 / 2025-08-05T14:13:07 / 2025-08-05T14:31:58 / 2025-08-05T14:31:59
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc              86.5G   104.9G   209.7G        N/A     141K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

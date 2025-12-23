@@ -1,0 +1,2522 @@
+### Starting TaskPrologue of job 8815342 on w2211 at Mon Aug  4 13:31:02 CEST 2025
+#   SLURM_JOB_NODELIST=w2211
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_analysis_workflow_creategti.nf` [marvelous_saha] DSL2 - revision: 1024523f26
+
+WARN: Access to undefined parameter `delta_search_min` -- Initialise it to a default value eg. `params.delta_search_min = some_value`
+WARN: Access to undefined parameter `source_file` -- Initialise it to a default value eg. `params.source_file = some_value`
+WARN: Access to undefined parameter `cone_all` -- Initialise it to a default value eg. `params.cone_all = some_value`
+WARN: Access to undefined parameter `convert` -- Initialise it to a default value eg. `params.convert = some_value`
+[-        ] ConvertFilesKM3NeT           -
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+[-        ] ConvertFilesKM3NeT           | 0 of 15
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (1)
+[2c/6c0c2f] ConvertFilesKM3NeT (8)       | 0 of 40
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (6)
+[c2/256642] ConvertFilesKM3NeT (25)      | 0 of 112
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (13)
+[49/66b877] ConvertFilesKM3NeT (21)      | 0 of 211
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (18)
+[c2/43cff3] ConvertFilesKM3NeT (23)      | 0 of 311
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (23)
+[39/ad43dd] ConvertFilesKM3NeT (17)      | 0 of 394
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (28)
+[b7/89dda1] ConvertFilesKM3NeT (16)      | 0 of 474
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (31)
+[12/2368a8] ConvertFilesKM3NeT (2)       | 0 of 552
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (32)
+[e5/f9ea56] ConvertFilesKM3NeT (3)       | 0 of 622
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (32)
+[e5/f9ea56] ConvertFilesKM3NeT (3)       | 0 of 758
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (32)
+[e5/f9ea56] ConvertFilesKM3NeT (3)       | 0 of 832
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (32)
+[e5/f9ea56] ConvertFilesKM3NeT (3)       | 0 of 896
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (32)
+[e5/f9ea56] ConvertFilesKM3NeT (3)       | 0 of 923
+[-        ] AddTrackScoreKM3NeT          -
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (33)
+[b7/89dda1] ConvertFilesKM3NeT (16)      | 1 of 923
+[-        ] AddTrackScoreKM3NeT          | 0 of 1
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (34)
+[fb/890604] ConvertFilesKM3NeT (30)      | 2 of 923, failed: 1
+[-        ] AddTrackScoreKM3NeT          | 0 of 1
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[fb/890604] NOTE: Process `ConvertFilesKM3NeT (30)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (34)
+[fb/890604] ConvertFilesKM3NeT (30)      | 2 of 923, failed: 1
+[-        ] AddTrackScoreKM3NeT          | 0 of 1
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[fb/890604] NOTE: Process `ConvertFilesKM3NeT (30)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (35)
+[3d/9b25a8] ConvertFilesKM3NeT (34)      | 3 of 923, failed: 1
+[-        ] AddTrackScoreKM3NeT          | 0 of 2
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (35)
+[3d/9b25a8] ConvertFilesKM3NeT (34)      | 3 of 923, failed: 1
+[-        ] AddTrackScoreKM3NeT          | 0 of 2
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (36)
+[df/c5dcad] ConvertFilesKM3NeT (35)      | 4 of 923, failed: 1
+[-        ] AddTrackScoreKM3NeT          | 0 of 3
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (37)
+[2b/4a3ee0] ConvertFilesKM3NeT (36)      | 5 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 3
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[c2/256642] NOTE: Process `ConvertFilesKM3NeT (25)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (38)
+[c7/a00a23] ConvertFilesKM3NeT (38)      | 6 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 4
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (39)
+[10/00f764] ConvertFilesKM3NeT (39)      | 7 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 5
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (40)
+[77/821242] ConvertFilesKM3NeT (65)      | 8 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 6
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (41)
+[b5/f68012] ConvertFilesKM3NeT (40)      | 9 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 7
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (42)
+[0a/f2fa80] ConvertFilesKM3NeT (41)      | 10 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 8
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (43)
+[03/cca0bc] ConvertFilesKM3NeT (42)      | 11 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 9
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (44)
+[77/821242] ConvertFilesKM3NeT (65)      | 12 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 10
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (45)
+[7d/e79786] ConvertFilesKM3NeT (43)      | 13 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 11
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (46)
+[ef/b81e5b] ConvertFilesKM3NeT (7)       | 14 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 12
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (46)
+[ef/b81e5b] ConvertFilesKM3NeT (7)       | 14 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 12
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (46)
+[39/ad43dd] ConvertFilesKM3NeT (17)      | 15 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 13
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (47)
+[90/cbf967] ConvertFilesKM3NeT (46)      | 15 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 13
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (48)
+[f0/610967] ConvertFilesKM3NeT (5)       | 16 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 14
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (48)
+[f0/610967] ConvertFilesKM3NeT (5)       | 16 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 14
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (49)
+[e1/962edb] ConvertFilesKM3NeT (48)      | 17 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 15
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (49)
+[e1/962edb] ConvertFilesKM3NeT (48)      | 17 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 15
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (50)
+[47/f2dbc7] ConvertFilesKM3NeT (49)      | 18 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 16
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (51)
+[ca/324446] ConvertFilesKM3NeT (50)      | 19 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 17
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (51)
+[ca/324446] ConvertFilesKM3NeT (50)      | 19 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 17
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (52)
+[e0/8e3f3e] ConvertFilesKM3NeT (51)      | 20 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 18
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (52)
+[3d/9b25a8] ConvertFilesKM3NeT (34)      | 21 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 19
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (53)
+[ca/b66527] ConvertFilesKM3NeT (52)      | 21 of 923, failed: 2
+[-        ] AddTrackScoreKM3NeT          | 0 of 19
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (54)
+[c6/b2b938] ConvertFilesKM3NeT (53)      | 22 of 923, failed: 3
+[-        ] AddTrackScoreKM3NeT          | 0 of 19
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[b9/92e29f] NOTE: Process `ConvertFilesKM3NeT (15)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (55)
+[bc/7f3100] ConvertFilesKM3NeT (54)      | 23 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 19
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[b9/92e29f] NOTE: Process `ConvertFilesKM3NeT (15)` terminated with an error exit status (137) -- Error is ignored
+[7c/4016aa] NOTE: Process `ConvertFilesKM3NeT (24)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (56)
+[0a/f2fa80] ConvertFilesKM3NeT (41)      | 24 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 20
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (56)
+[0a/f2fa80] ConvertFilesKM3NeT (41)      | 24 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 20
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (57)
+[78/19e01c] ConvertFilesKM3NeT (56)      | 25 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 21
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (57)
+[78/19e01c] ConvertFilesKM3NeT (56)      | 25 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 21
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (58)
+[40/4c7a8e] ConvertFilesKM3NeT (57)      | 26 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 22
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (59)
+[88/0bde34] ConvertFilesKM3NeT (58)      | 27 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 23
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (60)
+[5c/ccd4e6] ConvertFilesKM3NeT (59)      | 28 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 24
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (60)
+[5c/ccd4e6] ConvertFilesKM3NeT (59)      | 28 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 24
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (61)
+[9b/ee1e6b] ConvertFilesKM3NeT (33)      | 29 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 25
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (62)
+[76/def54b] ConvertFilesKM3NeT (61)      | 30 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 26
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (62)
+[76/def54b] ConvertFilesKM3NeT (61)      | 30 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 26
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (62)
+[65/9c3b71] ConvertFilesKM3NeT (27)      | 31 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 26
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (63)
+[f4/f4858a] ConvertFilesKM3NeT (89)      | 31 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 27
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (64)
+[e1/685f74] ConvertFilesKM3NeT (62)      | 32 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 28
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (65)
+[7c/9d1c8b] ConvertFilesKM3NeT (63)      | 33 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 29
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (65)
+[7c/9d1c8b] ConvertFilesKM3NeT (63)      | 33 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 29
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (66)
+[c7/a00a23] ConvertFilesKM3NeT (38)      | 34 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 30
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (67)
+[72/ca4384] ConvertFilesKM3NeT (18)      | 35 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 31
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (68)
+[e6/7e5c9b] ConvertFilesKM3NeT (67)      | 36 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 32
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (69)
+[d3/32dd9a] ConvertFilesKM3NeT (68)      | 37 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 33
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (69)
+[d3/32dd9a] ConvertFilesKM3NeT (68)      | 37 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 33
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (70)
+[df/c5dcad] ConvertFilesKM3NeT (35)      | 38 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 34
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (70)
+[df/c5dcad] ConvertFilesKM3NeT (35)      | 38 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 34
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (71)
+[df/ea3325] ConvertFilesKM3NeT (45)      | 39 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 35
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (71)
+[df/ea3325] ConvertFilesKM3NeT (45)      | 39 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 35
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (72)
+[9c/6c6c76] ConvertFilesKM3NeT (72)      | 40 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 36
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (72)
+[9c/6c6c76] ConvertFilesKM3NeT (72)      | 40 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 36
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (73)
+[b5/f68012] ConvertFilesKM3NeT (40)      | 41 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 37
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (74)
+[e6/d83b63] ConvertFilesKM3NeT (75)      | 42 of 923, failed: 4
+[-        ] AddTrackScoreKM3NeT          | 0 of 38
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (74)
+[70/860c86] ConvertFilesKM3NeT (64)      | 43 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 38
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[70/860c86] NOTE: Process `ConvertFilesKM3NeT (64)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (75)
+[b0/56bf6b] ConvertFilesKM3NeT (73)      | 43 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 38
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[70/860c86] NOTE: Process `ConvertFilesKM3NeT (64)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (76)
+[b0/2cdbd2] ConvertFilesKM3NeT (10)      | 44 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 39
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[70/860c86] NOTE: Process `ConvertFilesKM3NeT (64)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (77)
+[36/b2bbdb] ConvertFilesKM3NeT (77)      | 45 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 40
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (77)
+[36/b2bbdb] ConvertFilesKM3NeT (77)      | 45 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 40
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (78)
+[82/89421a] ConvertFilesKM3NeT (79)      | 45 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 40
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (78)
+[40/4c7a8e] ConvertFilesKM3NeT (57)      | 46 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 41
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (79)
+[bd/490a3b] ConvertFilesKM3NeT (80)      | 47 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 42
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (79)
+[bd/490a3b] ConvertFilesKM3NeT (80)      | 47 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 42
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (80)
+[e9/2c083a] ConvertFilesKM3NeT (4)       | 48 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 43
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (81)
+[49/4bf63c] ConvertFilesKM3NeT (78)      | 49 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 44
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (82)
+[38/a9ef84] ConvertFilesKM3NeT (69)      | 50 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 45
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (82)
+[38/a9ef84] ConvertFilesKM3NeT (69)      | 50 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 45
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (83)
+[7c/352f43] ConvertFilesKM3NeT (83)      | 51 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 46
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (84)
+[75/189d5a] ConvertFilesKM3NeT (88)      | 52 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 47
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (84)
+[75/189d5a] ConvertFilesKM3NeT (88)      | 52 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 47
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (85)
+[73/f930ee] ConvertFilesKM3NeT (90)      | 53 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 48
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (85)
+[73/f930ee] ConvertFilesKM3NeT (90)      | 53 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 48
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (86)
+[6d/3d9acd] ConvertFilesKM3NeT (91)      | 54 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 49
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (86)
+[6d/3d9acd] ConvertFilesKM3NeT (91)      | 54 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 49
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (87)
+[3d/431ea2] ConvertFilesKM3NeT (94)      | 55 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 50
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (87)
+[3d/431ea2] ConvertFilesKM3NeT (94)      | 55 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 50
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (88)
+[68/4bda2e] ConvertFilesKM3NeT (92)      | 56 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 51
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (88)
+[68/4bda2e] ConvertFilesKM3NeT (92)      | 56 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 51
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (89)
+[df/47838e] ConvertFilesKM3NeT (96)      | 57 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 52
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (90)
+[c6/6de5e5] ConvertFilesKM3NeT (98)      | 58 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 53
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (91)
+[0f/2b6535] ConvertFilesKM3NeT (86)      | 59 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 54
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (91)
+[e0/8e3f3e] ConvertFilesKM3NeT (51)      | 60 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 55
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (92)
+[93/701686] ConvertFilesKM3NeT (99)      | 60 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 55
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (93)
+[7b/3a6921] ConvertFilesKM3NeT (84)      | 61 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 56
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (93)
+[7b/3a6921] ConvertFilesKM3NeT (84)      | 61 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 56
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (94)
+[85/f548e3] ConvertFilesKM3NeT (82)      | 62 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 56
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (94)
+[85/f548e3] ConvertFilesKM3NeT (82)      | 62 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 57
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (94)
+[c6/b2b938] ConvertFilesKM3NeT (53)      | 63 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 57
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (95)
+[08/56c2fc] ConvertFilesKM3NeT (87)      | 63 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 58
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (95)
+[2d/56df9e] ConvertFilesKM3NeT (60)      | 64 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 59
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (96)
+[66/3cdafa] ConvertFilesKM3NeT (101)     | 64 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 59
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (96)
+[bc/7f3100] ConvertFilesKM3NeT (54)      | 65 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 60
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (97)
+[2c/92c2ff] ConvertFilesKM3NeT (104)     | 65 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 60
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (98)
+[fb/225397] ConvertFilesKM3NeT (103)     | 66 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 61
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (98)
+[fb/225397] ConvertFilesKM3NeT (103)     | 66 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 61
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (99)
+[ec/bab7fc] ConvertFilesKM3NeT (105)     | 66 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 61
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (99)
+[e1/685f74] ConvertFilesKM3NeT (62)      | 67 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 62
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (100)
+[39/cd80eb] ConvertFilesKM3NeT (102)     | 68 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 63
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (100)
+[39/cd80eb] ConvertFilesKM3NeT (102)     | 68 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 63
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (101)
+[e6/9cb803] ConvertFilesKM3NeT (106)     | 69 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 64
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (102)
+[3d/431ea2] ConvertFilesKM3NeT (94)      | 70 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 65
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (103)
+[72/3fb6ef] ConvertFilesKM3NeT (110)     | 71 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 66
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (104)
+[c0/2068bf] ConvertFilesKM3NeT (111)     | 72 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 67
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (105)
+[5f/fdca25] ConvertFilesKM3NeT (109)     | 73 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 68
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (105)
+[5f/fdca25] ConvertFilesKM3NeT (109)     | 73 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 68
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (106)
+[41/623546] ConvertFilesKM3NeT (85)      | 74 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 69
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (106)
+[41/623546] ConvertFilesKM3NeT (85)      | 74 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 69
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (106)
+[5c/ccd4e6] ConvertFilesKM3NeT (59)      | 75 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 69
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (107)
+[12/03871a] ConvertFilesKM3NeT (114)     | 75 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 70
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (108)
+[95/660381] ConvertFilesKM3NeT (113)     | 76 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 71
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (108)
+[95/660381] ConvertFilesKM3NeT (113)     | 76 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 71
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (109)
+[29/0a379f] ConvertFilesKM3NeT (115)     | 77 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 72
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (110)
+[10/1ba069] ConvertFilesKM3NeT (117)     | 78 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 73
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (111)
+[9c/a80eed] ConvertFilesKM3NeT (120)     | 79 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 74
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (112)
+[f6/f5378d] ConvertFilesKM3NeT (126)     | 80 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 75
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (113)
+[c2/13c9cd] ConvertFilesKM3NeT (93)      | 81 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 76
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (113)
+[c2/13c9cd] ConvertFilesKM3NeT (93)      | 81 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 76
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (114)
+[7c/70d604] ConvertFilesKM3NeT (118)     | 82 of 923, failed: 5
+[-        ] AddTrackScoreKM3NeT          | 0 of 77
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (114)
+[f6/f5378d] ConvertFilesKM3NeT (126)     | 83 of 923, failed: 6
+[-        ] AddTrackScoreKM3NeT          | 0 of 77
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[f6/f5378d] NOTE: Process `ConvertFilesKM3NeT (126)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (115)
+[ad/9e1a95] ConvertFilesKM3NeT (97)      | 83 of 923, failed: 6
+[-        ] AddTrackScoreKM3NeT          | 0 of 77
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[f6/f5378d] NOTE: Process `ConvertFilesKM3NeT (126)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (115)
+[95/660381] ConvertFilesKM3NeT (113)     | 84 of 923, failed: 6
+[-        ] AddTrackScoreKM3NeT          | 0 of 78
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (116)
+[e0/901c04] ConvertFilesKM3NeT (116)     | 84 of 923, failed: 6
+[-        ] AddTrackScoreKM3NeT          | 0 of 78
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (117)
+[22/387f85] ConvertFilesKM3NeT (108)     | 85 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 78
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[c2/13c9cd] NOTE: Process `ConvertFilesKM3NeT (93)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (118)
+[d1/884fb0] ConvertFilesKM3NeT (121)     | 86 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 79
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (118)
+[d1/884fb0] ConvertFilesKM3NeT (121)     | 86 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 79
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (119)
+[9b/82510c] ConvertFilesKM3NeT (119)     | 87 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 80
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (120)
+[70/6841f5] ConvertFilesKM3NeT (124)     | 88 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 81
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (120)
+[70/6841f5] ConvertFilesKM3NeT (124)     | 88 of 923, failed: 7
+[-        ] AddTrackScoreKM3NeT          | 0 of 81
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (121)
+[9b/b33f74] ConvertFilesKM3NeT (112)     | 89 of 923, failed: 8
+[-        ] AddTrackScoreKM3NeT          | 0 of 81
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[2c/92c2ff] NOTE: Process `ConvertFilesKM3NeT (104)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (121)
+[9b/b33f74] ConvertFilesKM3NeT (112)     | 89 of 923, failed: 8
+[-        ] AddTrackScoreKM3NeT          | 0 of 81
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[2c/92c2ff] NOTE: Process `ConvertFilesKM3NeT (104)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (122)
+[41/da5b5b] ConvertFilesKM3NeT (95)      | 90 of 923, failed: 8
+[-        ] AddTrackScoreKM3NeT          | 0 of 82
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (122)
+[41/da5b5b] ConvertFilesKM3NeT (95)      | 90 of 923, failed: 8
+[-        ] AddTrackScoreKM3NeT          | 0 of 82
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (123)
+[1d/11f0d5] ConvertFilesKM3NeT (125)     | 91 of 923, failed: 9
+[-        ] AddTrackScoreKM3NeT          | 0 of 82
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[08/56c2fc] NOTE: Process `ConvertFilesKM3NeT (87)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (124)
+[01/28688b] ConvertFilesKM3NeT (122)     | 92 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 82
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[08/56c2fc] NOTE: Process `ConvertFilesKM3NeT (87)` terminated with an error exit status (137) -- Error is ignored
+[e6/9cb803] NOTE: Process `ConvertFilesKM3NeT (106)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (125)
+[49/4bf63c] ConvertFilesKM3NeT (78)      | 93 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 83
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (125)
+[49/4bf63c] ConvertFilesKM3NeT (78)      | 93 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 83
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (126)
+[c2/57e238] ConvertFilesKM3NeT (100)     | 94 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 84
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (127)
+[64/b69c28] ConvertFilesKM3NeT (123)     | 95 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 85
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (127)
+[82/89421a] ConvertFilesKM3NeT (79)      | 96 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 85
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (128)
+[97/b4f4fb] ConvertFilesKM3NeT (132)     | 96 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 86
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (129)
+[66/f8a9c8] ConvertFilesKM3NeT (136)     | 97 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 87
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (129)
+[7b/3a6921] ConvertFilesKM3NeT (84)      | 98 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 88
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (130)
+[c5/201de0] ConvertFilesKM3NeT (157)     | 98 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 88
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (131)
+[81/6f272e] ConvertFilesKM3NeT (130)     | 99 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 89
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (132)
+[b0/f454f5] ConvertFilesKM3NeT (129)     | 100 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 90
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (133)
+[38/bc3c08] ConvertFilesKM3NeT (139)     | 101 of 923, failed: 10
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (134)
+[64/41c591] ConvertFilesKM3NeT (140)     | 102 of 923, failed: 11
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[27/e301d3] NOTE: Process `ConvertFilesKM3NeT (127)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (134)
+[64/41c591] ConvertFilesKM3NeT (140)     | 102 of 923, failed: 11
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[27/e301d3] NOTE: Process `ConvertFilesKM3NeT (127)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (135)
+[9b/5cf8e0] ConvertFilesKM3NeT (135)     | 103 of 923, failed: 12
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[1d/11f0d5] NOTE: Process `ConvertFilesKM3NeT (125)` terminated with an error exit status (137) -- Error is ignored
+
+
+executor >  local (136)
+[f1/bec217] ConvertFilesKM3NeT (137)     | 104 of 923, failed: 13
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[1d/11f0d5] NOTE: Process `ConvertFilesKM3NeT (125)` terminated with an error exit status (137) -- Error is ignored
+[41/623546] NOTE: Process `ConvertFilesKM3NeT (85)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (137)
+[7c/a5eb2d] ConvertFilesKM3NeT (143)     | 105 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 91
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[1d/11f0d5] NOTE: Process `ConvertFilesKM3NeT (125)` terminated with an error exit status (137) -- Error is ignored
+[41/623546] NOTE: Process `ConvertFilesKM3NeT (85)` terminated with an error exit status (137) -- Error is ignored
+[38/bc3c08] NOTE: Process `ConvertFilesKM3NeT (139)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (138)
+[ec/bab7fc] ConvertFilesKM3NeT (105)     | 106 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 92
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+
+executor >  local (139)
+[e0/901c04] ConvertFilesKM3NeT (116)     | 107 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 93
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+
+executor >  local (140)
+[36/89a376] ConvertFilesKM3NeT (163)     | 108 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 94
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (141)
+[8a/cfeab5] ConvertFilesKM3NeT (164)     | 109 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 95
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (142)
+[cd/929fb6] ConvertFilesKM3NeT (138)     | 110 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 96
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (142)
+[cd/929fb6] ConvertFilesKM3NeT (138)     | 110 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 96
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (143)
+[cb/bed19b] ConvertFilesKM3NeT (167)     | 111 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 97
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (143)
+[cb/bed19b] ConvertFilesKM3NeT (167)     | 111 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 97
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (144)
+[d3/cdc140] ConvertFilesKM3NeT (168)     | 112 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 98
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (144)
+[d3/cdc140] ConvertFilesKM3NeT (168)     | 112 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 98
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (145)
+[bd/639fe0] ConvertFilesKM3NeT (134)     | 113 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 99
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (145)
+[bd/639fe0] ConvertFilesKM3NeT (134)     | 113 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 99
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (146)
+[4f/92d781] ConvertFilesKM3NeT (128)     | 114 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 100
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (146)
+[4f/92d781] ConvertFilesKM3NeT (128)     | 114 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 100
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (147)
+[6b/806179] ConvertFilesKM3NeT (142)     | 115 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 101
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (148)
+[7f/39f789] ConvertFilesKM3NeT (144)     | 116 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 102
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (149)
+[1c/14ffcf] ConvertFilesKM3NeT (145)     | 117 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 103
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (150)
+[32/93eed0] ConvertFilesKM3NeT (147)     | 118 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 104
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (150)
+[32/93eed0] ConvertFilesKM3NeT (147)     | 118 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 104
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (151)
+[04/17a0f0] ConvertFilesKM3NeT (146)     | 119 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 105
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (151)
+[04/17a0f0] ConvertFilesKM3NeT (146)     | 119 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 105
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (152)
+[f7/14fba3] ConvertFilesKM3NeT (148)     | 120 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 106
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (153)
+[ab/b09c35] ConvertFilesKM3NeT (131)     | 121 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 107
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (153)
+[ab/b09c35] ConvertFilesKM3NeT (131)     | 121 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 107
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (154)
+[01/c002da] ConvertFilesKM3NeT (149)     | 122 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 108
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (155)
+[2e/56b11f] ConvertFilesKM3NeT (150)     | 123 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 109
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (155)
+[2e/56b11f] ConvertFilesKM3NeT (150)     | 123 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 109
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (155)
+[66/3cdafa] ConvertFilesKM3NeT (101)     | 124 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 109
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (156)
+[12/ffc8e6] ConvertFilesKM3NeT (151)     | 124 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 110
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (157)
+[c7/cb25b4] ConvertFilesKM3NeT (152)     | 125 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 111
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (157)
+[c7/cb25b4] ConvertFilesKM3NeT (152)     | 125 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 111
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (158)
+[24/a5647c] ConvertFilesKM3NeT (153)     | 126 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 112
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (159)
+[cd/929fb6] ConvertFilesKM3NeT (138)     | 127 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 113
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (159)
+[cd/929fb6] ConvertFilesKM3NeT (138)     | 127 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 113
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (160)
+[70/6841f5] ConvertFilesKM3NeT (124)     | 128 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 114
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (161)
+[20/4fb8e2] ConvertFilesKM3NeT (161)     | 129 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 115
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (161)
+[20/4fb8e2] ConvertFilesKM3NeT (161)     | 129 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 115
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (162)
+[11/421d8d] ConvertFilesKM3NeT (166)     | 130 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 116
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (163)
+[72/fcb49e] ConvertFilesKM3NeT (171)     | 131 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 117
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (164)
+[c6/af1615] ConvertFilesKM3NeT (169)     | 132 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 118
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (164)
+[c6/af1615] ConvertFilesKM3NeT (169)     | 132 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 118
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (164)
+[41/da5b5b] ConvertFilesKM3NeT (95)      | 133 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 118
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (165)
+[96/2f665f] ConvertFilesKM3NeT (162)     | 133 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 119
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (166)
+[39/cd80eb] ConvertFilesKM3NeT (102)     | 134 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 120
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (166)
+[39/cd80eb] ConvertFilesKM3NeT (102)     | 134 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 120
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (167)
+[ae/b72eae] ConvertFilesKM3NeT (165)     | 135 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 121
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (168)
+[68/65e4b3] ConvertFilesKM3NeT (155)     | 136 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 122
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (168)
+[68/65e4b3] ConvertFilesKM3NeT (155)     | 136 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 122
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (169)
+[d1/8df83b] ConvertFilesKM3NeT (156)     | 137 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 123
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (169)
+[d1/8df83b] ConvertFilesKM3NeT (156)     | 137 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 123
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (170)
+[1b/7e59a4] ConvertFilesKM3NeT (154)     | 138 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 124
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (170)
+[1b/7e59a4] ConvertFilesKM3NeT (154)     | 138 of 923, failed: 14
+[-        ] AddTrackScoreKM3NeT          | 0 of 124
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (171)
+[2c/0b79b8] ConvertFilesKM3NeT (173)     | 139 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 124
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[cb/bed19b] NOTE: Process `ConvertFilesKM3NeT (167)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (172)
+[d7/625cee] ConvertFilesKM3NeT (170)     | 140 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 125
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (172)
+[d7/625cee] ConvertFilesKM3NeT (170)     | 140 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 125
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (173)
+[24/a5647c] ConvertFilesKM3NeT (153)     | 141 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 126
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (173)
+[24/a5647c] ConvertFilesKM3NeT (153)     | 141 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 126
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (174)
+[90/9fc0e3] ConvertFilesKM3NeT (176)     | 142 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 127
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (175)
+[1c/14ffcf] ConvertFilesKM3NeT (145)     | 143 of 923, failed: 15
+[-        ] AddTrackScoreKM3NeT          | 0 of 128
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (176)
+[01/58b781] ConvertFilesKM3NeT (180)     | 144 of 923, failed: 16
+[-        ] AddTrackScoreKM3NeT          | 0 of 128
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[d1/8df83b] NOTE: Process `ConvertFilesKM3NeT (156)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (176)
+[01/58b781] ConvertFilesKM3NeT (180)     | 144 of 923, failed: 16
+[-        ] AddTrackScoreKM3NeT          | 0 of 128
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[d1/8df83b] NOTE: Process `ConvertFilesKM3NeT (156)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (177)
+[6b/806179] ConvertFilesKM3NeT (142)     | 145 of 923, failed: 16
+[-        ] AddTrackScoreKM3NeT          | 0 of 129
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (178)
+[93/1e86c0] ConvertFilesKM3NeT (175)     | 146 of 923, failed: 17
+[-        ] AddTrackScoreKM3NeT          | 0 of 129
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[f7/14fba3] NOTE: Process `ConvertFilesKM3NeT (148)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (179)
+[56/bde4b5] ConvertFilesKM3NeT (177)     | 147 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 129
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[f7/14fba3] NOTE: Process `ConvertFilesKM3NeT (148)` terminated with an error exit status (137) -- Error is ignored
+[a0/d41cb6] NOTE: Process `ConvertFilesKM3NeT (182)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (179)
+[4f/92d781] ConvertFilesKM3NeT (128)     | 148 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 129
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (180)
+[45/164c8f] ConvertFilesKM3NeT (183)     | 148 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 130
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (181)
+[3c/f986ce] ConvertFilesKM3NeT (179)     | 149 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 131
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (182)
+[a3/6b5f8b] ConvertFilesKM3NeT (184)     | 150 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 132
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (183)
+[96/68f89b] ConvertFilesKM3NeT (185)     | 151 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 133
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (184)
+[07/bc40e7] ConvertFilesKM3NeT (187)     | 152 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 134
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (185)
+[b1/1f33bc] ConvertFilesKM3NeT (186)     | 153 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 135
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (185)
+[b1/1f33bc] ConvertFilesKM3NeT (186)     | 153 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 135
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (186)
+[d1/66d59c] ConvertFilesKM3NeT (174)     | 154 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 136
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (187)
+[81/1d86cb] ConvertFilesKM3NeT (213)     | 155 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 137
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (187)
+[81/1d86cb] ConvertFilesKM3NeT (213)     | 155 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 137
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (187)
+[9b/5cf8e0] ConvertFilesKM3NeT (135)     | 156 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 138
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (188)
+[3b/928564] ConvertFilesKM3NeT (211)     | 156 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 138
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (189)
+[9f/f6eefc] ConvertFilesKM3NeT (214)     | 157 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 139
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (190)
+[0b/ca2b08] ConvertFilesKM3NeT (189)     | 158 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 140
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (191)
+[88/233cd8] ConvertFilesKM3NeT (190)     | 159 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 141
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (192)
+[34/a62437] ConvertFilesKM3NeT (194)     | 160 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 142
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (192)
+[34/a62437] ConvertFilesKM3NeT (194)     | 160 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 142
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (193)
+[5a/5fc6ab] ConvertFilesKM3NeT (193)     | 161 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 143
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (193)
+[5a/5fc6ab] ConvertFilesKM3NeT (193)     | 161 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 143
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (194)
+[2d/97f8d5] ConvertFilesKM3NeT (196)     | 162 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 144
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (194)
+[c6/af1615] ConvertFilesKM3NeT (169)     | 163 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 144
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (195)
+[f0/267113] ConvertFilesKM3NeT (192)     | 163 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 145
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (196)
+[62/732058] ConvertFilesKM3NeT (191)     | 164 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 146
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (196)
+[62/732058] ConvertFilesKM3NeT (191)     | 164 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 146
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (197)
+[7f/3d47de] ConvertFilesKM3NeT (199)     | 165 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 147
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (198)
+[a3/b13a71] ConvertFilesKM3NeT (201)     | 166 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 148
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (199)
+[bd/639fe0] ConvertFilesKM3NeT (134)     | 167 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 149
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (199)
+[bd/639fe0] ConvertFilesKM3NeT (134)     | 167 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 149
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (200)
+[08/f5acdb] ConvertFilesKM3NeT (204)     | 168 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 150
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (200)
+[08/f5acdb] ConvertFilesKM3NeT (204)     | 168 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 150
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (201)
+[9f/af6b8b] ConvertFilesKM3NeT (206)     | 169 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 151
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (201)
+[9f/af6b8b] ConvertFilesKM3NeT (206)     | 169 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 151
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (202)
+[b2/b37349] ConvertFilesKM3NeT (188)     | 170 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 152
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (203)
+[2a/61e85d] ConvertFilesKM3NeT (197)     | 171 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 153
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (204)
+[17/fb4f53] ConvertFilesKM3NeT (198)     | 172 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 154
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (204)
+[17/fb4f53] ConvertFilesKM3NeT (198)     | 172 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 154
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (205)
+[77/302961] ConvertFilesKM3NeT (181)     | 173 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 155
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (205)
+[77/302961] ConvertFilesKM3NeT (181)     | 173 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 155
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (206)
+[cf/0ff9cb] ConvertFilesKM3NeT (207)     | 174 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 156
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (207)
+[e9/182466] ConvertFilesKM3NeT (205)     | 175 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 157
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (208)
+[00/29687c] ConvertFilesKM3NeT (195)     | 176 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 158
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (208)
+[00/29687c] ConvertFilesKM3NeT (195)     | 176 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 158
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (209)
+[28/286662] ConvertFilesKM3NeT (209)     | 177 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 159
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (209)
+[28/286662] ConvertFilesKM3NeT (209)     | 177 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 159
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (210)
+[c4/fd5eb6] ConvertFilesKM3NeT (282)     | 178 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 160
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (211)
+[e1/0a0adb] ConvertFilesKM3NeT (202)     | 179 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (211)
+[e1/0a0adb] ConvertFilesKM3NeT (202)     | 179 of 923, failed: 18
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (211)
+[81/1d86cb] ConvertFilesKM3NeT (213)     | 180 of 923, failed: 19
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[81/1d86cb] NOTE: Process `ConvertFilesKM3NeT (213)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (212)
+[3b/702aab] ConvertFilesKM3NeT (208)     | 180 of 923, failed: 19
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[81/1d86cb] NOTE: Process `ConvertFilesKM3NeT (213)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (214)
+[e6/64c913] ConvertFilesKM3NeT (212)     | 182 of 923, failed: 21
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[81/1d86cb] NOTE: Process `ConvertFilesKM3NeT (213)` terminated with an error exit status (137) -- Error is ignored
+[9f/f6eefc] NOTE: Process `ConvertFilesKM3NeT (214)` terminated with an error exit status (137) -- Error is ignored
+[28/286662] NOTE: Process `ConvertFilesKM3NeT (209)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (214)
+[e6/64c913] ConvertFilesKM3NeT (212)     | 182 of 923, failed: 21
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[81/1d86cb] NOTE: Process `ConvertFilesKM3NeT (213)` terminated with an error exit status (137) -- Error is ignored
+[9f/f6eefc] NOTE: Process `ConvertFilesKM3NeT (214)` terminated with an error exit status (137) -- Error is ignored
+[28/286662] NOTE: Process `ConvertFilesKM3NeT (209)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (215)
+[b9/0d3737] ConvertFilesKM3NeT (216)     | 183 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[17/fb4f53] NOTE: Process `ConvertFilesKM3NeT (198)` terminated with an error exit status (137) -- Error is ignored
+
+
+
+
+executor >  local (215)
+[b9/0d3737] ConvertFilesKM3NeT (216)     | 183 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[17/fb4f53] NOTE: Process `ConvertFilesKM3NeT (198)` terminated with an error exit status (137) -- Error is ignored
+
+
+
+
+executor >  local (216)
+[4d/5e1466] ConvertFilesKM3NeT (217)     | 183 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 161
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (216)
+[3c/f986ce] ConvertFilesKM3NeT (179)     | 184 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 162
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (217)
+[6d/f5fb35] ConvertFilesKM3NeT (215)     | 185 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 163
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (218)
+[66/684453] ConvertFilesKM3NeT (223)     | 186 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 164
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (218)
+[66/684453] ConvertFilesKM3NeT (223)     | 186 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 164
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (219)
+[46/5e77ac] ConvertFilesKM3NeT (222)     | 187 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 165
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (219)
+[3b/928564] ConvertFilesKM3NeT (211)     | 188 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 166
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (220)
+[05/c20474] ConvertFilesKM3NeT (221)     | 188 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 166
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (221)
+[da/e70191] ConvertFilesKM3NeT (219)     | 189 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 167
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (222)
+[5c/bf2534] ConvertFilesKM3NeT (200)     | 190 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 168
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (222)
+[5c/bf2534] ConvertFilesKM3NeT (200)     | 190 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 168
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (223)
+[dd/7abda4] ConvertFilesKM3NeT (225)     | 191 of 923, failed: 22
+[-        ] AddTrackScoreKM3NeT          | 0 of 169
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (224)
+[c5/3edcb0] ConvertFilesKM3NeT (228)     | 192 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 169
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[4d/5e1466] NOTE: Process `ConvertFilesKM3NeT (217)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (225)
+[2c/5b060d] ConvertFilesKM3NeT (227)     | 193 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 170
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (225)
+[88/233cd8] ConvertFilesKM3NeT (190)     | 194 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 171
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (226)
+[b1/945ed9] ConvertFilesKM3NeT (226)     | 194 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 171
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (227)
+[2d/97f8d5] ConvertFilesKM3NeT (196)     | 195 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 172
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (228)
+[f0/267113] ConvertFilesKM3NeT (192)     | 196 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 173
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (229)
+[23/dda873] ConvertFilesKM3NeT (233)     | 197 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 174
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (229)
+[23/dda873] ConvertFilesKM3NeT (233)     | 197 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 174
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (230)
+[7f/3d47de] ConvertFilesKM3NeT (199)     | 198 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 175
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (231)
+[d1/bb75e7] ConvertFilesKM3NeT (224)     | 199 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 176
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (231)
+[d1/bb75e7] ConvertFilesKM3NeT (224)     | 199 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 176
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (232)
+[e9/9c86e0] ConvertFilesKM3NeT (229)     | 200 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 177
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (233)
+[5a/5fc6ab] ConvertFilesKM3NeT (193)     | 201 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 177
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (233)
+[5a/5fc6ab] ConvertFilesKM3NeT (193)     | 201 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 178
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (234)
+[9b/142aa8] ConvertFilesKM3NeT (234)     | 202 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 179
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (234)
+[9b/142aa8] ConvertFilesKM3NeT (234)     | 202 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 179
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (235)
+[8f/124052] ConvertFilesKM3NeT (251)     | 203 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 180
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (236)
+[08/f5acdb] ConvertFilesKM3NeT (204)     | 204 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 181
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (237)
+[2a/61e85d] ConvertFilesKM3NeT (197)     | 205 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 182
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (238)
+[14/439912] ConvertFilesKM3NeT (244)     | 205 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 182
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (238)
+[cf/0ff9cb] ConvertFilesKM3NeT (207)     | 206 of 923, failed: 23
+[-        ] AddTrackScoreKM3NeT          | 0 of 183
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (239)
+[58/0de35d] ConvertFilesKM3NeT (255)     | 207 of 923, failed: 24
+[-        ] AddTrackScoreKM3NeT          | 0 of 183
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[e6/64c913] NOTE: Process `ConvertFilesKM3NeT (212)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (239)
+[58/0de35d] ConvertFilesKM3NeT (255)     | 207 of 923, failed: 24
+[-        ] AddTrackScoreKM3NeT          | 0 of 183
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[e6/64c913] NOTE: Process `ConvertFilesKM3NeT (212)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (240)
+[a9/406b72] ConvertFilesKM3NeT (257)     | 208 of 923, failed: 25
+[-        ] AddTrackScoreKM3NeT          | 0 of 183
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[e6/64c913] NOTE: Process `ConvertFilesKM3NeT (212)` terminated with an error exit status (137) -- Error is ignored
+[e9/9c86e0] NOTE: Process `ConvertFilesKM3NeT (229)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (241)
+[73/1e95d7] ConvertFilesKM3NeT (236)     | 209 of 923, failed: 25
+[-        ] AddTrackScoreKM3NeT          | 0 of 184
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (241)
+[73/1e95d7] ConvertFilesKM3NeT (236)     | 209 of 923, failed: 25
+[-        ] AddTrackScoreKM3NeT          | 0 of 184
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+
+executor >  local (242)
+[e1/0a0adb] ConvertFilesKM3NeT (202)     | 210 of 923, failed: 25
+[-        ] AddTrackScoreKM3NeT          | 0 of 185
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (243)
+[67/56f14c] ConvertFilesKM3NeT (220)     | 211 of 923, failed: 25
+[-        ] AddTrackScoreKM3NeT          | 0 of 186
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (244)
+[60/cea765] ConvertFilesKM3NeT (239)     | 212 of 923, failed: 26
+[-        ] AddTrackScoreKM3NeT          | 0 of 186
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[dd/7abda4] NOTE: Process `ConvertFilesKM3NeT (225)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (244)
+[60/cea765] ConvertFilesKM3NeT (239)     | 212 of 923, failed: 26
+[-        ] AddTrackScoreKM3NeT          | 0 of 186
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[dd/7abda4] NOTE: Process `ConvertFilesKM3NeT (225)` terminated with an error exit status (137) -- Error is ignored
+
+executor >  local (245)
+[b2/b37349] ConvertFilesKM3NeT (188)     | 213 of 923, failed: 26
+[-        ] AddTrackScoreKM3NeT          | 0 of 187
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (246)
+[00/29687c] ConvertFilesKM3NeT (195)     | 214 of 923, failed: 26
+[-        ] AddTrackScoreKM3NeT          | 0 of 188
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+
+executor >  local (246)
+[00/29687c] ConvertFilesKM3NeT (195)     | 214 of 923, failed: 26
+[-        ] AddTrackScoreKM3NeT          | 0 of 188
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+
+executor >  local (247)
+[ed/4d89b3] ConvertFilesKM3NeT (242)     | 215 of 923, failed: 27
+[-        ] AddTrackScoreKM3NeT          | 0 of 188
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[b9/0d3737] NOTE: Process `ConvertFilesKM3NeT (216)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (247)
+[3b/702aab] ConvertFilesKM3NeT (208)     | 216 of 923, failed: 28
+[-        ] AddTrackScoreKM3NeT          | 0 of 188
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+[3b/702aab] NOTE: Process `ConvertFilesKM3NeT (208)` terminated with an error exit status (1) -- Error is ignored
+
+ERROR ~ Error executing process > 'ConvertFilesKM3NeT (249)'
+
+Caused by:
+  Disk quota exceeded
+
+
+
+ -- Check '.nextflow.log' file for details
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti.nf -profile woody_hannes_container_analysis --filestype data_orca --add_trackscore False -with-report
+
+executor >  local (247)
+[01/547157] ConvertFilesKM3NeT (249)     | 217 of 923, failed: 29
+[-        ] AddTrackScoreKM3NeT          | 0 of 188
+[-        ] CreateFullSkyEventList       -
+[-        ] CombineEventListsRunsFullSky -
+[-        ] FindGTIsKM3NeTCombined       -
+Oops... something went wrong
+[3b/702aab] NOTE: Process `ConvertFilesKM3NeT (208)` terminated with an error exit status (1) -- Error is ignored
+ERROR ~ Error executing process > 'ConvertFilesKM3NeT (249)'
+
+Caused by:
+  Disk quota exceeded
+
+
+
+ -- Check '.nextflow.log' file for details
+WARN: Killing running tasks (31)
+WARN: Failed to render execution report -- see the log file for details
+WARN: Can't update history file: .nextflow/history
+
+slurmstepd: error: Detected 26 oom_kill events in StepId=8815342.batch. Some of the step tasks have been OOM Killed.
+=== JOB_STATISTICS ===
+=== current date     : Mon Aug  4 22:13:20 CEST 2025
+= Job-ID             : 8815342 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 08:42:17
+= Total RAM usage    : 121.6 GiB of requested  GiB (%)   
+= Node list          : w2211
+= Subm/Elig/Start/End: 2025-08-04T13:12:05 / 2025-08-04T13:12:05 / 2025-08-04T13:31:02 / 2025-08-04T22:13:19
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+!!! /home/hpc             209.2G   104.9G   209.7G  -29404days     205K     500K   1,000K        N/A !!!
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

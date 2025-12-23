@@ -72,6 +72,16 @@ workflow{
         ConvertFilesKM3NeT(ORCA_Files_Channel)
         AddTrackScoreKM3NeT(ConvertFilesKM3NeT.out, input.parampid_folder)
         eventlist_input_data_orca = AddTrackScoreKM3NeT.out
+    } else if (input.filestype == 'data_arca') {
+        Channel
+            .fromPath("/home/hpc/capn/capn107h/software/psr/workflows/km3net/data_files_arca_v9_backup.txt")
+            .splitText(by: 1)
+            .combine(Channel.of('arca'))
+            .set { ARCA_Files_Channel }
+
+        //ConvertFilesKM3NeT(ORCA_Files_Channel)
+        AddTrackScoreKM3NeT(ARCA_Files_Channel, input.parampid_folder)
+        eventlist_input_data_orca = AddTrackScoreKM3NeT.out
     } else {
         error "Unsupported input.filestype: ${input.filestype}"
     }
@@ -161,7 +171,7 @@ workflow{
     input.muonscore_threshold_orca,
     'True',
     )
-    
+        
     CombineEventListsRunsFullSky(CreateFullSkyEventList.out.groupTuple(by: 1),input.source_file, input.delta_search_min, input.filestype)
     if (input.plot_all == 'True') {
         PlotSkyMapsKM3NeTFullSky(CombineEventListsRunsFullSky.out.combined_file, input.source_file, "combined_eventlists", input.delta_search_min, 120)
@@ -173,6 +183,28 @@ workflow{
         .set{ CombinedEventlistsOutput}
     // CombinedEventlistsOutput.view()
     FindGTIsKM3NeTCombined(CombinedEventlistsOutput,600)
+
+    CreateSelectedEventList(
+    eventlist_input,
+    //AddTrackScoreKM3NeT.out,
+    input.source_file,
+    input.delta_search_min,
+    input.ar_shower_file_arca,
+    input.ar_track_file_arca,
+    input.ar_shower_file_orca,
+    input.ar_track_file_orca,
+    input.energy_low_arca,
+    input.energy_high_arca,
+    input.energy_low_orca,
+    input.energy_high_orca,
+    input.energy_threshold_arca,
+    input.trackscore_threshold_arca,
+    input.muonscore_threshold_arca,
+    input.energy_threshold_orca,
+    input.trackscore_threshold_orca,
+    input.muonscore_threshold_orca,
+    input.cone_all,
+    )
     
 
 

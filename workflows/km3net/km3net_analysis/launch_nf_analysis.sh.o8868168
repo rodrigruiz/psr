@@ -1,0 +1,4934 @@
+### Starting TaskPrologue of job 8868168 on w2317 at Thu Aug 14 03:28:52 CEST 2025
+#   SLURM_JOB_NODELIST=w2317
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_analysis_workflow_creategti_selected.nf` [kickass_liskov] DSL2 - revision: ef9da27f32
+
+WARN: Access to undefined parameter `source_file` -- Initialise it to a default value eg. `params.source_file = some_value`
+WARN: Access to undefined parameter `cone_all` -- Initialise it to a default value eg. `params.cone_all = some_value`
+WARN: Access to undefined parameter `convert` -- Initialise it to a default value eg. `params.convert = some_value`
+[-        ] CreateSelectedEventList       -
+[-        ] CombineEventListsRunsSelected -
+
+[-        ] CreateSelectedEventList       | 0 of 22
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (4)
+[7b/d824c9] CreateSelectedEventList (18)  | 0 of 52
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (8)
+[44/31fc80] CreateSelectedEventList (21)  | 0 of 98
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (11)
+[94/299df3] CreateSelectedEventList (23)  | 0 of 138
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (15)
+[2e/f408a4] CreateSelectedEventList (5)   | 0 of 184
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (19)
+[77/54f351] CreateSelectedEventList (27)  | 0 of 237
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (24)
+[77/f4dab5] CreateSelectedEventList (29)  | 0 of 285
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (27)
+[dd/696667] CreateSelectedEventList (19)  | 0 of 317
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (28)
+[3e/70ad90] CreateSelectedEventList (8)   | 0 of 347
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 397
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 450
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 505
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 557
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 613
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 683
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 735
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 807
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 875
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (32)
+[11/46a407] CreateSelectedEventList (22)  | 0 of 876
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (33)
+[1c/67c875] CreateSelectedEventList (33)  | 0 of 876
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (33)
+[3a/bcf52e] CreateSelectedEventList (1)   | 1 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (34)
+[cb/a98542] CreateSelectedEventList (17)  | 2 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (35)
+[94/299df3] CreateSelectedEventList (23)  | 3 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (35)
+[94/299df3] CreateSelectedEventList (23)  | 3 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (36)
+[f9/d5c741] CreateSelectedEventList (37)  | 4 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (37)
+[c2/a22b36] CreateSelectedEventList (4)   | 5 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (38)
+[fc/eb28bc] CreateSelectedEventList (38)  | 6 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (39)
+[a7/eca16f] CreateSelectedEventList (39)  | 7 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+[3a/bcf52e] NOTE: Process `CreateSelectedEventList (1)` terminated with an error exit status (1) -- Error is ignored
+
+executor >  local (40)
+[6b/a29127] CreateSelectedEventList (3)   | 8 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+
+executor >  local (40)
+[6b/a29127] CreateSelectedEventList (3)   | 8 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+
+executor >  local (40)
+[fc/a9a7fc] CreateSelectedEventList (14)  | 9 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (41)
+[99/64fa68] CreateSelectedEventList (41)  | 9 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (42)
+[52/d4b2cc] CreateSelectedEventList (43)  | 10 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (42)
+[52/d4b2cc] CreateSelectedEventList (43)  | 10 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (43)
+[7a/b9607c] CreateSelectedEventList (44)  | 11 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (44)
+[71/630ee2] CreateSelectedEventList (45)  | 12 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (45)
+[b4/8d9c2a] CreateSelectedEventList (46)  | 13 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (46)
+[82/f3fddb] CreateSelectedEventList (42)  | 14 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (47)
+[6f/62369d] CreateSelectedEventList (47)  | 15 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (48)
+[3a/75ffdd] CreateSelectedEventList (48)  | 16 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (49)
+[59/2570b9] CreateSelectedEventList (50)  | 17 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (49)
+[59/2570b9] CreateSelectedEventList (50)  | 17 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (49)
+[5c/7391a8] CreateSelectedEventList (30)  | 18 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (50)
+[76/95f572] CreateSelectedEventList (49)  | 18 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (51)
+[1c/b070aa] CreateSelectedEventList (53)  | 19 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (52)
+[df/4f86b9] CreateSelectedEventList (9)   | 20 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (53)
+[45/bbb890] CreateSelectedEventList (28)  | 21 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (53)
+[45/bbb890] CreateSelectedEventList (28)  | 21 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (54)
+[8e/789c9b] CreateSelectedEventList (55)  | 22 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (54)
+[1c/67c875] CreateSelectedEventList (33)  | 23 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (55)
+[22/c439ac] CreateSelectedEventList (52)  | 23 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (56)
+[41/17e548] CreateSelectedEventList (57)  | 24 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (56)
+[41/17e548] CreateSelectedEventList (57)  | 24 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (57)
+[b3/d36968] CreateSelectedEventList (79)  | 25 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (58)
+[41/75c353] CreateSelectedEventList (58)  | 26 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (58)
+[41/75c353] CreateSelectedEventList (58)  | 26 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (59)
+[52/06ae24] CreateSelectedEventList (15)  | 27 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (60)
+[c7/3cf6ac] CreateSelectedEventList (59)  | 28 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (61)
+[2b/9e3ee6] CreateSelectedEventList (56)  | 29 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (61)
+[2b/9e3ee6] CreateSelectedEventList (56)  | 29 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (62)
+[1f/75d715] CreateSelectedEventList (61)  | 30 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (63)
+[a1/426c01] CreateSelectedEventList (62)  | 31 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (64)
+[09/f799af] CreateSelectedEventList (64)  | 32 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (64)
+[09/f799af] CreateSelectedEventList (64)  | 32 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (65)
+[be/a25f7b] CreateSelectedEventList (63)  | 33 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (66)
+[21/5cd216] CreateSelectedEventList (66)  | 34 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (67)
+[d0/c77ea5] CreateSelectedEventList (67)  | 35 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (67)
+[d0/c77ea5] CreateSelectedEventList (67)  | 35 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (68)
+[b9/49fc0a] CreateSelectedEventList (65)  | 36 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (69)
+[56/3eab1c] CreateSelectedEventList (68)  | 37 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (70)
+[01/968c74] CreateSelectedEventList (69)  | 38 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (71)
+[2a/15e459] CreateSelectedEventList (76)  | 39 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (72)
+[a6/648ca9] CreateSelectedEventList (71)  | 40 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (72)
+[a6/648ca9] CreateSelectedEventList (71)  | 40 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (73)
+[06/9510cb] CreateSelectedEventList (95)  | 41 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (74)
+[ed/67fad5] CreateSelectedEventList (72)  | 42 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (74)
+[ed/67fad5] CreateSelectedEventList (72)  | 42 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (75)
+[44/ff3ab9] CreateSelectedEventList (73)  | 43 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (75)
+[44/ff3ab9] CreateSelectedEventList (73)  | 43 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (76)
+[74/c4e9ca] CreateSelectedEventList (70)  | 44 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (78)
+[b4/8d9c2a] CreateSelectedEventList (46)  | 46 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (79)
+[22/9ecde6] CreateSelectedEventList (78)  | 47 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (79)
+[22/9ecde6] CreateSelectedEventList (78)  | 47 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (80)
+[9a/22ee25] CreateSelectedEventList (81)  | 48 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (80)
+[9a/22ee25] CreateSelectedEventList (81)  | 48 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (81)
+[c7/3cf6ac] CreateSelectedEventList (59)  | 49 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (81)
+[c7/3cf6ac] CreateSelectedEventList (59)  | 49 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (82)
+[8a/c62e7e] CreateSelectedEventList (85)  | 50 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (83)
+[7a/47ee9b] CreateSelectedEventList (83)  | 51 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (84)
+[7c/714b6d] CreateSelectedEventList (84)  | 52 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (85)
+[11/3f2b96] CreateSelectedEventList (107) | 53 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (85)
+[11/3f2b96] CreateSelectedEventList (107) | 53 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (87)
+[c9/e21dd3] CreateSelectedEventList (77)  | 55 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (87)
+[c9/e21dd3] CreateSelectedEventList (77)  | 55 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (88)
+[1c/b070aa] CreateSelectedEventList (53)  | 56 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (88)
+[1c/b070aa] CreateSelectedEventList (53)  | 56 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (89)
+[bd/6f1d7e] CreateSelectedEventList (86)  | 57 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (89)
+[bd/6f1d7e] CreateSelectedEventList (86)  | 57 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (90)
+[96/b4be75] CreateSelectedEventList (82)  | 58 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (90)
+[96/b4be75] CreateSelectedEventList (82)  | 58 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (91)
+[01/968c74] CreateSelectedEventList (69)  | 59 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (92)
+[da/212e4a] CreateSelectedEventList (92)  | 60 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (93)
+[29/07ba4a] CreateSelectedEventList (91)  | 61 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (94)
+[e8/b839a6] CreateSelectedEventList (96)  | 62 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (95)
+[74/73a30d] CreateSelectedEventList (89)  | 63 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (96)
+[02/5e16ad] CreateSelectedEventList (99)  | 64 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (97)
+[db/e7eec3] CreateSelectedEventList (98)  | 65 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (97)
+[db/e7eec3] CreateSelectedEventList (98)  | 65 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (98)
+[27/2bb47f] CreateSelectedEventList (97)  | 66 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (99)
+[16/614ed6] CreateSelectedEventList (101) | 67 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (99)
+[16/614ed6] CreateSelectedEventList (101) | 67 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (100)
+[f7/07cc69] CreateSelectedEventList (90)  | 68 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (101)
+[e0/8d95dc] CreateSelectedEventList (94)  | 69 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (101)
+[e0/8d95dc] CreateSelectedEventList (94)  | 69 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (102)
+[a7/8855e7] CreateSelectedEventList (102) | 70 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (102)
+[a7/8855e7] CreateSelectedEventList (102) | 70 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (103)
+[83/24ab3f] CreateSelectedEventList (100) | 71 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (104)
+[c9/e21dd3] CreateSelectedEventList (77)  | 72 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (105)
+[f9/0ca1ae] CreateSelectedEventList (104) | 73 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (106)
+[af/d31a2f] CreateSelectedEventList (103) | 74 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (107)
+[af/585097] CreateSelectedEventList (108) | 75 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (108)
+[60/40746f] CreateSelectedEventList (110) | 76 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (109)
+[94/116f5f] CreateSelectedEventList (106) | 77 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (110)
+[78/f01e46] CreateSelectedEventList (112) | 78 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (110)
+[78/f01e46] CreateSelectedEventList (112) | 78 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (111)
+[2d/845856] CreateSelectedEventList (74)  | 79 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (111)
+[2d/845856] CreateSelectedEventList (74)  | 79 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (112)
+[61/0ff58d] CreateSelectedEventList (116) | 80 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (113)
+[fb/29efcd] CreateSelectedEventList (117) | 81 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (114)
+[fb/620956] CreateSelectedEventList (115) | 82 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (114)
+[fb/620956] CreateSelectedEventList (115) | 82 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (115)
+[31/b2de25] CreateSelectedEventList (114) | 83 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (115)
+[31/b2de25] CreateSelectedEventList (114) | 83 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (116)
+[aa/342704] CreateSelectedEventList (119) | 84 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (117)
+[4f/6af867] CreateSelectedEventList (113) | 85 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (117)
+[4f/6af867] CreateSelectedEventList (113) | 85 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (118)
+[b5/358061] CreateSelectedEventList (111) | 86 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (119)
+[df/7f1aa8] CreateSelectedEventList (125) | 87 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (119)
+[df/7f1aa8] CreateSelectedEventList (125) | 87 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (120)
+[44/325640] CreateSelectedEventList (120) | 88 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (121)
+[aa/8fd265] CreateSelectedEventList (123) | 89 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (121)
+[aa/8fd265] CreateSelectedEventList (123) | 89 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (122)
+[e6/87c9b6] CreateSelectedEventList (121) | 90 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (123)
+[65/2d8710] CreateSelectedEventList (118) | 91 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (123)
+[65/2d8710] CreateSelectedEventList (118) | 91 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (124)
+[2a/e3d93b] CreateSelectedEventList (145) | 92 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (124)
+[2a/e3d93b] CreateSelectedEventList (145) | 92 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (125)
+[8f/4877af] CreateSelectedEventList (122) | 93 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (126)
+[0e/1def05] CreateSelectedEventList (127) | 94 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (126)
+[0e/1def05] CreateSelectedEventList (127) | 94 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (127)
+[95/36746a] CreateSelectedEventList (124) | 95 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (128)
+[b8/9f3b35] CreateSelectedEventList (126) | 96 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (128)
+[b8/9f3b35] CreateSelectedEventList (126) | 96 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (129)
+[92/d1ee51] CreateSelectedEventList (140) | 97 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (129)
+[92/d1ee51] CreateSelectedEventList (140) | 97 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (130)
+[50/776aed] CreateSelectedEventList (133) | 98 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (131)
+[29/ac9495] CreateSelectedEventList (138) | 99 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (131)
+[29/ac9495] CreateSelectedEventList (138) | 99 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (132)
+[32/fc64bf] CreateSelectedEventList (135) | 100 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (132)
+[32/fc64bf] CreateSelectedEventList (135) | 100 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (132)
+[02/5e16ad] CreateSelectedEventList (99)  | 101 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (134)
+[29/07ba4a] CreateSelectedEventList (91)  | 102 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (134)
+[29/07ba4a] CreateSelectedEventList (91)  | 102 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (135)
+[ca/92d3f5] CreateSelectedEventList (139) | 103 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (136)
+[e8/75be2d] CreateSelectedEventList (128) | 104 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (136)
+[e8/75be2d] CreateSelectedEventList (128) | 104 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (137)
+[81/ec7bd2] CreateSelectedEventList (141) | 105 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (137)
+[81/ec7bd2] CreateSelectedEventList (141) | 105 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (138)
+[76/cadaa7] CreateSelectedEventList (136) | 106 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (139)
+[ee/914df9] CreateSelectedEventList (142) | 107 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (139)
+[ee/914df9] CreateSelectedEventList (142) | 107 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (140)
+[9c/1aa62d] CreateSelectedEventList (134) | 108 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (140)
+[9c/1aa62d] CreateSelectedEventList (134) | 108 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (141)
+[94/67bdc4] CreateSelectedEventList (143) | 109 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (142)
+[f9/25bedb] CreateSelectedEventList (130) | 110 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (142)
+[f9/25bedb] CreateSelectedEventList (130) | 110 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (143)
+[60/40746f] CreateSelectedEventList (110) | 111 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (143)
+[b2/969f17] CreateSelectedEventList (109) | 112 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (144)
+[46/4f9ab0] CreateSelectedEventList (132) | 112 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (144)
+[aa/342704] CreateSelectedEventList (119) | 113 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (145)
+[3f/5bc2d7] CreateSelectedEventList (131) | 113 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (146)
+[cb/8e1abe] CreateSelectedEventList (146) | 114 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (147)
+[25/cefd05] CreateSelectedEventList (147) | 115 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (148)
+[80/42ce1b] CreateSelectedEventList (149) | 116 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (148)
+[80/42ce1b] CreateSelectedEventList (149) | 116 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (149)
+[cb/1fcce3] CreateSelectedEventList (148) | 117 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (150)
+[87/cf06b6] CreateSelectedEventList (151) | 118 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (151)
+[ca/6d4331] CreateSelectedEventList (153) | 119 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (151)
+[ca/6d4331] CreateSelectedEventList (153) | 119 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (152)
+[54/92cd0a] CreateSelectedEventList (150) | 120 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (152)
+[81/ec7bd2] CreateSelectedEventList (141) | 121 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (153)
+[b8/5f283b] CreateSelectedEventList (154) | 121 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (154)
+[12/174917] CreateSelectedEventList (156) | 122 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (154)
+[12/174917] CreateSelectedEventList (156) | 122 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (155)
+[37/f8ca97] CreateSelectedEventList (152) | 123 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (156)
+[5e/8017e1] CreateSelectedEventList (155) | 124 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (156)
+[5e/8017e1] CreateSelectedEventList (155) | 124 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (157)
+[e2/b33bf8] CreateSelectedEventList (159) | 125 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (158)
+[09/013535] CreateSelectedEventList (160) | 126 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (158)
+[09/013535] CreateSelectedEventList (160) | 126 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (159)
+[64/804e95] CreateSelectedEventList (163) | 127 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (160)
+[25/4ca4dd] CreateSelectedEventList (179) | 128 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (161)
+[0e/1def05] CreateSelectedEventList (127) | 129 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (161)
+[0e/1def05] CreateSelectedEventList (127) | 129 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (162)
+[87/445b1e] CreateSelectedEventList (158) | 130 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (163)
+[6e/e99dfc] CreateSelectedEventList (165) | 131 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (163)
+[6e/e99dfc] CreateSelectedEventList (165) | 131 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (164)
+[13/ea357e] CreateSelectedEventList (162) | 132 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (164)
+[13/ea357e] CreateSelectedEventList (162) | 132 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (165)
+[0f/7cfc54] CreateSelectedEventList (161) | 133 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (166)
+[4d/c18328] CreateSelectedEventList (164) | 134 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (167)
+[09/f93656] CreateSelectedEventList (168) | 135 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (168)
+[ce/16f234] CreateSelectedEventList (170) | 136 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (169)
+[11/f4abf6] CreateSelectedEventList (171) | 137 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (170)
+[91/a90578] CreateSelectedEventList (169) | 138 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (172)
+[e8/6fda0d] CreateSelectedEventList (166) | 140 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (172)
+[e8/6fda0d] CreateSelectedEventList (166) | 140 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (173)
+[3e/ad9500] CreateSelectedEventList (176) | 141 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (174)
+[58/1fc98f] CreateSelectedEventList (177) | 142 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (174)
+[58/1fc98f] CreateSelectedEventList (177) | 142 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (175)
+[9a/f90283] CreateSelectedEventList (172) | 143 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (176)
+[f2/edcf21] CreateSelectedEventList (167) | 144 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (177)
+[f0/e71ca4] CreateSelectedEventList (175) | 145 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (178)
+[19/7d270d] CreateSelectedEventList (180) | 146 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (179)
+[d9/cd41ec] CreateSelectedEventList (178) | 147 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (180)
+[f8/f2db58] CreateSelectedEventList (174) | 148 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (181)
+[11/3654c2] CreateSelectedEventList (182) | 149 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (181)
+[11/3654c2] CreateSelectedEventList (182) | 149 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (182)
+[80/e11d24] CreateSelectedEventList (181) | 150 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (183)
+[16/519060] CreateSelectedEventList (184) | 151 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (184)
+[dd/532cfd] CreateSelectedEventList (186) | 152 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (185)
+[d9/cf7bb3] CreateSelectedEventList (185) | 153 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (185)
+[d9/cf7bb3] CreateSelectedEventList (185) | 153 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (186)
+[f3/d965a6] CreateSelectedEventList (188) | 154 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (186)
+[f3/d965a6] CreateSelectedEventList (188) | 154 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (187)
+[25/4ca4dd] CreateSelectedEventList (179) | 155 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (187)
+[cb/1fcce3] CreateSelectedEventList (148) | 156 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (188)
+[d6/1c526d] CreateSelectedEventList (183) | 156 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (189)
+[b4/34bdf3] CreateSelectedEventList (187) | 157 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (189)
+[b4/34bdf3] CreateSelectedEventList (187) | 157 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (190)
+[c0/26a427] CreateSelectedEventList (196) | 158 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (191)
+[b2/cd36de] CreateSelectedEventList (194) | 159 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (192)
+[5f/123aa1] CreateSelectedEventList (191) | 160 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (193)
+[98/6e94a0] CreateSelectedEventList (195) | 161 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (194)
+[7e/00026c] CreateSelectedEventList (189) | 162 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (194)
+[7e/00026c] CreateSelectedEventList (189) | 162 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (195)
+[60/7e15a7] CreateSelectedEventList (190) | 163 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (196)
+[a3/32faec] CreateSelectedEventList (199) | 164 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (196)
+[09/f93656] CreateSelectedEventList (168) | 165 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (197)
+[a7/c6c7b4] CreateSelectedEventList (201) | 165 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (198)
+[bb/d8a5d1] CreateSelectedEventList (193) | 166 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (199)
+[a8/f682ea] CreateSelectedEventList (198) | 167 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (199)
+[a8/f682ea] CreateSelectedEventList (198) | 167 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (200)
+[35/b28814] CreateSelectedEventList (203) | 168 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (201)
+[db/908b0c] CreateSelectedEventList (197) | 169 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (202)
+[61/a619df] CreateSelectedEventList (200) | 170 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (202)
+[61/a619df] CreateSelectedEventList (200) | 170 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (203)
+[3e/ad9500] CreateSelectedEventList (176) | 172 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (205)
+[31/7be116] CreateSelectedEventList (206) | 173 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (206)
+[95/8ae8c0] CreateSelectedEventList (211) | 174 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (207)
+[2d/47fba0] CreateSelectedEventList (207) | 175 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (208)
+[0f/260514] CreateSelectedEventList (212) | 176 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (209)
+[b0/7cd489] CreateSelectedEventList (204) | 177 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (210)
+[67/98d64a] CreateSelectedEventList (210) | 178 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (211)
+[36/29043f] CreateSelectedEventList (219) | 179 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (211)
+[36/29043f] CreateSelectedEventList (219) | 179 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (213)
+[c1/cd8fb6] CreateSelectedEventList (213) | 181 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (213)
+[c1/cd8fb6] CreateSelectedEventList (213) | 181 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (214)
+[2f/cb8726] CreateSelectedEventList (208) | 182 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (215)
+[27/1d759b] CreateSelectedEventList (216) | 183 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (215)
+[27/1d759b] CreateSelectedEventList (216) | 183 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (216)
+[fa/67ab52] CreateSelectedEventList (217) | 184 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (217)
+[db/de8bfa] CreateSelectedEventList (218) | 185 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (217)
+[db/de8bfa] CreateSelectedEventList (218) | 185 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (218)
+[10/942dfc] CreateSelectedEventList (215) | 186 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (219)
+[9c/b09232] CreateSelectedEventList (220) | 187 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (221)
+[8a/727ef7] CreateSelectedEventList (221) | 189 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (221)
+[8a/727ef7] CreateSelectedEventList (221) | 189 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (222)
+[ea/4b575c] CreateSelectedEventList (214) | 190 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (223)
+[7b/12622c] CreateSelectedEventList (229) | 191 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (224)
+[44/84a073] CreateSelectedEventList (231) | 192 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (225)
+[55/b723c4] CreateSelectedEventList (226) | 193 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (225)
+[55/b723c4] CreateSelectedEventList (226) | 193 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (226)
+[3f/399b6a] CreateSelectedEventList (224) | 194 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (227)
+[e6/4c6582] CreateSelectedEventList (232) | 195 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (228)
+[72/6122b6] CreateSelectedEventList (228) | 196 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (229)
+[66/fca089] CreateSelectedEventList (223) | 197 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (230)
+[e2/44a09c] CreateSelectedEventList (234) | 198 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (231)
+[9b/19d56e] CreateSelectedEventList (225) | 199 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (231)
+[9b/19d56e] CreateSelectedEventList (225) | 199 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (232)
+[ec/cf789c] CreateSelectedEventList (227) | 200 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (233)
+[45/8d27d3] CreateSelectedEventList (230) | 201 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (233)
+[45/8d27d3] CreateSelectedEventList (230) | 201 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (234)
+[c5/a86cf4] CreateSelectedEventList (233) | 202 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (234)
+[c5/a86cf4] CreateSelectedEventList (233) | 202 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (235)
+[29/81b250] CreateSelectedEventList (235) | 203 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (236)
+[31/7be116] CreateSelectedEventList (206) | 204 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (237)
+[1e/941a49] CreateSelectedEventList (236) | 205 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (238)
+[00/2c8103] CreateSelectedEventList (240) | 206 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (239)
+[1c/cd09fb] CreateSelectedEventList (239) | 207 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (239)
+[1c/cd09fb] CreateSelectedEventList (239) | 207 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (240)
+[58/7c29f3] CreateSelectedEventList (243) | 208 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (240)
+[58/7c29f3] CreateSelectedEventList (243) | 208 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (241)
+[1f/0a3934] CreateSelectedEventList (238) | 209 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (241)
+[1f/0a3934] CreateSelectedEventList (238) | 209 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (242)
+[67/98d64a] CreateSelectedEventList (210) | 210 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (243)
+[08/2508fe] CreateSelectedEventList (246) | 211 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (244)
+[ad/64345c] CreateSelectedEventList (245) | 212 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (244)
+[ad/64345c] CreateSelectedEventList (245) | 212 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (245)
+[41/60d947] CreateSelectedEventList (244) | 213 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (246)
+[a2/13c173] CreateSelectedEventList (260) | 214 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (246)
+[a2/13c173] CreateSelectedEventList (260) | 214 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (247)
+[cc/8935af] CreateSelectedEventList (249) | 215 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (247)
+[cc/8935af] CreateSelectedEventList (249) | 215 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (248)
+[56/f9d427] CreateSelectedEventList (248) | 216 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (248)
+[56/f9d427] CreateSelectedEventList (248) | 216 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (249)
+[5b/03c844] CreateSelectedEventList (251) | 217 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (249)
+[5b/03c844] CreateSelectedEventList (251) | 217 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (250)
+[a7/4a9875] CreateSelectedEventList (271) | 218 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (251)
+[74/301481] CreateSelectedEventList (247) | 219 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (251)
+[74/301481] CreateSelectedEventList (247) | 219 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (252)
+[50/8e6d15] CreateSelectedEventList (242) | 220 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (253)
+[91/554992] CreateSelectedEventList (252) | 221 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (253)
+[91/554992] CreateSelectedEventList (252) | 221 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (254)
+[57/fc374f] CreateSelectedEventList (250) | 222 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (254)
+[7b/12622c] CreateSelectedEventList (229) | 223 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (256)
+[9a/b000f2] CreateSelectedEventList (254) | 224 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (256)
+[9a/b000f2] CreateSelectedEventList (254) | 224 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (257)
+[01/5f1751] CreateSelectedEventList (256) | 225 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (258)
+[d6/7291ee] CreateSelectedEventList (258) | 226 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (259)
+[5f/4852e0] CreateSelectedEventList (265) | 227 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (260)
+[49/2b883e] CreateSelectedEventList (261) | 228 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (260)
+[49/2b883e] CreateSelectedEventList (261) | 228 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (261)
+[13/044440] CreateSelectedEventList (255) | 229 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (262)
+[47/e2f3f4] CreateSelectedEventList (266) | 230 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (262)
+[47/e2f3f4] CreateSelectedEventList (266) | 230 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (263)
+[ad/a789c3] CreateSelectedEventList (272) | 231 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (263)
+[ad/a789c3] CreateSelectedEventList (272) | 231 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (264)
+[b5/835e64] CreateSelectedEventList (259) | 232 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (265)
+[e8/36b65d] CreateSelectedEventList (275) | 233 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (265)
+[e8/36b65d] CreateSelectedEventList (275) | 233 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (266)
+[16/645dc8] CreateSelectedEventList (273) | 234 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (267)
+[95/da546f] CreateSelectedEventList (264) | 235 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (268)
+[99/bd5935] CreateSelectedEventList (278) | 236 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (269)
+[92/f976ec] CreateSelectedEventList (263) | 237 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (269)
+[92/f976ec] CreateSelectedEventList (263) | 237 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (270)
+[ef/bd89cc] CreateSelectedEventList (257) | 238 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (271)
+[2a/4a9369] CreateSelectedEventList (241) | 239 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (272)
+[f4/68e4c5] CreateSelectedEventList (262) | 240 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (272)
+[f4/68e4c5] CreateSelectedEventList (262) | 240 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (273)
+[2c/704a83] CreateSelectedEventList (268) | 241 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (273)
+[2c/704a83] CreateSelectedEventList (268) | 241 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (274)
+[60/ab8a5c] CreateSelectedEventList (276) | 242 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (274)
+[60/ab8a5c] CreateSelectedEventList (276) | 242 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (275)
+[59/91a10f] CreateSelectedEventList (274) | 243 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (275)
+[59/91a10f] CreateSelectedEventList (274) | 243 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (276)
+[8f/0b7446] CreateSelectedEventList (270) | 244 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (277)
+[58/910e10] CreateSelectedEventList (267) | 245 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (277)
+[58/910e10] CreateSelectedEventList (267) | 245 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (278)
+[bb/f7c055] CreateSelectedEventList (277) | 246 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (278)
+[bb/f7c055] CreateSelectedEventList (277) | 246 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (279)
+[a6/5e2b8c] CreateSelectedEventList (290) | 247 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (280)
+[ac/0a6bc8] CreateSelectedEventList (288) | 248 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (281)
+[8d/96f716] CreateSelectedEventList (293) | 249 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (281)
+[8d/96f716] CreateSelectedEventList (293) | 249 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (282)
+[8a/72a2df] CreateSelectedEventList (291) | 250 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (283)
+[26/89dea3] CreateSelectedEventList (279) | 251 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (284)
+[19/b3ab35] CreateSelectedEventList (285) | 252 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (284)
+[19/b3ab35] CreateSelectedEventList (285) | 252 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (285)
+[a4/ab4833] CreateSelectedEventList (280) | 253 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (286)
+[49/2eb67f] CreateSelectedEventList (281) | 254 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (286)
+[49/2eb67f] CreateSelectedEventList (281) | 254 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (287)
+[29/9d129a] CreateSelectedEventList (284) | 255 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (288)
+[c6/88b468] CreateSelectedEventList (289) | 256 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (289)
+[4f/2a0769] CreateSelectedEventList (283) | 257 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (290)
+[9b/90a822] CreateSelectedEventList (286) | 258 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (291)
+[85/162e5e] CreateSelectedEventList (287) | 259 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (291)
+[85/162e5e] CreateSelectedEventList (287) | 259 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (292)
+[d7/acfaf8] CreateSelectedEventList (282) | 260 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (293)
+[e2/538d17] CreateSelectedEventList (295) | 261 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (295)
+[9b/d66d4d] CreateSelectedEventList (294) | 263 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (296)
+[47/e2f3f4] CreateSelectedEventList (266) | 264 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (296)
+[09/28749c] CreateSelectedEventList (297) | 264 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (297)
+[3b/16daa7] CreateSelectedEventList (292) | 265 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (297)
+[3b/16daa7] CreateSelectedEventList (292) | 265 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (297)
+[ad/a789c3] CreateSelectedEventList (272) | 266 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (299)
+[12/428975] CreateSelectedEventList (299) | 267 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (300)
+[0c/cfd6ec] CreateSelectedEventList (296) | 268 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (301)
+[95/da546f] CreateSelectedEventList (264) | 269 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (301)
+[95/da546f] CreateSelectedEventList (264) | 269 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (302)
+[d4/5a018a] CreateSelectedEventList (306) | 270 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (303)
+[df/5cca33] CreateSelectedEventList (309) | 271 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (303)
+[df/5cca33] CreateSelectedEventList (309) | 271 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (304)
+[3e/5be89b] CreateSelectedEventList (316) | 272 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (305)
+[04/199d85] CreateSelectedEventList (324) | 273 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (305)
+[04/199d85] CreateSelectedEventList (324) | 273 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (306)
+[8b/edcdbe] CreateSelectedEventList (302) | 274 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (307)
+[ff/5b1be3] CreateSelectedEventList (320) | 275 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (308)
+[2b/e66a91] CreateSelectedEventList (313) | 276 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (309)
+[cf/df9f54] CreateSelectedEventList (332) | 277 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (309)
+[cf/df9f54] CreateSelectedEventList (332) | 277 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (310)
+[96/3c9ab4] CreateSelectedEventList (304) | 278 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (310)
+[96/3c9ab4] CreateSelectedEventList (304) | 278 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (311)
+[62/96f37b] CreateSelectedEventList (319) | 279 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (312)
+[92/8f3936] CreateSelectedEventList (312) | 280 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (313)
+[58/910e10] CreateSelectedEventList (267) | 281 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (314)
+[47/a958fd] CreateSelectedEventList (310) | 282 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (315)
+[74/aa53be] CreateSelectedEventList (307) | 283 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (315)
+[74/aa53be] CreateSelectedEventList (307) | 283 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (316)
+[3d/e095f5] CreateSelectedEventList (311) | 284 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (317)
+[b6/5b374f] CreateSelectedEventList (327) | 285 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (317)
+[bb/f7c055] CreateSelectedEventList (277) | 286 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (319)
+[29/49c2dc] CreateSelectedEventList (330) | 287 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (319)
+[29/49c2dc] CreateSelectedEventList (330) | 287 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (320)
+[41/7493fb] CreateSelectedEventList (315) | 288 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (320)
+[ac/0a6bc8] CreateSelectedEventList (288) | 289 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (321)
+[dc/d5ceec] CreateSelectedEventList (331) | 289 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (322)
+[3d/e095f5] CreateSelectedEventList (311) | 290 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (322)
+[3d/e095f5] CreateSelectedEventList (311) | 290 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (323)
+[a2/a8a12d] CreateSelectedEventList (322) | 291 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (324)
+[13/06f74a] CreateSelectedEventList (308) | 292 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (324)
+[13/06f74a] CreateSelectedEventList (308) | 292 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (325)
+[1c/82823c] CreateSelectedEventList (334) | 293 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (325)
+[1c/82823c] CreateSelectedEventList (334) | 293 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (326)
+[e5/300710] CreateSelectedEventList (318) | 294 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (327)
+[c0/f00690] CreateSelectedEventList (317) | 295 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (327)
+[c0/f00690] CreateSelectedEventList (317) | 295 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (328)
+[da/5403a6] CreateSelectedEventList (326) | 296 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (329)
+[e2/df2189] CreateSelectedEventList (321) | 297 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (330)
+[8d/00c465] CreateSelectedEventList (325) | 298 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (330)
+[8d/00c465] CreateSelectedEventList (325) | 298 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (332)
+[89/183b32] CreateSelectedEventList (314) | 300 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (332)
+[89/183b32] CreateSelectedEventList (314) | 300 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (334)
+[84/52250f] CreateSelectedEventList (337) | 302 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (336)
+[8e/6f74a1] CreateSelectedEventList (333) | 304 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (338)
+[b0/ac37fe] CreateSelectedEventList (328) | 306 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (339)
+[fe/bc537f] CreateSelectedEventList (335) | 307 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (339)
+[fe/bc537f] CreateSelectedEventList (335) | 307 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (340)
+[32/aaba19] CreateSelectedEventList (338) | 308 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (341)
+[9f/659c05] CreateSelectedEventList (355) | 309 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (341)
+[9f/659c05] CreateSelectedEventList (355) | 309 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (342)
+[7b/0f31a2] CreateSelectedEventList (358) | 310 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (343)
+[3c/7aa8cd] CreateSelectedEventList (343) | 311 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (344)
+[79/262131] CreateSelectedEventList (341) | 312 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (344)
+[79/262131] CreateSelectedEventList (341) | 312 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (345)
+[cb/760be8] CreateSelectedEventList (361) | 313 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (345)
+[cb/760be8] CreateSelectedEventList (361) | 313 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (346)
+[bf/6de79d] CreateSelectedEventList (348) | 314 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (346)
+[bf/6de79d] CreateSelectedEventList (348) | 314 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (347)
+[9a/d85942] CreateSelectedEventList (340) | 315 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (347)
+[9a/d85942] CreateSelectedEventList (340) | 315 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (348)
+[5b/d8c94b] CreateSelectedEventList (345) | 316 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (348)
+[5b/d8c94b] CreateSelectedEventList (345) | 316 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (349)
+[b1/c97607] CreateSelectedEventList (353) | 317 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (349)
+[b1/c97607] CreateSelectedEventList (353) | 317 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (350)
+[ca/46b44f] CreateSelectedEventList (362) | 318 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (351)
+[28/3ac034] CreateSelectedEventList (346) | 319 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (351)
+[28/3ac034] CreateSelectedEventList (346) | 319 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (352)
+[cc/51c7a0] CreateSelectedEventList (349) | 320 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (352)
+[cc/51c7a0] CreateSelectedEventList (349) | 320 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (352)
+[09/28749c] CreateSelectedEventList (297) | 321 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (354)
+[9f/854060] CreateSelectedEventList (350) | 322 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (355)
+[a4/e0e88c] CreateSelectedEventList (342) | 323 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (355)
+[a4/e0e88c] CreateSelectedEventList (342) | 323 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (356)
+[22/f847f1] CreateSelectedEventList (367) | 324 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (356)
+[22/f847f1] CreateSelectedEventList (367) | 324 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (357)
+[66/1029e4] CreateSelectedEventList (352) | 325 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (357)
+[66/1029e4] CreateSelectedEventList (352) | 325 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (358)
+[74/16017c] CreateSelectedEventList (347) | 326 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (358)
+[74/16017c] CreateSelectedEventList (347) | 326 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (359)
+[fe/297c80] CreateSelectedEventList (365) | 327 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (359)
+[fe/297c80] CreateSelectedEventList (365) | 327 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (360)
+[f0/0432a1] CreateSelectedEventList (370) | 328 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (361)
+[03/567eca] CreateSelectedEventList (369) | 329 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (362)
+[57/970703] CreateSelectedEventList (344) | 330 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (363)
+[bd/f4d5b5] CreateSelectedEventList (363) | 331 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (363)
+[bd/f4d5b5] CreateSelectedEventList (363) | 331 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (365)
+[5e/db1320] CreateSelectedEventList (357) | 333 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (365)
+[5e/db1320] CreateSelectedEventList (357) | 333 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (366)
+[8d/2f8630] CreateSelectedEventList (359) | 334 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (367)
+[4c/a570d1] CreateSelectedEventList (354) | 335 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (367)
+[4c/a570d1] CreateSelectedEventList (354) | 335 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (368)
+[59/cc7130] CreateSelectedEventList (366) | 336 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (368)
+[59/cc7130] CreateSelectedEventList (366) | 336 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (369)
+[ba/281ccd] CreateSelectedEventList (373) | 337 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (369)
+[ba/281ccd] CreateSelectedEventList (373) | 337 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (370)
+[15/465284] CreateSelectedEventList (380) | 338 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (370)
+[15/465284] CreateSelectedEventList (380) | 338 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (371)
+[aa/f7a4cd] CreateSelectedEventList (382) | 339 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (372)
+[a4/c72e67] CreateSelectedEventList (372) | 340 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (372)
+[a4/c72e67] CreateSelectedEventList (372) | 340 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (373)
+[e7/2389b4] CreateSelectedEventList (378) | 341 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (374)
+[af/75fc70] CreateSelectedEventList (371) | 342 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (375)
+[33/899cad] CreateSelectedEventList (360) | 343 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (376)
+[d8/9c29cc] CreateSelectedEventList (379) | 344 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (377)
+[e7/9aa989] CreateSelectedEventList (394) | 345 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (378)
+[e9/cafcd2] CreateSelectedEventList (375) | 346 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (378)
+[e9/cafcd2] CreateSelectedEventList (375) | 346 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (379)
+[2d/2a0cb1] CreateSelectedEventList (409) | 347 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (380)
+[22/fd2526] CreateSelectedEventList (411) | 348 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (381)
+[9f/4d6265] CreateSelectedEventList (404) | 349 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (381)
+[9f/4d6265] CreateSelectedEventList (404) | 349 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (382)
+[0e/f1d739] CreateSelectedEventList (377) | 350 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (383)
+[84/9f1cad] CreateSelectedEventList (402) | 351 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (383)
+[79/262131] CreateSelectedEventList (341) | 352 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (385)
+[c3/14dc3c] CreateSelectedEventList (368) | 353 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (385)
+[c3/14dc3c] CreateSelectedEventList (368) | 353 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (386)
+[fc/1bd4cf] CreateSelectedEventList (396) | 354 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (386)
+[fc/1bd4cf] CreateSelectedEventList (396) | 354 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (387)
+[ff/cd91ea] CreateSelectedEventList (395) | 355 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (388)
+[0a/393aa3] CreateSelectedEventList (407) | 356 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (389)
+[7e/f4cbf7] CreateSelectedEventList (406) | 357 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (390)
+[87/2666f4] CreateSelectedEventList (381) | 358 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (390)
+[87/2666f4] CreateSelectedEventList (381) | 358 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (391)
+[e9/2f0b20] CreateSelectedEventList (403) | 359 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (391)
+[e9/2f0b20] CreateSelectedEventList (403) | 359 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (392)
+[b1/382b23] CreateSelectedEventList (351) | 360 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (393)
+[d8/f8ebd7] CreateSelectedEventList (376) | 361 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (393)
+[d8/f8ebd7] CreateSelectedEventList (376) | 361 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (394)
+[96/1af0d7] CreateSelectedEventList (399) | 362 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (395)
+[b7/07d1aa] CreateSelectedEventList (400) | 363 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (396)
+[8c/8f68e3] CreateSelectedEventList (420) | 364 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (397)
+[2f/8f1cc1] CreateSelectedEventList (410) | 365 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (397)
+[2f/8f1cc1] CreateSelectedEventList (410) | 365 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (398)
+[ce/5f20f9] CreateSelectedEventList (387) | 366 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (399)
+[4d/3eccd3] CreateSelectedEventList (385) | 367 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (400)
+[32/9ed13a] CreateSelectedEventList (414) | 368 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (401)
+[1f/aa319a] CreateSelectedEventList (397) | 369 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (403)
+[33/843602] CreateSelectedEventList (384) | 371 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (404)
+[63/83bf03] CreateSelectedEventList (405) | 372 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (404)
+[63/83bf03] CreateSelectedEventList (405) | 372 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (405)
+[42/01cd1e] CreateSelectedEventList (398) | 373 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (405)
+[42/01cd1e] CreateSelectedEventList (398) | 373 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (406)
+[74/24fa1f] CreateSelectedEventList (386) | 374 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (406)
+[74/24fa1f] CreateSelectedEventList (386) | 374 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (407)
+[40/37d7ea] CreateSelectedEventList (413) | 375 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (408)
+[02/733137] CreateSelectedEventList (389) | 376 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (409)
+[04/2d59b1] CreateSelectedEventList (436) | 377 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (410)
+[33/f9976d] CreateSelectedEventList (424) | 378 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (410)
+[33/f9976d] CreateSelectedEventList (424) | 378 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (411)
+[e9/cafcd2] CreateSelectedEventList (375) | 379 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (412)
+[87/51efe5] CreateSelectedEventList (440) | 380 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (412)
+[87/51efe5] CreateSelectedEventList (440) | 380 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (413)
+[64/3aeb30] CreateSelectedEventList (417) | 381 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (413)
+[64/3aeb30] CreateSelectedEventList (417) | 381 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (415)
+[13/df0224] CreateSelectedEventList (401) | 383 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (415)
+[13/df0224] CreateSelectedEventList (401) | 383 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (416)
+[90/2a4d19] CreateSelectedEventList (391) | 384 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (417)
+[b2/e502e8] CreateSelectedEventList (415) | 384 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (418)
+[c7/5ec8bc] CreateSelectedEventList (423) | 386 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (419)
+[e3/37986a] CreateSelectedEventList (418) | 387 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (420)
+[f0/433e8a] CreateSelectedEventList (392) | 388 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (421)
+[9f/a21ba9] CreateSelectedEventList (443) | 389 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (421)
+[9f/a21ba9] CreateSelectedEventList (443) | 389 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (422)
+[2f/7c184e] CreateSelectedEventList (416) | 390 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (423)
+[7e/7c34ed] CreateSelectedEventList (429) | 391 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (423)
+[7e/7c34ed] CreateSelectedEventList (429) | 391 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (424)
+[2d/b4933e] CreateSelectedEventList (419) | 392 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (425)
+[45/af2f23] CreateSelectedEventList (421) | 393 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (425)
+[45/af2f23] CreateSelectedEventList (421) | 393 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (426)
+[65/a5365e] CreateSelectedEventList (422) | 394 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (427)
+[4d/3eccd3] CreateSelectedEventList (385) | 395 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (427)
+[4d/3eccd3] CreateSelectedEventList (385) | 395 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (429)
+[86/183d66] CreateSelectedEventList (428) | 397 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (430)
+[2f/8f1cc1] CreateSelectedEventList (410) | 398 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (430)
+[2f/8f1cc1] CreateSelectedEventList (410) | 398 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (431)
+[eb/ecf4b3] CreateSelectedEventList (390) | 399 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (432)
+[c9/713c64] CreateSelectedEventList (426) | 400 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (433)
+[64/56dc3c] CreateSelectedEventList (437) | 401 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (433)
+[64/56dc3c] CreateSelectedEventList (437) | 401 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (434)
+[cd/289888] CreateSelectedEventList (433) | 402 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (434)
+[cd/289888] CreateSelectedEventList (433) | 402 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (435)
+[76/f1bc70] CreateSelectedEventList (383) | 403 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (436)
+[d8/4f4272] CreateSelectedEventList (430) | 404 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (437)
+[3e/99db5a] CreateSelectedEventList (431) | 405 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (438)
+[c9/bc9d1c] CreateSelectedEventList (435) | 406 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (439)
+[58/861232] CreateSelectedEventList (438) | 407 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (440)
+[c0/58b456] CreateSelectedEventList (434) | 408 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (440)
+[c0/58b456] CreateSelectedEventList (434) | 408 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (441)
+[30/198616] CreateSelectedEventList (441) | 409 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (441)
+[30/198616] CreateSelectedEventList (441) | 409 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (442)
+[9a/c0766d] CreateSelectedEventList (446) | 410 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (443)
+[0c/52f9c4] CreateSelectedEventList (439) | 411 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (444)
+[20/d8001e] CreateSelectedEventList (454) | 412 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (445)
+[5e/be5577] CreateSelectedEventList (455) | 413 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (445)
+[5e/be5577] CreateSelectedEventList (455) | 413 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (446)
+[69/7e9ac1] CreateSelectedEventList (453) | 414 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (446)
+[69/7e9ac1] CreateSelectedEventList (453) | 414 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (447)
+[f5/ba547b] CreateSelectedEventList (445) | 415 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (447)
+[f5/ba547b] CreateSelectedEventList (445) | 415 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (448)
+[9f/afd8f9] CreateSelectedEventList (442) | 416 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (448)
+[9f/afd8f9] CreateSelectedEventList (442) | 416 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (449)
+[3a/271d7a] CreateSelectedEventList (469) | 417 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (450)
+[07/3bfa7d] CreateSelectedEventList (448) | 418 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (450)
+[07/3bfa7d] CreateSelectedEventList (448) | 418 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (451)
+[fe/3d0be0] CreateSelectedEventList (457) | 419 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (451)
+[fe/3d0be0] CreateSelectedEventList (457) | 419 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (452)
+[2a/d0e4ca] CreateSelectedEventList (452) | 420 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (452)
+[2a/d0e4ca] CreateSelectedEventList (452) | 420 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (453)
+[c2/bee81c] CreateSelectedEventList (447) | 421 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (454)
+[01/fd5b05] CreateSelectedEventList (450) | 422 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (454)
+[01/fd5b05] CreateSelectedEventList (450) | 422 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (455)
+[28/a0a9c6] CreateSelectedEventList (451) | 423 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (455)
+[28/a0a9c6] CreateSelectedEventList (451) | 423 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (456)
+[1b/807e5d] CreateSelectedEventList (449) | 424 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (456)
+[1b/807e5d] CreateSelectedEventList (449) | 424 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (457)
+[87/51efe5] CreateSelectedEventList (440) | 425 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (458)
+[c0/3ab07e] CreateSelectedEventList (444) | 426 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (459)
+[d0/33cbff] CreateSelectedEventList (456) | 427 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (460)
+[a1/8a8229] CreateSelectedEventList (464) | 428 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (461)
+[45/af2f23] CreateSelectedEventList (421) | 429 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (461)
+[45/af2f23] CreateSelectedEventList (421) | 429 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (462)
+[f3/16a94d] CreateSelectedEventList (462) | 430 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (462)
+[9f/a21ba9] CreateSelectedEventList (443) | 431 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (463)
+[98/82e0ed] CreateSelectedEventList (465) | 431 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (464)
+[75/478b17] CreateSelectedEventList (482) | 432 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (465)
+[7f/f0b143] CreateSelectedEventList (463) | 433 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (465)
+[7f/f0b143] CreateSelectedEventList (463) | 433 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (466)
+[ed/f8c0c0] CreateSelectedEventList (459) | 434 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (466)
+[ed/f8c0c0] CreateSelectedEventList (459) | 434 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (467)
+[29/9ff8b1] CreateSelectedEventList (458) | 435 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (468)
+[c8/a234e0] CreateSelectedEventList (476) | 436 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (468)
+[c8/a234e0] CreateSelectedEventList (476) | 436 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (469)
+[3f/f2ec1c] CreateSelectedEventList (460) | 437 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (470)
+[8e/a2ccf9] CreateSelectedEventList (472) | 438 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (471)
+[e6/8f772a] CreateSelectedEventList (478) | 439 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (471)
+[e6/8f772a] CreateSelectedEventList (478) | 439 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (472)
+[38/50305f] CreateSelectedEventList (471) | 440 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (472)
+[38/50305f] CreateSelectedEventList (471) | 440 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (473)
+[be/689093] CreateSelectedEventList (466) | 441 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (474)
+[19/bc9335] CreateSelectedEventList (487) | 442 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (474)
+[19/bc9335] CreateSelectedEventList (487) | 442 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (475)
+[a2/463e76] CreateSelectedEventList (474) | 443 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (475)
+[a2/463e76] CreateSelectedEventList (474) | 443 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (476)
+[58/861232] CreateSelectedEventList (438) | 445 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (477)
+[b3/dcb0ff] CreateSelectedEventList (480) | 445 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (478)
+[36/34fd2f] CreateSelectedEventList (470) | 446 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (479)
+[7d/1cff7b] CreateSelectedEventList (485) | 447 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (479)
+[7d/1cff7b] CreateSelectedEventList (485) | 447 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (480)
+[4d/36fcbb] CreateSelectedEventList (473) | 448 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (480)
+[4d/36fcbb] CreateSelectedEventList (473) | 448 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (481)
+[53/a5a052] CreateSelectedEventList (497) | 449 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (481)
+[53/a5a052] CreateSelectedEventList (497) | 449 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (483)
+[fc/273fc1] CreateSelectedEventList (475) | 451 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (483)
+[fc/273fc1] CreateSelectedEventList (475) | 451 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (484)
+[0a/77a7bb] CreateSelectedEventList (484) | 452 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (484)
+[0a/77a7bb] CreateSelectedEventList (484) | 452 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (485)
+[32/4efe14] CreateSelectedEventList (486) | 453 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (485)
+[32/4efe14] CreateSelectedEventList (486) | 453 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (486)
+[cb/25a22c] CreateSelectedEventList (477) | 454 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (488)
+[66/8b4b80] CreateSelectedEventList (493) | 456 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (488)
+[66/8b4b80] CreateSelectedEventList (493) | 456 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (489)
+[30/ea49b2] CreateSelectedEventList (488) | 457 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (490)
+[e9/36d8d6] CreateSelectedEventList (501) | 458 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (491)
+[66/a204fa] CreateSelectedEventList (479) | 459 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (491)
+[66/a204fa] CreateSelectedEventList (479) | 459 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (492)
+[c3/692a26] CreateSelectedEventList (492) | 460 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (493)
+[18/14ee9a] CreateSelectedEventList (489) | 461 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (493)
+[18/14ee9a] CreateSelectedEventList (489) | 461 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (494)
+[ca/6746ee] CreateSelectedEventList (491) | 462 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (494)
+[ca/6746ee] CreateSelectedEventList (491) | 462 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (495)
+[7e/affb7d] CreateSelectedEventList (494) | 463 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (495)
+[7e/affb7d] CreateSelectedEventList (494) | 463 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (496)
+[e2/e02aef] CreateSelectedEventList (496) | 464 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (497)
+[f2/006235] CreateSelectedEventList (498) | 465 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (497)
+[f2/006235] CreateSelectedEventList (498) | 465 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (498)
+[fd/fc7fc4] CreateSelectedEventList (499) | 466 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (498)
+[fd/fc7fc4] CreateSelectedEventList (499) | 466 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (499)
+[99/3a0f13] CreateSelectedEventList (490) | 467 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (500)
+[ce/3beccc] CreateSelectedEventList (495) | 468 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (501)
+[36/305dd3] CreateSelectedEventList (505) | 469 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (501)
+[36/305dd3] CreateSelectedEventList (505) | 469 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (502)
+[36/c783f7] CreateSelectedEventList (504) | 470 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (502)
+[36/c783f7] CreateSelectedEventList (504) | 470 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (503)
+[83/0f7817] CreateSelectedEventList (508) | 471 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (504)
+[54/4269c8] CreateSelectedEventList (502) | 472 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (504)
+[54/4269c8] CreateSelectedEventList (502) | 472 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (505)
+[03/2fd877] CreateSelectedEventList (500) | 473 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (506)
+[c8/a234e0] CreateSelectedEventList (476) | 474 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (506)
+[c8/a234e0] CreateSelectedEventList (476) | 474 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (507)
+[0c/c99f54] CreateSelectedEventList (532) | 475 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (508)
+[96/76176f] CreateSelectedEventList (514) | 476 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (508)
+[96/76176f] CreateSelectedEventList (514) | 476 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (509)
+[48/ab9162] CreateSelectedEventList (503) | 477 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (510)
+[48/d9245f] CreateSelectedEventList (521) | 478 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (510)
+[48/d9245f] CreateSelectedEventList (521) | 478 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (511)
+[9d/c495fa] CreateSelectedEventList (529) | 479 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (511)
+[9d/c495fa] CreateSelectedEventList (529) | 479 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (511)
+[c9/37a464] CreateSelectedEventList (525) | 480 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (512)
+[fc/e1fe92] CreateSelectedEventList (518) | 480 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (513)
+[86/be428a] CreateSelectedEventList (516) | 481 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (514)
+[55/a6dbf5] CreateSelectedEventList (511) | 482 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (516)
+[5b/abadbb] CreateSelectedEventList (507) | 484 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (516)
+[5b/abadbb] CreateSelectedEventList (507) | 484 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (517)
+[bb/607034] CreateSelectedEventList (531) | 485 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (518)
+[9b/62aa20] CreateSelectedEventList (528) | 486 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (519)
+[af/53b22f] CreateSelectedEventList (519) | 487 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (520)
+[7a/d8aadb] CreateSelectedEventList (515) | 488 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (520)
+[7a/d8aadb] CreateSelectedEventList (515) | 488 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (521)
+[42/866062] CreateSelectedEventList (533) | 489 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (522)
+[8c/701a55] CreateSelectedEventList (535) | 490 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (524)
+[62/d58a91] CreateSelectedEventList (512) | 492 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (525)
+[63/43874e] CreateSelectedEventList (520) | 493 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (526)
+[25/7158f2] CreateSelectedEventList (510) | 494 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (527)
+[ec/105007] CreateSelectedEventList (527) | 495 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (527)
+[ec/105007] CreateSelectedEventList (527) | 495 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (528)
+[81/992b3e] CreateSelectedEventList (513) | 496 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (529)
+[fc/9bd200] CreateSelectedEventList (509) | 497 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (530)
+[bf/9f13a0] CreateSelectedEventList (530) | 498 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (530)
+[bf/9f13a0] CreateSelectedEventList (530) | 498 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (531)
+[bb/c06a60] CreateSelectedEventList (540) | 499 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (531)
+[bb/c06a60] CreateSelectedEventList (540) | 499 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (532)
+[ad/206aac] CreateSelectedEventList (506) | 500 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (533)
+[24/7cea70] CreateSelectedEventList (534) | 501 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (534)
+[ac/4ba8fc] CreateSelectedEventList (524) | 502 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (535)
+[09/527853] CreateSelectedEventList (517) | 503 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (536)
+[66/cb81fe] CreateSelectedEventList (539) | 504 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (536)
+[66/cb81fe] CreateSelectedEventList (539) | 504 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (537)
+[f3/50f884] CreateSelectedEventList (522) | 505 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (538)
+[03/2fd877] CreateSelectedEventList (500) | 506 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (540)
+[63/70024a] CreateSelectedEventList (538) | 508 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (540)
+[63/70024a] CreateSelectedEventList (538) | 508 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (541)
+[b4/e6565f] CreateSelectedEventList (543) | 509 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (542)
+[bb/61b919] CreateSelectedEventList (542) | 510 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (542)
+[bb/61b919] CreateSelectedEventList (542) | 510 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (543)
+[2e/64b9bb] CreateSelectedEventList (537) | 511 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (543)
+[2e/64b9bb] CreateSelectedEventList (537) | 511 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (544)
+[04/0fea5f] CreateSelectedEventList (547) | 512 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (544)
+[04/0fea5f] CreateSelectedEventList (547) | 512 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (545)
+[b8/e28972] CreateSelectedEventList (549) | 513 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (546)
+[3d/120201] CreateSelectedEventList (545) | 514 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (547)
+[1f/17640b] CreateSelectedEventList (555) | 514 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (547)
+[bb/607034] CreateSelectedEventList (531) | 515 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (548)
+[e2/c95cd5] CreateSelectedEventList (551) | 516 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (549)
+[65/569b0e] CreateSelectedEventList (552) | 517 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (549)
+[65/569b0e] CreateSelectedEventList (552) | 517 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (550)
+[51/5f3a9a] CreateSelectedEventList (550) | 518 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (551)
+[4c/a5d91d] CreateSelectedEventList (544) | 519 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (552)
+[cb/4908c6] CreateSelectedEventList (548) | 520 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (553)
+[10/1db152] CreateSelectedEventList (553) | 521 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (553)
+[10/1db152] CreateSelectedEventList (553) | 521 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (554)
+[64/dc34b6] CreateSelectedEventList (567) | 522 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (555)
+[7d/c6c45c] CreateSelectedEventList (558) | 523 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (555)
+[7d/c6c45c] CreateSelectedEventList (558) | 523 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (556)
+[34/8ded15] CreateSelectedEventList (570) | 524 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (556)
+[34/8ded15] CreateSelectedEventList (570) | 524 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (557)
+[72/297062] CreateSelectedEventList (568) | 525 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (558)
+[17/4e27a9] CreateSelectedEventList (556) | 526 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (559)
+[aa/4cdfcf] CreateSelectedEventList (578) | 527 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (560)
+[ec/105007] CreateSelectedEventList (527) | 528 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (560)
+[bd/56628f] CreateSelectedEventList (577) | 528 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (561)
+[c6/f3283c] CreateSelectedEventList (566) | 529 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (562)
+[53/57461c] CreateSelectedEventList (573) | 530 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (563)
+[51/23758b] CreateSelectedEventList (561) | 531 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (564)
+[95/b3be41] CreateSelectedEventList (571) | 532 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (565)
+[06/7dd130] CreateSelectedEventList (565) | 533 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (566)
+[93/be70a8] CreateSelectedEventList (582) | 534 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (567)
+[f8/e10d19] CreateSelectedEventList (569) | 535 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (568)
+[12/be3321] CreateSelectedEventList (546) | 536 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (568)
+[12/be3321] CreateSelectedEventList (546) | 536 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (569)
+[ca/69b5cd] CreateSelectedEventList (563) | 537 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (570)
+[d8/429c07] CreateSelectedEventList (557) | 538 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (572)
+[1e/112922] CreateSelectedEventList (584) | 540 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (572)
+[1e/112922] CreateSelectedEventList (584) | 540 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (573)
+[cb/aad0e7] CreateSelectedEventList (583) | 541 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (573)
+[cb/aad0e7] CreateSelectedEventList (583) | 541 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (574)
+[81/d738ad] CreateSelectedEventList (554) | 542 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (574)
+[81/d738ad] CreateSelectedEventList (554) | 542 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (575)
+[1a/6c3376] CreateSelectedEventList (585) | 543 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (576)
+[a3/8d5de7] CreateSelectedEventList (574) | 544 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (576)
+[a3/8d5de7] CreateSelectedEventList (574) | 544 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (577)
+[3d/676716] CreateSelectedEventList (575) | 545 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (577)
+[3d/676716] CreateSelectedEventList (575) | 545 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (578)
+[c9/00dfc2] CreateSelectedEventList (588) | 546 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (579)
+[b8/e28972] CreateSelectedEventList (549) | 547 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (579)
+[b8/e28972] CreateSelectedEventList (549) | 547 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (580)
+[d4/0bd319] CreateSelectedEventList (562) | 548 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (581)
+[e2/c95cd5] CreateSelectedEventList (551) | 549 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (581)
+[0d/99ea01] CreateSelectedEventList (587) | 549 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (582)
+[84/b49987] CreateSelectedEventList (581) | 550 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (582)
+[84/b49987] CreateSelectedEventList (581) | 550 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (583)
+[9e/ea1fc5] CreateSelectedEventList (580) | 551 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (584)
+[bb/95fc2b] CreateSelectedEventList (593) | 552 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (585)
+[2a/c8f695] CreateSelectedEventList (559) | 553 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (585)
+[17/4e27a9] CreateSelectedEventList (556) | 554 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (586)
+[0f/c121b0] CreateSelectedEventList (560) | 554 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (587)
+[44/3adee4] CreateSelectedEventList (594) | 555 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (588)
+[d8/570736] CreateSelectedEventList (611) | 556 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (588)
+[d8/570736] CreateSelectedEventList (611) | 556 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (589)
+[74/b7ed4f] CreateSelectedEventList (601) | 557 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (590)
+[41/d10ca7] CreateSelectedEventList (610) | 558 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (592)
+[1c/42740a] CreateSelectedEventList (615) | 560 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (592)
+[1c/42740a] CreateSelectedEventList (615) | 560 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (593)
+[9c/ddcd34] CreateSelectedEventList (612) | 561 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (593)
+[9c/ddcd34] CreateSelectedEventList (612) | 561 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (594)
+[47/2490e0] CreateSelectedEventList (596) | 562 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (594)
+[47/2490e0] CreateSelectedEventList (596) | 562 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (594)
+[aa/4cdfcf] CreateSelectedEventList (578) | 563 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (595)
+[b0/447dfd] CreateSelectedEventList (604) | 563 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (596)
+[52/cab3c2] CreateSelectedEventList (595) | 564 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (597)
+[c6/f3283c] CreateSelectedEventList (566) | 565 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (598)
+[37/fdedee] CreateSelectedEventList (589) | 566 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (598)
+[37/fdedee] CreateSelectedEventList (589) | 566 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (599)
+[e7/5c304a] CreateSelectedEventList (592) | 567 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (600)
+[d4/faf64b] CreateSelectedEventList (572) | 568 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (601)
+[9a/3e706b] CreateSelectedEventList (586) | 569 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (602)
+[8e/3fb8dd] CreateSelectedEventList (598) | 570 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (603)
+[1e/112922] CreateSelectedEventList (584) | 571 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (604)
+[b2/060ec8] CreateSelectedEventList (591) | 572 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (604)
+[b2/060ec8] CreateSelectedEventList (591) | 572 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (605)
+[fc/0f77cb] CreateSelectedEventList (602) | 573 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (605)
+[fc/0f77cb] CreateSelectedEventList (602) | 573 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (606)
+[61/720d35] CreateSelectedEventList (614) | 574 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (607)
+[58/01cc95] CreateSelectedEventList (590) | 575 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (608)
+[ad/841fab] CreateSelectedEventList (608) | 576 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (609)
+[7a/f32cb9] CreateSelectedEventList (607) | 577 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (609)
+[7a/f32cb9] CreateSelectedEventList (607) | 577 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (610)
+[09/0d2df0] CreateSelectedEventList (600) | 578 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (611)
+[53/3f8e9f] CreateSelectedEventList (606) | 579 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (611)
+[53/3f8e9f] CreateSelectedEventList (606) | 579 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (613)
+[1c/21035b] CreateSelectedEventList (605) | 581 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (613)
+[1c/21035b] CreateSelectedEventList (605) | 581 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (614)
+[51/0c662f] CreateSelectedEventList (603) | 582 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (614)
+[51/0c662f] CreateSelectedEventList (603) | 582 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (615)
+[09/946f31] CreateSelectedEventList (617) | 583 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (615)
+[09/946f31] CreateSelectedEventList (617) | 583 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (616)
+[47/2490e0] CreateSelectedEventList (596) | 584 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (617)
+[7f/ad4bee] CreateSelectedEventList (618) | 585 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (618)
+[fe/974989] CreateSelectedEventList (616) | 586 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (618)
+[fe/974989] CreateSelectedEventList (616) | 586 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (619)
+[9b/fab7c6] CreateSelectedEventList (619) | 587 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (620)
+[da/8449b1] CreateSelectedEventList (624) | 588 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (620)
+[da/8449b1] CreateSelectedEventList (624) | 588 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (621)
+[7f/675f7e] CreateSelectedEventList (620) | 589 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (621)
+[7f/675f7e] CreateSelectedEventList (620) | 589 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (622)
+[2d/2318c6] CreateSelectedEventList (631) | 590 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (622)
+[2d/2318c6] CreateSelectedEventList (631) | 590 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (622)
+[9c/ddcd34] CreateSelectedEventList (612) | 591 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (623)
+[f4/5d7682] CreateSelectedEventList (630) | 591 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (624)
+[40/b7736e] CreateSelectedEventList (639) | 592 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (624)
+[40/b7736e] CreateSelectedEventList (639) | 592 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (625)
+[4b/eddb24] CreateSelectedEventList (636) | 593 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (626)
+[43/98b207] CreateSelectedEventList (625) | 594 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (626)
+[43/98b207] CreateSelectedEventList (625) | 594 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (627)
+[80/896b92] CreateSelectedEventList (626) | 595 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (628)
+[a3/7aaa7e] CreateSelectedEventList (627) | 596 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (629)
+[e7/5c304a] CreateSelectedEventList (592) | 597 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (630)
+[fc/0f77cb] CreateSelectedEventList (602) | 598 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (631)
+[b0/447dfd] CreateSelectedEventList (604) | 599 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (631)
+[b0/447dfd] CreateSelectedEventList (604) | 599 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (632)
+[38/97c7c1] CreateSelectedEventList (632) | 600 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (633)
+[e0/6bfeea] CreateSelectedEventList (635) | 601 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (633)
+[e0/6bfeea] CreateSelectedEventList (635) | 601 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (634)
+[22/0ecc4a] CreateSelectedEventList (597) | 602 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (634)
+[22/0ecc4a] CreateSelectedEventList (597) | 602 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (635)
+[82/dff7a9] CreateSelectedEventList (628) | 603 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (636)
+[a9/8de134] CreateSelectedEventList (629) | 604 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (637)
+[c8/b36ab7] CreateSelectedEventList (634) | 605 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (638)
+[db/4df157] CreateSelectedEventList (642) | 606 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (639)
+[cb/2a011f] CreateSelectedEventList (640) | 607 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (639)
+[cb/2a011f] CreateSelectedEventList (640) | 607 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (640)
+[93/c3f748] CreateSelectedEventList (643) | 608 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (641)
+[21/4f1fdc] CreateSelectedEventList (641) | 609 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (642)
+[b9/d6c4b6] CreateSelectedEventList (649) | 610 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (642)
+[b9/d6c4b6] CreateSelectedEventList (649) | 610 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (643)
+[b4/bcca8c] CreateSelectedEventList (646) | 611 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (644)
+[ce/ce40c5] CreateSelectedEventList (647) | 612 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (644)
+[ce/ce40c5] CreateSelectedEventList (647) | 612 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (645)
+[74/598cfd] CreateSelectedEventList (658) | 613 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (646)
+[04/0f0945] CreateSelectedEventList (622) | 614 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (646)
+[04/0f0945] CreateSelectedEventList (622) | 614 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (647)
+[7f/ad4bee] CreateSelectedEventList (618) | 615 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (648)
+[34/ca467d] CreateSelectedEventList (661) | 616 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (649)
+[ca/c5a9ca] CreateSelectedEventList (652) | 617 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (650)
+[8a/e531bf] CreateSelectedEventList (653) | 618 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (650)
+[8a/e531bf] CreateSelectedEventList (653) | 618 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (651)
+[c2/6bd1fc] CreateSelectedEventList (609) | 619 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (652)
+[f6/f943bf] CreateSelectedEventList (645) | 620 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (652)
+[f6/f943bf] CreateSelectedEventList (645) | 620 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (653)
+[37/cc923c] CreateSelectedEventList (644) | 621 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (653)
+[37/cc923c] CreateSelectedEventList (644) | 621 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (654)
+[b1/9dec8e] CreateSelectedEventList (648) | 622 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (654)
+[b1/9dec8e] CreateSelectedEventList (648) | 622 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (655)
+[14/ef022c] CreateSelectedEventList (665) | 623 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (656)
+[d5/f3461f] CreateSelectedEventList (638) | 624 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (657)
+[e8/f710f1] CreateSelectedEventList (663) | 625 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (658)
+[2b/6e88c5] CreateSelectedEventList (670) | 626 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (658)
+[2b/6e88c5] CreateSelectedEventList (670) | 626 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (659)
+[e6/a4e581] CreateSelectedEventList (651) | 627 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (659)
+[e6/a4e581] CreateSelectedEventList (651) | 627 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (660)
+[8e/6a4d9a] CreateSelectedEventList (664) | 628 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (661)
+[37/be99ba] CreateSelectedEventList (677) | 629 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (661)
+[4b/eddb24] CreateSelectedEventList (636) | 630 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (662)
+[ff/528834] CreateSelectedEventList (672) | 630 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (663)
+[a5/d1d730] CreateSelectedEventList (659) | 631 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (663)
+[a5/d1d730] CreateSelectedEventList (659) | 631 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (664)
+[22/bee499] CreateSelectedEventList (660) | 632 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (664)
+[22/bee499] CreateSelectedEventList (660) | 632 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (665)
+[fa/99ae0f] CreateSelectedEventList (674) | 633 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (666)
+[46/f2ef64] CreateSelectedEventList (676) | 634 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (666)
+[46/f2ef64] CreateSelectedEventList (676) | 634 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (668)
+[64/052695] CreateSelectedEventList (650) | 636 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (669)
+[78/8a5b17] CreateSelectedEventList (662) | 637 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (670)
+[26/87cf40] CreateSelectedEventList (678) | 638 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (671)
+[bb/e7a578] CreateSelectedEventList (671) | 639 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (671)
+[bb/e7a578] CreateSelectedEventList (671) | 639 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (673)
+[0c/55b94f] CreateSelectedEventList (654) | 641 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (673)
+[0c/55b94f] CreateSelectedEventList (654) | 641 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (674)
+[5b/5eb3db] CreateSelectedEventList (637) | 642 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (675)
+[93/c3f748] CreateSelectedEventList (643) | 643 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (676)
+[84/f13e6f] CreateSelectedEventList (623) | 644 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (677)
+[d7/0f5c1b] CreateSelectedEventList (673) | 645 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (678)
+[c8/a25af0] CreateSelectedEventList (675) | 646 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (678)
+[c8/a25af0] CreateSelectedEventList (675) | 646 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (679)
+[fb/3b268a] CreateSelectedEventList (679) | 647 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (680)
+[87/874ccc] CreateSelectedEventList (689) | 648 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (680)
+[87/874ccc] CreateSelectedEventList (689) | 648 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (681)
+[a1/e163c1] CreateSelectedEventList (699) | 649 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (681)
+[a1/e163c1] CreateSelectedEventList (699) | 649 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (682)
+[ec/b39e80] CreateSelectedEventList (681) | 650 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (682)
+[ec/b39e80] CreateSelectedEventList (681) | 650 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (683)
+[56/b1a2f7] CreateSelectedEventList (680) | 651 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (683)
+[56/b1a2f7] CreateSelectedEventList (680) | 651 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (684)
+[13/1c1314] CreateSelectedEventList (698) | 652 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (685)
+[8e/5eb189] CreateSelectedEventList (682) | 653 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (685)
+[8e/5eb189] CreateSelectedEventList (682) | 653 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (686)
+[c5/04eda0] CreateSelectedEventList (700) | 654 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (686)
+[c5/04eda0] CreateSelectedEventList (700) | 654 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (687)
+[e3/087643] CreateSelectedEventList (684) | 655 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (687)
+[e3/087643] CreateSelectedEventList (684) | 655 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (688)
+[48/cec83e] CreateSelectedEventList (686) | 656 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (688)
+[48/cec83e] CreateSelectedEventList (686) | 656 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (689)
+[94/767388] CreateSelectedEventList (683) | 657 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (690)
+[e8/f710f1] CreateSelectedEventList (663) | 658 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (691)
+[82/92e584] CreateSelectedEventList (697) | 659 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (692)
+[51/f5336e] CreateSelectedEventList (693) | 660 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (692)
+[51/f5336e] CreateSelectedEventList (693) | 660 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (693)
+[55/d18f95] CreateSelectedEventList (694) | 661 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (694)
+[2b/d454ef] CreateSelectedEventList (691) | 662 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (694)
+[2b/d454ef] CreateSelectedEventList (691) | 662 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (695)
+[ea/9138c9] CreateSelectedEventList (692) | 663 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (696)
+[f9/0e03f5] CreateSelectedEventList (688) | 664 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (696)
+[f9/0e03f5] CreateSelectedEventList (688) | 664 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (697)
+[26/87cf40] CreateSelectedEventList (678) | 665 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (698)
+[48/b9bd0f] CreateSelectedEventList (702) | 666 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (700)
+[10/f6ed3f] CreateSelectedEventList (704) | 668 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (701)
+[68/165b9e] CreateSelectedEventList (687) | 669 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (702)
+[78/8a5b17] CreateSelectedEventList (662) | 670 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (703)
+[8d/48414f] CreateSelectedEventList (701) | 671 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (704)
+[fa/44d246] CreateSelectedEventList (703) | 672 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (705)
+[6a/4237bd] CreateSelectedEventList (716) | 673 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (706)
+[90/b1d4bf] CreateSelectedEventList (714) | 674 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (707)
+[bb/e7a578] CreateSelectedEventList (671) | 675 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (708)
+[8f/be79a8] CreateSelectedEventList (715) | 676 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (708)
+[8f/be79a8] CreateSelectedEventList (715) | 676 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (709)
+[4f/f66775] CreateSelectedEventList (706) | 677 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (709)
+[4f/f66775] CreateSelectedEventList (706) | 677 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (710)
+[cc/39499d] CreateSelectedEventList (726) | 678 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (710)
+[cc/39499d] CreateSelectedEventList (726) | 678 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (712)
+[79/ddb93d] CreateSelectedEventList (725) | 680 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (712)
+[79/ddb93d] CreateSelectedEventList (725) | 680 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (713)
+[10/a8a404] CreateSelectedEventList (712) | 681 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (713)
+[10/a8a404] CreateSelectedEventList (712) | 681 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (713)
+[fb/3b268a] CreateSelectedEventList (679) | 682 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (714)
+[f0/f186a3] CreateSelectedEventList (721) | 682 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (715)
+[c6/51ef3e] CreateSelectedEventList (713) | 683 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (716)
+[de/dd5dda] CreateSelectedEventList (722) | 684 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (716)
+[de/dd5dda] CreateSelectedEventList (722) | 684 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (717)
+[31/720198] CreateSelectedEventList (711) | 685 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (718)
+[56/b1a2f7] CreateSelectedEventList (680) | 686 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (718)
+[56/b1a2f7] CreateSelectedEventList (680) | 686 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (719)
+[25/c9e11f] CreateSelectedEventList (707) | 687 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (720)
+[05/b45aec] CreateSelectedEventList (724) | 688 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (721)
+[e7/473ca9] CreateSelectedEventList (730) | 689 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (721)
+[94/767388] CreateSelectedEventList (683) | 690 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (722)
+[85/658c85] CreateSelectedEventList (743) | 690 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (723)
+[e7/6e7aaf] CreateSelectedEventList (709) | 691 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (724)
+[fd/01766f] CreateSelectedEventList (718) | 692 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (725)
+[e4/1f9af9] CreateSelectedEventList (719) | 693 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (727)
+[21/b811c8] CreateSelectedEventList (723) | 695 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (727)
+[21/b811c8] CreateSelectedEventList (723) | 695 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (728)
+[0c/cf2579] CreateSelectedEventList (727) | 696 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (729)
+[b7/33bfa9] CreateSelectedEventList (728) | 697 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (730)
+[bc/0b56e7] CreateSelectedEventList (708) | 698 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (731)
+[0d/afe9ed] CreateSelectedEventList (733) | 699 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (732)
+[9b/a456d7] CreateSelectedEventList (729) | 700 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (732)
+[9b/a456d7] CreateSelectedEventList (729) | 700 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (732)
+[f0/f186a3] CreateSelectedEventList (721) | 701 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (734)
+[f5/dffeed] CreateSelectedEventList (735) | 702 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (735)
+[bc/831f05] CreateSelectedEventList (732) | 703 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (736)
+[99/d6b0b6] CreateSelectedEventList (748) | 704 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (736)
+[99/d6b0b6] CreateSelectedEventList (748) | 704 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (737)
+[27/dd729c] CreateSelectedEventList (745) | 705 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (737)
+[27/dd729c] CreateSelectedEventList (745) | 705 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (738)
+[59/f6d6c4] CreateSelectedEventList (737) | 706 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (739)
+[7c/b5b296] CreateSelectedEventList (744) | 707 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (739)
+[7c/b5b296] CreateSelectedEventList (744) | 707 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (739)
+[48/b9bd0f] CreateSelectedEventList (702) | 708 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (740)
+[70/b8a0ff] CreateSelectedEventList (738) | 708 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (741)
+[27/280603] CreateSelectedEventList (740) | 709 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (742)
+[1b/c94032] CreateSelectedEventList (750) | 710 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (744)
+[d3/f445bc] CreateSelectedEventList (734) | 712 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (745)
+[8b/7d7a6b] CreateSelectedEventList (739) | 713 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (746)
+[06/4d0079] CreateSelectedEventList (747) | 714 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (747)
+[90/016579] CreateSelectedEventList (736) | 715 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (747)
+[90/016579] CreateSelectedEventList (736) | 715 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (748)
+[d5/4baa96] CreateSelectedEventList (741) | 716 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (748)
+[d5/4baa96] CreateSelectedEventList (741) | 716 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (749)
+[2f/f1f95f] CreateSelectedEventList (759) | 717 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (750)
+[3f/43d6fd] CreateSelectedEventList (751) | 718 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (751)
+[d2/b35e8d] CreateSelectedEventList (746) | 719 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (752)
+[48/69f253] CreateSelectedEventList (758) | 720 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (752)
+[48/69f253] CreateSelectedEventList (758) | 720 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (753)
+[5e/188d00] CreateSelectedEventList (756) | 721 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (753)
+[5e/188d00] CreateSelectedEventList (756) | 721 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (754)
+[71/dc1a59] CreateSelectedEventList (749) | 722 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (754)
+[71/dc1a59] CreateSelectedEventList (749) | 722 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (755)
+[4b/a5c754] CreateSelectedEventList (755) | 723 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (756)
+[7d/caff1c] CreateSelectedEventList (753) | 724 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (757)
+[c8/b3fb5c] CreateSelectedEventList (761) | 725 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (758)
+[76/594345] CreateSelectedEventList (754) | 726 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (758)
+[76/594345] CreateSelectedEventList (754) | 726 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (760)
+[a7/5c3b7e] CreateSelectedEventList (752) | 728 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (760)
+[a7/5c3b7e] CreateSelectedEventList (752) | 728 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (761)
+[6d/1f3773] CreateSelectedEventList (760) | 729 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (761)
+[6d/1f3773] CreateSelectedEventList (760) | 729 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (762)
+[74/e67555] CreateSelectedEventList (771) | 730 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (763)
+[fa/6dfca6] CreateSelectedEventList (762) | 731 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (764)
+[03/c2dfc1] CreateSelectedEventList (765) | 732 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (764)
+[03/c2dfc1] CreateSelectedEventList (765) | 732 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (765)
+[c9/c9b772] CreateSelectedEventList (770) | 733 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (766)
+[3b/47bf7e] CreateSelectedEventList (768) | 734 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (767)
+[13/218c9b] CreateSelectedEventList (766) | 735 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (768)
+[f4/a420ea] CreateSelectedEventList (772) | 736 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (768)
+[f4/a420ea] CreateSelectedEventList (772) | 736 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (769)
+[b4/d9eaf8] CreateSelectedEventList (775) | 737 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (770)
+[3e/191086] CreateSelectedEventList (764) | 738 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (771)
+[f3/85da2e] CreateSelectedEventList (779) | 739 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (772)
+[f4/c4322c] CreateSelectedEventList (763) | 740 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (772)
+[f4/c4322c] CreateSelectedEventList (763) | 740 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (773)
+[fe/b02670] CreateSelectedEventList (769) | 741 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (774)
+[b1/a62582] CreateSelectedEventList (776) | 742 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (775)
+[d9/5ef6a5] CreateSelectedEventList (783) | 743 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (776)
+[1d/359f37] CreateSelectedEventList (780) | 744 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (777)
+[bb/620983] CreateSelectedEventList (767) | 745 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (777)
+[bb/620983] CreateSelectedEventList (767) | 745 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (778)
+[c5/a73ce0] CreateSelectedEventList (778) | 746 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (778)
+[c5/a73ce0] CreateSelectedEventList (778) | 746 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (779)
+[7f/550921] CreateSelectedEventList (786) | 747 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (779)
+[06/4d0079] CreateSelectedEventList (747) | 748 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (780)
+[7b/d08067] CreateSelectedEventList (788) | 748 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (781)
+[ca/695171] CreateSelectedEventList (782) | 749 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (781)
+[ca/695171] CreateSelectedEventList (782) | 749 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (782)
+[e9/33518a] CreateSelectedEventList (781) | 750 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (783)
+[7e/8fa5c8] CreateSelectedEventList (790) | 751 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (783)
+[7e/8fa5c8] CreateSelectedEventList (790) | 751 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (784)
+[5d/76afe9] CreateSelectedEventList (774) | 752 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (784)
+[5d/76afe9] CreateSelectedEventList (774) | 752 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (785)
+[bf/b131db] CreateSelectedEventList (789) | 753 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (786)
+[cc/465457] CreateSelectedEventList (773) | 754 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (786)
+[cc/465457] CreateSelectedEventList (773) | 754 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (787)
+[9b/e09888] CreateSelectedEventList (787) | 755 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (787)
+[6d/1f3773] CreateSelectedEventList (760) | 756 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (788)
+[43/aa16e7] CreateSelectedEventList (792) | 756 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (788)
+[5e/188d00] CreateSelectedEventList (756) | 757 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (789)
+[a4/439569] CreateSelectedEventList (784) | 757 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (790)
+[9e/60dfb2] CreateSelectedEventList (785) | 758 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (790)
+[9e/60dfb2] CreateSelectedEventList (785) | 758 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (791)
+[0a/402710] CreateSelectedEventList (796) | 759 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (792)
+[90/bb8047] CreateSelectedEventList (793) | 760 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (793)
+[f5/4f6e2e] CreateSelectedEventList (799) | 761 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (793)
+[f5/4f6e2e] CreateSelectedEventList (799) | 761 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (794)
+[3d/3f19e7] CreateSelectedEventList (802) | 762 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (796)
+[2f/23d64e] CreateSelectedEventList (794) | 764 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (796)
+[2f/23d64e] CreateSelectedEventList (794) | 764 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (797)
+[a7/5c3b7e] CreateSelectedEventList (752) | 765 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (797)
+[a7/5c3b7e] CreateSelectedEventList (752) | 765 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (798)
+[24/9918d4] CreateSelectedEventList (798) | 766 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (800)
+[15/ccca76] CreateSelectedEventList (806) | 768 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (800)
+[15/ccca76] CreateSelectedEventList (806) | 768 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (801)
+[9e/6e4de6] CreateSelectedEventList (803) | 769 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (802)
+[74/911bc0] CreateSelectedEventList (805) | 770 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (803)
+[ca/a7e97a] CreateSelectedEventList (801) | 771 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (804)
+[77/06bef4] CreateSelectedEventList (800) | 772 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (804)
+[77/06bef4] CreateSelectedEventList (800) | 772 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (805)
+[4e/9ee0fb] CreateSelectedEventList (777) | 773 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (806)
+[fe/b02670] CreateSelectedEventList (769) | 774 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (806)
+[fe/b02670] CreateSelectedEventList (769) | 774 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (807)
+[57/a274e5] CreateSelectedEventList (808) | 775 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (807)
+[57/a274e5] CreateSelectedEventList (808) | 775 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (808)
+[57/54253a] CreateSelectedEventList (807) | 776 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (809)
+[be/24011e] CreateSelectedEventList (811) | 777 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (810)
+[00/a9a1a8] CreateSelectedEventList (820) | 778 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (810)
+[00/a9a1a8] CreateSelectedEventList (820) | 778 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (811)
+[26/fe96c6] CreateSelectedEventList (819) | 779 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (811)
+[26/fe96c6] CreateSelectedEventList (819) | 779 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (812)
+[80/f5468a] CreateSelectedEventList (822) | 780 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (812)
+[80/f5468a] CreateSelectedEventList (822) | 780 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (813)
+[88/ec862f] CreateSelectedEventList (810) | 781 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (813)
+[88/ec862f] CreateSelectedEventList (810) | 781 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (814)
+[78/e39d6f] CreateSelectedEventList (815) | 782 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (815)
+[69/6a61a0] CreateSelectedEventList (824) | 783 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (815)
+[69/6a61a0] CreateSelectedEventList (824) | 783 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (816)
+[d1/13e513] CreateSelectedEventList (816) | 784 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (817)
+[8d/4a0078] CreateSelectedEventList (821) | 785 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (818)
+[ab/147002] CreateSelectedEventList (814) | 786 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (819)
+[d2/69f4c9] CreateSelectedEventList (809) | 787 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (819)
+[d2/69f4c9] CreateSelectedEventList (809) | 787 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (820)
+[61/01458b] CreateSelectedEventList (812) | 788 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (820)
+[61/01458b] CreateSelectedEventList (812) | 788 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (821)
+[55/5ed0d4] CreateSelectedEventList (823) | 789 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (821)
+[55/5ed0d4] CreateSelectedEventList (823) | 789 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (822)
+[06/e4df18] CreateSelectedEventList (833) | 790 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (823)
+[66/ec6c30] CreateSelectedEventList (818) | 791 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (824)
+[ba/beec89] CreateSelectedEventList (817) | 792 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (825)
+[3e/f3f3a2] CreateSelectedEventList (838) | 793 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (826)
+[3d/edc550] CreateSelectedEventList (836) | 794 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (827)
+[9a/5e1c0e] CreateSelectedEventList (835) | 795 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (828)
+[7f/2e9d14] CreateSelectedEventList (832) | 796 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (828)
+[7f/2e9d14] CreateSelectedEventList (832) | 796 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (829)
+[d7/91d14d] CreateSelectedEventList (840) | 797 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (830)
+[67/74a3dd] CreateSelectedEventList (831) | 798 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (831)
+[11/9a641d] CreateSelectedEventList (830) | 799 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (832)
+[d3/89ee21] CreateSelectedEventList (828) | 800 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (834)
+[f3/cb0bba] CreateSelectedEventList (837) | 802 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (834)
+[f3/cb0bba] CreateSelectedEventList (837) | 802 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (835)
+[a3/ffde1b] CreateSelectedEventList (839) | 803 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (836)
+[9e/da9a97] CreateSelectedEventList (843) | 804 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (837)
+[80/e715ba] CreateSelectedEventList (827) | 805 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (838)
+[a3/28d695] CreateSelectedEventList (826) | 806 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (839)
+[d9/80174f] CreateSelectedEventList (825) | 807 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (839)
+[d9/80174f] CreateSelectedEventList (825) | 807 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (840)
+[b1/52c1fe] CreateSelectedEventList (834) | 808 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (842)
+[51/88416b] CreateSelectedEventList (829) | 810 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (843)
+[bb/e6c1a6] CreateSelectedEventList (846) | 811 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (843)
+[bb/e6c1a6] CreateSelectedEventList (846) | 811 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (844)
+[e3/660cad] CreateSelectedEventList (849) | 812 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (844)
+[e3/660cad] CreateSelectedEventList (849) | 812 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (845)
+[f8/7611e4] CreateSelectedEventList (845) | 813 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (845)
+[f8/7611e4] CreateSelectedEventList (845) | 813 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (846)
+[84/e9646d] CreateSelectedEventList (850) | 814 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (848)
+[a4/e5e94b] CreateSelectedEventList (842) | 816 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (848)
+[a4/e5e94b] CreateSelectedEventList (842) | 816 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (849)
+[48/a6a03c] CreateSelectedEventList (847) | 817 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (850)
+[73/e60bf7] CreateSelectedEventList (841) | 818 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (850)
+[73/e60bf7] CreateSelectedEventList (841) | 818 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (851)
+[cb/d6a7d9] CreateSelectedEventList (848) | 819 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (852)
+[05/02c804] CreateSelectedEventList (851) | 820 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (852)
+[05/02c804] CreateSelectedEventList (851) | 820 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (853)
+[5b/cce9db] CreateSelectedEventList (853) | 821 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (853)
+[5b/cce9db] CreateSelectedEventList (853) | 821 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (854)
+[2e/2819d0] CreateSelectedEventList (861) | 822 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (855)
+[6c/d67197] CreateSelectedEventList (863) | 823 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (855)
+[6c/d67197] CreateSelectedEventList (863) | 823 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (856)
+[8c/fb72ad] CreateSelectedEventList (862) | 824 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (856)
+[8c/fb72ad] CreateSelectedEventList (862) | 824 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (857)
+[93/75476b] CreateSelectedEventList (858) | 825 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (858)
+[37/eea801] CreateSelectedEventList (866) | 826 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (859)
+[ec/d933fd] CreateSelectedEventList (864) | 827 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (860)
+[0b/133b9d] CreateSelectedEventList (867) | 828 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (861)
+[ba/b7426c] CreateSelectedEventList (860) | 829 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (862)
+[50/e9cd29] CreateSelectedEventList (871) | 830 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (863)
+[b5/d62f0a] CreateSelectedEventList (872) | 831 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (863)
+[b5/d62f0a] CreateSelectedEventList (872) | 831 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (864)
+[5e/a05ff4] CreateSelectedEventList (868) | 832 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (864)
+[5e/a05ff4] CreateSelectedEventList (868) | 832 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (865)
+[00/a396fd] CreateSelectedEventList (870) | 833 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (866)
+[31/1a1afd] CreateSelectedEventList (854) | 834 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (866)
+[31/1a1afd] CreateSelectedEventList (854) | 834 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (867)
+[cf/736232] CreateSelectedEventList (859) | 835 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (867)
+[cf/736232] CreateSelectedEventList (859) | 835 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (868)
+[d4/d5a480] CreateSelectedEventList (876) | 836 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (869)
+[b8/7e7099] CreateSelectedEventList (855) | 837 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (869)
+[b8/7e7099] CreateSelectedEventList (855) | 837 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (870)
+[d5/f1f85d] CreateSelectedEventList (857) | 838 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (870)
+[d5/f1f85d] CreateSelectedEventList (857) | 838 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (871)
+[9f/8bc069] CreateSelectedEventList (869) | 839 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (872)
+[87/bb14af] CreateSelectedEventList (856) | 840 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (872)
+[87/bb14af] CreateSelectedEventList (856) | 840 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (873)
+[e0/d0a7ca] CreateSelectedEventList (865) | 841 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (874)
+[b6/21d43c] CreateSelectedEventList (875) | 842 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (875)
+[bd/8d6f19] CreateSelectedEventList (873) | 843 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[06/6c9560] CreateSelectedEventList (874) | 844 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[06/6c9560] CreateSelectedEventList (874) | 844 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[a3/28d695] CreateSelectedEventList (826) | 845 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[b1/52c1fe] CreateSelectedEventList (834) | 846 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[6e/8197e7] CreateSelectedEventList (844) | 847 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[bb/e6c1a6] CreateSelectedEventList (846) | 848 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[e9/3e03e2] CreateSelectedEventList (813) | 849 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[51/88416b] CreateSelectedEventList (829) | 850 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[9f/8bc069] CreateSelectedEventList (869) | 852 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[00/a396fd] CreateSelectedEventList (870) | 853 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[2e/2819d0] CreateSelectedEventList (861) | 854 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[73/e60bf7] CreateSelectedEventList (841) | 855 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[84/e9646d] CreateSelectedEventList (850) | 856 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[05/02c804] CreateSelectedEventList (851) | 857 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[37/eea801] CreateSelectedEventList (866) | 858 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[8c/fb72ad] CreateSelectedEventList (862) | 859 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[0b/133b9d] CreateSelectedEventList (867) | 860 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[6c/d67197] CreateSelectedEventList (863) | 861 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[ba/b7426c] CreateSelectedEventList (860) | 862 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[bd/8d6f19] CreateSelectedEventList (873) | 863 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[ec/d933fd] CreateSelectedEventList (864) | 864 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[50/e9cd29] CreateSelectedEventList (871) | 865 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[b5/d62f0a] CreateSelectedEventList (872) | 866 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[5e/a05ff4] CreateSelectedEventList (868) | 867 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[d5/f1f85d] CreateSelectedEventList (857) | 869 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[cf/736232] CreateSelectedEventList (859) | 870 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[b8/7e7099] CreateSelectedEventList (855) | 871 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[31/1a1afd] CreateSelectedEventList (854) | 872 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[e0/d0a7ca] CreateSelectedEventList (865) | 873 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[87/bb14af] CreateSelectedEventList (856) | 874 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[b6/21d43c] CreateSelectedEventList (875) | 875 of 876, failed: 1
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[06/6c9560] CreateSelectedEventList (874) | 876 of 876, failed: 1 ✔
+[-        ] CombineEventListsRunsSelected -
+
+executor >  local (876)
+[06/6c9560] CreateSelectedEventList (874) | 876 of 876, failed: 1 ✔
+[-        ] CombineEventListsRunsSelected | 0 of 1
+
+executor >  local (877)
+[06/6c9560] CreateSelectedEventList (874)  | 876 of 876, failed: 1 ✔
+[ff/1546a5] Com…EventListsRunsSelected (1) | 0 of 1
+
+executor >  local (877)
+[06/6c9560] CreateSelectedEventList (874)  | 876 of 876, failed: 1 ✔
+[ff/1546a5] Com…EventListsRunsSelected (1) | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti_selected.nf -profile woody_hannes_container_analysis --filestype data_orca_conv --delta_search_min 30.0 -with-report
+
+executor >  local (877)
+[06/6c9560] CreateSelectedEventList (874)  | 876 of 876, failed: 1 ✔
+[ff/1546a5] Com…EventListsRunsSelected (1) | 1 of 1 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_analysis_workflow_creategti_selected.nf -profile woody_hannes_container_analysis --filestype data_orca_conv --delta_search_min 30.0 -with-report
+Completed at: 14-Aug-2025 04:22:28
+Duration    : 48m 52s
+CPU hours   : 19.9 (0% failed)
+Succeeded   : 876
+Ignored     : 1
+Failed      : 1
+
+
+=== JOB_STATISTICS ===
+=== current date     : Thu Aug 14 04:22:29 CEST 2025
+= Job-ID             : 8868168 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:53:38
+= Total RAM usage    : 114.5 GiB of requested  GiB (%)   
+= Node list          : w2317
+= Subm/Elig/Start/End: 2025-08-14T03:20:05 / 2025-08-14T03:22:06 / 2025-08-14T03:28:51 / 2025-08-14T04:22:29
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc             101.5G   104.9G   209.7G        N/A     244K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    

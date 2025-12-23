@@ -11,11 +11,12 @@ process ConvertFilesKM3NeT{
     tuple path("*.h5"), val(detectorname), emit: converted_file
     // tuple val(ratio), path("*.h5"), val(iteration), emit: converted_file
 
-    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true //, enabled: false
+    //publishDir = false
 
     script:
     """
-    /venv/bin/python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ConvertKM3NeTFiles.py -i "${input_file}" -o "./" --detector ${detectorname}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ConvertKM3NeTFiles.py -i "${input_file}" -o "./" --detector ${detectorname}
     """
 }
 
@@ -28,7 +29,7 @@ process AddTrackScoreKM3NeT{
     output:
     tuple path("*classified.h5"), val(detectorname), emit: classified_file
     
-    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true //, enabled: false
 
     script:
     """
@@ -40,12 +41,13 @@ process AddTrackScoreKM3NeT{
 }
 
 process BlindDataKM3NET{
+    errorStrategy 'ignore'
     input:
     tuple path(input_file), val(detectorname)
     output:
     tuple path("*blinded.h5"), val(detectorname), emit: blinded_file
 
-    publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/blinded_data", mode: 'link', overwrite: true, enabled: false
 
     script:
     """
@@ -66,7 +68,7 @@ process CreateEventListKM3NeT{
     path "*eventlist.hdf5", emit: eventlist
     tuple val(ratio), path('*eventlist.hdf5'), val(iteration), emit: eventlist
 
-    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true, enabled: false
 
     """
     python3  /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CreateEventListKM3NeT.py -i "${input_file}" -o "./" -s "${source_specs_file}" --energy_th ${energy_threshold} --dist ${dist} --detector ${detectorname}
@@ -76,16 +78,16 @@ process CreateEventListKM3NeT{
 process CorrectEventListKM3NeT{
     errorStrategy 'ignore'
     input:
-    tuple path(input_file), val(detectorname), path(total_events_file)
+    tuple path(input_file), val(detectorname)
     // path input_file
     // tuple val(ratio), path(input_file), val(iteration)
     path source_specs_file
     
     output:
-    tuple path("*corrected.hdf5"), val(detectorname), path(total_events_file), emit: corrected_eventlist
+    tuple path("*corrected.hdf5"), val(detectorname),  emit: corrected_eventlist
     // tuple val(ratio), path("*corrected.hdf5"), val(iteration), emit: corrected_eventlist
 
-    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/eventlists_preprocessed", mode: 'link', overwrite: true //, enabled: false
 
     script:
     """
@@ -118,10 +120,10 @@ process InjectSignalKM3NeT_old{
     """
 }
 
-process InjectSignalKM3NeT{
+process InjectSignalKM3NeT_backup{
     //errorStrategy 'ignore'
     input:
-    tuple val(ratio), path(input_file), val(detectorname), path(total_events_file), val(iteration)
+    tuple val(ratio), path(input_file), val(detectorname), path(total_events_file), val(iteration), val(energy_min), val(gamma)
     val frequency
     val pulseshape
     val df
@@ -134,7 +136,7 @@ process InjectSignalKM3NeT{
 
     
     output:
-    tuple val(ratio), path("*signal*hdf5"), val(detectorname), val(iteration), emit: injected_signal
+    tuple val(ratio), path("*signal*hdf5"), val(detectorname), val(iteration), val(energy_min), val(gamma), emit: injected_signal
     path("*.png"), emit: plot , optional : true
     path("*total_events2.txt"), emit: total_events , optional : true //gets created for each injection, so not only once...
 
@@ -142,10 +144,38 @@ process InjectSignalKM3NeT{
 
     script:
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/InjectSignalKM3NeT_new.py -i ${input_file} -o "./" --total_events_file ${total_events_file} --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa} --method ${method} #--plot True
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/InjectSignalKM3NeT_new.py -i ${input_file} -o "./" --total_events_file ${total_events_file} --ratio ${ratio} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa} --method ${method} --E_min ${energy_min} --gamma ${gamma} #--plot True
     """
 }
 
+process InjectSignalKM3NeT{
+    //errorStrategy 'ignore'
+    input:
+    tuple val(rate), path(input_file), val(detectorname), val(iteration), val(energy_min), val(gamma)
+    val frequency
+    val pulseshape
+    val df
+    val baseline
+    val a
+    val phi
+    val kappa
+    val method
+    path energy_response_file
+
+
+    
+    output:
+    tuple val(rate), path("*signal*hdf5"), val(detectorname), val(iteration), val(energy_min), val(gamma), emit: injected_signal
+    path("*.png"), emit: plot , optional : true
+    path("*total_events2.txt"), emit: total_events , optional : true //gets created for each injection, so not only once...
+
+    publishDir "${params.output_dir}/signal", mode: 'link', overwrite: true //, enabled: false
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/InjectSignalKM3NeT.py -i ${input_file} -o "./" -e ${energy_response_file} --rate ${rate} --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa} --method ${method} --E_min ${energy_min} --gamma ${gamma} #--plot True
+    """
+}
 
 process CombineEventListsRuns{
     input:
@@ -159,12 +189,12 @@ process CombineEventListsRuns{
 
     output:
     //tuple val(ratio), path("*combined_eventlist*.hdf5"), val(iteration), emit: combined_file
-    tuple path("*combined_eventlist*.hdf5"), val(detector), path("*total_events.txt"), emit: combined_file
-    path("*lightcurve.png"), emit: lightcurve_plot
-    path("*total_events.txt"), emit: total_events 
-    path("*zenith_over_time.png"), emit: zenith_over_time_plot
-    path("*energy_check.txt"), emit: energy_check
-    path("*gtis.pkl"), emit: gti_file
+    tuple path("*_combined_*.hdf5"), val(detector),  emit: combined_file
+    path("*lightcurve.png"), emit: lightcurve_plot, optional: true
+    path("*total_events.txt"), emit: total_events, optional: true 
+    path("*zenith_over_time.png"), emit: zenith_over_time_plot, optional: true
+    path("*energy_check.txt"), emit: energy_check, optional: true
+    path("*gtis.pkl"), emit: gti_file, optional: true
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
@@ -179,7 +209,7 @@ process CombineEventListsDetectors{
     input:
     //tuple val(ratio), path(input_files), val(iteration)
     //tuple val(input_files), val(source_specs_file), val(delta_search_min), val(filestype), val(detector)
-    tuple val(ratio), path(input_files), val(detectorname), val(iteration)
+    tuple val(ratio), path(input_files), val(detectorname), val(iteration), val(energy_min), val(gamma)
     path source_specs_file
     val delta_search_min
     val filestype
@@ -187,18 +217,18 @@ process CombineEventListsDetectors{
 
     output:
     //tuple val(ratio), path("*combined_eventlist*.hdf5"), val(iteration), emit: combined_file
-    tuple val(ratio), path("*combined_eventlist*.hdf5"), val(iteration), emit: combined_file
-    path("*lightcurve.png"), emit: lightcurve_plot
-    path("*total_events.txt"), emit: total_events 
-    path("*zenith_over_time.png"), emit: zenith_over_time_plot
-    path("*energy_check.txt"), emit: energy_check
+    tuple val(ratio), path("*combinedet*.hdf5"), val(iteration), val(energy_min), val(gamma), emit: combined_file
+    path("*lightcurve.png"), emit: lightcurve_plot, optional: true
+    path("*total_events.txt"), emit: total_events, optional: true 
+    path("*zenith_over_time.png"), emit: zenith_over_time_plot, optional: true
+    path("*energy_check.txt"), emit: energy_check, optional: true
 
     publishDir "${params.output_dir}/combined_eventlists", mode: 'link', overwrite: true;
 
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CombineEventListsKM3NeT.py ${inputFilesString} -o "./" -s ${source_specs_file} --delta_search_min ${delta_search_min} --filestype ${filestype} --detector 'arcaorca'
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/CombineEventListsKM3NeT.py ${inputFilesString} -o "./" -s ${source_specs_file} --delta_search_min ${delta_search_min} --filestype ${filestype} --detector 'arcaorca' --combinedet 'True'
     """
 }
 
@@ -206,19 +236,19 @@ process CombineEventListsDetectors{
 
 process EpochFoldingKM3NeT{
     input:
-    tuple val(ratio), path(input_file), val(iteration)
+    tuple val(ratio), path(input_file), path(gti_file), val(iteration), val(energy_min), val(gamma), val(length)
     val frequency
     val number_of_testf
     val df
     val nbin
     val segment_size
-    path gti_file
+    // path gti_file
 
     output:
-    tuple val(ratio), path("*epochfolding_results.hdf5"), val(iteration), emit: hdf5;
+    tuple val(ratio), path("*ef.hdf5"), val(iteration), val(energy_min), val(gamma), val(length), emit: hdf5;
     path "*.png", emit: plot;
 
-    publishDir "${params.output_dir}/epoch_folding", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/epoch_folding", mode: 'link', overwrite: true, enabled: false
 
     script:
     """
@@ -229,14 +259,14 @@ process EpochFoldingKM3NeT{
 
 process Chi2HistogramKM3NeT{
     input:
-    tuple val(ratio), path(input_files), val(iteration)
+    tuple val(ratio), path(input_files), val(iteration), val(energy_min), val(gamma), val(length)
     val nhbins
 
     output:
-    path "*maxchi2.hdf5", emit: hdf5
+    tuple path("*maxchi2.hdf5"), val(energy_min), val(gamma), val(length), emit: hdf5
     path "*.png", emit: plot
 
-    publishDir "${params.output_dir}/maxchi2", mode: 'link', overwrite: true
+    publishDir "${params.output_dir}/maxchi2", mode: 'link', overwrite: true, enabled: false
 
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
@@ -247,23 +277,23 @@ process Chi2HistogramKM3NeT{
 
 process SignalNoiseStatisticsKM3NeT{
     input:
-    path input_files
+    tuple path(input_files), val(energy_min), val(gamma), val(length)
     val nbin
     val frequency
     val angle
     path total_events_file
 
     output:
-    path "*StatisticOverSNR.hdf5", emit: hdf5
-    path "*StatisticOverSNR_plotlin.png", emit: plot_lin
-    path "*StatisticOverSNR_plotlog.png", emit: plot_log
+    tuple path("*StatisticOverRate.hdf5"), val(energy_min), val(gamma), val(length), emit: hdf5
+    path "*StatisticOverRate_plotlin.png", emit: plot_lin
+    path "*StatisticOverRate_plotlog.png", emit: plot_log
 
     publishDir "${params.output_dir}/eff_statistic", mode: 'link', overwrite: true
     
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./" --total_events_file ${total_events_file} --nbin ${nbin} --frequency ${frequency} --angle ${angle}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/SignalNoiseStatisticsKM3NeT.py ${inputFilesString} -o "./" --total_events_file ${total_events_file} --nbin ${nbin} --frequency ${frequency} --angle ${angle} --E_min ${energy_min} --gamma ${gamma} --length ${length}
     """
 }
 
@@ -295,6 +325,9 @@ process MultifileAngularResolutionKM3NeT{
     val runtype
     val recotype
     val pltscale
+    val energy_low
+    val energy_high
+    val nbins
 
     output: 
     path "*AngularResolutionOverEnergy*.hdf5", emit: hdf5
@@ -306,7 +339,7 @@ process MultifileAngularResolutionKM3NeT{
     script:
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
-    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/MultifileAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale}
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/MultifileAngularResolutionKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname} --runtype ${runtype} --recotype ${recotype} --pltscale ${pltscale} --energy_low ${energy_low} --energy_high ${energy_high} --nbins ${nbins}
     """
 }
 
@@ -405,7 +438,7 @@ process CreateEventListKM3NeT_new {
     output:
     tuple path("*eventlist_new.hdf5"), val(detectorname), emit: eventlist_new
 
-    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true;
+    publishDir "${params.output_dir}/eventlists", mode: 'link', overwrite: true, enabled: false
 
     script:
 
@@ -602,9 +635,9 @@ process FilterMuonScore{
 
 
 process PlotSkyMapsKM3NeT{
-    //errorStrategy 'ignore'
+    errorStrategy 'ignore'
     input:
-    tuple path(input_file), val(detectorname), path(total_events_file)
+    tuple path(input_file), val(detectorname)
     //path input_file
     //val detectorname
     path source_specs_file
@@ -631,7 +664,7 @@ process PlotSkyMapsKM3NeT{
 }
 
 process PlotSkyMapsKM3NeTCombined{
-    //errorStrategy 'ignore'
+    errorStrategy 'ignore'
     input:
     tuple val(ratio), path(input_file), val(iteration)
     val detectorname
@@ -693,11 +726,14 @@ process FindGTIsKM3NeTSingle{
 
 process FindGTIsKM3NeTCombined{
     input:
+    // tuple val(ratio), path(input_files), val(iteration), val(energy_min), val(gamma)
     path(input_files)
     val dt_gtis
 
     output:
     path("*combined_gtis.pkl") ,  emit: gti_file
+    //tuple val(ratio), path(input_files), val(iteration), val(energy_min), val(gamma), path("*combined_gtis.pkl"), emit: gti_file_tuple
+    path("*GTIs.png"), emit: gti_lightcurve_plot, optional: true
 
     publishDir "${params.output_dir}/gtis", mode: 'link', overwrite: true;
 
@@ -705,5 +741,209 @@ process FindGTIsKM3NeTCombined{
     def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
     """
     python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/FindGTIsKM3NeT.py ${inputFilesString} -o "./" --df ${dt_gtis} --combine
+    """
+}
+
+process ApplyCutsKM3NeT{
+    input:
+    tuple val(ratio), path(input_file), val(detectorname), val(iteration), val(energy_min_inj), val(gamma)
+    val energy_min
+    val energy_max
+    val nhits_tr_min
+    val nhits_sh_min
+    val lik_tr_min
+    val lik_sh_min
+    val beta0_tr_max
+    val zenith_min
+    val trackscore_low_max
+    val trackscore_high_min
+
+    output:
+    tuple val(ratio), path("*cutsapplied.hdf5"), val(detectorname), val(iteration), val(energy_min_inj), val(gamma), emit: cut_file
+
+    publishDir "${params.output_dir}/cutfiles", mode: 'link', overwrite: true, enabled: false
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/ApplyCutsKM3NeT.py -i ${input_file} -o "./" --detector ${detectorname} \
+        --energy_min ${energy_min} --energy_max ${energy_max} --nhits_tr_min ${nhits_tr_min} --nhits_sh_min ${nhits_sh_min} \
+        --lik_tr_min ${lik_tr_min} --lik_sh_min ${lik_sh_min} --beta0_tr_max ${beta0_tr_max} --zenith_min ${zenith_min} \
+        --trackscore_low_max ${trackscore_low_max} --trackscore_high_min ${trackscore_high_min}
+                                                                                       
+    """
+}
+
+process CalculateWeightsKM3NeT{
+    input:
+    tuple path(input_files), val(detectorname)
+
+    output:
+    path("*weights.hdf5"), emit: weights
+
+    publishDir "${params.output_dir}/weights", mode: 'link', overwrite: true;
+
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    #python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AtmosphericNeutrinoWeightsKM3NeT.py -i "${input_files}" -o "./"
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AtmosphericNeutrinoWeightsKM3NeT.py ${inputFilesString} -o "./" --detector ${detectorname}
+    """
+}
+
+process AddWeightsKM3NeT_old {
+    errorStrategy 'ignore'
+
+    input:
+    tuple path(input_file), val(detectorname)
+    val weights_folder
+
+    output:
+    tuple path("*with_weights.h5"), val(detectorname), emit: weighted_file
+
+    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true;
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AddWeightsKM3NeT.py -i "${input_file}" -p "${weights_folder}" -o "./" --detector ${detectorname}
+    """
+}
+
+process AddWeightsKM3NeT {
+    // errorStrategy 'ignore'
+
+    input:
+    tuple path(input_file), val(detectorname)
+    path orca_weights_file
+    path arca_weights_file
+
+    output:
+    tuple path("*with_weights.h5"), val(detectorname), emit: weighted_file
+
+    publishDir "${params.output_dir}/input", mode: 'link', overwrite: true, enabled: false
+
+    script:
+    def weight_file = detectorname == 'orca' ? orca_weights_file : arca_weights_file
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/AddWeightsKM3NeT_new.py \
+        -i "${input_file}" \
+        -w "${weight_file}" \
+        -o "./" \
+        --detector ${detectorname}
+    """
+}
+
+process SelectSubsetKM3NeT {
+
+    input:
+    tuple val(ratio), path(input_file), val(iteration), val(energy_min_inj), val(gamma), val(length) //, path(gti_file)
+    path(gti_file)
+    // val fraction
+    
+    output:
+    tuple val(ratio), path("*days.hdf5"), path("*subset_gtis.pkl"), val(iteration), val(energy_min_inj), val(gamma), val(length), emit: subset_file
+
+    publishDir "${params.output_dir}/subsets", mode: 'link', overwrite: true;
+
+    script:
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/SelectDataSetLengthKM3NeT.py -i ${input_file} -o "./" --gti_files ${gti_file} --length ${length}
+    """
+
+}
+
+
+process InjectCutSelectFoldKM3NeT {
+
+    input:
+    tuple val(rate), path(input_file), val(detectorname), val(iteration), val(energy_min_inj), val(gamma), val(length)
+    path(gti_file)
+
+    val frequency
+    val pulseshape
+    val df
+    val baseline
+    val a
+    val phi
+    val kappa
+    val method
+    path energy_response_file
+
+    val energy_min
+    val energy_max
+    val nhits_tr_min
+    val nhits_sh_min
+    val lik_tr_min
+    val lik_sh_min
+    val beta0_tr_max
+    val zenith_min
+    val trackscore_low_max
+    val trackscore_high_min
+
+    val number_of_testf
+    val testdf
+    val nbin
+    val segment_size
+
+    val run_name
+
+
+    output:
+    tuple val(rate), path("*ef.hdf5"), val(iteration), val(energy_min_inj), val(gamma), val(length), emit: efhdf5;
+    path "*total_events.txt", emit: total_events_file
+    path "*.png", emit: plot, optional: true
+
+    publishDir "${params.output_dir}/epoch_folding", mode: 'link', overwrite: true, enabled: false
+
+    script:
+
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/InjectCutSelectFoldKM3NeT.py \
+        -i "${input_file}" -o "./" -e ${energy_response_file} --rate ${rate} \
+        --pulseshape ${pulseshape} --df ${df} --frequency ${frequency} --baseline ${baseline} --a ${a} --phi ${phi} --kappa ${kappa} \
+        --method ${method} --E_min ${energy_min_inj} --gamma ${gamma} --detector ${detectorname} \
+        --energy_min ${energy_min} --energy_max ${energy_max} --nhits_tr_min ${nhits_tr_min} --nhits_sh_min ${nhits_sh_min} \
+        --lik_tr_min ${lik_tr_min} --lik_sh_min ${lik_sh_min} --beta0_tr_max ${beta0_tr_max} --zenith_min ${zenith_min} \
+        --trackscore_low_max ${trackscore_low_max} --trackscore_high_min ${trackscore_high_min} \
+        --gti_files ${gti_file} --length ${length} \
+        --number_of_testf ${number_of_testf} --testdf ${testdf} --nbin ${nbin} --iteration ${iteration} --segment_size ${segment_size} \
+        --run_name ${run_name}
+
+    """
+}
+
+process RateOverGammaSensitivityPlotKM3NeT{
+
+    input:
+    tuple path(input_files), val(energy_min), val(gamma), val(length)
+
+    output:
+    path("*.png"), emit: sensitivity_plot
+    path("*Gamma.hdf5"), emit: sensitivity_data
+
+
+    publishDir "${params.output_dir}/sensitivity", mode: 'link', overwrite: true
+
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/RateOverGammaSensitivityPlotKM3NeT.py ${inputFilesString} -o "./" 
+    """
+}
+
+process RateOverEminSensitivityPlotKM3NeT{
+
+    input:
+    tuple path(input_files), val(energy_min), val(gamma), val(length)
+
+    output:
+    path("*.png"), emit: sensitivity_plot
+    path("*E_min.hdf5"), emit: sensitivity_data
+
+    publishDir "${params.output_dir}/sensitivity", mode: 'link', overwrite: true
+
+    script:
+    def inputFilesString = input_files.collect { "-i ${it}" }.join(' ')
+    """
+    python3 /home/hpc/capn/capn107h/software/psr/src/scripts/km3net/RateOverEminSensitivityPlotKM3NeT.py ${inputFilesString} -o "./" 
     """
 }

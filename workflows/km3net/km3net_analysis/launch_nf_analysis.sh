@@ -15,4 +15,4 @@ shift 2
 
 # Run Nextflow workflow with Slurm configuration
 # nextflow plugin install nf-boosts
-nextflow -C ${CONFIG} run ${WORKFLOW} -profile woody_hannes_container_analysis "$@"
+nextflow -C ${CONFIG} run ${WORKFLOW} -profile woody_hannes_container_analysis "$@" -with-report

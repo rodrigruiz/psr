@@ -8,7 +8,6 @@
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013295.jchain.aashower.8.root
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013296.jchain.aashower.9.root
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013297.jchain.aashower.10.root
-/home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013298.jchain.aashower.11.root
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013299.jchain.aashower.12.root
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013300.jchain.aashower.13.root
 /home/hpc/capn/mppi104h/wecapstor3/out/ARCA/KM3NeT_00000133/v8.1/reco/electron/mcv8.1.gsg_anue-CCHEDIS_1e2-1e8GeV.sirene.jterbr00013301.jchain.aashower.14.root

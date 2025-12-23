@@ -1,0 +1,169 @@
+### Starting TaskPrologue of job 8864416 on w2233 at Tue Aug 12 22:00:16 CEST 2025
+#   SLURM_JOB_NODELIST=w2233
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=4
+#   SLURM_NPROCS=4
+#   SLURM_TASKS_PER_NODE=4
+#   SLURM_JOB_CPUS_PER_NODE=32
+#   SLURM_EXPORT_ENV=
+Running on cores 0-31 with govenor powersave
+### Finished TaskPrologue
+curl: (7) Failed to connect to www.nextflow.io port 443: Connection timed out
+
+ N E X T F L O W   ~  version 24.10.1
+
+Launching `km3net_convertfiles.nf` [lethal_lavoisier] DSL2 - revision: dcfc982ae0
+
+[-        ] ConvertFilesKM3NeT -
+
+[-        ] ConvertFilesKM3NeT | 0 of 40
+
+executor >  slurm (3)
+[62/dde673] ConvertFilesKM3NeT (9) | 0 of 66
+
+executor >  slurm (6)
+[9e/356910] ConvertFilesKM3NeT (6) | 0 of 66
+
+executor >  slurm (8)
+[86/33b099] ConvertFilesKM3NeT (32) | 0 of 66
+
+executor >  slurm (11)
+[bf/96043a] ConvertFilesKM3NeT (3)  | 0 of 66
+
+executor >  slurm (14)
+[30/ac33ec] ConvertFilesKM3NeT (26) | 0 of 66
+
+executor >  slurm (16)
+[94/6c0c69] ConvertFilesKM3NeT (17) | 0 of 66
+
+executor >  slurm (19)
+[2f/28f69b] ConvertFilesKM3NeT (27) | 0 of 66
+
+executor >  slurm (22)
+[82/499f96] ConvertFilesKM3NeT (7)  | 0 of 66
+
+executor >  slurm (26)
+[4d/cc3d57] ConvertFilesKM3NeT (13) | 0 of 66
+
+executor >  slurm (29)
+[58/59312f] ConvertFilesKM3NeT (31) | 0 of 66
+
+executor >  slurm (32)
+[1d/37510d] ConvertFilesKM3NeT (15) | 0 of 66
+
+executor >  slurm (34)
+[07/4e8ab6] ConvertFilesKM3NeT (41) | 0 of 66
+
+executor >  slurm (35)
+[14/f1b461] ConvertFilesKM3NeT (39) | 0 of 66
+
+executor >  slurm (37)
+[b1/2f58ad] ConvertFilesKM3NeT (37) | 0 of 66
+
+executor >  slurm (40)
+[f2/49e877] ConvertFilesKM3NeT (38) | 0 of 66
+
+executor >  slurm (43)
+[0a/ed6dd1] ConvertFilesKM3NeT (43) | 0 of 66
+
+executor >  slurm (46)
+[b6/220557] ConvertFilesKM3NeT (47) | 0 of 66
+
+executor >  slurm (49)
+[ba/d69a18] ConvertFilesKM3NeT (48) | 0 of 66
+
+executor >  slurm (53)
+[6c/50cbb7] ConvertFilesKM3NeT (50) | 0 of 66
+
+executor >  slurm (56)
+[74/6fc550] ConvertFilesKM3NeT (51) | 0 of 66
+
+executor >  slurm (60)
+[96/c9e10e] ConvertFilesKM3NeT (56) | 0 of 66
+
+executor >  slurm (64)
+[32/d6668e] ConvertFilesKM3NeT (52) | 0 of 66
+
+executor >  slurm (66)
+[95/a96525] ConvertFilesKM3NeT (62) | 0 of 66
+
+executor >  slurm (66)
+[95/a96525] ConvertFilesKM3NeT (62) | 0 of 66
+
+executor >  slurm (66)
+[be/77c33e] ConvertFilesKM3NeT (36) | 2 of 66
+
+executor >  slurm (66)
+[f2/49e877] ConvertFilesKM3NeT (38) | 5 of 66
+
+executor >  slurm (66)
+[f2/49e877] ConvertFilesKM3NeT (38) | 5 of 66
+
+executor >  slurm (66)
+[f2/49e877] ConvertFilesKM3NeT (38) | 5 of 66
+
+executor >  slurm (66)
+[44/cfa62b] ConvertFilesKM3NeT (25) | 6 of 66
+
+executor >  slurm (66)
+[c5/fa1820] ConvertFilesKM3NeT (61) | 7 of 66
+
+executor >  slurm (66)
+[e0/e75831] ConvertFilesKM3NeT (23) | 28 of 66
+
+executor >  slurm (66)
+[b6/220557] ConvertFilesKM3NeT (47) | 45 of 66
+
+executor >  slurm (66)
+[43/884ffa] ConvertFilesKM3NeT (55) | 51 of 66
+
+executor >  slurm (66)
+[bd/db63b9] ConvertFilesKM3NeT (54) | 56 of 66
+
+executor >  slurm (66)
+[bc/099864] ConvertFilesKM3NeT (34) | 57 of 66
+
+executor >  slurm (66)
+[6c/50cbb7] ConvertFilesKM3NeT (50) | 58 of 66
+
+executor >  slurm (66)
+[96/c9e10e] ConvertFilesKM3NeT (56) | 61 of 66
+
+executor >  slurm (66)
+[95/a96525] ConvertFilesKM3NeT (62) | 66 of 66 ✔
+
+executor >  slurm (66)
+[95/a96525] ConvertFilesKM3NeT (62) | 66 of 66 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_convertfiles.nf -profile woody_hannes_container_analysis --filestype data_arca -with-report
+
+executor >  slurm (66)
+[95/a96525] ConvertFilesKM3NeT (62) | 66 of 66 ✔
+Pipeline complete
+Command line: nextflow -C profiles.config run km3net_convertfiles.nf -profile woody_hannes_container_analysis --filestype data_arca -with-report
+Completed at: 12-Aug-2025 22:09:31
+Duration    : 4m 30s
+CPU hours   : 1.8
+Succeeded   : 66
+
+
+=== JOB_STATISTICS ===
+=== current date     : Tue Aug 12 22:09:32 CEST 2025
+= Job-ID             : 8864416 on woody
+= Job-Name           : launch_nf_analysis.sh
+= Job-Command        : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis/launch_nf_analysis.sh
+= Initial workdir    : /home/hpc/capn/capn107h/software/psr/workflows/km3net/km3net_analysis
+= Queue/Partition    : work
+= Slurm account      : capn with QOS=ecap-long
+= Requested resources:  for 12:00:00
+= Elapsed runtime    : 00:09:16
+= Total RAM usage    : 0.8 GiB of requested  GiB (%)   
+= Node list          : w2233
+= Subm/Elig/Start/End: 2025-08-12T20:35:14 / 2025-08-12T20:35:14 / 2025-08-12T22:00:15 / 2025-08-12T22:09:31
+======================
+=== Quota infos ======
+    Path                 Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody             0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc              96.1G   104.9G   209.7G        N/A     181K     500K   1,000K        N/A    
+    /home/vault             0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/saturn            4.0K     0.0K     0.0K        N/A       1                           N/A    
