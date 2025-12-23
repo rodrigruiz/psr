@@ -91,7 +91,7 @@ def main():
             os.remove(output_file)  # Remove the file if it already exists
 
     if data['combine']:
-        combined_output_file = data['output_dir'] + 'combined_gtis'
+        combined_output_file = data['output_dir'] + 'gtifile_combined_gtis'
         absolute_gtis.sort()
 
         plt.figure(figsize=(10, 6))
@@ -99,12 +99,13 @@ def main():
         for start, end in gtis:
             plt.axvline(start, linestyle="dotted", color="gray", alpha=0.8)
             plt.axvline(end, linestyle="dotted", color="gray", alpha=0.8)
+            plt.axvspan(start, end, color="gray", alpha=0.2) 
         plt.xlabel("Time (s)", fontsize=14)
         plt.ylabel("Counts", fontsize=14)
-        plt.title("Lightcurve", fontsize=16)
+        plt.title("Lightcurve with highlighted GTIs", fontsize=16)
         plt.grid(True)
         plt.tight_layout()
-        plt.savefig("Testplot_lightcurve.png")
+        plt.savefig("Testplot_lightcurve_withGTIs.png")
         
         print(len(absolute_gtis))
         print(absolute_gtis)

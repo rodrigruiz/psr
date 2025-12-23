@@ -72,17 +72,17 @@ def main():
         print(f"Processing file: {file}")
 
         # Check and shuffle times and columns for each table if it exists
-        # if hasattr(tables, 'id_table'):
-        #     print("Shuffling times in ID table...")
-        #     tables.id_table = shuffle_columns(tables.id_table, ['timeslice_utc_time'])
+        if hasattr(tables, 'id_table'):
+            print("Shuffling times in ID table...")
+            tables.id_table = shuffle_columns(tables.id_table, ['timeslice_utc_time'])
 
-        if hasattr(tables, 'mc_table') and tables.mc_table is not None:
-            print("Shuffling columns in MC table...")
-            tables.mc_table = shuffle_columns(tables.mc_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
+        #if hasattr(tables, 'mc_table') and tables.mc_table is not None:
+            #print("Shuffling columns in MC table...")
+            #tables.mc_table = shuffle_columns(tables.mc_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
 
-        if hasattr(tables, 'reco_table'):
-            print("Shuffling columns in RECO_EVENTS table...")
-            tables.reco_table = shuffle_columns(tables.reco_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
+        #if hasattr(tables, 'reco_table'):
+            #print("Shuffling columns in RECO_EVENTS table...")
+            #tables.reco_table = shuffle_columns(tables.reco_table, ['energy', 'phi_detectorframe', 'theta_detectorframe'])
 
         # Write the shuffled tables back to an HDF5 file
         with File(output_filename, 'w') as h5file:

@@ -38,7 +38,49 @@ import datetime
 from astropy.time import Time
 from epochfolding.gtis import saveGTIs
 
+def compute_merged_intervals(input_files, timediff_threshold=1.0):
+    """
+    Read each event file and determine the earliest and latest event time
+    (in UNIX seconds) from its event list. Then merge intervals if they
+    are close enough.
+    """
+    time_intervals = []
 
+    for file in input_files:
+        with h5py.File(file, 'r') as h5_file:
+            EventList = EL.readEventList(h5_file)
+
+            if len(EventList) == 0:
+                continue  # skip empty files
+
+            # Min/max from raw event list (unfiltered)
+            file_min = EventList['time'][0]
+            file_max = EventList['time'][-1]
+
+            time_intervals.append([file_min, file_max])
+
+    if not time_intervals:
+        print("No time intervals found. Check input files.")
+        return []
+
+    # Sort intervals by start time
+    time_intervals.sort(key=lambda x: x[0])
+
+    # Merge intervals if gaps are small
+    merged_intervals = []
+    current_start, current_end = time_intervals[0]
+
+    for next_start, next_end in time_intervals[1:]:
+        if next_start - current_end < timediff_threshold:
+            current_end = max(current_end, next_end)
+        else:
+            merged_intervals.append([current_start, current_end])
+            current_start, current_end = next_start, next_end
+
+    # Append the last one
+    merged_intervals.append([current_start, current_end])
+
+    return merged_intervals
 
 
 def summarize_event_files(folder_path, file_suffix="total_events.txt", output_file="summary.txt"):
@@ -101,77 +143,68 @@ def main():
         print("Source Name:", source_name)
 
     CombinedEventList = None
-    time_intervals = []
-    timediff_threshold = 1.0  # seconds
 
-    # Single pass: build combined list + record GTI intervals
+    timediff_threshold = 1.0  
+
     for file in input_files:
         with h5py.File(file, 'r') as h5_file:
             EventList = EL.readEventList(h5_file)
 
-            if len(EventList) == 0:
-                continue
-
-            # Record file time coverage
-            file_min = EventList['time'][0]
-            file_max = EventList['time'][-1]
-            time_intervals.append([file_min, file_max])
-
-            # Stack events
             if CombinedEventList is None:
                 CombinedEventList = EventList
             else:
-                CombinedEventList = vstack([CombinedEventList, EventList])
+                CombinedEventList = vstack([CombinedEventList,EventList])
+            
+            
+    CombinedEventList.sort("time")
+    print("CombinedEventlist:")
+    print(CombinedEventList)
 
-    # Sort and merge GTI intervals
-    merged_intervals = []
-    if time_intervals:
-        time_intervals.sort(key=lambda x: x[0])
-        current_start, current_end = time_intervals[0]
+    event_count = len(CombinedEventList)
 
-        for next_start, next_end in time_intervals[1:]:
-            if next_start - current_end < timediff_threshold:
-                current_end = max(current_end, next_end)
-            else:
-                merged_intervals.append([current_start, current_end])
-                current_start, current_end = next_start, next_end
 
-        merged_intervals.append([current_start, current_end])
-
-    print("Merged time intervals with uninterrupted data:")
-    for start, end in merged_intervals:
-        print(Time(start, format='unix').isot, "→", Time(end, format='unix').isot)
-
-    # Output filenames
-    event_count = len(CombinedEventList) if CombinedEventList is not None else 0
-    common_prefix = os.path.commonprefix(input_files)
-    common_prefix = os.path.basename(common_prefix).rstrip("_-.")
-    if not common_prefix:
-        common_prefix = ""
-
+    # Extract common prefix from input filenames
     if combinedet:
+        common_prefix = os.path.commonprefix(input_files)
+        # Remove any trailing non-alphanumeric characters from common prefix
+        common_prefix = os.path.basename(common_prefix).rstrip("_-.")
+        if not common_prefix:
+            common_prefix = ""
+        #output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist.hdf5")
         output_file = os.path.join(output_dir, f"{detector}_{common_prefix}_combinedet.hdf5")
         gti_output_file = os.path.join(output_dir, f"{detector}_{common_prefix}_combinedet_gtis")
     else:
+        common_prefix = os.path.commonprefix(input_files)
+        # Remove any trailing non-alphanumeric characters from common prefix
+        common_prefix = os.path.basename(common_prefix).rstrip("_-.")
+        if not common_prefix:
+            common_prefix = ""
+        #output_file = os.path.join(output_dir, f"{common_prefix}_combined_eventlist.hdf5")
         output_file = os.path.join(output_dir, f"{detector}_{common_prefix}_combined_{event_count}events.hdf5")
         gti_output_file = os.path.join(output_dir, f"{detector}_{common_prefix}_combined_{event_count}events_gtis")
-
-    # Save GTIs
-    print("Merged Intervals aka GTIs: ", merged_intervals)
-    saveGTIs(merged_intervals, gti_output_file)
-
-    # Sort final combined list and save
-    if CombinedEventList is not None:
-        CombinedEventList.sort("time")
-        CombinedEventList.write(output_file, format='hdf5', path='data', overwrite=True, serialize_meta=True)
-        print(f"Combined EventList saved to {output_file}")
-
-    # Save metadata text file
+    
+    event_times = CombinedEventList['time']
+    astropy_event_times = Time(event_times, format="unix")
+    mjd_times = astropy_event_times.mjd
+    title_prefix = str(source_name) + " " + detector
     opening_angle_min = float(arguments['--delta_search_min'])
     filestype = str(arguments['--filestype'])
-    total_events_file = os.path.join(output_dir, f"{event_count}_total_events.txt")
+    
+
+    
+    #estimated_neutrino_events, masked_times, masked_zeniths, mean_event_rate, intervals, event_rates = estimate_total_neutrino_events(astropy_event_times, zenith, zenith_threshold, n_events_min = 5, duration_min = 300*u.s, title_prefix=title_prefix, output_file=output_file)
+    
+    #plot_binned_light_curve(mjd_times, masked_times, mean_event_rate, estimated_neutrino_events, title_prefix, output_file, bin_size_seconds=600,zenith_threshold=zenith_threshold)
+
+
+    # Save the combined EventList
+    CombinedEventList.write(output_file, format='hdf5', path='data', overwrite=True, serialize_meta = True)
+    print(f"Combined EventList saved to {output_file}")
+
+    n_total_events = len(event_times)
+    total_events_file = os.path.join(output_dir,f"{n_total_events}_total_events.txt" )
     with open(total_events_file, "w") as f:
-        f.write(str(event_count) + "\n")
+        f.write(str(n_total_events) + "\n")
         f.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
         f.write(str(source_name) + "\n")
         f.write(str(opening_angle_min) + "\n")

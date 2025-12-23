@@ -92,9 +92,9 @@ def plot_angular_resolution_vs_energy(table, reco_type_id, reco_stage_id, reco_n
     plt.xscale('log')
     plt.yscale(plt_scale)
     #plt.ylim([1e-4,1e2])
-    plt.xlabel('Reconstructed Energy [GeV]')
-    plt.ylabel('Angular Resolution [°]')
-    plt.title(f'Angular Resolution vs Energy for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
+    plt.xlabel(r'Reconstructed Energy $E_{reco}$ (GeV)')
+    plt.ylabel(r'Angular Error $\delta\phi$ (°)')
+    plt.title(f'Angular Error vs Energy for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
     plt.legend()
     plt.grid(True, which="both", ls="--")
 
@@ -113,7 +113,7 @@ def plot_angular_resolution_vs_energy(table, reco_type_id, reco_stage_id, reco_n
     plt.figure(figsize=(10, 6))
     plt.hist(filtered_table['separation'], bins=53, color='darkorange')
     plt.yscale(plt_scale)
-    plt.xlabel('Angular Separation [°]')
+    plt.xlabel(r'Angular Separation $\delta\phi$ (°)')
     plt.ylabel('Counts')
     plt.title(f'Histogram of Angular Separations for {reco_name} Reco Type ({run_type}, {len(filtered_table)} events)')
     

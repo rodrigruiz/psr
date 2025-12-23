@@ -99,10 +99,12 @@ def main():
             #gti_table = read_table_hdf5(gti_file)
             print(gti_file)
             gti_table = loadGTIs(gti_file)
+            #gti_table = np.array(gti_table)
             gti_start = gti_table[:,0]
             gti_stop = gti_table[:,1]
             current_gti = np.array([gti_start, gti_stop]).T
             print(f"GTIs: {current_gti}")
+            
 
         # Fetching filename for usage in output filename
         folder_path, file_name = os.path.split(file)
@@ -110,12 +112,14 @@ def main():
 
         #output_plot = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
         #output_file = os.path.join(data['output_dir'], f"{file_name}_SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
-
-        output_plot = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
-        output_file = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
+        output_file = os.path.join(data['output_dir'], f"{file_name}_r{data['ratio']}_I{data['iteration'].zfill(4)}_{data['frequency']}Hz_ef.hdf5")
+        output_plot = os.path.join(data['output_dir'], f"{file_name}_r{data['ratio']}_I{data['iteration'].zfill(4)}_{data['frequency']}Hz_efplot.png")
+        #output_plot = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_resultplot.png")
+        #output_file = os.path.join(data['output_dir'], f"SNR_{data['ratio']}_I{data['iteration'].zfill(4)}_TestFrequency_{data['frequency']}_epochfolding_results.hdf5")
 
         with h5py.File(file, 'r') as input_file:
             EventList = readEventList(input_file)
+            print(f"Times: {np.array(EventList['time'].value)}")
             frequencies = get_testfrequencies(float(data['frequency']), int(data['number_of_testf']), float(data['df']))
             #print(f"First 10 Current GTIs: {current_gti[:10]}")
             #print(f"Last 10 Current GTIs: {current_gti[-10:]}")

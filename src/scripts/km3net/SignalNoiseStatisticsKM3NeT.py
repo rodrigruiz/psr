@@ -1,6 +1,6 @@
 """ Fetching Chi2 distributions from Chi2HistogramKM3NeT.py and creating Chi2 over SNR plots.
 
-Usage: SignalNoiseStatisticsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR --total_events_file TOTAL_EVENTS_FILE [--nbin=<nbin>] [--frequency=<frequency>] [--angle=<angle>]
+Usage: SignalNoiseStatisticsKM3NeT.py -i INPUT_FILES... -o OUTPUT_DIR --total_events_file TOTAL_EVENTS_FILE [--nbin=<nbin>] [--frequency=<frequency>] [--angle=<angle>] [--E_min=<float>] [--gamma=<float>] [--length=<float>]
 
 Options:
   -h --help                                 Show this help message
@@ -10,6 +10,9 @@ Options:
      --nbin=<int>                           Number of bins [default: 32]
      --frequency=<float>                    Injected test frequency around which the search was defined [default: None]
      --angle=<float>                        Opening search angle [default: None]
+     --E_min=<float>                        Minimum energy [default: None]
+     --gamma=<float>                        Spectral index of the power law [default: None]
+     --length=<float>                       Length of the subset
 """
 
 
@@ -61,19 +64,26 @@ def main():
         with open(arguments['--total_events_file'], "r") as f:
             lines = f.readlines()  # Read all lines into a list
             total_events = int(lines[0].strip())  # First line: total events (integer)
-            estimated_neutrino_events = int(float(lines[1].strip()))  # Second line: estimated neutrino events (float)
+            n_events_injected = int(float(lines[1].strip()))  # Second line: estimated neutrino events (float)
     except Exception as e:
         print(f"Error reading total events file: {e}")
         total_events = None  # Default to None if reading fails
-        estimated_neutrino_events = None  # Default to None if reading fails
+        n_events_injected = None  # Default to None if reading fails
 
     print(f"Total events used for timing analysis: {total_events}")
-    print(f"Estimated neutrino events: {estimated_neutrino_events}")
+    print(f"Number of injected Events: {n_events_injected}")
+    #print(f"Estimated neutrino events: {estimated_neutrino_events}")
 
-    output_file = os.path.join(output_dir, f"{common_prefix}_StatisticOverSNR.hdf5")
-    output_plot_lin = os.path.join(output_dir, f"{common_prefix}_{float(arguments['--frequency']):.3e}Hz_{float(arguments['--angle']):.2f}deg_{total_events}Events_StatisticOverSNR_plotlin.png")
-    output_plot_log = os.path.join(output_dir, f"{common_prefix}_{float(arguments['--frequency']):.3e}Hz_{float(arguments['--angle']):.2f}deg_{total_events}Events_StatisticOverSNR_plotlog.png")
+    common_prefix = os.path.basename(common_prefix).rstrip("_-.")[:10]
+
+
+    output_filename = os.path.join(output_dir, f"{common_prefix}_f{float(arguments['--frequency']):.3e}Hz_E{float(arguments['--E_min']):.3e}GeV_g{float(arguments['--gamma']):.2f}_length{float(arguments['--length']):.2f}d_StatisticOverRate")
     
+    output_file = output_filename + ".hdf5" 
+    output_plot_lin = output_filename + "_plotlin.png"
+    output_plot_log = output_filename + "_plotlog.png"
+    #output_plot_lin = os.path.join(output_dir, f"{common_prefix}_{float(arguments['--frequency']):.3e}Hz_{float(arguments['--angle']):.2f}deg_{total_events}Events_StatisticOverSNR_plotlin.png")
+    #output_plot_log = os.path.join(output_dir, f"{common_prefix}_{float(arguments['--frequency']):.3e}Hz_{float(arguments['--angle']):.2f}deg_{total_events}Events_StatisticOverSNR_plotlog.png")
 
     pvalue = chi2.sf(max_chi2_list , int(arguments['--nbin']) -1)
 
@@ -112,7 +122,7 @@ def main():
     ax2.scatter(ratio_list,max_chi2_list,alpha=0)
     ax1.legend()
     if arguments['--frequency'] is not None: 
-        plt.title(f"SNR Statistics \n {float(arguments['--frequency']):.3e} Hz - {total_events} Events Total - {estimated_neutrino_events} Neutrino Events - {float(arguments['--angle']):.2f} deg")
+        plt.title(f"SNR Statistics \n {float(arguments['--frequency']):.3e} Hz - {total_events} Events Total - {n_events_injected} Injected Signal Events - {float(arguments['--angle']):.2f} deg")
     plt.savefig(output_plot_log, bbox_inches='tight')
     plt.close(fig)
 
@@ -126,6 +136,40 @@ def main():
     chi2_over_snr_table.write(output_file, format='hdf5', path='histogram_data', overwrite=True, serialize_meta = True)
 
     print(f"Maximum Chi2 written to {output_file}")
+
+    from astropy.table import QTable
+
+    # Detection thresholds
+    pval_3sigma = 0.0027
+    pval_5sigma = 2.87e-7
+    log_pval_3sigma = np.log10(pval_3sigma)
+    log_pval_5sigma = np.log10(pval_5sigma)
+
+    # Sort the table for proper interpolation
+    sorted_table = chi2_over_snr_table.copy()
+    sorted_table.sort('SNR')
+
+    snr_array = np.array(sorted_table['SNR'])
+    log_pvals = np.log10(np.array(sorted_table['p_Value']))
+
+    # Perform interpolation (flip for descending order of p-value)
+    snr_3sigma = np.interp(log_pval_3sigma, log_pvals[::-1], snr_array[::-1])
+    snr_5sigma = np.interp(log_pval_5sigma, log_pvals[::-1], snr_array[::-1])
+
+    # Create a new table with sigma thresholds
+    sigmas_table = QTable(
+        names=('SNR_3sigma', 'SNR_5sigma', 'E_min', 'gamma', 'length'),
+        rows=[(snr_3sigma, snr_5sigma, float(arguments['--E_min']), float(arguments['--gamma']), float(arguments['--length']))]
+    )
+
+    # Save it into the same HDF5 file under a new group^^
+    with h5py.File(output_file, 'a') as h5_file:
+        sigma_group = 'sigma_thresholds'
+        if sigma_group in h5_file:
+            del h5_file[sigma_group]
+        sigmas_table.write(h5_file, path=sigma_group)
+
+    print(f"SNR thresholds for 3σ and 5σ saved under '{sigma_group}' in {output_file}")
 
     
 if __name__ == "__main__":

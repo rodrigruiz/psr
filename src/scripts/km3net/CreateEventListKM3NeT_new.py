@@ -54,6 +54,13 @@ def extract_run_id(filename: str) -> str:
     
     return None  # No 8-digit number found
 
+def simple_poly(E, a, b, c):
+    x = np.log10(E)
+    return a * x**2 + b * x + c
+
+def cubic_log_poly(E, a, b, c, d):
+    x = np.log10(E)
+    return a * x**3 + b * x**2 + c * x + d
 
 # Functions to fit to the angular resolution distribution
 def logistic_function(E, a, b, c, d):
@@ -90,7 +97,7 @@ def fit_angular_resolution(file_path, output_dir, energy_low, energy_high, fit_t
         plot_name = os.path.join(output_dir,f"fitted_angular_resolution_tracklike.png")
     elif fit_type == "polymial":
         # Initial guesses for the sinusoidal function parameters
-        popt, _ = curve_fit(polynomial, energy_bin_centers, angular_resolution, sigma=sigma1_width, absolute_sigma=True)
+        popt, _ = curve_fit(polynomial, energy_bin_centers, angular_resolution, p0=[0.0,0.0,0.05,-0.3,1.0,0.0,0.0,0.0] ,sigma=sigma1_width, absolute_sigma=True)
         fit_func = lambda E: polynomial(E, *popt)
         plot_name = os.path.join(output_dir,f"fitted_angular_resolution_showerlike.png")
     else:
@@ -337,7 +344,8 @@ def select_events(tables, trackscore_threshold, muonscore_threshold, detector_na
 
     # Create masks for track_score above threshold
     id_event_ids = tables.id_table['event_id']
-    track_scores = tables.id_table['track_score']
+    #track_scores = tables.id_table['track_score']
+    track_scores = np.random.rand(len(id_event_ids))
     high_score_mask = track_scores > trackscore_threshold
     event_score_map = dict(zip(id_event_ids, high_score_mask))
     score_lookup = dict(zip(id_event_ids, track_scores))  # For later column assignment
@@ -362,7 +370,11 @@ def select_events(tables, trackscore_threshold, muonscore_threshold, detector_na
                 selected_event_ids.append(event_id)
         else:
             # Select shower-like events
+            # ATTENTION! HERE WE CURRENTLY USE AASHOWER FOR BOTH DETECTORS! FOR ORCA IT SHOULD USUALLY BE JSHOWER!
             if detector_name == 'arca' and rec_type == kd.reconstruction.AANET_RECONSTRUCTION_TYPE and rec_stage == kd.reconstruction.AASHOWERBEGIN:
+                combined_mask[i] = True
+                selected_event_ids.append(event_id)
+            elif detector_name == 'orca_wrong' and rec_type == kd.reconstruction.AANET_RECONSTRUCTION_TYPE and rec_stage == kd.reconstruction.AASHOWERBEGIN:
                 combined_mask[i] = True
                 selected_event_ids.append(event_id)
             elif detector_name == 'orca' and rec_type == kd.reconstruction.JPP_RECONSTRUCTION_TYPE and rec_stage == kd.reconstruction.JSHOWERBEGIN:
@@ -395,8 +407,21 @@ def select_events(tables, trackscore_threshold, muonscore_threshold, detector_na
     # Add MC weights if applicable
     if is_mc:
         weight_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['normalized_weight']))
-        event_table['normalized_weight'] = [weight_map.get(eid, 1.0) for eid in event_table['event_id']]
+        #atm_weight_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['atm_weight']))
+        pdg_id_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['pdg_id']))
+        is_cc_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['is_cc']))
+        num_events_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['num_gen_events']))
+        E_mc_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['energy']))
+        theta_mc_map = dict(zip(tables.mc_table['event_id'], tables.mc_table['theta_detectorframe']))
 
+
+        event_table['normalized_weight'] = [weight_map.get(eid, None) for eid in event_table['event_id']]
+        #event_table['atm_weight'] = [atm_weight_map.get(eid, None) for eid in event_table['event_id']]
+        event_table['pdg_id'] = [pdg_id_map.get(eid, -1) for eid in event_table['event_id']]
+        event_table['is_cc'] = [is_cc_map.get(eid, False) for eid in event_table['event_id']]
+        event_table['num_gen_events'] = [num_events_map.get(eid, None) for eid in event_table['event_id']]
+        event_table['energy_mc'] = [E_mc_map.get(eid,None) for eid in event_table['event_id']]
+        event_table['theta_mc'] = [theta_mc_map.get(eid,None) for eid in event_table['event_id']]
     return event_table
 
 
@@ -480,10 +505,31 @@ def main():
         
 
         tables = load_hdf5_tables(file)
+
+        # Determine which column to use for time
+        if hasattr(tables, "reco_table") and "tracktime_utc" in tables.reco_table.colnames:
+            raw_times = tables.reco_table['tracktime_utc']
+        elif hasattr(tables, "mc_table") and "timeslice_utc_time" in tables.mc_table.colnames:
+            raw_times = tables.mc_table['timeslice_utc_time']
+        else:
+            raise KeyError("No suitable time column found for min/max extraction.")
+
+        # Convert to astropy Time object if needed
+        raw_times_astropy = Time(raw_times, format="unix")  # or 'mjd', depending on your format
+
+        # Find first and last event time in the raw file
+        first_event_time = np.min(raw_times_astropy)
+        last_event_time  = np.max(raw_times_astropy)
+
+        print(f"Raw file time coverage: {first_event_time.isot} → {last_event_time.isot}")
+
+
+
         if hasattr(tables,"mc_table") and tables.mc_table is not None:
             is_mc = True
         else: is_mc = False
-
+        if is_mc:
+            daq_livetime = tables.id_table['daq_livetime'][0]
         event_table = select_events(tables, trackscore_threshold, muonscore_threshold, detector_name, is_mc)
 
         #print(event_table)
@@ -562,7 +608,7 @@ def main():
         times = event_table['tracktime_utc']
         energy = event_table['energy']
         event_id = event_table['event_id']
-        track_score = event_table['track_score']
+        #track_score = event_table['track_score']
         #muon_score = event_table['muon_score']
 
         if is_mc is True: normalized_weight = event_table['normalized_weight']
@@ -611,6 +657,7 @@ def main():
         separation_deg = separation[location_mask].to(u.deg).value  # Filtered separation
         detector_name_list = [detector_name] * len(event_table['tracktime_utc'])  # Detector name for each event
         run_ids = [run_id] * len(event_table['tracktime_utc'])
+        if is_mc: daq_livetimes = [daq_livetime] * len(event_table['tracktime_utc'])
 
         theta = np.asarray(event_table['theta_detectorframe'], dtype=np.float64)
         phi = np.asarray(event_table['phi_detectorframe'], dtype=np.float64)
@@ -644,10 +691,12 @@ def main():
         
         # Add extra columns
         event_list['run_id'] = run_ids
+        if is_mc: event_list['daq_livetime'] = daq_livetimes
         event_list['detector'] = detector_name_list
         event_list['azimuth'] = source_azimuths
         event_list['zenith'] = source_zeniths
         event_list['separation'] = separation_deg
+        
 
         print(event_list)
         min_opening_angle = str(data['delta_search_min'])
@@ -655,7 +704,9 @@ def main():
         output_file = os.path.join(data['output_dir'], f"{file_name}_{source_name}_{min_opening_angle}_deg_{energy_threshold_str}-E_th_eventlist_new")
         # Save the output table
         
-        
+        event_list.meta['first_event_time'] = first_event_time.isot
+        event_list.meta['last_event_time']  = last_event_time.isot
+
         event_list.write(output_file + '.hdf5', format='hdf5', overwrite=True, serialize_meta=True)
         print("hdf5 File written...")
 

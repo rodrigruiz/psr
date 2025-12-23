@@ -30,6 +30,7 @@ import pylab as pl
 import km3astro.plot as km3plt
 from km3astro.coord import local_event
 import matplotlib.colors as mcolors
+from matplotlib.colors import LogNorm
 from scipy.ndimage import gaussian_filter
 
 from stingray import EventList, Lightcurve
@@ -168,7 +169,7 @@ def plot_equatorial_skymap(theta,phi,event_times,energy,source_ra,source_dec,sou
     print(f"Plot saved: {output_plot}")
 
 
-def plot_equatorial_hist_skymap(theta,phi,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True, detectorname='arca'):
+def plot_equatorial_hist_skymap(theta,phi,atm_weights,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True, detectorname='arca'):
 
     source_coord = SkyCoord(ra=source_ra * u.deg, dec=source_dec * u.deg)
 
@@ -191,7 +192,11 @@ def plot_equatorial_hist_skymap(theta,phi,event_times,num_bins,source_ra,source_
     dec_bins = np.linspace(-np.pi/2, np.pi/2, num_bins + 1)  # Dec in [-π/2, π/2]
 
     # Compute 2D histogram
-    hist, ra_edges, dec_edges = np.histogram2d(ra_vals, dec_vals, bins=[ra_bins, dec_bins])
+    if atm_weights is not None:
+        hist, ra_edges, dec_edges = np.histogram2d(ra_vals, dec_vals, bins=[ra_bins, dec_bins], weights=atm_weights)
+    else:
+        hist, ra_edges, dec_edges = np.histogram2d(ra_vals, dec_vals, bins=[ra_bins, dec_bins])
+
 
     if smooth_hist is True:
         hist_g = gaussian_filter(hist, sigma=1.0)
@@ -209,7 +214,7 @@ def plot_equatorial_hist_skymap(theta,phi,event_times,num_bins,source_ra,source_
 
     fig, ax = km3plt.projection_axes(projection="aitoff", figsize=(10, 5))
 
-    pc = ax.pcolormesh(ra_bins[:-1], dec_bins[:-1], hist_plot.T, shading="auto")
+    pc = ax.pcolormesh(ra_bins[:-1], dec_bins[:-1], hist_plot.T, shading="auto", norm=LogNorm())
     plot_equatorial_custom(source_coord, markersize=5, color='deeppink',marker="o", ax=ax, label=source_name, no_face_colors=True)
     
     cbar = plt.colorbar(pc, ax=ax, orientation="horizontal", pad=0.07)
@@ -226,7 +231,7 @@ def plot_equatorial_hist_skymap(theta,phi,event_times,num_bins,source_ra,source_
     plt.savefig(output_plot, bbox_inches='tight')
     print(f"Plot saved: {output_plot}")
 
-def plot_ra_dec_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True, detectorname='arca'):
+def plot_ra_dec_hist(theta,phi,atm_weights,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True, detectorname='arca'):
 
     source_coord = SkyCoord(ra=source_ra * u.deg, dec=source_dec * u.deg)
     total_events = len(event_times)
@@ -245,7 +250,11 @@ def plot_ra_dec_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_
     plt.figure(figsize=(8, 5))
 
     # 2D histogram
-    h = plt.hist2d(ra_vals, dec_vals, bins=num_bins, cmap='viridis')
+    if atm_weights is not None:
+        h = plt.hist2d(phi, theta, bins=num_bins, cmap='viridis', weights=atm_weights)
+    else:
+        h = plt.hist2d(phi, theta, bins=num_bins, cmap='viridis')
+
     plt.colorbar(h[3], label='Counts per bin')
 
     plt.scatter(source_coord.ra.rad, source_coord.dec.rad, s=30, facecolors='none', edgecolors='deeppink', marker='o', label=source_name)
@@ -262,7 +271,7 @@ def plot_ra_dec_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_
 
     print(f"2D Histogram plot saved: {output_plot}")
 
-def plot_ra_projection(theta, phi, event_times, num_bins, output_file, source_ra, source_dec, source_name, title_prefix="", detectorname='arca'):
+def plot_ra_projection(theta, phi, atm_weights, event_times, num_bins, output_file, source_ra, source_dec, source_name, title_prefix="", detectorname='arca'):
     source_coord = SkyCoord(ra=source_ra * u.deg, dec=source_dec * u.deg)
     
     # Convert to sky coordinates
@@ -270,7 +279,13 @@ def plot_ra_projection(theta, phi, event_times, num_bins, output_file, source_ra
     ra_vals, dec_vals = km3plt.ra_dec(event_location_icrs)
 
     # 2D histogram
-    hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins)
+    if atm_weights is not None:
+        hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins, weights=atm_weights)
+    else:
+        hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins)
+    
+
+    
 
     # Project onto RA axis
     ra_projection = hist2d.sum(axis=1)
@@ -290,15 +305,18 @@ def plot_ra_projection(theta, phi, event_times, num_bins, output_file, source_ra
     print(f"RA projection plot saved: {output_plot}")
 
 
-def plot_dec_projection(theta, phi, event_times, num_bins, output_file, source_ra, source_dec, source_name, title_prefix="", detectorname='arca'):
+def plot_dec_projection(theta, phi, atm_weights, event_times, num_bins, output_file, source_ra, source_dec, source_name, title_prefix="", detectorname='arca'):
     source_coord = SkyCoord(ra=source_ra * u.deg, dec=source_dec * u.deg)
     
     # Convert to sky coordinates
     event_location_icrs = local_event(theta.value, phi.value, event_times, detectorname).transform_to('icrs')
     ra_vals, dec_vals = km3plt.ra_dec(event_location_icrs)
 
-    # 2D histogram
-    hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins)
+    if atm_weights is not None:
+        hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins, weights=atm_weights)
+    else:
+        hist2d, xedges, yedges = np.histogram2d(ra_vals, dec_vals, bins=num_bins)
+    
 
     # Project onto Dec axis
     dec_projection = hist2d.sum(axis=0)
@@ -319,14 +337,17 @@ def plot_dec_projection(theta, phi, event_times, num_bins, output_file, source_r
 
 
 
-def plot_theta_phi_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True):
+def plot_theta_phi_hist(theta,phi,atm_weights,event_times,num_bins,source_ra,source_dec,source_name, output_file, title_prefix="", radius=5*u.deg, circle=False,energy_max_size = None, zero_white_bins = True, smooth_hist = True):
 
 
 
     plt.figure(figsize=(8, 5))
 
     # 2D histogram
-    h = plt.hist2d(phi, theta, bins=num_bins, cmap='viridis')
+    if atm_weights is not None:
+        h = plt.hist2d(phi, theta, bins=num_bins, cmap='viridis', weights=atm_weights)
+    else:
+        h = plt.hist2d(phi, theta, bins=num_bins, cmap='viridis')
     plt.colorbar(h[3], label='Counts per bin')
 
     # Mark the source
@@ -347,9 +368,16 @@ def plot_theta_phi_hist(theta,phi,event_times,num_bins,source_ra,source_dec,sour
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_phi_projection(theta, phi, num_bins, output_file, title_prefix="", source_name=""):
+def plot_phi_projection(theta, phi, atm_weights, num_bins, output_file, title_prefix="", source_name=""):
     # Compute 2D histogram (same as original)
-    hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins)
+    #hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins)
+
+    # 2D histogram
+    if atm_weights is not None:
+        hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins, weights=atm_weights)
+    else:
+        hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins)
+    
 
     # Project onto phi axis by summing over theta (axis=1 since theta is along the y-axis)
     phi_projection = hist2d.sum(axis=1)
@@ -370,9 +398,12 @@ def plot_phi_projection(theta, phi, num_bins, output_file, title_prefix="", sour
 
     print(f"Phi projection plot saved: {output_plot}")
 
-def plot_theta_projection(theta, phi, num_bins, output_file, title_prefix="", source_name=""):
+def plot_theta_projection(theta, phi, atm_weights, num_bins, output_file, title_prefix="", source_name=""):
     # Compute 2D histogram
-    hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins)
+    if atm_weights is not None:
+        hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins, weights=atm_weights)
+    else:
+        hist2d, xedges, yedges = np.histogram2d(phi, theta, bins=num_bins)
 
     # Project onto theta axis by summing over phi (axis=0 since phi is along the x-axis)
     theta_projection = hist2d.sum(axis=0)
@@ -424,7 +455,7 @@ def plot_ra_dec(theta,phi,event_times,num_bins,source_ra,source_dec,source_name,
     plt.savefig(output_plot, bbox_inches='tight')
     print(f"Plot saved: {output_plot}")
 
-def plot_energy_histogram(energy, nbins, source_name, output_file, logx = True, logy = True):
+def plot_energy_histogram(energy, atm_weights, nbins, source_name, output_file, logx = True, logy = True):
 
     print("Energy: ", energy)
 
@@ -446,21 +477,24 @@ def plot_energy_histogram(energy, nbins, source_name, output_file, logx = True, 
 
     plt.figure(figsize=(8,5))
 
-    if logx and logy:
-        bins = logbins
-        plt.hist(energy.value,bins=bins,log=True,color="darkblue")
-        pl.gca().set_xscale("log")
-    elif logx and not logy:
-        bins = logbins
-        plt.hist(energy.value,bins=bins,log=False,color="darkblue")
-        pl.gca().set_xscale("log")
-    elif not logx and logy:
-        bins = nbins
-        plt.hist(energy.value,bins=bins,log=True,color="darkblue")
-    elif not logx and not logy: 
-        bins = nbins
-        plt.hist(energy.value,bins=bins,log=False,color="darkblue")
+    bins = logbins if logx else nbins
+    log_setting = logy
 
+    # Set up keyword arguments for the histogram
+    hist_kwargs = {
+        "bins": bins,
+        "log": log_setting,
+        "color": "darkblue"
+    }
+    if atm_weights is not None:
+        hist_kwargs["weights"] = atm_weights
+
+    # Plot histogram
+    plt.hist(energy.value, **hist_kwargs)
+
+    # Set log-scale on x-axis if needed
+    if logx:
+        plt.gca().set_xscale("log")
     print("Bins: ", bins)
 
     plt.xlabel("Energy (GeV)")
@@ -495,6 +529,7 @@ def main():
         energy = EventList['energy']
         #detectorname = EventList['detector']
         event_count = len(event_times)
+        atm_weights = EventList['atm_weight'] if 'atm_weight' in EventList.colnames else None
 
     folder_path, file_name = os.path.split(input_file)
     file_name = os.path.splitext(file_name)[0]
@@ -505,15 +540,15 @@ def main():
 
 
     plot_equatorial_skymap(theta,phi,event_times,energy,source_ra,source_dec,source_name,output_file,radius=radius,detectorname=detectorname)
-    plot_equatorial_hist_skymap(theta,phi,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius,detectorname=detectorname) #,smooth_hist=False)
-    plot_energy_histogram(energy, 200, source_name, output_file, logx = True, logy = True)
-    plot_ra_dec_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius, smooth_hist=False,detectorname=detectorname)
-    plot_theta_phi_hist(theta,phi,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius, smooth_hist=False)
+    plot_equatorial_hist_skymap(theta,phi,atm_weights,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius,detectorname=detectorname) #,smooth_hist=False)
+    plot_energy_histogram(energy, atm_weights, 200, source_name, output_file, logx = True, logy = True)
+    plot_ra_dec_hist(theta,phi,atm_weights,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius, smooth_hist=False,detectorname=detectorname)
+    plot_theta_phi_hist(theta,phi,atm_weights, event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius, smooth_hist=False)
     plot_ra_dec(theta,phi,event_times,num_bins,source_ra,source_dec,source_name,output_file,radius=radius,detectorname=detectorname)
-    plot_phi_projection(theta, phi, num_bins, output_file,source_name=source_name)
-    plot_theta_projection(theta, phi, num_bins, output_file,source_name=source_name)
-    plot_ra_projection(theta, phi, event_times, num_bins, output_file, source_ra,source_dec, source_name)
-    plot_dec_projection(theta, phi, event_times, num_bins, output_file, source_ra,source_dec, source_name)
+    plot_phi_projection(theta, phi, atm_weights, num_bins, output_file,source_name=source_name)
+    plot_theta_projection(theta, phi, atm_weights, num_bins, output_file,source_name=source_name)
+    plot_ra_projection(theta, phi, atm_weights, event_times, num_bins, output_file, source_ra,source_dec, source_name)
+    plot_dec_projection(theta, phi, atm_weights, event_times, num_bins, output_file, source_ra,source_dec, source_name)
     
 if __name__ == "__main__":
     main()

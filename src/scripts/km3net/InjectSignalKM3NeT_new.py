@@ -1,5 +1,5 @@
 """Inject an artificial signal.
-Usage: InjectSignal.py -i INPUT_FILES... -o OUTPUT_DIR --total_events_file TOTAL_EVENTS_FILE [--ratio=<float>] [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>] [--plot=<plot>] [--method=<method>]
+Usage: InjectSignal.py -i INPUT_FILES... -o OUTPUT_DIR --total_events_file TOTAL_EVENTS_FILE [--ratio=<float>] [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>] [--plot=<plot>] [--method=<method>] [--E_min=<float>] [--E_max=<float>] [--gamma=<float>] [--E_cut=<float>]
 
 Options:
   -h --help                                 Help
@@ -17,6 +17,10 @@ Options:
      --kappa=<float>                        Shape parameter of the MVMD. [default: 5.]
      --plot=<plot>                          Bool, whether to plot the injected signal or not [default: False]
      --method=<method>                      String: 'classic' or 'base'. Method of Injection to use. [default: base]
+     --E_min=<float>                        Minimum Energy of injected power law spectrum [default: 1e5 ]
+     --E_max=<float>                        Max Energy of the spectrum [default: 2e6]
+     --gamma=<float>                        Spectral index of the spectrum [default: 2.]
+     --E_cut=<float>                        Cutoff Energy of spectrum [default: 1e6]
 """ 
 
 from docopt import docopt
@@ -276,10 +280,31 @@ def sample_power_law_energies(n, E_min, E_max, gamma, E_cut):
 
     return dist.rvs(size=n)
 
+def sample_power_law_energies_fast(n, E_min, E_max, gamma, E_cut):
+    """
+    Vectorized sampling from a power-law with exponential cutoff.
+    """
+    # Rejection sampling: faster for reasonable cutoff
+    energies = []
+    count = 0
+    max_pdf = (E_min ** -gamma) * np.exp(-E_min / E_cut)
+
+    while len(energies) < n:
+        E_trial = np.random.uniform(E_min, E_max, size=n)
+        pdf_vals = (E_trial ** -gamma) * np.exp(-E_trial / E_cut)
+        accept_prob = pdf_vals / max_pdf
+        accepted = E_trial[np.random.rand(n) < accept_prob]
+        energies.extend(accepted.tolist())
+        count += 1
+        if count > 10:  # emergency exit if acceptance rate is too low
+            break
+
+    return np.array(energies[:n])
+
     
 
 
-def injectSignalRedistributeHighRes(time, energy, ratio, estimated_neutrinos, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None, plot=False):
+def injectSignalRedistributeHighRes(time, energy, ratio, estimated_neutrinos, bin_time, pulseshape, frequency, baseline, a, phi, E_min=1.1e5, E_max=2e6, E_cut=1e6, gamma=2.0, kappa=None, plot=False):
     """
     Injects a signal with a given pulseshape into an event list.
 
@@ -338,12 +363,12 @@ def injectSignalRedistributeHighRes(time, energy, ratio, estimated_neutrinos, bi
     new_event_times = ev.time
 
     #new_event_energies = np.full_like(new_event_times, fill_value=1000.0, dtype=np.float64)
-    new_event_energies = sample_power_law_energies(
+    new_event_energies = sample_power_law_energies_fast(
         n=len(new_event_times),
-        E_min=1.1e5,       # Adjust as needed
-        E_max=2e6,     # Adjust as needed
-        gamma=2.0,       # Slope of the spectrum
-        E_cut=1e6      # Energy cutoff
+        E_min=E_min,       # Adjust as needed
+        E_max=E_max,     # Adjust as needed
+        gamma=gamma,       # Slope of the spectrum
+        E_cut=E_cut      # Energy cutoff
     )
 
     # Determine how many events to keep from the original event list
@@ -452,8 +477,8 @@ def generate_base_lightcurve(frequency, start_time, bin_time, pulseshape, baseli
     return lc_base, base_event_times, base_interval_length
 
 
-def injectSignalWithBaseInterval(time, ratio, estimated_neutrinos, bin_time, pulseshape, 
-                                 frequency, baseline, a, phi, kappa=None, num_periods=20, plot=False):
+def injectSignalWithBaseInterval(time, energy, ratio, estimated_neutrinos, bin_time, pulseshape, 
+                                 frequency, baseline, a, phi, kappa=None, num_periods=20,  E_min=1.1e5, E_max=2e6, E_cut=1e6, gamma=2.0, plot=False):
     """
     Injects a signal using a periodic base interval approach.
 
@@ -523,6 +548,14 @@ def injectSignalWithBaseInterval(time, ratio, estimated_neutrinos, bin_time, pul
     random_intervals = np.random.randint(0, num_intervals, size=num_new_events)
     random_shifts = random_intervals * base_interval_length
     new_event_times = chosen_base_times + random_shifts
+
+    new_event_energies = sample_power_law_energies_fast(
+        n=len(new_event_times),
+        E_min=E_min,       # Adjust as needed
+        E_max=E_max,     # Adjust as needed
+        gamma=gamma,       # Slope of the spectrum
+        E_cut=E_cut      # Energy cutoff
+    )
     
     print(f"chosen_base_times: {chosen_base_times[:5]}, Length: {len(chosen_base_times)}, Type: {type(chosen_base_times)}")
     print(f"Min: {np.min(chosen_base_times)}")
@@ -544,22 +577,27 @@ def injectSignalWithBaseInterval(time, ratio, estimated_neutrinos, bin_time, pul
     print("new_event_times Max: ", np.max(new_event_times))
     # Keep a subset of original events
     indices_to_keep_original = np.random.choice(len(time), num_original_events_to_keep, replace=False)
-    remaining_original_events = time[indices_to_keep_original]
+    remaining_original_times = time[indices_to_keep_original]
+    remaining_original_energies = energy[indices_to_keep_original]
 
     print(f"indices_to_keep_original: {indices_to_keep_original}, Length: {len(indices_to_keep_original)}, Type: {type(indices_to_keep_original)}")
-    print(f"remaining_original_events: {remaining_original_events}, Length: {len(remaining_original_events)}, Type: {type(remaining_original_events)}")
+    print(f"remaining_original_events: {remaining_original_times}, Length: {len(remaining_original_times)}, Type: {type(remaining_original_times)}")
 
     # Combine original and injected event times
-    combined_events = np.sort(np.concatenate((remaining_original_events, new_event_times)))
-
-    print(f"combined_events: {combined_events}, Length: {len(combined_events)}, Type: {type(combined_events)}")
+    combined_times = np.sort(np.concatenate((remaining_original_times, new_event_times)))
+    combined_energies = np.concatenate((remaining_original_energies, new_event_energies))
+    # Sort by time to keep everything aligned
+    sort_indices = np.argsort(combined_times)
+    combined_times = combined_times[sort_indices]
+    combined_energies = combined_energies[sort_indices]
+    print(f"combined_events: {combined_times}, Length: {len(combined_times)}, Type: {type(combined_times)}")
     lc_injected = []
 
     # Return results
     if plot:
-        return lc_base, lc_injected, new_event_times , combined_events
+        return lc_base, lc_injected, new_event_times , combined_times, combined_energies
     else:
-        return combined_events
+        return combined_times, combined_energies
     
 def estimate_total_neutrino_events(time, zenith_input, radian=False):
     """
@@ -689,26 +727,45 @@ def main():
 
             #estimated_neutrino_events = estimate_total_neutrino_events(times, zenith)
 
-            #inject_args = [times, float(data['ratio']), float(data['df']), data['pulseshape'],
+            #*inject_kwargs = [times, float(data['ratio']), float(data['df']), data['pulseshape'],
             #               float(data['frequency']), float(data['baseline']), float(data['a']), float(data['phi'])]
             
-            inject_args = [times, energy, float(data['ratio']), estimated_neutrino_events, float(data['df']), data['pulseshape'],
-               float(data['frequency']), float(data['baseline']), float(data['a']), float(data['phi'])]
-
+            #*inject_kwargs = [times, energy, float(data['ratio']), estimated_neutrino_events, float(data['df']), data['pulseshape'],
+            #   float(data['frequency']), float(data['baseline']), float(data['a']), float(data['phi']),E_min=float(data['E_min'])]
+            
+            inject_kwargs = {
+                'time': times,
+                'energy': energy,
+                'ratio': float(data['ratio']),
+                'estimated_neutrinos': estimated_neutrino_events,
+                'bin_time': float(data['df']),
+                'pulseshape': data['pulseshape'],
+                'frequency': float(data['frequency']),
+                'baseline': float(data['baseline']),
+                'a': float(data['a']),
+                'phi': float(data['phi']),
+                'E_min': float(data['E_min']),
+                'E_max': float(data['E_max']),
+                'E_cut': float(data.get('E_cut', 1e6)),     # fallback to default if not provided
+                'gamma': float(data.get('gamma', 2.0)),     # fallback to default if not provided                         # or True if you want to see the plot
+            }
             if data['pulseshape'] == 'mvm':
-                inject_args.append(float(data['kappa']))
-                output_file += '_mvm.hdf5'
+                inject_kwargs['kappa'] = float(data['kappa'])
+                output_file = output_file + '_mvm_Emin' + str(data['E_min']) + 'g' + str(data['gamma']) + '.hdf5'
             else:
-                output_file += '_sine.hdf5'
+                #output_file += '_sine.hdf5'
+                output_file = output_file + '_sine_Emin' + str(data['E_min']) + 'g' + str(data['gamma']) +  '.hdf5'
+
+            
 
             # Only use simulated times from within the gtis when implemented
 
             if plot == True:
                 try:
                     if method == 'classic':
-                        lc_original, lc_injected, new_event_times, new_event_energies, combined_event_times , combined_energies= injectSignalRedistributeHighRes(*inject_args, plot=plot)
+                        lc_original, lc_injected, new_event_times, new_event_energies, combined_event_times , combined_energies= injectSignalRedistributeHighRes(**inject_kwargs, plot=plot)
                     elif method == 'base':
-                        lc_original, lc_injected, new_event_times, combined_event_times = injectSignalWithBaseInterval(*inject_args)
+                        lc_original, lc_injected, new_event_times, combined_event_times, combined_energies = injectSignalWithBaseInterval(**inject_kwargs)
                     else: print("--method must be 'classic' or 'base'!")
                     # Try plotting
                     plot_simulated_signal(lc_original, new_event_times, frequency=float(data['frequency']), output_file=output_file)
@@ -726,9 +783,9 @@ def main():
                             f.write("Dummy plot file - plotting failed.")
             else:
                 if method == 'classic':
-                    combined_event_times, combined_energies = injectSignalRedistributeHighRes(*inject_args)
+                    combined_event_times, combined_energies = injectSignalRedistributeHighRes(**inject_kwargs)
                 elif method == 'base':
-                    combined_event_times = injectSignalWithBaseInterval(*inject_args)
+                    combined_event_times, combined_energies = injectSignalWithBaseInterval(**inject_kwargs)
                 else: print("--method must be 'classic' or 'base'!")
 
             TimeEventList= TimeSeries(time=Time(combined_event_times, format='unix'))

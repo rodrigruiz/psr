@@ -1,20 +1,27 @@
 """Inject an artificial signal.
-Usage: InjectSignal.py -i INPUT_FILES... -o OUTPUT_DIR [--ratio=<float>] [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>]
+Usage: InjectSignal.py -i INPUT_FILES... -o OUTPUT_DIR -e ENERGY_PDF [--rate=<float>] [--pulseshape=<pulseshape>] [--df=<float>] [--frequency=<float>] [--baseline=<float>] [--a=<float>] [--phi=<float>] [--kappa=<float>] [--plot=<plot>] [--method=<method>] [--E_min=<float>] [--E_max=<float>] [--gamma=<float>] [--E_cut=<float>]
 
 Options:
-  -h --help                              Help
-  -i --input_files INPUT_FILES           Input files
-  -o --output_dir OUTPUT_DIR             Output file
-     --ratio=<float>                     Ratio of injected signal to original count number. [default: 0.3]
-     --pulseshape=<pulseshape>           Shape of the injected signal (sine or mvm). [default: mvm]
-                                         if 'sine': 'df', 'frequency', 'baseline', 'a', 'phi' should be set
-     --df=<float>                        Time resolution of the signal. [default: 0.1]
-     --frequency=<float>                 Frequency of the signal. [default: 1]
-     --baseline=<float>                  Offset on the y-axis. [default: 0.]
-     --a=<float>                         Amplitude of the signal. [default: 1.]
-     --phi=<float>                       Phase of the signal. [default: 0.]
-     --kappa=<float>                     Shape parameter of the MVMD. [default: 5.]
-"""
+  -h --help                                 Help
+  -i --input_files INPUT_FILES              Input files
+  -o --output_dir OUTPUT_DIR                Output file
+  -e --energy_pdf ENERGY_PDF                Filepath of the hdf5 file storing the E_true - E_reco distribution
+     --rate=<float>                         Rate of injected signal neutrinos in 1/d. [default: 1.]
+     --pulseshape=<pulseshape>              Shape of the injected signal (sine or mvm). [default: mvm]
+                                             if 'sine': 'df', 'frequency', 'baseline', 'a', 'phi' should be set
+     --df=<float>                           Time resolution of the signal. [default: 0.1]
+     --frequency=<float>                    Frequency of the signal. [default: 1]
+     --baseline=<float>                     Offset on the y-axis. [default: 0.]
+     --a=<float>                            Amplitude of the signal. [default: 1.]
+     --phi=<float>                          Phase of the signal. [default: 0.]
+     --kappa=<float>                        Shape parameter of the MVMD. [default: 5.]
+     --plot=<plot>                          Bool, whether to plot the injected signal or not [default: False]
+     --method=<method>                      String: 'classic' or 'base'. Method of Injection to use. [default: base]
+     --E_min=<float>                        Minimum Energy of injected power law spectrum [default: 1e5 ]
+     --E_max=<float>                        Max Energy of the spectrum [default: 2e6]
+     --gamma=<float>                        Spectral index of the spectrum [default: 2.]
+     --E_cut=<float>                        Cutoff Energy of spectrum [default: 1e6]
+""" 
 
 from docopt import docopt
 import os, glob
@@ -33,121 +40,540 @@ import plens.antares_hdf5 as antares_hdf5
 
 from stingray import EventList, Lightcurve
 import warnings
+import matplotlib.pyplot as plt
+import traceback
+import sys
 
-def injectSignalRedistribute( time, ratio, bin_time, pulseshape, frequency, baseline, a, phi, kappa=None ):
-
-    """Injects a signal with a MVM pulseshape into an existing time sequence (eventlist) by first deleting random counts to ensure an unchanged total count number.
+def create_binned_light_curve(times, bin_size_seconds=60):
+    """Plot a binned light curve for the given event times."""
+    if len(times) == 0:
+        print("No events to plot.")
+        return
     
-    Parameters
-    ----------
-        time : np.array
+    start_time, end_time = np.min(times), np.max(times) 
+    num_bins = int((end_time - start_time) / bin_size_seconds)
+    
+    event_counts, bin_edges = np.histogram(times, bins=num_bins, range=(start_time, end_time))
+    bin_centers = (bin_edges[1:] + bin_edges[:-1]) / 2
+    
+    return bin_centers, event_counts
 
-        ratio : float
-        
+def plot_simulated_signal(lc_original, new_event_times, frequency, output_file, num_cycles=5, bin_size_seconds=None):
+    """
+    Plots the pure simulated signal and overlays the actual injected event times.
+    
+    Parameters:
+        lc_original : Lightcurve
+            Light curve of the pure simulated signal.
+        new_event_times : np.array
+            Injected event times (overlaid as vertical lines).
+        num_cycles : int, optional
+            Number of signal periods to display (default is 5).
+    """
+
+
+    plt.figure(figsize=(10, 5))
+
+    # Calculate period from frequency
+    # frequency = 1 / np.median(np.diff(lc_original.time))  # Approximate frequency
+    period = 1 / frequency  # Period of the signal
+    if bin_size_seconds == None: bin_size_seconds = period/20.0
+
+    # Define the time range to plot
+    t_min = lc_original.time[0] + period
+    t_max = t_min + (num_cycles + 2) * period
+
+    # Mask to select data in the desired time range
+    mask = (lc_original.time >= t_min) & (lc_original.time <= t_max)
+
+    plt.plot(lc_original.time[mask], lc_original.counts[mask]*2, lw=3, label="Pulse Timing Model", color='darkorange', alpha = 0.7, zorder = 3)
+
+    new_event_times_bin_centers, new_event_times_counts = create_binned_light_curve(new_event_times,bin_size_seconds=bin_size_seconds)
+    plt.plot(new_event_times_bin_centers, new_event_times_counts, drawstyle='steps-mid', lw=2, label="Injected Events Lightcurve", color='firebrick', alpha=0.7, zorder = 3)
+
+    # Overlay injected event times within the time range
+    for event in new_event_times:
+        if t_min <= event <= t_max:
+            plt.axvline(event, color='darkgrey', alpha=0.6,  label='Injected Events' if event == new_event_times[0] else None, zorder = 2)
+
+    
+
+    
+
+    plt.xlabel("Time (s)")
+    plt.ylabel("Counts per Bin")
+    plt.title(f"Simulated Signal with Injected Event Times ({num_cycles} cycles)")
+    plt.legend(['Simulated Signal', 'Injected Events Lightcurve', 'Injected Events'])
+    plt.xlim([t_min+0.5*period,t_max-1.5*period])
+    plt.grid(alpha=0.5)
+
+    output_plot = output_file + "simulated_signal.png"
+    plt.savefig(output_plot)
+    print(f"Plot saved: {output_plot}")
+
+
+def plot_data_comparison(original_times, injected_signal_times, frequency, output_file, rate, num_cycles=5, bin_size_seconds = None):
+    """
+    Plots a comparison between the initial dataset and the injected light curve.
+    
+    Parameters:
+        lc_initial : Lightcurve
+            Light curve of the original data before injection.
+        lc_injected : Lightcurve
+            Light curve of the dataset after injection.
+        frequency : float
+            The frequency of the signal (used to calculate the period).
+        num_cycles : int, optional
+            Number of signal periods to display (default is 5).
+    """
+    plt.figure(figsize=(10, 5))
+
+    
+    
+    # Calculate period from frequency
+    period = 1 / frequency  # Period of the signal
+    if bin_size_seconds == None: bin_size_seconds = period/20.0
+
+    # Define the time range to plot
+    t_min = np.min([original_times[0],injected_signal_times[0]]) + period
+    t_max = t_min + (num_cycles + 2) * period
+
+    
+
+    original_times_bin_centers, original_event_counts = create_binned_light_curve(original_times,bin_size_seconds=bin_size_seconds)
+    injected_signal_bin_centers, injected_signal_counts = create_binned_light_curve(injected_signal_times,bin_size_seconds=bin_size_seconds)
+
+    
+
+    # Plot both initial and injected light curves within the specified time range
+    plt.plot(original_times_bin_centers, original_event_counts, drawstyle='steps-mid', lw=4, label="Original Data", color='darkorange', alpha=1)
+    plt.plot(injected_signal_bin_centers, injected_signal_counts, drawstyle='steps-mid', lw=2, label="Injected Data", color='darkblue', alpha=1)
+    
+    plt.xlabel("Time (s)")
+    plt.ylabel("Intensity")
+    plt.title(f"Initial vs Injected Light Curve ({num_cycles} cycles - {frequency:.2e} Hz - Rate {rate} 1/d)")
+    plt.xlim([t_min+0.5*period,t_max-1.5*period])
+    plt.legend()
+    plt.grid(alpha=0.5)
+
+    output_plot = output_file + "signal_comparison.png"
+    plt.savefig(output_plot)
+    print(f"Plot saved: {output_plot}")
+
+
+def sample_power_law_energies(n, E_min, E_max, gamma, E_cut):
+    """
+    Samples `n` energies from a power-law distribution: flux(E) ∝ E^(-gamma)
+    between E_min and E_max.
+    """
+    if gamma == 1.0:
+        # Special case: integral diverges, use logarithmic sampling
+        r = np.random.uniform(0, 1, n)
+        energies = E_min * (E_max / E_min) ** r
+    else:
+        # Inverse transform sampling
+        r = np.random.uniform(0, 1, n)
+        exponent = 1.0 - gamma
+        E_min_pow = E_min ** exponent
+        E_max_pow = E_max ** exponent
+        energies = (E_min_pow + (E_max_pow - E_min_pow) * r) ** (1.0 / exponent)
+    
+    return energies
+
+def sample_power_law_energies_cutoff(n, E_min, E_max, gamma, E_cut):
+    """
+    Vectorized sampling from a power-law with exponential cutoff.
+    Returns exactly `n` samples between E_min and E_max.
+    """
+    energies = []
+    max_pdf = (E_min ** -gamma) * np.exp(-E_min / E_cut)
+    batch_size = max(1000, n)  # ensures efficiency for small n too
+
+    while len(energies) < n:
+        # Step 1: Draw trial samples from uniform proposal
+        E_trial = np.random.uniform(E_min, E_max, size=batch_size)
+
+        # Step 2: Compute target PDF values for these samples
+        pdf_vals = (E_trial ** -gamma) * np.exp(-E_trial / E_cut)
+
+        # Step 3: Acceptance probability is ratio to maximum
+        accept_prob = pdf_vals / max_pdf
+
+        # Step 4: Accept or reject
+        accepted = E_trial[np.random.rand(batch_size) < accept_prob]
+        energies.extend(accepted.tolist())
+
+    return np.array(energies[:n])
+
+def injectSignalRedistributeHighRes(time, energy, rate, n_events_inject, bin_time, pulseshape, frequency, baseline, a, phi, hist2d, bins_true, bins_reco, E_min=1.1e5, E_max=2e6, E_cut=1e6, gamma=2.0, kappa=None, plot=False):
+    """
+    Injects a signal with a given pulseshape into an event list.
+
+    Parameters:
+        time : np.array
+            Original event times.
+        energy : np.array
+            Original event energies
+        rate: float
+            Rate by which signal neutrinos should roughly be injected
+        n_events_injects : int
+            Number of injected signal neutrino events.
         bin_time : float
-        
+            Time bin width.
+        pulseshape : str
+            Type of pulse shape ('sine' or 'mvm').
         frequency : float
             Frequency of the pulse train.
-            
         baseline : float
-            Offset along the y-axis.
-            
+            Y-axis offset.
         a : float
-            Amplitude of the Pulse. Equates to the area of one pulse.
-            
+            Amplitude.
         phi : float
-            Phase offset of the pulse train.
-            
-        kappa : float
-            Shape parameter giving the width of the function.
-        
-    Returns
-    -------
-        np.array
-        New times with injected pulsetrain.
-        
+            Phase.
+        kappa : float, optional
+            Shape parameter for MVM.
+        plot : bool
+            Whether to plot results.
+
+    Returns:
+        If plot=True:
+            tuple: (lc_original, lc_injected, new_event_times, combined_events)
+        Else:
+            np.array: combined event times.
     """
-    
+    # Create a high-resolution time grid independent of `time`
+
+    bin_time = 1e-1
+
+    high_res_time = np.arange(time.min(), time.max(), bin_time)  # 10x finer resolution
+    #print("len(high_res_time): ", len(high_res_time))
+    #print("len(time): ", len(time))
+
+    # Generate smooth signal counts based on the chosen pulse shape
     if pulseshape == 'mvm':
-        counts = MVMD(time, frequency, phi, kappa, a, baseline=baseline)
+        # Use the MVMD function for the MVM pulse shape
+        counts = MVMD(high_res_time, frequency, phi, kappa, a, baseline=baseline)
     elif pulseshape == 'sine':
-        counts = sinusoid(time, frequency, baseline, a, phi)
+        # Use the sinusoid function for the sine wave pulse shape
+        counts = sinusoid(high_res_time, frequency, baseline, a, phi)
 
-    print(f"time: {time}")
-    print(f"counts: {counts}")
-    print(f"len(counts): {len(counts)}")
+    # Generate a smooth light curve
+    lc_original = Lightcurve(high_res_time, counts, dt=bin_time / 10, skip_checks=True)
 
-    # Create a light curve with the desired signal
-    lc = Lightcurve(time, counts, dt=bin_time, skip_checks=True)
-
-    #lc.plot()
-    
-    # Simulate event times from the light curve
+    # Simulate event times from the smooth light curve
     ev = EventList()
-    ev.simulate_times(lc)
-    #print(f"len(ev.time): {len(ev.time)}")
-
+    ev.simulate_times(lc_original)
     new_event_times = ev.time
-    
-        # Determine the desired number of new events based on the ratio
+
+    #new_event_energies = np.full_like(new_event_times, fill_value=1000.0, dtype=np.float64)
+    new_event_energies_true = sample_power_law_energies(
+        n=len(new_event_times),
+        E_min=E_min,       # Adjust as needed
+        E_max=E_max,     # Adjust as needed
+        gamma=gamma,       # Slope of the spectrum
+        E_cut=E_cut      # Energy cutoff
+    )
+
+    new_event_energies_reco, failed = sample_reco_energy_array(new_event_energies_true, hist2d, bins_true, bins_reco) 
+    print(f"Successfully sampled: {(~failed).sum()} / {len(new_event_energies_reco)}")
+    # Determine how many events to keep from the original event list
     total_events = len(time)
-    num_new_events = int(round(ratio * total_events))
-    num_original_events_to_keep = total_events - num_new_events
-
-    print("Total Events:", total_events)
-    print("New Events: ", num_new_events)
-    print("Original Events: ", num_original_events_to_keep)
-
-    print("new_event_times: ", new_event_times)
-    print("num_new_events: ", num_new_events)
-    print("len(new_event_times): ", len(new_event_times))
-    
 
     
+
+    #num_new_events = int(round(estimated_neutrinos * ratio))  # Number of new events to inject
+    num_new_events = n_events_inject
+    num_original_events_to_keep = total_events - num_new_events  # Remaining original events to keep
+
     if num_original_events_to_keep < 0:
-        raise ValueError("Number of original events to keep is negative. "
-                         "Ensure that ratio is between 0 and 1.")
-    
-    # The following seems to break when len(new_event_times) == 0.
-    # Adjust selection to ensure enough new events
+        raise ValueError("Number of original events to keep is negative. Ensure estimated_neutrinos is reasonable.")
+
+    # Randomly sample the desired number of injected events
     if len(new_event_times) >= num_new_events:
         indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=False)
         new_event_times = new_event_times[indices_to_keep_new]
     else:
-        # Allow replacement to reach the desired number of new events
         indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=True)
         new_event_times = new_event_times[indices_to_keep_new]
- 
-    
-    # Randomly select events to keep from the original times
+
+    # Keep a subset of original events
     indices_to_keep_original = np.random.choice(len(time), num_original_events_to_keep, replace=False)
-    remaining_original_events = time[indices_to_keep_original]
+    remaining_original_times = time[indices_to_keep_original]
+    remaining_original_energies = energy[indices_to_keep_original]
 
 
+    # Combine the original and injected event times
+    combined_times = np.concatenate((remaining_original_times, new_event_times))
+    combined_energies = np.concatenate((remaining_original_energies, new_event_energies_reco))
+    # Sort by time to keep everything aligned
+    sort_indices = np.argsort(combined_times)
+    combined_times = combined_times[sort_indices]
+    combined_energies = combined_energies[sort_indices]
 
-    print("Remaining Original Events: ", len(remaining_original_events))
-    print("Remaining Original Event Indices: ", len(indices_to_keep_original))
+    # Generate light curve for the injected event list
+    time_bins = np.arange(time.min(), time.max(), bin_time)
+    print("Time bins: ", time_bins)
+    print("Length of time bins: ", len(time_bins))
+    counts_combined, _ = np.histogram(combined_times, bins=time_bins)
+    time_centers = (time_bins[:-1] + time_bins[1:]) / 2
+    lc_injected = Lightcurve(time_centers, counts_combined, dt=bin_time, skip_checks=True)
 
-    print("New Events: ", len(new_event_times))
-    print("New Event Indices:", len(indices_to_keep_new))
-    #print(f"len(new_event_times): {len(new_event_times)}")
-    #print(f"len(remaining_original_events): {len(remaining_original_events)}")
+    # Return the results
+    if plot:
+        return lc_original, lc_injected, new_event_times, new_event_energies_reco, combined_times, combined_energies
+    else:
+        return combined_times, combined_energies
+        
+def generate_base_lightcurve(frequency, start_time, bin_time, pulseshape, baseline, a, phi, kappa=None, num_periods=20):
+    """
+    Generates a high-resolution light curve for a short base interval.
+
+    Parameters:
+        frequency : float
+            Frequency of the pulse train.
+        bin_time : float
+            Time bin width.
+        pulseshape : str
+            Type of pulse shape ('sine' or 'mvm').
+        baseline : float
+            Y-axis offset.
+        a : float
+            Amplitude.
+        phi : float
+            Phase.
+        kappa : float, optional
+            Shape parameter for MVM.
+        num_periods : int
+            Number of periods to include in the base interval.
+
+    Returns:
+        tuple: (base_event_times, base_interval_length)
+    """
+    base_interval_length = num_periods / frequency  # Total duration of the base interval
+    high_res_time = np.arange(start_time, start_time + base_interval_length, bin_time)  # High-resolution time grid
+
+
+    dtype_size = np.dtype(np.float64).itemsize  # Size of one element in bytes (usually 8 bytes)
+    num_elements = int(base_interval_length / bin_time)  # Estimated number of elements
+    estimated_memory_MB = (num_elements * dtype_size) / (1024**2)  # Convert bytes to MB
+
+    print(f"Estimated memory required: {estimated_memory_MB:.2f} MB")
+    print(f"Memory required for high_res_time: {high_res_time.nbytes / (1024**2):.2f} MB")
+
+    print("high_res_time: ", high_res_time[:5])
+
+    # Generate smooth signal counts based on the chosen pulse shape
+    if pulseshape == 'mvm':
+        counts = MVMD(high_res_time, frequency, phi, kappa, a, baseline=baseline)
+    elif pulseshape == 'sine':
+        counts = sinusoid(high_res_time, frequency, baseline, a, phi)
     
-    # Combine the remaining original events with the new events
-    combined_events = np.sort(np.concatenate((remaining_original_events, new_event_times)))
+    # Generate a smooth light curve
+    lc_base = Lightcurve(high_res_time, counts, dt=bin_time, skip_checks=True)
 
+    #print("lc_base:", lc_base)
     
 
-    return combined_events
+    # Simulate event times from the base light curve
+    ev = EventList()
+    ev.simulate_times(lc_base)
+    base_event_times = ev.time
+
+    #print("base_event_times: ", base_event_times)
+    print("len(base_event_times): ", len(base_event_times))
+
+
+    return lc_base, base_event_times, base_interval_length
+
+
+def injectSignalWithBaseInterval(time, energy, rate, n_events_inject, bin_time, pulseshape, 
+                                 frequency, baseline, a, phi, hist2d, bins_true, bins_reco, kappa=None, num_periods=20,  E_min=1.1e5, E_max=2e6, E_cut=1e6, gamma=2.0, plot=False):
+    """
+    Injects a signal using a periodic base interval approach.
+
+    Parameters:
+        time : np.array
+            Original event times.
+        ratio : float
+            Fraction of estimated neutrino events to inject.
+        n_events_inject : int
+            Number of signal events to inject.
+        bin_time : float
+            Time bin width.
+        pulseshape : str
+            Type of pulse shape ('sine' or 'mvm').
+        frequency : float
+            Frequency of the pulse train.
+        baseline : float
+            Y-axis offset.
+        a : float
+            Amplitude.
+        phi : float
+            Phase.
+        kappa : float, optional
+            Shape parameter for MVM.
+        num_periods : int
+            Number of periods to use in the base interval.
+        plot : bool
+            Whether to plot results.
+
+    Returns:
+        np.array: Combined event times.
+    """
+    start_time = np.min(time)
+    print("start_time: ", start_time)
+    print("end_time: ", np.max(time))
+    
+    # Generate base light curve and get event times
+    lc_base, base_event_times, base_interval_length = generate_base_lightcurve(
+        frequency, start_time, bin_time, pulseshape, baseline, a, phi, kappa, num_periods
+    )
+
+    #print("lc_base_loaded: ", lc_base)
+    print("len(base_event_times_loaded): ", len(base_event_times))
+    print("base_interval_length: ", base_interval_length)
+
+    # Determine how many events to inject
+    total_events = len(time)
+    #num_new_events = int(round(int(estimated_neutrinos) * ratio))  
+    num_new_events = n_events_inject
+    num_original_events_to_keep = total_events - num_new_events  
+
+    print("total_events: ", total_events)
+    print("num_new_events: ", num_new_events)
+
+    if num_original_events_to_keep < 0:
+        raise ValueError("Number of original events to keep is negative. Check estimated_neutrinos.")
+
+    # Randomly select event times from the base and spread across dataset
+    total_time_span = time.max() - time.min()
+    num_intervals = int(np.ceil(total_time_span / base_interval_length))
+
+    print(f"total_time_span: {total_time_span}, Type: {type(total_time_span)}")
+    print(f"num_intervals: {num_intervals}, Type: {type(num_intervals)}")
+    print(f"total_time_span/num_intervals: {total_time_span/num_intervals}")
+
+    # Sample random base events and replicate across time
+    chosen_base_times = np.random.choice(base_event_times, num_new_events, replace=True)
+    random_intervals = np.random.randint(0, num_intervals, size=num_new_events)
+    random_shifts = random_intervals * base_interval_length
+    new_event_times = chosen_base_times + random_shifts
+
+
+    # Randomly sample the desired number of injected events
+    if len(new_event_times) >= num_new_events:
+        indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=False)
+        new_event_times = new_event_times[indices_to_keep_new]
+    else:
+        indices_to_keep_new = np.random.choice(len(new_event_times), num_new_events, replace=True)
+        new_event_times = new_event_times[indices_to_keep_new]
+
+    # Keep a subset of original events
+    indices_to_keep_original = np.random.choice(len(time), num_original_events_to_keep, replace=False)
+    remaining_original_times = time[indices_to_keep_original]
+    remaining_original_energies = energy[indices_to_keep_original]
+    print("len(new_event_times): ", len(new_event_times))
+    new_event_energies_true = sample_power_law_energies(
+        n=len(new_event_times),
+        E_min=E_min,       # Adjust as needed
+        E_max=E_max,     # Adjust as needed
+        gamma=gamma,       # Slope of the spectrum
+        E_cut=E_cut      # Energy cutoff
+    )
+    print("len(new_event_energies_true): ", len(new_event_energies_true))
+    
+    new_event_energies_reco, failed = sample_reco_energy_array(new_event_energies_true, hist2d, bins_true, bins_reco) 
+    print(f"Successfully sampled: {(~failed).sum()} / {len(new_event_energies_reco)}")
+
+    print(f"chosen_base_times: {chosen_base_times[:5]}, Length: {len(chosen_base_times)}, Type: {type(chosen_base_times)}")
+    print(f"Min: {np.min(chosen_base_times)}")
+    print(f"Max: {np.max(chosen_base_times)}")
+    print(f"Min (relative): {np.min(chosen_base_times)-start_time}")
+    print(f"Max (relative): {np.max(chosen_base_times)-start_time}")    
+    print(f"random_intervals: {random_intervals[:5]}, Length: {len(random_intervals)}, Type: {type(random_intervals)}")
+    print(f"Min: {np.min(random_intervals)}")
+    print(f"Max: {np.max(random_intervals)}")
+    print(f"random_shifts: {random_shifts[:5]}, Length: {len(random_shifts)}, Type: {type(random_shifts)}")
+    print(f"new_event_times: {new_event_times[:5]}, Length: {len(new_event_times)}, Type: {type(new_event_times)}")
+    print(f"new_event_energies_reco: {new_event_energies_reco[:5]}, Length: {len(new_event_energies_reco)}, Type: {type(new_event_energies_reco)}")
+    # Check if the periodicity is actually there:
+    
+    # Ensure events are within valid range
+    #new_event_times = new_event_times[(new_event_times >= time.min()) & (new_event_times <= time.max())]
+    #print(f"After Range Selection: new_event_times: {new_event_times}, Length: {len(new_event_times)}, Type: {type(new_event_times)}")
+    print("new_event_times Min: ", np.min(new_event_times))
+    print("new_event_times Max: ", np.max(new_event_times))
+    # Keep a subset of original events
+    indices_to_keep_original = np.random.choice(len(time), num_original_events_to_keep, replace=False)
+    remaining_original_times = time[indices_to_keep_original]
+    remaining_original_energies = energy[indices_to_keep_original]
+
+    print(f"indices_to_keep_original: {indices_to_keep_original}, Length: {len(indices_to_keep_original)}, Type: {type(indices_to_keep_original)}")
+    print(f"remaining_original_events: {remaining_original_times}, Length: {len(remaining_original_times)}, Type: {type(remaining_original_times)}")
+
+    # Combine original and injected event times
+    combined_times = np.sort(np.concatenate((remaining_original_times, new_event_times)))
+    combined_energies = np.concatenate((remaining_original_energies, new_event_energies_reco))
+
+    print("Length of combined_event_times:", len(combined_times))
+    print("Length of combined_energies:", len(combined_energies))
+    # Sort by time to keep everything aligned
+    sort_indices = np.argsort(combined_times)
+    combined_times = combined_times[sort_indices]
+    combined_energies = combined_energies[sort_indices]
+    print(f"combined_events: {combined_times}, Length: {len(combined_times)}, Type: {type(combined_times)}")
+    lc_injected = []
+
+    # Return results
+    if plot:
+        return lc_base, lc_injected, new_event_times , combined_times, combined_energies
+    else:
+        return combined_times, combined_energies
+
+def load_histogram(file_path):
+    with h5py.File(file_path, 'r') as f:
+        hist2d = f['hist2d'][()]
+        bins_true = f['bins_true'][()]
+        bins_reco = f['bins_reco'][()]
+    return hist2d, bins_true, bins_reco
+
+def sample_reco_energy_array(true_energies, hist2d, bins_true, bins_reco):
+    """
+    Samples reconstructed energies for an array of true energies based on the 2D histogram.
+
+    Parameters:
+    - true_energies (array-like): True energies to sample from
+    - hist2d (2D array): Histogram [true_energy_bin, reco_energy_bin]
+    - bins_true (1D array): Bin edges for true energy
+    - bins_reco (1D array): Bin edges for reco energy
+
+    Returns:
+    - reco_samples (np.ndarray): Sampled reconstructed energies
+    - failed_mask (np.ndarray): Boolean mask indicating which samples failed
+    """
+    true_energies = np.asarray(true_energies)
+    reco_samples = np.full_like(true_energies, fill_value=np.nan, dtype=float)
+    bin_centers_reco = 0.5 * (bins_reco[1:] + bins_reco[:-1])
+
+    for i, E_true in enumerate(true_energies):
+        true_bin_idx = np.digitize(E_true, bins_true) - 1
+
+        # Check if within valid histogram range
+        if 0 <= true_bin_idx < hist2d.shape[0]:
+            slice_hist = hist2d[true_bin_idx, :]
+            if np.sum(slice_hist) > 0:
+                pdf = slice_hist / np.sum(slice_hist)
+                reco_samples[i] = np.random.choice(bin_centers_reco, p=pdf)
+
+    # Optional: mask of failed samples (outside valid range or empty bins)
+    failed_mask = np.isnan(reco_samples)
+    return reco_samples, failed_mask
 
 def main():
-    #print(stingray.__version__)
     arguments = docopt(__doc__)
 
-    data = {}
-    for key in arguments:
-        data[key.replace("-", "")] = arguments[key]
-    
+    data = {key.replace("-", ""): arguments[key] for key in arguments}
+
     input_files = []
     for pattern in data['input_files']:
         input_files.extend(glob.glob(pattern))
@@ -156,60 +582,129 @@ def main():
     if not os.path.exists(data['output_dir']):
         os.makedirs(data['output_dir'])
 
-    for file in input_files:    
-        # Fetching filename for usage in output filename 
+    plot = data['plot'].lower() == "true"
+
+    print(f"DEBUG: Plot option is {plot} (type: {type(plot)})")
+
+    method = str(arguments['--method'])
+
+    energy_pdf_path = data['energy_pdf']
+    hist2d, bins_true, bins_reco = load_histogram(energy_pdf_path)
+
+    for file in input_files:
         folder_path, file_name = os.path.split(file)
         file_name = os.path.splitext(file_name)[0]
-        #print(file_name)
 
-        output_file = data['output_dir'] + file_name + '_'+ str(data['frequency']) + 'Hz_' + str(data['a']) + '-signal'
-        #print(output_file, os.path.exists(output_file))
+        output_file = f"{data['output_dir']}{file_name}_{data['frequency']}Hz_{data['a']}-signal"
 
-        # Read TimeSeries
         with h5py.File(file) as input_file:
-            
             EventList = EL.readEventList(input_file)
-            
-            if data['pulseshape'] == 'mvm':
-                EventListNew = TimeSeries(time=Time(injectSignalRedistribute(EventList['time'].value, 
-                                                        float(data['ratio']),
-                                                        float(data['df']), 
-                                                        data['pulseshape'],
-                                                        float(data['frequency']), 
-                                                        float(data['baseline']), 
-                                                        float(data['a']), 
-                                                        float(data['phi']), 
-                                                        float(data['kappa'])),
-                                                format='unix'
-                                                    )
-                                            )
-                output_file += '_mvm.hdf5'
-                    
-            elif data['pulseshape'] == 'sine':
-                EventListNew = TimeSeries(time=Time(injectSignalRedistribute(EventList['time'].value, 
-                                                        float(data['ratio']),
-                                                        float(data['df']), 
-                                                        data['pulseshape'],
-                                                        float(data['frequency']), 
-                                                        float(data['baseline']), 
-                                                        float(data['a']), 
-                                                        float(data['phi'])),
-                                                format='unix'
-                                                    )
-                                            )
-                output_file += '_sine.hdf5'
+            times = EventList['time'].value.astype(float)
+            zenith = EventList['zenith'].value.astype(float)
+            energy = EventList['energy'].value.astype(float)
+            rate = float(data['rate'])
 
+            print(f"Max Time: {times.max()}")
+            print(f"Min Time: {times.min()}")
+            duration = times.max() - times.min()
+            duration_days = duration/(24.0*3600.0)
+            print(f"Duration: {duration} s - {duration_days} d")
+            n_events = len(times)
+            print(f"Number of Events: {n_events}")
+            rate_max = 1.0*n_events/duration_days
+            print(f"Max Rate: {rate_max} 1/d")
+
+            if rate > rate_max:
+                print(f"Rate ({rate}) exceeds maximum possible rate ({rate_max})! That doesn't work, signal Injection is skipped...")
+                sys.exit(1)
+            else:
+                print(f"Rate ({rate}) is lower than maximum possible rate ({rate_max}), all fine!")
+                n_events_inject = int(rate*duration_days)
+                print(f"Number of injected events: {n_events_inject}")
+            #estimated_neutrino_events = estimate_total_neutrino_events(times, zenith)
+
+            #*inject_kwargs = [times, float(data['ratio']), float(data['df']), data['pulseshape'],
+            #               float(data['frequency']), float(data['baseline']), float(data['a']), float(data['phi'])]
+            
+            #*inject_kwargs = [times, energy, float(data['ratio']), estimated_neutrino_events, float(data['df']), data['pulseshape'],
+            #   float(data['frequency']), float(data['baseline']), float(data['a']), float(data['phi']),E_min=float(data['E_min'])]
+            
+            inject_kwargs = {
+                'time': times,
+                'energy': energy,
+                'rate': float(data['rate']),
+                'n_events_inject' : n_events_inject,
+                'bin_time': float(data['df']),
+                'pulseshape': data['pulseshape'],
+                'frequency': float(data['frequency']),
+                'baseline': float(data['baseline']),
+                'a': float(data['a']),
+                'phi': float(data['phi']),
+                'hist2d' : hist2d,
+                'bins_true' : bins_true,
+                'bins_reco' : bins_reco,
+                'E_min': float(data['E_min']),
+                'E_max': float(data['E_max']),
+                'E_cut': float(data.get('E_cut', 1e6)),     # fallback to default if not provided
+                'gamma': float(data.get('gamma', 2.0)),     # fallback to default if not provided                         # or True if you want to see the plot
+            }
+            if data['pulseshape'] == 'mvm':
+                inject_kwargs['kappa'] = float(data['kappa'])
+                output_file = output_file + '_mvm_Emin' + str(data['E_min']) + 'g' + str(data['gamma']) + '.hdf5'
+            else:
+                #output_file += '_sine.hdf5'
+                output_file = output_file + '_sine_Emin' + str(data['E_min']) + 'g' + str(data['gamma']) +  '.hdf5'
+
+            
+
+            # Only use simulated times from within the gtis when implemented
+
+            if plot == True:
+                try:
+                    if method == 'classic':
+                        lc_original, lc_injected, new_event_times, new_event_energies, combined_event_times , combined_energies= injectSignalRedistributeHighRes(**inject_kwargs, plot=plot)
+                    elif method == 'base':
+                        lc_original, lc_injected, new_event_times, combined_event_times, combined_energies = injectSignalWithBaseInterval(**inject_kwargs)
+                    else: print("--method must be 'classic' or 'base'!")
+                    # Try plotting
+                    plot_simulated_signal(lc_original, new_event_times, frequency=float(data['frequency']), output_file=output_file)
+                    plot_data_comparison(times, combined_event_times, frequency=float(data['frequency']), output_file=output_file, rate=float(data['rate']))
+
+                except Exception as e:
+                    print(f"Warning: Plotting failed due to error: {e}")
+                    traceback.print_exc()  # Print full error details
+
+                    # Generate dummy PNG files
+                    dummy_files = [f"{output_file}simulated_signal.png", f"{output_file}signal_comparison.png"]
+                    for dummy_file in dummy_files:
+                        print(f"Creating dummy plot file: {dummy_file}")
+                        with open(dummy_file, "w") as f:
+                            f.write("Dummy plot file - plotting failed.")
+            else:
+                if method == 'classic':
+                    combined_event_times, combined_energies = injectSignalRedistributeHighRes(**inject_kwargs)
+                elif method == 'base':
+                    combined_event_times, combined_energies = injectSignalWithBaseInterval(**inject_kwargs)
+                else: print("--method must be 'classic' or 'base'!")
+
+            TimeEventList= TimeSeries(time=Time(combined_event_times, format='unix'))
             InjectedEventList = EventList.copy()
-            InjectedEventList['time'] = EventListNew['time']
-                
+            InjectedEventList['time'] = TimeEventList['time']
+            InjectedEventList['energy'] = combined_energies #* EventList['energy'].unit
+
         if os.path.exists(output_file):
             print("File already existed. Deleting File...")
-            os.remove(output_file)  # Remove the file if it already exists
-        with h5py.File(output_file, 'w') as output:  
+            os.remove(output_file)
 
-            
-
+        with h5py.File(output_file, 'w') as output:
             InjectedEventList.write(output, format='hdf5', overwrite=True, serialize_meta=True)
+
+    n_total_events = len(times)
+    total_events_file = os.path.join(str(data['output_dir']),f"{n_total_events}_total_events2.txt" )
+    with open(total_events_file, "w") as f:
+        f.write(str(n_total_events) + "\n") 
+        f.write(str(n_events_inject) + "\n")
+
 
 if __name__ == "__main__":
     main()

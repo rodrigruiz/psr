@@ -1013,5 +1013,4 @@ def main():
             savehdf5(freq, efstat, out)
 
 
-if __name__ == "__main__":
-    main()
+
