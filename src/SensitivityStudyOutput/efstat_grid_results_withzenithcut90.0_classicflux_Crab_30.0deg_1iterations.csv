@@ -1,0 +1,4 @@
+zenith_cut,angle,phi0,gamma,detector,mean_max_efstat,mean_max_efstat_error
+90.0,30.0,0.01,2,arca,62.9034175334324,0.0
+90.0,30.0,0.01,2,orca,58.01643003839629,0.0
+90.0,30.0,0.01,2,combined,59.07389911745051,0.0
